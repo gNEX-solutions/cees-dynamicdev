@@ -6,5 +6,11 @@ class Member extends dbh{
       $result =$this->connect()->query($query);   
       return $result;
   }
+
+  function getUsers(){
+   $query ="SELECT * FROM team_members WHERE status = 2";
+   $result =$this->connect()->query($query);   
+   return $result;
+}
 }
 ?>

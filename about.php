@@ -10,6 +10,14 @@ $no_mem =mysqli_num_rows($members);
 $no_mem ='';
 }
 
+//getUser
+$user = $service->getUsers();
+if($user){
+$no_user =mysqli_num_rows($user);
+}else{
+$no_user ='';
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -111,7 +119,6 @@ $no_mem ='';
                         <a href="<?php echo $row['linkedin_url']; ?>" target="_blank">
                             <span class="p-1 socicon-linkedin socicon mbr-iconfont mbr-iconfont-social"></span>
                         </a>
-                       
                     </div>
                 </div>
             </div>
@@ -121,11 +128,6 @@ $no_mem ='';
 </section>
 
 <section class="carousel slide testimonials-slider cid-ryEUu17Rx5" data-interval="false" id="testimonials-slider1-0">
-    
-    
-
-    
-
     <div class="container text-center">
         <h2 class="pb-5 mbr-fonts-style display-2">
             WHAT OUR FANTASTIC USERS SAY
@@ -133,44 +135,29 @@ $no_mem ='';
 
         <div class="carousel slide" role="listbox" data-pause="true" data-keyboard="false" data-ride="carousel" data-interval="5000">
             <div class="carousel-inner">
-                
-                
-            <div class="carousel-item">
-                    <div class="user col-md-8">
-                        <div class="user_image">
-                            <img src="assets/images/face3.jpg">
+            <?php
+            if($no_user>0){
+            while ($row = mysqli_fetch_array($user)) { ?>
+                <div class="carousel-item">
+                        <div class="user col-md-8">
+                            <div class="user_image">
+                            <img src="<?php echo $row['profilepic_url']; ?>">
+                            </div>
+                            <div class="user_text pb-3">
+                                <p class="mbr-fonts-style display-7">
+                                <?php echo $row['quote'];?>
+                                </p>
+                            </div>
+                            <div class="user_name mbr-bold pb-2 mbr-fonts-style display-7">
+                            <?php echo $row['first_name']; ?>
+                            </div>
+                            <div class="user_desk mbr-light mbr-fonts-style display-7">
+                            <?php echo $row['role']; ?>
+                            </div>
                         </div>
-                        <div class="user_text pb-3">
-                            <p class="mbr-fonts-style display-7">
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae nostrum, quos voluptas fugiat blanditiis, temporibus expedita cumque doloribus ea, officiis consequuntur repellat minus ad veritatis? Facere similique accusamus, accusantium sunt!
-                            </p>
-                        </div>
-                        <div class="user_name mbr-bold pb-2 mbr-fonts-style display-7">
-                            Alex
-                        </div>
-                        <div class="user_desk mbr-light mbr-fonts-style display-7">
-                            DESIGNER
-                        </div>
-                    </div>
-                </div><div class="carousel-item">
-                    <div class="user col-md-8">
-                        <div class="user_image">
-                            <img src="assets/images/face2.jpg">
-                        </div>
-                        <div class="user_text pb-3">
-                            <p class="mbr-fonts-style display-7">
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae nostrum, quos voluptas fugiat blanditiis, temporibus expedita cumque doloribus ea, officiis consequuntur repellat minus ad veritatis? Facere similique accusamus, accusantium sunt!
-                            </p>
-                        </div>
-                        <div class="user_name mbr-bold pb-2 mbr-fonts-style display-7">
-                            Linda
-                        </div>
-                        <div class="user_desk mbr-light mbr-fonts-style display-7">
-                            DEVELOPER
-                        </div>
-                    </div>
-                </div></div>
-
+                </div>
+            <?php } } ?>
+            </div>
             <div class="carousel-controls">
                 <a class="carousel-control-prev" role="button" data-slide="prev">
                   <span aria-hidden="true" class="mbri-arrow-prev mbr-iconfont"></span>
