@@ -9,7 +9,7 @@
   <link rel="shortcut icon" href="assets/images/logo2.png" type="image/x-icon">
   <meta name="description" content="Post page">
   
-  <title>Post</title>
+  <title>Consulting Services</title>
   <link rel="stylesheet" href="assets/web/assets/mobirise-icons/mobirise-icons.css">
   <link rel="stylesheet" href="assets/tether/tether.min.css">
   <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
@@ -29,90 +29,69 @@
         <?php require_once 'common/Components/header.php'; ?>
       </section>
 
-<div class="col-12 col-md-8">
-    <img src="assets\images\service talent.jpg" alt="" title="">
+<div class="carousel-inner">
+    <img style="  height: 100%;background-position: center;background-repeat: no-repeat;background-size: cover;" src="assets\images\service talent.jpg" alt="" title="">
+    <div class="carousel-caption">
+                <h5>Consulting Services</h5>
+                <p>Feel the Original taste of enterprise excellence tools and techniques</p>
+            </div>
 </div>
 
 <section class="header1 cid-ruXI5S6ubv" id="header16-1l">
-    <div class="container">
-        <div class="row ">
-          <div class="col-12 general-title text-center">
-            <h3>WHY BUY WITH US?</h3>
-            <p>We have the best value for you</p>
-            <hr>
-          </div>
-          <div class="col-lg-3 col-md-3 col-sm-12">
-        <div class="servicebox text-center">
-          <div class="service-icon">
-            <div class="dm-icon-effect-1" data-effect="slide-left">
-              <a href="#" class=""> <i class="dm-icon fa fa-money fa-3x"></i> </a>
-            </div>
-            <div class="servicetitle">
-              <h4>Affordable Price</h4>
-              <hr>
-            </div>
-            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry"s standard dummy text ever since..</p>
-          </div>
-          <!-- service-icon -->
-        </div>
-        <!-- servicebox -->
-      </div>
-      <!-- large-3 -->
-
-      <div class="col-lg-3 col-md-3 col-sm-12">
-        <div class="servicebox text-center">
-          <div class="service-icon">
-            <div class="dm-icon-effect-1" data-effect="slide-bottom">
-              <a href="#" class=""> <i class="dm-icon fa fa-trophy fa-3x"></i> </a>
-            </div>
-            <div class="servicetitle">
-              <h4>Best Quality</h4>
-              <hr>
-            </div>
-            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry"s standard dummy text ever since..</p>
-          </div>
-          <!-- service-icon -->
-        </div>
-        <!-- servicebox -->
-      </div><div class="col-lg-3 col-md-3 col-sm-12">
-        <div class="servicebox text-center">
-          <div class="service-icon">
-            <div class="dm-icon-effect-1" data-effect="slide-bottom">
-              <a href="#" class=""> <i class="dm-icon fa fa-heart-o fa-3x"></i> </a>
-            </div>
-            <div class="servicetitle">
-              <h4>24/7 Support</h4>
-              <hr>
-            </div>
-            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry"s standard dummy text ever since..</p>
-          </div>
-          <!-- service-icon -->
-        </div>
-        <!-- servicebox -->
-      </div>
-      <!-- large-3 -->
-
-      <div class="col-lg-3 col-md-3 col-sm-12">
-        <div class="servicebox text-center">
-          <div class="service-icon">
-            <div class="dm-icon-effect-1" data-effect="slide-right">
-              <a href="#" class=""> <i class="dm-icon fa fa-book fa-3x"></i> </a>
-            </div>
-            <div class="servicetitle">
-              <h4>Lifetime Warranty</h4>
-              <hr>
-            </div>
-            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry"s standard dummy text ever since..</p>
-          </div>
-          <!-- service-icon -->
-        </div>
-        <!-- servicebox -->
-      </div>
-      <!-- large-3 -->
-
-      <div class="divider"></div>
+<!--Griglia alternata testo e immagine, resposive con flexbox.-->
+<div class="container">
+  <div class="grid-flex"  id="monster">
+    <div class="col col-image">
+    <img src="assets\images\consultancy\01.png" alt="" class="mx-auto d-block" />
     </div>
-    <!-- end container -->
+    <div class="col col-text">
+    
+      <div class="Aligner-item text-left">
+      <h3 class="text-left display-2 font-weight-normal">Enterprise Diagnosis Tool 1.0</h3>
+        <p class="text-justify">Comprehensive tool to diagnosis KPIs system alignment, process stability, people capability, management system and lean cultural aspects of an organization.
+
+        </p>
+      </div>
+    </div>
+  </div>
+  <hr style="margin-bottom:70px;">
+  <div class="grid-flex hideme">
+    <div class="col col-image">
+    <img src="assets\images\consultancy\02.png" alt="" class="mx-auto d-block" />
+    </div>
+    <div class="col col-text col-left" style="margin-left:75px;">
+      <div class="Aligner-item">
+        <h3 class="text-left display-2 font-weight-normal" >Focused Business Improvement</h3>
+        <p class="text-justify">Focus on biggest problems in the business and rapid implementation of  
+        countermeasures through cross functional team approach</p>
+        <ul style="list-style-type:disc;" class="text-left">
+            <li>Product development support</li>
+            <li>Cost of quality reduction</li>
+            <li>Changeover loss reduction</li>
+            <li>Material Leadtime reduction</li>
+            <li>Machine downtime and spare part cost reduction</li>
+            <li>Work life improvement for support services</li>
+        </ul>  
+      </div>
+    </div>
+  </div>
+  <hr>
+  <div class="grid-flex hideme">
+    <div class="col col-image">
+    <img src="assets\images\consultancy\03.png" alt="" class="mx-auto d-block" />
+    </div>
+    <div class="col col-text">
+      <div class="Aligner-item">
+      <h3 class="text-left display-2 font-weight-normal">Management System Development</h3>
+        <p class="text-justify">Develop sustainable management systems to align the leadership direction 
+        while cultivating the lean culture across the organization</p>
+        <ul style="list-style-type:disc;" class="text-left">
+          <li>Establish sustainable management systems</li>
+          <li>Lean behavior cultivation</li>
+        </ul>
+      </div>
+    </div>
+  </div>
   </section>
 
   <div class="content-slider col-12">
@@ -120,29 +99,23 @@
     <div class="mask">
       <ul>
         <li class="anim1">
-          <div class="quote">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</div>
+          <div class="quote">Enterprise Diagnosis Tool 1.0</div>
           <div class="source"> Lorem Ipsum has been the industry"s standard dummy text ever since..</div>
         </li>
         <li class="anim2">
-          <div class="quote">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</div>
+          <div class="quote">Focused Business Improvement</div>
           <div class="source"> Lorem Ipsum has been the industry"s standard dummy text ever since..</div>
         </li>
         <li class="anim3">
-          <div class="quote">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</div>
-          <div class="source"> Lorem Ipsum has been the industry"s standard dummy text ever since..</div>
-        </li>
-        <li class="anim4">
-          <div class="quote">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</div>
-          <div class="source"> Lorem Ipsum has been the industry"s standard dummy text ever since..</div>
-        </li>
-        <li class="anim5">
-          <div class="quote">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</div>
+          <div class="quote">Management System Development</div>
           <div class="source"> Lorem Ipsum has been the industry"s standard dummy text ever since..</div>
         </li>
       </ul>
     </div>
   </div>
 </div>
+</div>
+</section>
 
 <section class="mbr-section info2 cid-ruXIRFRxrA" id="info2-1n">
     <div class="container">
@@ -201,23 +174,51 @@
   </div>
 </section>
 
-<section class="cid-ruXI5U4sXz" id="footer5-1m">
+<section class="cid-ruOTxA2tiD" id="footer5-16">
 <?php require_once ('common/Components/footer.php'); ?>
 </section>
 
+<script src="assets/web/assets/jquery/jquery.min.js"></script>
+<script src="assets/popper/popper.min.js"></script>
+<script src="assets/tether/tether.min.js"></script>
+<script src="assets/bootstrap/js/bootstrap.min.js"></script>
+<script src="assets/dropdown/js/nav-dropdown.js"></script>
+<script src="assets/dropdown/js/navbar-dropdown.js"></script>
+<script src="assets/touchswipe/jquery.touch-swipe.min.js"></script>
+<script src="assets/parallax/jarallax.min.js"></script>
+<script src="assets/smoothscroll/smooth-scroll.js"></script>
+<script src="assets/theme/js/script.js"></script>
 
-  <script src="assets/web/assets/jquery/jquery.min.js"></script>
-  <script src="assets/popper/popper.min.js"></script>
-  <script src="assets/tether/tether.min.js"></script>
-  <script src="assets/bootstrap/js/bootstrap.min.js"></script>
-  <script src="assets/dropdown/js/nav-dropdown.js"></script>
-  <script src="assets/dropdown/js/navbar-dropdown.js"></script>
-  <script src="assets/touchswipe/jquery.touch-swipe.min.js"></script>
-  <script src="assets/parallax/jarallax.min.js"></script>
-  <script src="assets/smoothscroll/smooth-scroll.js"></script>
-  <script src="assets/theme/js/script.js"></script>
-  
-  
- <div id="scrollToTop" class="scrollToTop mbr-arrow-up"><a style="text-align: center;"><i class="mbr-arrow-up-icon mbr-arrow-up-icon-cm cm-icon cm-icon-smallarrow-up"></i></a></div>
-  </body>
+<script>
+$(function(){  // $(document).ready shorthand
+  $('.monster').fadeIn('slow');
+});
+
+$(document).ready(function() {
+    
+    /* Every time the window is scrolled ... */
+    $(window).scroll( function(){
+    
+        /* Check the location of each desired element */
+        $('.hideme').each( function(i){
+            
+            var bottom_of_object = $(this).position().top + $(this).outerHeight();
+            var bottom_of_window = $(window).scrollTop() + $(window).height();
+            
+            /* If the object is completely visible in the window, fade it it */
+            if( bottom_of_window > bottom_of_object ){
+                
+                $(this).animate({'opacity':'1'},1500);
+                    
+            }
+            
+        }); 
+    
+    });
+    
+});
+</script>
+
+<div id="scrollToTop" class="scrollToTop mbr-arrow-up"><a style="text-align: center;"><i class="mbr-arrow-up-icon mbr-arrow-up-icon-cm cm-icon cm-icon-smallarrow-up"></i></a></div>
+</body>
 </html>

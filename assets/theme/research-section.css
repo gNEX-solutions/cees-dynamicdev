@@ -1,0 +1,181 @@
+#research-section p{
+word-wrap: break-word;
+}
+
+#title-text{
+text-align:center !important;
+width: 100%;
+margin-bottom:20px;
+border-style: solid;
+border-width: 0px 0px 4px 0px;
+margin:10px;
+padding:10px;
+border-color:#1a91ae;
+color:#0f5384;
+}
+
+#date-section{
+
+font-size:10px;
+color:#01516b;
+}
+
+#research-section .right-part{
+width:100%;
+height:400px;
+}
+
+#research-section .right-part .row{
+width:100%;
+height:25%;
+margin:auto;
+border-style: dashed;
+border-width: 0px 0px 0px 2px;
+border-color:#e6e6e6;
+padding:5px;
+padding-left:15px;
+overflow:scroll;
+}
+
+#research-section .right-part .row::-webkit-scrollbar-thumb {
+background: #ebebeb !important; 
+border-radius: 20px !important; 
+}
+
+#research-section .right-part .row::-webkit-scrollbar {
+width: 5px;
+}
+
+#research-section .right-part p{
+font-size:12px;
+margin-bottom:0px;
+color:rgb(93, 93, 93);
+}
+
+#research-section .right-part h5{
+margin-top:5px;
+font-size:16px;
+line-height: 13pt;
+font-family: 'Open Sans', sans-serif !important;
+font-weight:500;
+}
+
+
+#research-section .left-part div:nth-child(1){
+width:100%;
+padding: 20px;
+z-index:9999 !important;
+background-image: linear-gradient(rgba(255,255,255,0), rgba(255,255,255,1), rgba(255,255,255,1));
+background-size:auto 300px;
+background-repeat: no-repeat;
+background-position: bottom;
+}
+
+#research-section .left-part div h4{
+margin-top:40%;
+font-size: 26px !important;
+font-family: 'Open Sans', sans-serif !important;
+}
+
+#research-section .left-part{
+padding:0px;
+width:100%;
+height:400px;
+background-image: url("../images/mbr-3-1460x973.jpg");
+background-size: auto 100%;
+}
+
+@media only screen and (max-width: 991px) {
+
+    #research-section .left-part div:nth-child(1){
+        background-size: 100% auto;
+
+    }
+    #research-section .right-part p{
+    font-size:11px;
+    margin-bottom:0px;
+    }
+    
+    #research-section .right-part h5{
+    margin-top:5px;
+    font-size:13px;
+    line-height: 13pt;
+    }
+        
+}  
+
+.image1{
+background-image: url("../images/mbr-3-1460x973.jpg");
+background-size:  100% auto;
+background-repeat:no-repeat;
+
+}
+.image2{
+background-image: url("../images/mbr-1620x1080.jpg");
+background-size:  100% auto;
+background-repeat:no-repeat;
+}
+
+.image3{
+background-image: url("../images/mbr-3-1460x973.jpg");
+background-size: auto 100%;
+background-repeat:no-repeat;
+}
+
+.image4{
+background-image: url("../images/mbr-1620x1080.jpg");
+background-size: auto 100%;
+background-repeat:no-repeat;
+}
+
+
+.pr-2 p{
+ border-style: solid;
+ border-width: 0px 0px 0px 2px;
+ border-color:#1a91ae;
+ padding-left:10px;
+
+}
+
+.why-us-image{
+    position: absolute;
+    top:50px;
+    width:  100%;
+    height: 100%;
+    background-image: url("../images/person-mountain-top_1160-904.jpg") ;
+    background-repeat: no-repeat;
+    background-position: right;
+}
+
+.aside-content{
+    z-index: 3 !important;
+    width:50% !important;
+   
+}
+
+.block-content{
+    background-image: linear-gradient(to left,rgba(255,255,255,0), rgb(255, 255, 255), rgb(255, 255, 255));
+    background-size:auto 100%;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    width:100%;
+}
+
+.block-content p{
+    padding-right: 50%;
+}
+
+@media only screen and (max-width: 991px) {
+    .block-content p{
+        padding-right: 0% !important;
+    }
+    .aside-content{
+        z-index: 3 !important;
+        width:100% !important;
+       
+    }
+
+    .why-us-image{
+        background-image: url("") ;
+    }
+} 

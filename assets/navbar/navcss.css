@@ -40,7 +40,7 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  /* font-family: 'Montserrat', sans-serif; */
+  font-family: 'Montserrat', sans-serif ;
   /* color: #11151c;
   font-weight: 700;
   margin: 0px 0px 15px; */
@@ -529,7 +529,7 @@ textarea.input {
 
 .nav-menu>li>a:hover {
   color:#00adf2 !important; 
-  font-size: 13px;
+  /* font-size: 13px; */
   
 }
 
