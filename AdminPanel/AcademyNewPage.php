@@ -42,24 +42,30 @@
 
           <!-- Page Heading -->
           <h1 class="h3 mb-4 text-gray-800">New CEES Academy Page</h1>
-          <form>
-  
+          <form method="POST" action="AdminModel/create.php" enctype="multipart/form-data">
+         
+  <input type="hidden" name="inputType" value="Academy">
     <div class="form-group">
       <label for="inputTitle">Title</label>
-      <input type="text" class="form-control" id="inputTitle" placeholder="Title">
+      <input type="text" class="form-control" name="inputTitle" placeholder="Title" required>
     </div>
     <div class="form-group">
       <label for="inputSummary">Summary</label>
-      <textarea class="form-control" id="inputSummary" placeholder="Summary"></textarea>
+      <textarea class="form-control" name="inputSummary" placeholder="Summary" required></textarea>
     </div>
     <div class="form-group">
-      <label for="inputDescription">Description</label>
-      <textarea class="form-control" id="inputDescription" placeholder="Description"></textarea>
+      <label for="inputDescription">Paragraph 1</label>
+      <textarea class="form-control" name="inputDescription1" placeholder="Paragraph" required></textarea>
+    </div>
+
+    <div class="form-group">
+      <label for="inputDescription">Paragraph 2</label>
+      <textarea class="form-control" name="inputDescription2" placeholder="Paragraph" required></textarea>
     </div>
   
   <div class="form-group">
     <label for="inputImage" >Image</label><br>
-    <input type="file"  accept="image/*" id="inputImage">
+    <input type="file"  accept="image/*" name="inputImage" required>
   </div>
   
   <button type="submit" class="btn btn-primary">Create</button>

@@ -5,7 +5,7 @@ class dbh{
     private $userName;
     private $password;
     private $dbName;
-   protected function connect()
+   public function connect()
    { 
        $this->serverName="us-cdbr-iron-east-02.cleardb.net";
        $this->userName="b2549a7be081f5";
