@@ -36,8 +36,8 @@
                     <div class="bg-white py-2 collapse-inner rounded">
                      
                       <a class="collapse-item" href="AcademyNewPage.php">CEES Academy</a>
-                      <a class="collapse-item" href="#">Consulting Services</a>
-                      <a class="collapse-item" href="#">Solutions Lab</a>
+                      <a class="collapse-item" href="ConsultancyNewPage.php">Consulting Services</a>
+                      <a class="collapse-item" href="SolutionsLabNewPage.php">Solutions Lab</a>
                       <div class="collapse-divider"></div>
                     </div>
                   </div>

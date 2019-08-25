@@ -9,7 +9,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Academy New Page</title>
+  <title>Consultancy New Page</title>
   <?php include 'resources/nav.php'; ?>
   <?php include 'resources/footer.php'; ?>
   <!-- Custom fonts for this template-->
@@ -41,7 +41,7 @@
         <div class="container-fluid">
 
           <!-- Page Heading -->
-          <h1 class="h3 mb-4 text-gray-800">New CEES Academy Page</h1>
+          <h1 class="h3 mb-4 text-gray-800">New Solutions Lab Page</h1>
           <form>
   
     <div class="form-group">
