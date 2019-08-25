@@ -73,6 +73,44 @@ $stmt4= $conn->prepare("INSERT INTO consultancies_images(status,url,idConsultanc
 $statusNum=1;
 $stmt4->bind_param("isi",$statusNum,$target_file,$id);
 $stmt4->execute();
+} elseif($type=='Solutions'){
+    $type='SL';
+    $status=1;
+$stmt5= $conn->prepare("INSERT INTO consultancies(heading,type,status,summary) VALUES (?,?,?,?)");
+$stmt5->bind_param("ssis",$title,$type,$status,$summary);
+$stmt5->execute();
+$id=$stmt5->insert_id;
+$stmt6= $conn->prepare("INSERT INTO consultaies_descriptions(description,idconsultancies,description_order) VALUES (?,?,?)");
+$order=1;
+$stmt6->bind_param("sii",$description1,$id,$order);
+$stmt6->execute();
+$stmt7= $conn->prepare("INSERT INTO consultaies_descriptions(description,idconsultancies,description_order) VALUES (?,?,?)");
+$order=2;
+$stmt7->bind_param("sii",$description2,$id,$order);
+$stmt7->execute();
+$stmt8= $conn->prepare("INSERT INTO consultancies_images(status,url,idConsultancies) VALUES (?,?,?)");
+$statusNum=1;
+$stmt8->bind_param("isi",$statusNum,$target_file,$id);
+$stmt8->execute();
+}elseif($type='Consultancy'){
+    $type='CS';
+    $status=1;
+$stmt5= $conn->prepare("INSERT INTO consultancies(heading,type,status,summary) VALUES (?,?,?,?)");
+$stmt5->bind_param("ssis",$title,$type,$status,$summary);
+$stmt5->execute();
+$id=$stmt5->insert_id;
+$stmt6= $conn->prepare("INSERT INTO consultaies_descriptions(description,idconsultancies,description_order) VALUES (?,?,?)");
+$order=1;
+$stmt6->bind_param("sii",$description1,$id,$order);
+$stmt6->execute();
+$stmt7= $conn->prepare("INSERT INTO consultaies_descriptions(description,idconsultancies,description_order) VALUES (?,?,?)");
+$order=2;
+$stmt7->bind_param("sii",$description2,$id,$order);
+$stmt7->execute();
+$stmt8= $conn->prepare("INSERT INTO consultancies_images(status,url,idConsultancies) VALUES (?,?,?)");
+$statusNum=1;
+$stmt8->bind_param("isi",$statusNum,$target_file,$id);
+$stmt8->execute();
 }
 
 $conn->close();
