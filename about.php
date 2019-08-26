@@ -1,5 +1,5 @@
 <?php session_start();
-require_once "/Model/teamMembers.php";
+require_once "Model/teamMembers.php";
 $service = new Member();
 
 //getMember
