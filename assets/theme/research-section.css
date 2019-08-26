@@ -159,6 +159,8 @@ background-repeat:no-repeat;
     background-repeat: no-repeat;
     background-position: bottom;
     width:100%;
+    margin-top: 50px;
+
 }
 
 .block-content p{
@@ -172,7 +174,6 @@ background-repeat:no-repeat;
     .aside-content{
         z-index: 3 !important;
         width:100% !important;
-       
     }
 
     .why-us-image{
