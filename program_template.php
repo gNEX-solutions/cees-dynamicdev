@@ -8,7 +8,16 @@
 <html>
 
 <header>
-<title>Program</title>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+  <link rel="shortcut icon" href="assets/images/logo2.png" type="image/x-icon">
+  <meta name="description" content="">
+
+  <title>Program</title>
+
   <link rel="stylesheet" href="assets/web/assets/mobirise-icons/mobirise-icons.css">
   <link rel="stylesheet" href="assets/tether/tether.min.css">
   <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
@@ -18,8 +27,8 @@
   <link rel="stylesheet" href="assets/dropdown/css/style.css">
   <link rel="stylesheet" href="assets/theme/css/style.css">
   <link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css" type="text/css">
-  <link rel="stylesheet" href="assets/services/style.css">
   <link rel="stylesheet" href="assets/theme/css/preloader.css">
+
 
 </header>
 
@@ -53,34 +62,37 @@
                     </p>
                  </div>
             </div>
-            <div class="media-container-row" style="margin-top:40px">
-                <p class="mbr-text mbr-fonts-style display-7">
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. 
-                    It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
+            <div class="media-container-row">
+                <div class="col-md-12" >
+                    <p class="mbr-text mbr-fonts-style display-7">
+                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. 
+                            It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                    </p>
+                 </div>
+
             </div>
 
             <div class="media-container-row">
                 <div>
                 <table>
                     <tr>
-                        <th>Program code</th>
+                        <th>Program code: &nbsp </th>
                         <td>Maria Anders</td>
                     </tr>
                     <tr>
-                        <th>Program Name</th>
+                        <th>Program Name:&nbsp</th>
                         <td>Francisco Chang</td>
                     </tr>
                     <tr>
-                        <th>Venue</th>
+                        <th>Venue:&nbsp</th>
                         <td>Francisco Chang</td>
                     </tr>
                     <tr>
-                        <th>time</th>
+                        <th>time:&nbsp</th>
                         <td>4.00PM-6.00PM</td>
                     </tr>
                     <tr>
-                        <th>Content</th>
+                        <th>Content:&nbsp</th>
                         <td>Lorem Ipsum is simply dummy text</td>
                     </tr>
                     <tr>
@@ -105,6 +117,12 @@
         </div>
     </div>
 </section>
+<br><br>
+<section class="cid-ruOTxA2tiD" id="footer5-16">
+
+<?php require_once ('common/Components/footer.php'); ?>
+        
+</section>
 
 <script src="assets/web/assets/jquery/jquery.min.js"></script>
   <script src="assets/popper/popper.min.js"></script>
@@ -126,6 +144,9 @@
     /* margin:auto !important; */
 }
 </style>
+
+
+<div id="scrollToTop" class="scrollToTop mbr-arrow-up"><a style="text-align: center;"><i class="mbr-arrow-up-icon mbr-arrow-up-icon-cm cm-icon cm-icon-smallarrow-up"></i></a></div>
 
 </body>
 

@@ -1885,9 +1885,12 @@ body {
   /* color: #2eacff; */
   font-family: 'Open Sans', sans-serif !important;
   font-weight: 300 !important;
+  background-image: linear-gradient(to right,rgba(0, 0, 0, 0),rgba(0, 0, 0, 0) ,rgb(0, 0, 0));
 }
 .first h5{
   text-align: right !important;
+  text-shadow: 2px 2px #020202 !important;
+  text-shadow: 1px 1px 30px #004a8f !important;
 }
 .first{
   top: 190px !important;
@@ -1907,9 +1910,12 @@ body {
   /* color: #2eacff; */
   font-family: 'Open Sans', sans-serif !important;
   font-weight: 300 !important;
+  background-image: linear-gradient(to right,rgba(0, 0, 0, 0),rgba(0, 0, 0, 0) ,rgb(0, 0, 0));
 }
 .second h5{
   text-align: right !important;
+  text-shadow: 2px 2px #020202 !important;
+  text-shadow: 1px 1px 30px #004a8f !important;
 }
 .second{
   top: 150px !important;
@@ -1929,9 +1935,13 @@ body {
   /* color: #2eacff; */
   font-family: 'Open Sans', sans-serif !important;
   font-weight: 300 !important;
+  background-image: linear-gradient(to right,rgba(0, 0, 0, 0),rgba(0, 0, 0, 0) ,rgb(0, 0, 0));
+  right: 0px;
+  padding: 0%;
 }
 .third h5{
   text-align: right !important;
+  text-shadow: 1px 1px 30px #004a8f !important;
 }
 .third{
   top: 320px !important;
