@@ -1,3 +1,5 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
 <?php 
 
 include '../../Model/dbh.inc.php';
@@ -21,6 +23,9 @@ $description2=$_POST['inputDescription2'];
 
 $target_dir = "../../assets/images/";
 $target_file = $target_dir . basename($_FILES["inputImage"]["name"]);
+
+
+echo($target_file);
 $uploadOk = 1;
 $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
 // Check if image file is a actual image or fake image
@@ -36,7 +41,7 @@ if(isset($_POST["submit"])) {
 }
 // Check if file already exists
 if (file_exists($target_file)) {
-    echo "Sorry, file already exists.";
+    // echo "Sorry, file already exists.";
     $uploadOk = 0;
 }
 // Check file size
@@ -56,7 +61,11 @@ if ($uploadOk == 0) {
 // if everything is ok, try to upload file
 } else {
     if (move_uploaded_file($_FILES["inputImage"]["tmp_name"], $target_file)) {
-       echo "The file ". basename( $_FILES["inputImage"]["name"]). " has been uploaded.".$title;
+    //    echo " The file ". basename( $_FILES["inputImage"]["name"]). " has been uploaded.".$title;
+   echo(" <div class=\"alert alert-success\" role=\"alert\">
+        The file ". basename( $_FILES["inputImage"]["name"]). " has been uploaded.".$title.
+        "</div>"
+    );
     } else {
      
         exit("Sorry, there was an error uploading your file. Please try again");
@@ -79,5 +88,11 @@ $stmt= $conn->prepare("update heroku_3dffaa1b8ca65ff.consultaies_descriptions se
 $stmt->bind_param("ss",$description1,$descriptionId1);
 $stmt->execute();
 $stmt->bind_param("ss",$description2,$descriptionId2);
+$stmt->execute();
+
+//adding new image to images table 
+$stmt= $conn->prepare("insert into  heroku_3dffaa1b8ca65ff.consultancies_images( status, caption, url, idConsultancies )
+     values ( 1,'',?, ?);");
+$stmt->bind_param("ss",$target_file,$pageId);
 $stmt->execute();
 

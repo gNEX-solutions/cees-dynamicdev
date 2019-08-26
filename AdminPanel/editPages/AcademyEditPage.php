@@ -55,13 +55,16 @@ $conn=$newConnection->connect(); ?>
       <div class="row">
         <div class="col-lg-10 col-md-6" style="padding-bottom: 1px">
           <select class="custom-select" id="inputGroupSelect04" name="page">
-            <option selected>Select page...</option>
+            <!-- <option selected>Select page...</option> -->
             <?php 
               $result = $conn->query("SELECT consultancies.idconsultancies as id , consultancies.heading  as heading
               FROM heroku_3dffaa1b8ca65ff.consultancies where consultancies.type = 'CA' and consultancies.status = '1';");
               while($row = $result->fetch_assoc()){
                 // echo($row[1]);
-                echo("<option value='".$row['id']."' >".$row['heading']."</option>");
+               
+                  echo("<option value='".$row['id']."' >".$row['heading']."</option>");
+                
+                
               }
             ?>
           </select>
@@ -85,11 +88,13 @@ $conn=$newConnection->connect(); ?>
 
   <?php 
     // echo("<h1> dinith </h1>");
+    
     if($_SERVER['REQUEST_METHOD'] == "POST" and isset($_POST["edit"])){
     
       
       $page_id = $_POST['page']; //  the id of the page 
       // echo("<p>".$page_id."</p>");
+      // $_SESSION['page'] = $page_id;
 
       // creating two connections for paragraphs and images 
       $connPara=$newConnection->connect(); 
@@ -100,7 +105,7 @@ $conn=$newConnection->connect(); ?>
       $stmntPara = $connPara->prepare("SELECT * FROM heroku_3dffaa1b8ca65ff.consultaies_descriptions 
           where consultaies_descriptions.idconsultancies = ?;");
       $stmntImage = $connImage->prepare("SELECT * FROM heroku_3dffaa1b8ca65ff.consultancies_images 
-      where consultancies_images.idConsultancies = ?;");
+      where consultancies_images.idConsultancies = ? and consultancies_images.status = 1;");
 
 
       $stmntCons->bind_param("s", $page_id);
@@ -210,10 +215,10 @@ $conn=$newConnection->connect(); ?>
               ");
             }
         ?> 
-        <p> Add Images </p> 
+        <!-- <p> Add Images </p>  -->
       <div >
-          <label for="inputImage" >Image</label><br>
-          <input type="file"  accept="image/*" name="inputImage" required>
+          <label for="inputImage" >Add Image</label><br>
+          <input type="file"  accept="image/*" name="inputImage" >
         </div> 
       </div> 
         
