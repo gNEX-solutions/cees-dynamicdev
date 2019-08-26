@@ -1891,16 +1891,25 @@ body {
   text-align: right !important;
   text-shadow: 2px 2px #020202 !important;
   text-shadow: 1px 1px 30px #004a8f !important;
+  line-height: 100%;
+}
+@media (max-width: 900px) {
+  .first h5{
+    text-align: right !important;
+    text-shadow: 2px 2px #020202 !important;
+    text-shadow: 1px 1px 30px #004a8f !important;
+    line-height: 60%;
+  }
 }
 .first{
   top: 190px !important;
 }
 .first h5 .part1{
-  font-size: 120px !important;
+  font-size: 10vw !important;
   /* background-color: #0d0d0d; */
 }
 .first h5 .part2{
-  font-size: 50px !important;
+  font-size:5vw  !important;
   /* background-color: #0d0d0d; */
 }
 
@@ -1916,16 +1925,29 @@ body {
   text-align: right !important;
   text-shadow: 2px 2px #020202 !important;
   text-shadow: 1px 1px 30px #004a8f !important;
+
+}
+@media (max-width: 900px) {
+  .second h5{
+    text-align: right !important;
+    text-shadow: 2px 2px #020202 !important;
+    text-shadow: 1px 1px 30px #004a8f !important;
+    line-height: 80%;
+  }
+  .second{
+    top: 40% !important;
+  }
 }
 .second{
-  top: 150px !important;
+  bottom: -50px !important;
 }
 .second h5 .part1{
-  font-size: 120px !important;
+  font-size: 10vw !important;
   /* background-color: #0d0d0d; */
 }
 .second h5 .part2{
-  font-size: 50px !important;
+  margin-top:-50px !important;
+  font-size: 5vw !important;
   /* background-color: #0d0d0d; */
 }
 
@@ -1942,17 +1964,25 @@ body {
 .third h5{
   text-align: right !important;
   text-shadow: 1px 1px 30px #004a8f !important;
+  line-height: 100%;
+}
+@media (max-width: 900px) {
+  .third h5{
+    text-align: right !important;
+    text-shadow: 2px 2px #020202 !important;
+    text-shadow: 1px 1px 30px #004a8f !important;
+    line-height: 60%;
+  }
 }
 .third{
-  top: 320px !important;
-  bottom: 0px !important;
+  bottom: -100px !important;
 }
 .third h5 .part1{
-  font-size: 120px !important;
+  font-size: 10vw !important;
   /* background-color: #0d0d0d; */
 }
 .third h5 .part2{
-  font-size: 50px !important;
+  font-size: 5vw !important;
   /* background-color: #0d0d0d; */
 }
 

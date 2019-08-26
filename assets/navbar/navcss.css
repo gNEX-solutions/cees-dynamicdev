@@ -74,8 +74,8 @@ h4 {
 	height:100%;
 	position: absolute;
 	z-index:0;
-	animation: slide 4s infinite 3s;
-	 
+  animation: slide 4s infinite 3s;
+  pointer-events: none !important;
   /* 
   CSS Gradient - complete browser support from http://www.colorzilla.com/gradient-editor/ 
   */
