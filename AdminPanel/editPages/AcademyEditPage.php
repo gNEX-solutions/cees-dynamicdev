@@ -199,10 +199,7 @@ $conn=$newConnection->connect(); ?>
         
       </div>
       <div class="col-md-6">
-        <!-- <div >
-          <label for="inputImage" >Image</label><br>
-          <input type="file"  accept="image/*" name="inputImage" required>
-        </div> -->
+       
         <p> Images </p>
         <!-- <div class=""> -->
         <?php 
@@ -212,8 +209,14 @@ $conn=$newConnection->connect(); ?>
               
               ");
             }
-        ?>  
-      </div>    
+        ?> 
+        <p> Add Images </p> 
+      <div >
+          <label for="inputImage" >Image</label><br>
+          <input type="file"  accept="image/*" name="inputImage" required>
+        </div> 
+      </div> 
+        
     </div>
     <div>
         <button type="submit" method="post" class="btn btn-success">Save Changes</button>
