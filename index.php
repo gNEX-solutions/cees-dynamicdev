@@ -22,6 +22,7 @@
   <link rel="stylesheet" href="assets/theme/research-section.css">
   <link rel="stylesheet" href="assets/slider-home/slider.css">
   <link rel="stylesheet" href="assets/logo slider/style.css">
+  <link rel="stylesheet" href="assets/theme/css/preloader.css">
 
   <script src="assets/web/assets/jquery/jquery.min.js"></script>
 
@@ -31,7 +32,7 @@
 <div id="preloader">
   <div id="status">&nbsp;</div>
 </div>
-  <section class="menu cid-ruNsw1yRec"  once="menu" id="menu1-0" style="width:100%; position:fixed; z-index:9999;">
+  <section class="menu cid-ruNsw1yRec"  once="menu" id="menu1-0" style="width:100%; position:fixed; z-index:999;">
         <?php require_once ('common/Components/header.php'); ?>
   </section>
 
@@ -45,26 +46,36 @@
         </ol>
         <div class="carousel-inner">
             <div class="carousel-item active" >
-            <div class="parallax cid-ruNtyUeTOv1 mbr-fullscreen d-block w-100" src="assets/images/mbr-1920x1198.jpg" alt="First slide"></div>
-            <div class="carousel-caption">
-                <h5>CEES Academy</h5>
+            <div class="parallax cid-ruNtyUeTOv1 mbr-fullscreen d-block w-100"  alt="First slide"></div>
+            <div class="carousel-caption first">
+                <h5><span class="part1">CEES</span> 
+                    <br>
+                    <span class="part2">Academy</span>
+                </h5>
                 <p>Enlightening Minds</p>
             </div>
             </div>
             <div class="carousel-item">
             <div class="parallax cid-ruNtyUeTOv2 mbr-fullscreen d-block w-100"  alt="Second slide"></div>
-            <div class="carousel-caption ">
-                <h5>Consulting Services</h5>
+            <div class="carousel-caption second">
+                <h5><span class="part1">Consulting</span> 
+                    <br>
+                    <span class="part2">Services</span>
+                </h5>
                 <p>Unlocking Opportunities</p>
             </div>
             </div>
             <div class="carousel-item">
             <div class="parallax cid-ruNtyUeTOv3 mbr-fullscreen d-block w-100" alt="Third slide"></div>
-            <div class="carousel-caption">
-             <h5>Solution LAB</h5>
+            <div class="carousel-caption third">
+             <h5><span class="part1">Solutions</span> 
+                    <br>
+                    <span class="part2">Lab</span>
+                </h5>
              <p>Amplifying Future</p>
             </div>
             </div>
+
         </div>
         <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -607,40 +618,3 @@
 </body>
 </html>
 
-
-<style>
-body {
-  overflow: hidden;
-}
-
-
-/* Preloader */
-
-#preloader {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #fff;
-  /* change if the mask should have another color then white */
-  z-index: 99;
-  /* makes sure it stays on top */
-}
-
-#status {
-  width: 200px;
-  height: 200px;
-  position: absolute;
-  left: 50%;
-  /* centers the loading animation horizontally one the screen */
-  top: 50%;
-  /* centers the loading animation vertically one the screen */
-  background-image: url(assets/cees.gif);
-  /* path to your loading animation */
-  background-repeat: no-repeat;
-  background-position: center;
-  margin: -100px 0 0 -100px;
-  /* is width and height divided by two */
-}
-</style>
