@@ -74,14 +74,14 @@
     
           <!-- Nav Item - Pages Collapse Menu -->
           <li class="nav-item">
-          <a class="nav-link" href="blank.php">
+          <a class="nav-link" href="addEvents.php">
             <i class="fas fa-fw fa-chart-area"></i>
             <span>Add Events</span></a>
         </li>
     
           <!-- Nav Item - Utilities Collapse Menu -->
           <li class="nav-item">
-          <a class="nav-link" href="blank.php">
+          <a class="nav-link" href="updateEvents.php">
             <i class="fas fa-fw fa-chart-area"></i>
             <span>Update Events</span></a>
         </li>
