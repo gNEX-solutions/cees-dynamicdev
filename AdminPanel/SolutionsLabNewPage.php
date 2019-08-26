@@ -9,7 +9,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Academy New Page</title>
+  <title>Consultancy New Page</title>
   <?php include 'resources/nav.php'; ?>
   <?php include 'resources/footer.php'; ?>
   <!-- Custom fonts for this template-->
@@ -41,17 +41,16 @@
         <div class="container-fluid">
 
           <!-- Page Heading -->
-          <h1 class="h3 mb-4 text-gray-800">New CEES Academy Page</h1>
-          <form method="POST" action="AdminModel/create.php" enctype="multipart/form-data">
-         
-  <input type="hidden" name="inputType" value="Academy">
+          <h1 class="h3 mb-4 text-gray-800">New Solutions Lab Page</h1>
+          <form action="AdminModel/create.php" method="POST" enctype="multipart/form-data">
+          <input type="hidden" name="inputType" value="Solutions">
     <div class="form-group">
       <label for="inputTitle">Title</label>
-      <input type="text" class="form-control" name="inputTitle" placeholder="Title" required>
+      <input type="text" class="form-control" name="inputTitle" placeholder="Title">
     </div>
     <div class="form-group">
       <label for="inputSummary">Summary</label>
-      <textarea class="form-control" name="inputSummary" placeholder="Summary" required></textarea>
+      <textarea class="form-control" name="inputSummary" placeholder="Summary"></textarea>
     </div>
     <div class="form-group">
       <label for="inputDescription">Paragraph 1</label>
@@ -65,7 +64,7 @@
   
   <div class="form-group">
     <label for="inputImage" >Image</label><br>
-    <input type="file"  accept="image/*" name="inputImage" required>
+    <input type="file"  accept="image/*" name="inputImage">
   </div>
   
   <button type="submit" class="btn btn-primary">Create</button>
