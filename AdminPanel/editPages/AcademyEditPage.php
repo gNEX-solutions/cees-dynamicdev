@@ -31,92 +31,121 @@
   <?php showNavBar(); ?>
 
     <!-- Content Wrapper -->
-    <div id="content-wrapper" class="d-flex flex-column">
+  <div id="content-wrapper" class="d-flex flex-column">
 
-      <!-- Main Content -->
-      <div id="content">
+  <!-- Main Content -->
+  <div id="content">
+
+    
+
+  <!-- Begin Page Content -->
+  <div class="container-fluid">
+
+  <!-- Page Heading -->
+  <h1 class="h3 mb-4 text-gray-800">Edit CEES Academy Pages</h1>
+
+  <!-- select the relavant page  -->
+  <form>
+    <div class="form-group">
+      <div class="row">
+        <div class="col-lg-10 col-md-6" style="padding-bottom: 1px">
+          <select class="custom-select" id="inputGroupSelect04">
+            <option selected>Select page...</option>
+            <option value="1">One</option>
+            <option value="2">Two</option>
+            <option value="3">Three</option>
+          </select>
+        </div>
+        <div class="col-lg-1 col-md-2">
+          <div class="input-group-append" style="padding-bottom: 1px; width: 100%">
+            <button class="btn btn-outline-primary" type="button">Edit</button>
+          </div>
+        </div>
+        <div class="col-lg-1 col-md-2">
+          <div class="input-group-append" style="padding-bottom: 1px;  width: 100%">
+            <button class="btn btn-outline-danger" type="button"> Delete </button>
+          </div>
+        </div>
+      </div>
+      
+      
+    </div>
+  </form>
+
+
+  <!-- edit the page content  -->
+  <form method="POST" action="AdminModel/create.php" enctype="multipart/form-data">
+    <div class="row">
+      <div class="col-md-6">
+      
+        <input type="hidden" name="inputType" value="Academy">
+        <div class="form-group">
+          <label for="inputTitle">Title</label>
+          <input type="text" class="form-control" name="inputTitle" placeholder="Title" required>
+        </div>
+        <div class="form-group">
+          <label for="inputSummary">Summary</label>
+          <textarea class="form-control" name="inputSummary" placeholder="Summary" required></textarea>
+        </div>
+        <div class="form-group">
+          <label for="inputDescription">Paragraph 1</label>
+          <textarea class="form-control" name="inputDescription1" placeholder="Paragraph" required></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="inputDescription">Paragraph 2</label>
+          <textarea class="form-control" name="inputDescription2" placeholder="Paragraph" required></textarea>
+        </div>
+
+        
+      </div>
+      <div class="col-md-6">
+        <!-- <div >
+          <label for="inputImage" >Image</label><br>
+          <input type="file"  accept="image/*" name="inputImage" required>
+        </div> -->
+        <p> sample text </p>
+        <!-- <div class=""> -->
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTED9f0P_NtgexxbQW0czCYt4QvWy8XhlgEEkYEUoZujHlQhMCs" alt="..." class="img-thumbnail" style=" max-height: 150px">
+      
+      </div>  
 
       
-
-        <!-- Begin Page Content -->
-        <div class="container-fluid">
-
-<!-- Page Heading -->
-<h1 class="h3 mb-4 text-gray-800">Edit CEES Academy Pages</h1>
-
-
-<form method="POST" action="AdminModel/create.php" enctype="multipart/form-data">
-  <div class="row">
-    <div class="col">
     
-      <input type="hidden" name="inputType" value="Academy">
-      <div class="form-group">
-        <label for="inputTitle">Title</label>
-        <input type="text" class="form-control" name="inputTitle" placeholder="Title" required>
-      </div>
-      <div class="form-group">
-        <label for="inputSummary">Summary</label>
-        <textarea class="form-control" name="inputSummary" placeholder="Summary" required></textarea>
-      </div>
-      <div class="form-group">
-        <label for="inputDescription">Paragraph 1</label>
-        <textarea class="form-control" name="inputDescription1" placeholder="Paragraph" required></textarea>
-      </div>
-
-      <div class="form-group">
-        <label for="inputDescription">Paragraph 2</label>
-        <textarea class="form-control" name="inputDescription2" placeholder="Paragraph" required></textarea>
-      </div>
-
-       
     </div>
-    <div class="col">
-      <!-- <div >
-        <label for="inputImage" >Image</label><br>
-        <input type="file"  accept="image/*" name="inputImage" required>
-      </div> -->
-      <p> sample text </p>
-      <!-- <div class=""> -->
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTED9f0P_NtgexxbQW0czCYt4QvWy8XhlgEEkYEUoZujHlQhMCs" alt="..." class="img-thumbnail" style=" max-height: 150px">
-     
-    </div>  
-
+    <div>
+        <button type="submit" class="btn btn-primary">Save Changes</button>
+      </div>
     
-   
-  </div>
-  <div>
-      <button type="submit" class="btn btn-primary">Save Changes</button>
-     </div>
-  
-</form>
-  
-  
-  
-  
-  
-
-        </div>
-        <!-- /.container-fluid -->
-
-      </div>
-      <!-- End of Main Content -->
-
-      <!-- Footer -->
-      <?php showFooter(); ?>
-      <!-- End of Footer -->
-
-    </div>
-    <!-- End of Content Wrapper -->
+  </form>
+    
+    
+    
+    
+    
 
   </div>
-  <!-- End of Page Wrapper -->
+          <!-- /.container-fluid -->
+
+  </div>
+  <!-- End of Main Content -->
+
+  <!-- Footer -->
+  <?php showFooter(); ?>
+  <!-- End of Footer -->
+
+  </div>
+  <!-- End of Content Wrapper -->
+
+    </div>
+    <!-- End of Page Wrapper -->
 
   <!-- Scroll to Top Button-->
   <a class="scroll-to-top rounded" href="#page-top">
     <i class="fas fa-angle-up"></i>
   </a>
 
-  <!-- Logout Modal-->
+    <!-- Logout Modal-->
   <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
