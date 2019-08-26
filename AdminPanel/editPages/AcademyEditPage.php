@@ -14,6 +14,7 @@
   <?php include '../resources/footer.php'; ?>
   <!-- including the database connection  -->
   <?php include '../../Model/dbh.inc.php'; ?>
+  <?php include '../AdminModel/editPage.php'; ?>
   <!-- Custom fonts for this template-->
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
@@ -156,7 +157,7 @@ $conn=$newConnection->connect(); ?>
 
 
   <!-- edit the page content  -->
-  <form method="POST" action="../AdminModel/editPage.php" enctype="multipart/form-data">
+  <form method="POST" action="./AcademyEditPage.php" enctype="multipart/form-data">
     <div class="row">
       <div class="col-md-6">
       
@@ -259,7 +260,7 @@ $conn=$newConnection->connect(); ?>
         
     </div>
     <div>
-        <button type="submit" method="post" class="btn btn-success">Save Changes</button>
+        <button type="submit" method="post" name="update_table" class="btn btn-success">Save Changes</button>
     </div>
     
   </form>
