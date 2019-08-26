@@ -88,7 +88,11 @@ $conn=$newConnection->connect(); ?>
 
   <?php 
     // echo("<h1> dinith </h1>");
-    
+    $page_id = "";
+    $resultCons = null;
+    $resultPara = null;
+    $resultImage = null;
+    $paraRows = null;
     if($_SERVER['REQUEST_METHOD'] == "POST" and isset($_POST["edit"])){
     
       
@@ -136,6 +140,7 @@ $conn=$newConnection->connect(); ?>
 
     if($_SERVER['REQUEST_METHOD'] == "POST" and isset($_POST["delete"])){
       echo ("<h1> delete clicked </h1>");
+
     }
   ?>
 
@@ -149,11 +154,25 @@ $conn=$newConnection->connect(); ?>
         <input type="hidden" name="inputId" value=<?php echo($page_id); ?>>
         <div class="form-group">
           <label for="inputTitle">Title</label>
-          <input type="text" class="form-control" name="inputTitle" placeholder="Title" required value=<?php echo($rowCons['heading']); ?>>
+          <input type="text" class="form-control" name="inputTitle" placeholder="Title" 
+              required value=<?php 
+                if($resultCons != null){
+                  echo($rowCons['heading']); 
+                }
+                
+                ?> >
         </div>
         <div class="form-group">
           <label for="inputSummary">Summary</label>
-          <textarea class="form-control" name="inputSummary" placeholder="Summary" required ><?php echo($rowCons['summary']); ?></textarea>
+          <textarea class="form-control" name="inputSummary" placeholder="Summary" required >
+          <?php 
+              if($resultCons != null){
+                 echo($rowCons['summary']);
+              }
+              
+          ?>
+          
+          </textarea>
         </div>
 
         
@@ -163,7 +182,7 @@ $conn=$newConnection->connect(); ?>
           <label for="inputDescription">Paragraph 1</label>
           <input type="hidden" name="desId1" value=
           <?php 
-            if(count($paraRows)>0){
+            if($resultPara != null && count($paraRows)>0){
               $row = $paraRows[0];
               echo($row['idconsultaies_descriptions']);
             } 
@@ -171,7 +190,7 @@ $conn=$newConnection->connect(); ?>
           ?>>
           <textarea class="form-control" name="inputDescription1" placeholder="Paragraph" required>
              <?php
-              if(count($paraRows)>0){
+              if($resultPara != null && count($paraRows)>0){
                 $row = $paraRows[0];
                 echo($row['description']);
               } 
@@ -183,7 +202,7 @@ $conn=$newConnection->connect(); ?>
           <label for="inputDescription">Paragraph 2</label>
           <input type="hidden" name="desId2" value=
           <?php 
-            if(count($paraRows)>0){
+            if($resultPara != null && count($paraRows)>0){
               $row = $paraRows[1];
               echo($row['idconsultaies_descriptions']);
             } 
@@ -192,7 +211,7 @@ $conn=$newConnection->connect(); ?>
           <textarea class="form-control" name="inputDescription2" placeholder="Paragraph" required>
           <?php 
              
-             if(count($paraRows)>1){
+             if($resultPara != null && count($paraRows)>1){
               $row = $paraRows[1];
               echo($row['description']); 
              }
@@ -208,6 +227,7 @@ $conn=$newConnection->connect(); ?>
         <p> Images </p>
         <!-- <div class=""> -->
         <?php 
+          if($resultImage != null){
             while($row = $resultImage->fetch_assoc() ){
               
               echo("
@@ -217,6 +237,8 @@ $conn=$newConnection->connect(); ?>
               
               ");
             }
+          }
+           
         ?> 
         <!-- <p> Add Images </p>  -->
       <div >
