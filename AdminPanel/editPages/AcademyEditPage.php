@@ -87,7 +87,8 @@ $conn=$newConnection->connect(); ?>
     // echo("<h1> dinith </h1>");
     if($_SERVER['REQUEST_METHOD'] == "POST" and isset($_POST["edit"])){
     
-      $page_id = $_POST['page'];
+      
+      $page_id = $_POST['page']; //  the id of the page 
       // echo("<p>".$page_id."</p>");
 
       // creating two connections for paragraphs and images 
@@ -135,11 +136,12 @@ $conn=$newConnection->connect(); ?>
 
 
   <!-- edit the page content  -->
-  <form method="POST" action="AdminModel/create.php" enctype="multipart/form-data">
+  <form method="POST" action="../AdminModel/editPage.php" enctype="multipart/form-data">
     <div class="row">
       <div class="col-md-6">
       
         <input type="hidden" name="inputType" value="Academy">
+        <input type="hidden" name="inputId" value=<?php echo($page_id); ?>>
         <div class="form-group">
           <label for="inputTitle">Title</label>
           <input type="text" class="form-control" name="inputTitle" placeholder="Title" required value=<?php echo($rowCons['heading']); ?>>
@@ -154,6 +156,14 @@ $conn=$newConnection->connect(); ?>
 
         <div class="form-group">
           <label for="inputDescription">Paragraph 1</label>
+          <input type="hidden" name="desId1" value=
+          <?php 
+            if(count($paraRows)>0){
+              $row = $paraRows[0];
+              echo($row['idconsultaies_descriptions']);
+            } 
+          
+          ?>>
           <textarea class="form-control" name="inputDescription1" placeholder="Paragraph" required>
              <?php
               if(count($paraRows)>0){
@@ -166,6 +176,14 @@ $conn=$newConnection->connect(); ?>
 
         <div class="form-group">
           <label for="inputDescription">Paragraph 2</label>
+          <input type="hidden" name="desId2" value=
+          <?php 
+            if(count($paraRows)>0){
+              $row = $paraRows[1];
+              echo($row['idconsultaies_descriptions']);
+            } 
+          
+          ?>>
           <textarea class="form-control" name="inputDescription2" placeholder="Paragraph" required>
           <?php 
              
@@ -194,17 +212,12 @@ $conn=$newConnection->connect(); ?>
               
               ");
             }
-        ?>
-        
-      
-      </div>  
-
-      
-    
+        ?>  
+      </div>    
     </div>
     <div>
-        <button type="submit" class="btn btn-primary">Save Changes</button>
-      </div>
+        <button type="submit" method="post" class="btn btn-success">Save Changes</button>
+    </div>
     
   </form>
     
