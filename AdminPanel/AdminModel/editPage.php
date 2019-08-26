@@ -91,8 +91,11 @@ $stmt->bind_param("ss",$description2,$descriptionId2);
 $stmt->execute();
 
 //adding new image to images table 
-$stmt= $conn->prepare("insert into  heroku_3dffaa1b8ca65ff.consultancies_images( status, caption, url, idConsultancies )
+if($uploadOk){
+    $stmt= $conn->prepare("insert into  heroku_3dffaa1b8ca65ff.consultancies_images( status, caption, url, idConsultancies )
      values ( 1,'',?, ?);");
-$stmt->bind_param("ss",$target_file,$pageId);
-$stmt->execute();
+    $stmt->bind_param("ss",$target_file,$pageId);
+    $stmt->execute();
+}
+
 

@@ -209,8 +209,11 @@ $conn=$newConnection->connect(); ?>
         <!-- <div class=""> -->
         <?php 
             while($row = $resultImage->fetch_assoc() ){
+              
               echo("
-              <img src=". $row['url']." alt='..' class='img-thumbnail' style=' max-height: 150px'>
+              <input type=\"hidden\" name=\"inputId\" value=" . $row['idconsultancies_images']. ">
+                <img src=". $row['url']." alt='..' class='img-thumbnail' style=' max-height: 150px'>
+                <button type=\"submit\" name=\"img_remove\" class=\"btn btn-outline-danger\" > Remove </button>
               
               ");
             }
