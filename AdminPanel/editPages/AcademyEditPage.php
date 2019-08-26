@@ -139,7 +139,17 @@ $conn=$newConnection->connect(); ?>
     }
 
     if($_SERVER['REQUEST_METHOD'] == "POST" and isset($_POST["delete"])){
-      echo ("<h1> delete clicked </h1>");
+      $page_id = $_POST['page']; //  the id of the page 
+      // $title=$_POST['inputTitle'];
+      $stmt = $conn->prepare("update  heroku_3dffaa1b8ca65ff.consultancies 
+        set consultancies.status = 0 where consultancies.idconsultancies = ?;") ;
+      $stmt->bind_param("s",$page_id);
+      $stmt->execute();
+
+      echo(" <div class=\"alert alert-success\" role=\"alert\">
+        The page  has been deleted successfully. </div>"
+    );
+      // echo ("<h1> delete clicked </h1>");
 
     }
   ?>
