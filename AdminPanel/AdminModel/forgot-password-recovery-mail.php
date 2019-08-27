@@ -1,5 +1,4 @@
 <?php
-session_start();
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
@@ -14,12 +13,10 @@ require_once("AdminModel/mail_configuration.php");
 $mail = new PHPMailer();
 
 try {
-$emailBody = "<div>" . $user["username"] . ",<br><br><p>Click this link to recover your password<br><a href='" . PROJECT_HOME . "AdminPanel/register.php
-'>click here</a><br><br></p>Regards,<br> Admin.</div>";
-// $emailBody = "<div><br><br><p>Click this link to recover your password<br><br><br></p>Regards,<br> Admin.</div>";
+$emailBody = "<div>" . $user["username"] . ",<br><br><p>Click this link to recover your password<br><a href='" . PROJECT_HOME . "AdminPanel/register.php?userId=" . $user["userId"] . "&username=" . $user["username"] . "&email=" . $user["email"] . "'>" . PROJECT_HOME . "AdminPanel/register.php?userId=" . $user["userId"] . "</a><br><br></p>Regards,<br> Admin.</div>";
 
 $mail->IsSMTP();
-$mail->SMTPDebug = 1;
+// $mail->SMTPDebug = 1;
 $mail->SMTPAuth = TRUE;
 $mail->SMTPSecure = "tls";
 $mail->Port     = PORT;  
@@ -35,8 +32,6 @@ $mail->AddAddress($user["email"]);
 $mail->Subject = "Forgot Password Recovery";		
 $mail->MsgHTML($emailBody);
 $mail->IsHTML(true);
-$mail->send();
-echo 'Message has been sent';
 if(!$mail->Send()) {
 	$error_message = 'Problem in Sending Password Recovery Email';
 } else {

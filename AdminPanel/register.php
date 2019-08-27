@@ -1,3 +1,36 @@
+<?php
+require_once('../Model/dbh.inc.php');
+$dbh = new dbh();
+if(isset($_GET['userId']))
+{
+    $userId = $_GET['userId'];
+    $userName = $_GET['username'];
+    $email = $_GET['email'];
+}
+if(isset($_POST["reset-password"])) {
+  $sql2 = "UPDATE user SET `password` = '" . $_POST["member_password"]. "', `username` = '" . $_POST["member_username"]. "', `email` = '" . $_POST["member_email"]. "' WHERE `userId` = '" . $_GET["userId"] . "'";
+  $result=$dbh->connect()->query($sql2);
+  $success_message = "Password is reset successfully. Redirecting to Login page...";
+  header( "refresh:5;url=login.php" );
+}
+
+
+?>
+<script>
+function validate_password_reset() {
+	if((document.getElementById("member_password").value == "") && (document.getElementById("confirm_password").value == "")) {
+		document.getElementById("validation-message").innerHTML = "Please enter new password!"
+		return false;
+	}
+	if(document.getElementById("member_password").value  != document.getElementById("confirm_password").value) {
+		document.getElementById("validation-message").innerHTML = "Both password should be same!"
+		return false;
+	}
+	
+	return true;
+}
+</script>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -28,50 +61,41 @@
       <div class="card-body p-0">
         <!-- Nested Row within Card Body -->
         <div class="row">
-          <div class="col-lg-5 d-none d-lg-block bg-register-image"></div>
-          <div class="col-lg-7">
-            <div class="p-5">
+              <div class="col-lg-6 d-none d-lg-block"><img src="img/cees.png" alt="cees" style="width:50%; margin: 20%;"></div>
+              <div class="col-lg-6">
+                <div class="p-5">
               <div class="text-center">
-                <h1 class="h4 text-gray-900 mb-4">Create an Account!</h1>
+                <h1 class="h4 text-gray-900 mb-4">Update Account!</h1>
               </div>
-              <form class="user">
-                <div class="form-group row">
-                  <div class="col-sm-6 mb-3 mb-sm-0">
-                    <input type="text" class="form-control form-control-user" id="exampleFirstName" placeholder="First Name">
-                  </div>
-                  <div class="col-sm-6">
-                    <input type="text" class="form-control form-control-user" id="exampleLastName" placeholder="Last Name">
-                  </div>
+              <form class="user" name="frmReset" id="frmReset" method="post" onSubmit="return validate_password_reset();">
+                <?php if(!empty($success_message)) { ?>
+                <div class="success_message"><?php echo $success_message; ?></div>
+                <?php } ?>
+
+                <div id="validation-message">
+                  <?php if(!empty($error_message)) { ?>
+                <?php echo $error_message; ?>
+                <?php } ?>
                 </div>
                 <div class="form-group">
-                  <input type="email" class="form-control form-control-user" id="exampleInputEmail" placeholder="Email Address">
+                  <input type="text" class="form-control form-control-user" name="member_username" id="member_username" value="<?php echo $userName; ?>">
+                </div>
+                <div class="form-group">
+                  <input type="email" class="form-control form-control-user" name="member_email" id="member_email" value="<?php echo $email; ?>">
                 </div>
                 <div class="form-group row">
                   <div class="col-sm-6 mb-3 mb-sm-0">
-                    <input type="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="Password">
+                    <input type="password" class="form-control form-control-user" name="member_password" id="member_password" placeholder="New Password">
                   </div>
                   <div class="col-sm-6">
-                    <input type="password" class="form-control form-control-user" id="exampleRepeatPassword" placeholder="Repeat Password">
+                    <input type="password" class="form-control form-control-user" name="confirm_password" id="confirm_password" placeholder="Repeat Password">
                   </div>
                 </div>
-                <a href="login.html" class="btn btn-primary btn-user btn-block">
-                  Register Account
-                </a>
+                <input type="submit" name="reset-password" id="reset-password" value="Update Account!" class="btn btn-primary btn-user btn-block">
+
                 <hr>
-                <a href="index.html" class="btn btn-google btn-user btn-block">
-                  <i class="fab fa-google fa-fw"></i> Register with Google
-                </a>
-                <a href="index.html" class="btn btn-facebook btn-user btn-block">
-                  <i class="fab fa-facebook-f fa-fw"></i> Register with Facebook
-                </a>
               </form>
               <hr>
-              <div class="text-center">
-                <a class="small" href="forgot-password.html">Forgot Password?</a>
-              </div>
-              <div class="text-center">
-                <a class="small" href="login.html">Already have an account? Login!</a>
-              </div>
             </div>
           </div>
         </div>
