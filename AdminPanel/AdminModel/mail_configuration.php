@@ -8,5 +8,5 @@ define("MAIL_HOST", ""); // smtp host
 define("MAILER", "smtp");
 
 define("SENDER_NAME", "Admin");
-define("SERDER_EMAIL", "dumindu@gnexsolutions.com");
+define("SERDER_EMAIL", "akalanka@gnexsolutions.com");
 ?>
