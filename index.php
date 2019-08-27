@@ -369,6 +369,7 @@ include 'Model/viewEvents.php';
                         <p>
                              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sed velit dignissim sodales ut eu sem integer vitae justo.                      
                         </p>
+                        <button id="button1">See more articles</button>
                     </div>
             </div>
 
@@ -420,11 +421,15 @@ include 'Model/viewEvents.php';
                         </p>  
                     </div> 
                 </div>
+                <div class="row">
+                    <button id="button1">See more articles</button>
+                </div>
             </div>
         </div>
     </div>
 
 </section>
+<br>
 <section class="cid-ruXscj5IY2">
         <div class="container">
             <div class="row" > 
