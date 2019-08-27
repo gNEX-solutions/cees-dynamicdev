@@ -29,6 +29,7 @@ include 'Model/viewEvents.php';
   <link rel="stylesheet" href="assets/slider-home/slider.css">
   <link rel="stylesheet" href="assets/logo slider/style.css">
   <link rel="stylesheet" href="assets/theme/css/preloader.css">
+  <link rel="stylesheet" href="assets/full-image-viewer/image-viewer.css">
 
   <script src="assets/web/assets/jquery/jquery.min.js"></script>
 
@@ -102,19 +103,6 @@ include 'Model/viewEvents.php';
     </div>
 </section> 
     
-<section>
-    <!-- <div class="container" id="post-slider">
-        <div class="row">
-            <div class="col-md-7" id="post-slider-image">
-            
-            </div>
-            <div class="col-md-5" id="post-slider-content">
-
-            </div>
-        </div>
-    </div> -->
-
-</section>
 
 <section class="features1 cid-ruNBDZ0eEF" id="features1-8">
     <h1 class="mbr-title pt-2 mbr-fonts-style display-2" style="text-align:center">What We Do?</h1>
@@ -172,6 +160,39 @@ include 'Model/viewEvents.php';
             </div>
         </div>
     </div>
+</section>
+
+<section class="progress-bars2 cid-ruNvXuN71m" >
+<div class="container">
+    <div class="row" > 
+        <!-- <h2 id="title-text">PROGRAM SCHEDULE</h2> -->
+        <h1 id="title-text" class="mbr-title pt-2 mbr-fonts-style display-2" style="text-align:center">Program Schedule</h1>
+    </div>
+<div id="post-slider-container">
+    <div class="glide" id="Glide" >
+                    <div class="glide__wrapper">
+                        <ul class="glide__track">
+
+                        <?php
+
+                             $eventDetails = new ViewEvents();
+                             $eventDetails->ShowEvent_List();
+
+                        ?>
+
+                        </ul>
+                    </div>
+                <ul class="glide__bullets"></ul>
+         </div>
+</div>
+</div>
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="img01">
+</div>
+
 </section>
 
 <!-- <section class="mbr-section content7 cid-ruNvXuN71m" id="content7-2">
@@ -259,32 +280,6 @@ include 'Model/viewEvents.php';
         </div> 
     </div>          
 </section>
-
-<section class="progress-bars2 cid-ruXscj5IY2" >
-<div class="container">
-    <div class="row" > 
-        <h2 id="title-text">PROGRAM SCHEDULE</h2>
-    </div>
-<div id="post-slider-container">
-    <div class="glide" id="Glide" >
-                    <div class="glide__wrapper">
-                        <ul class="glide__track">
-
-                        <?php
-
-                             $eventDetails = new ViewEvents();
-                             $eventDetails->ShowEvent_List();
-
-                        ?>
-
-                        </ul>
-                    </div>
-                <ul class="glide__bullets"></ul>
-         </div>
-</div>
-</div>
-</section>
-
 <section class="progress-bars2 cid-ruXscj5IY2" id="progress-bars2-1b">
     <!-- <div class="container">
         <h2 class="mbr-section-title pb-3 align-center mbr-fonts-style display-2">
@@ -353,9 +348,9 @@ include 'Model/viewEvents.php';
 
     <div class="container">
          <div class="row" > 
-             <h2 id="title-text">
-                INSIGHTS & RESEARCH
-            </h2>
+         <h1 id="title-text" class="mbr-title pt-2 mbr-fonts-style display-2" style="text-align:center">
+                Insights & Research
+            </h1>
         </div>
         <br>
         <div class="row" id="research-section">
@@ -429,60 +424,62 @@ include 'Model/viewEvents.php';
     </div>
 
 </section>
+<section class="cid-ruNBDZ0eEF">
+        <div class="container">
+            <div class="row" > 
+                <h1 class="mbr-title pt-2 mbr-fonts-style display-2" style="text-align:center;width:100%">
+                        Our Clients
+                </h1>
+            </div>
+            <div id="slider-logo">
+                <div id="slider-logo-track">
+                    <div class="slide">
+                        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/1.png" height="100" width="250" alt="" />
+                    </div>
+                    <div class="slide">
+                        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/2.png" height="100" width="250" alt="" />
+                    </div>
+                    <div class="slide">
+                        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/3.png" height="100" width="250" alt="" />
+                    </div>
+                    <div class="slide">
+                        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/4.png" height="100" width="250" alt="" />
+                    </div>
+                    <div class="slide">
+                        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/5.png" height="100" width="250" alt="" />
+                    </div>
+                    <div class="slide">
+                        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/6.png" height="100" width="250" alt="" />
+                    </div>
+                    <div class="slide">
+                        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/7.png" height="100" width="250" alt="" />
+                    </div>
+                    <div class="slide">
+                        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/1.png" height="100" width="250" alt="" />
+                    </div>
+                    <div class="slide">
+                        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/2.png" height="100" width="250" alt="" />
+                    </div>
+                    <div class="slide">
+                        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/3.png" height="100" width="250" alt="" />
+                    </div>
+                    <div class="slide">
+                        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/4.png" height="100" width="250" alt="" />
+                    </div>
+                    <div class="slide">
+                        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/5.png" height="100" width="250" alt="" />
+                    </div>
+                    <div class="slide">
+                        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/6.png" height="100" width="250" alt="" />
+                    </div>
+                    <div class="slide">
+                        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/7.png" height="100" width="250" alt="" />
+                    </div>
+                </div>
+            </div>
+        </div>
 
-<div class="container">
-    <div class="row" > 
-        <h2 id="title-text">
-            OUR CLIENTS
-        </h2>
-    </div>
-    <div id="slider-logo">
-    	<div id="slider-logo-track">
-    		<div class="slide">
-    			<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/1.png" height="100" width="250" alt="" />
-    		</div>
-    		<div class="slide">
-    			<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/2.png" height="100" width="250" alt="" />
-    		</div>
-    		<div class="slide">
-    			<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/3.png" height="100" width="250" alt="" />
-    		</div>
-    		<div class="slide">
-    			<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/4.png" height="100" width="250" alt="" />
-    		</div>
-    		<div class="slide">
-    			<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/5.png" height="100" width="250" alt="" />
-    		</div>
-    		<div class="slide">
-    			<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/6.png" height="100" width="250" alt="" />
-    		</div>
-    		<div class="slide">
-    			<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/7.png" height="100" width="250" alt="" />
-    		</div>
-    		<div class="slide">
-    			<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/1.png" height="100" width="250" alt="" />
-    		</div>
-    		<div class="slide">
-    			<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/2.png" height="100" width="250" alt="" />
-    		</div>
-    		<div class="slide">
-    			<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/3.png" height="100" width="250" alt="" />
-    		</div>
-    		<div class="slide">
-    			<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/4.png" height="100" width="250" alt="" />
-    		</div>
-    		<div class="slide">
-    			<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/5.png" height="100" width="250" alt="" />
-    		</div>
-    		<div class="slide">
-    			<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/6.png" height="100" width="250" alt="" />
-    		</div>
-    		<div class="slide">
-    			<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/7.png" height="100" width="250" alt="" />
-    		</div>
-    	</div>
-    </div>
-</div>
+</section>
 
 <section class="mbr-section info2 cid-ruOTHzyksn" id="info2-17">
 
@@ -523,6 +520,7 @@ include 'Model/viewEvents.php';
   <script src="assets/parallax/jarallax.min.js"></script>
   <script src="assets/smoothscroll/smooth-scroll.js"></script>
   <script src="assets/theme/js/script.js"></script>
+  <script src="assets/full-image-viewer/image-viewer.js"></script>
   
   <link rel="stylesheet" href="https://cdn.rawgit.com/jedrzejchalubek/glidejs/8eabfbb9/dist/css/glide.core.min.css" >
   <link rel="stylesheet" href="https://cdn.rawgit.com/jedrzejchalubek/glidejs/8eabfbb9/dist/css/glide.theme.min.css" >
