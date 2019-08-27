@@ -30,6 +30,7 @@ include 'Model/viewEvents.php';
   <link rel="stylesheet" href="assets/logo slider/style.css">
   <link rel="stylesheet" href="assets/theme/css/preloader.css">
   <link rel="stylesheet" href="assets/full-image-viewer/image-viewer.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:700&display=swap" rel="stylesheet">
 
   <script src="assets/web/assets/jquery/jquery.min.js"></script>
 
@@ -120,7 +121,7 @@ include 'Model/viewEvents.php';
                     </p>
                   <span class="vspacer"></span>
                   <p class="py-3 mbr-fonts-style">
-                    <a href="#">READ MORE » </a>
+                    <a href="http://localhost:8080/cees-dynamicdev/Programs.php" target="_blank">READ MORE » </a>
                   </p>
                 </div>
             </div>
@@ -137,7 +138,7 @@ include 'Model/viewEvents.php';
                     </p>
                   <span class="vspacer"></span>
                   <p class="py-3 mbr-fonts-style">
-                    <a href="#">READ MORE » </a>
+                    <a href="http://localhost:8080/cees-dynamicdev/services-talent.php" target="_blank">READ MORE » </a>
                   </p>
                 </div>
             </div>
@@ -154,7 +155,7 @@ include 'Model/viewEvents.php';
                     </p>
                   <span class="vspacer"></span>
                   <p class="py-3 mbr-fonts-style">
-                    <a href="#">READ MORE » </a>
+                    <a href="http://localhost:8080/cees-dynamicdev/services2.php" target="_blank">READ MORE » </a>
                   </p>
                 </div>
             </div>
@@ -424,7 +425,7 @@ include 'Model/viewEvents.php';
     </div>
 
 </section>
-<section class="cid-ruNBDZ0eEF">
+<section class="cid-ruXscj5IY2">
         <div class="container">
             <div class="row" > 
                 <h1 class="mbr-title pt-2 mbr-fonts-style display-2" style="text-align:center;width:100%">
