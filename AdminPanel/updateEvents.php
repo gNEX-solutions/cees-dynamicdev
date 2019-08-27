@@ -91,6 +91,10 @@
           </form>
 
         <?php
+        $page_id = "";
+        $resultCons = null;
+        $resultPara = null;
+        $paraRows = null;
 
           if($_SERVER['REQUEST_METHOD'] == "POST" and isset($_POST["delete"])){
             $page_id = $_POST['page']; //  the id of the page 
@@ -106,9 +110,117 @@
             // echo ("<h1> delete clicked </h1>");
       
           }
+
+          if($_SERVER['REQUEST_METHOD'] == "POST" and isset($_POST["edit"])){
+
+            $page_id = $_POST['page']; //  the id of the page
+      
+            // creating two connections for paragraphs and images 
+            $connPara=$newConnection->connect();
+      
+            $stmntCons = $conn->prepare("select * from heroku_3dffaa1b8ca65ff.events
+                 where events.event_id = ? and events.status = '1';") ;
+            $stmntPara = $connPara->prepare("SELECT * FROM heroku_3dffaa1b8ca65ff.events_images 
+                where events_images.idEvent = ?;");
+      
+            $stmntCons->bind_param("s", $page_id);
+            $stmntPara->bind_param("s", $page_id);
+      
+            $stmntCons->execute();
+            $stmntPara->execute();
+      
+      
+            $resultCons =  $stmntCons->get_result();
+            $resultPara =  $stmntPara->get_result();
+      
+            // closing the extra connections
+            $connPara = null ;
+      
+            $rowCons = $resultCons->fetch_assoc();
+            $paraRows = $resultPara->fetch_assoc();
+            print_r($paraRows);
+            print_r($rowCons);
+          }
         ?>            
 
-        </div>
+      <form method="POST" action="./AcademyEditPage.php" enctype="multipart/form-data">
+
+        <input type="hidden" name="inputId" value=<?php echo($page_id); ?>>
+
+          <div class="form-group row">
+            <div class="col-sm-6 mb-3 mb-sm-0">
+              <input type="text" class="form-control form-control-user" name="EventName" placeholder="Event Name"  
+              required value=<?php 
+                if($resultCons != null){
+                  echo($rowCons['name']);
+                  }?> >
+            </div>
+            <div class="col-sm-6 mb-3 mb-sm-0">
+              <input type="text" class="form-control form-control-user" name="EventLocation" placeholder="Event Location"
+              required value=<?php 
+                if($resultCons != null){
+                  echo($rowCons['location']);
+                  }?> >
+            </div>
+          </div>
+
+          <div class="form-group row">
+             <div class="col-sm-2">
+                 <label style="float:left;">Event Date</label>
+             </div>
+              <div class="col-sm-2">
+                 <input type="date" class="form-control form-control-user" name="EventDate" placeholder="Event Date"
+                 required value=<?php 
+                  if($resultCons != null){
+                  echo($rowCons['date']);
+                  }?>>
+              </div>
+             <div class="col-sm-2">
+                 <label style="float:left;">Event Start Time</label>
+             </div>
+             <div class="col-sm-2" style="float:left;" >
+               <input type="time" class="form-control form-control-user" name="EventStartTime" placeholder="Email Address"
+               required value=<?php 
+                if($resultCons != null){
+                  echo($rowCons['start_time']);
+                  }?>>
+             </div>
+             <div class="col-sm-2">
+                 <label style="float:right;">Event End Time</label>
+             </div>
+             <div class="col-sm-2">
+               <input type="time" class="form-control form-control-user" name="EventEndTime" placeholder="Email Address"
+               required value=<?php 
+                if($resultCons != null){
+                  echo($rowCons['end_time']);
+                  }?>>
+             </div>
+          </div>
+
+          <div class="form-group">
+            <label for="inputDescription">Description</label>
+            <textarea class="form-control" name="inputDescription1" placeholder="Paragraph" required>
+            <?php 
+              if($resultCons != null){
+                 echo($rowCons['description']);
+              }?>
+            </textarea>
+          </div>
+
+          <div class="col-md-6">
+          <p> Images </p>
+            <?php 
+              if($paraRows != null){
+                  echo("<input type=\"hidden\" name=\"inputId\" value=" . $paraRows['url']. ">
+                    <img src=". substr($paraRows['url'], 3)." alt='..' class='img-thumbnail' style=' max-height: 150px'>
+                    <button type=\"submit\" name=\"img_remove\" class=\"btn btn-outline-danger\" > Remove </button>
+
+                  ");}?> 
+            <div >
+
+      </form>
+      
+    </div>
         <!-- /.container-fluid -->
       
       </div>
