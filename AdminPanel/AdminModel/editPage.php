@@ -6,16 +6,43 @@
 
 // echo("<h1> edit page is workinng </h1>");
 if($_SERVER['REQUEST_METHOD'] == "POST" and isset($_POST["update_table"])){
-    echo("<h1> edit page is workinng </h1>");
+    // echo("<h1> edit page is workinng </h1>");
     $pageId = $_POST['inputId']; // id of the page 
-    $descriptionId1 = $_POST['desId1']; // id of the description 1
-    $descriptionId2 = $_POST['desId2'];// id of the description 2
+    // $descriptionId1 = $_POST['desId1']; // id of the description 1
+    // $descriptionId2 = $_POST['desId2'];// id of the description 2
+    $descriptions = array();
+    $desIds = array();
+    $pageOdres = array();
+
+
+    for( $i = 1; $i < 3; $i++){
+        // $string = 'desId'.strval($i);
+        $desId = null;
+        $description = null;
+        $pgorder = null;
+        $desId = $_POST['desId'.strval($i)];
+        if($desId == null || $desId == ''){
+            $desId = '-1';
+        }
+        echo($desId);
+
+        $description = $_POST['inputDescription'.strval($i)];
+        $pgorder = strval($i);
+
+        array_push($desIds,$desId);
+        array_push($descriptions, $description);
+        array_push($pageOdres,$pgorder);
+
+    }
+
+    // echo(count($desIds));
+    
 
 
     $title=$_POST['inputTitle'];
     $summary=$_POST['inputSummary'];
-    $description1=$_POST['inputDescription1'];
-    $description2=$_POST['inputDescription2'];
+    // $description1=$_POST['inputDescription1'];
+    // $description2=$_POST['inputDescription2'];
     // $type=$_POST['input'];
 
     // echo($pageId);
@@ -84,12 +111,34 @@ if($_SERVER['REQUEST_METHOD'] == "POST" and isset($_POST["update_table"])){
     $stmt->execute();
 
     // updating the consultancy description table 
-    $stmt= $conn->prepare("update heroku_3dffaa1b8ca65ff.consultaies_descriptions set 
-        consultaies_descriptions.`description` = ? where consultaies_descriptions.idconsultaies_descriptions = ?;");
-    $stmt->bind_param("ss",$description1,$descriptionId1);
-    $stmt->execute();
-    $stmt->bind_param("ss",$description2,$descriptionId2);
-    $stmt->execute();
+    $updateSql = "update heroku_3dffaa1b8ca65ff.consultaies_descriptions set 
+    consultaies_descriptions.`description` = ? where consultaies_descriptions.idconsultaies_descriptions = ?;";
+
+    $insertSql = "insert into heroku_3dffaa1b8ca65ff.consultaies_descriptions( description , idconsultancies, description_order) 
+        values (? , ?, ?)";
+
+    for($i = 0; $i < count($desIds);$i++){
+        // echo($desIds[$i]);
+        if($desIds[$i] == '-1'){
+                // echo("<h1> null desc id</h1>");
+                $stmt= $conn->prepare($insertSql);
+                $stmt->bind_param("sss",$descriptions[$i],$pageId,$pageOdres[$i]);
+                $stmt->execute();
+            }
+        else {
+            // echo("<h1> excuting this </h1>");
+            // echo($description1. ' '. $descriptionId1);
+            $stmt= $conn->prepare($updateSql);
+            $stmt->bind_param("ss",$descriptions[$i],$desIds[$i]);
+            $stmt->execute();
+        }
+    }
+    // 
+    
+    // echo($description1);
+    // echo($descriptionId1);
+   
+    
 
     //adding new image to images table 
     if($uploadOk){
