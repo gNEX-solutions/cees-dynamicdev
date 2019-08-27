@@ -29,7 +29,6 @@ $stmt= $conn->prepare("INSERT INTO events(name,date,start_time,end_time,descript
 $stmt->bind_param("ssssssi",$eventName,$insertDate,$insertStartTime,$insertEndTime,$description,$location,$status);
 $stmt->execute();
 $id=$stmt->insert_id;
-echo $id;
 
 $stmt2= $conn->prepare("INSERT INTO events_images(status,caption,url,idEvent) VALUES (?,?,?,?)");
 $stmt2->bind_param("issi",$status,$caption,$target_file,$id);
@@ -38,3 +37,5 @@ $stmt2->execute();
 $conn->close();
 
 ?>
+
+<script type="text/javascript">alert("Event Created Successfully");history.go(-1);</script>
