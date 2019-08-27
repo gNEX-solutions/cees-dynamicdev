@@ -41,9 +41,15 @@
 <section class="menu cid-ruNsw1yRec" once="menu" id="menu1-0">
     <?php require_once 'common/Components/header.php'; ?>
 </section>
-
+<?php
+$compname = $_GET['idconsultancies']; 
+$heading = $_GET['heading']; 
+$services=new ViewServices();
+$datas=$services->ShowCA_CONTENT($compname);
+$images=$services->showCA_IMAGES($compname);
+?>
 <section class="features1 cid-ruNBDZ0eEF" >
-<h1 class="mbr-title pt-2 mbr-fonts-style display-2" style="text-align:center;">Program name</h1>
+<h1 class="mbr-title pt-2 mbr-fonts-style display-2" style="text-align:center;"><?php echo $heading?></h1>
 </section>
 
 <section class="features11 cid-ruXpPiazmW" id="features11-19">
@@ -51,25 +57,17 @@
         <div class="col-md-12">
             <div class="media-container-row">
                  <div class="col-md-6" style="overflow:hidden">
-                     <img src="assets/images/person-mountain-top_1160-904.jpg">
+                     <img src="<?php echo $images[0]['url']?>">
                  </div>
                  <div class="col-md-6" >
-                    <p class="mbr-text mbr-fonts-style display-7">
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. 
-                        It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. 
-                        It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                    </p>
+                    <p class="mbr-text mbr-fonts-style display-7"><?php echo $datas[0]['description'] ?>'</p>
                  </div>
             </div>
-            <div class="media-container-row">
-                <div class="col-md-12" >
-                    <p class="mbr-text mbr-fonts-style display-7">
-                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. 
-                            It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                    </p>
-                 </div>
 
+            <div class="media-container-row" style="margin-top:40px">
+                <div class="col-md-12" >
+                    <p class="mbr-text mbr-fonts-style display-7"><?php echo $datas[1]['description'] ?>'</p>
+                </div>
             </div>
 
             <div class="media-container-row">
