@@ -147,9 +147,11 @@ if($_SERVER['REQUEST_METHOD'] == "POST" and isset($_POST["update_table"])){
 
     //adding new image to images table 
     if($uploadOk){
+        $file_url = substr($target_file,6);
+        echo($file_url.' '.$pageId);
         $stmt= $conn->prepare("insert into  heroku_3dffaa1b8ca65ff.consultancies_images( status, caption, url, idConsultancies )
         values ( 1,'',?, ?);");
-        $stmt->bind_param("ss",$target_file,$pageId);
+        $stmt->bind_param("ss",$file_url,$pageId);
         $stmt->execute();
     }
 }

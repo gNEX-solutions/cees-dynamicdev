@@ -273,7 +273,7 @@ $conn=$newConnection->connect(); ?>
               
               echo("
               <input type=\"hidden\" name=\"inputId\" value=" . $row['idconsultancies_images']. ">
-                <img src=". $row['url']." alt='..' class='img-thumbnail' style=' max-height: 150px'>
+                <img src=../../". $row['url']." alt='..' class='img-thumbnail' style=' max-height: 150px'>
                 <button type=\"submit\" name=\"img_remove\" class=\"btn btn-outline-danger\" > Remove </button>
               
               ");
