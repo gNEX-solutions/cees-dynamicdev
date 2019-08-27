@@ -110,15 +110,21 @@ $no_user ='';
                         <p><?php echo $row['role']; ?></p>
                     </div>
                     <div class="item-social pt-2">
+                    <?php if ($row['twitter_url']){?> 
                         <a href="<?php echo $row['twitter_url']; ?>" target="_blank">
                             <span class="p-1 socicon-twitter socicon mbr-iconfont mbr-iconfont-social"></span>
                         </a>
+                    <?php } 
+                     if ($row['facebook_url']){?>
                         <a href="<?php echo $row['facebook_url']; ?>" target="_blank">
                             <span class="p-1 socicon-facebook socicon mbr-iconfont mbr-iconfont-social"></span>
                         </a>
+                    <?php } 
+                    if ($row['linkedin_url']){?>
                         <a href="<?php echo $row['linkedin_url']; ?>" target="_blank">
                             <span class="p-1 socicon-linkedin socicon mbr-iconfont mbr-iconfont-social"></span>
                         </a>
+                    <?php } ?>
                     </div>
                 </div>
             </div>
