@@ -117,11 +117,11 @@ include 'Model/viewEvents.php';
 </section>
 
 <section class="features1 cid-ruNBDZ0eEF" id="features1-8">
-    <h1 class="mbr-title pt-2 mbr-fonts-style display-2" style="text-align:center">What We Do</h1>
+    <h1 class="mbr-title pt-2 mbr-fonts-style display-2" style="text-align:center">What We Do?</h1>
     <div class="container">
         <div class="media-container-row">
             <div class="card p-3 col-12 col-md-6 col-lg-4">
-               <h3>Enlighten You</h3>
+               <!-- <h3>Enlighten You</h3> -->
                 <div class="card-img pb-3">
                     <span class="mbr-iconfont mbri-idea" style="color: rgb(15, 118, 153); fill: rgb(15, 118, 153); font-size: 120px;"></span>
                 </div>
@@ -138,9 +138,9 @@ include 'Model/viewEvents.php';
             </div>
 
             <div class="card p-3 col-12 col-md-6 col-lg-4">
-            <h3>Transform You</h3>
+            <!-- <h3>Transform You</h3> -->
                 <div class="card-img pb-3">
-                    <span class="mbr-iconfont mbri-update" style="color: rgb(15, 118, 153); fill: rgb(15, 118, 153); font-size: 120px;"></span>
+                    <span class="mbr-iconfont mbri-like" style="color: rgb(15, 118, 153); fill: rgb(15, 118, 153); font-size: 120px;"></span>
                 </div>
                 <div class="card-box">
                     <h4 class="card-title py-3 mbr-fonts-style display-5"><a href="#">Consulting Services&nbsp;</a></h4>
@@ -155,7 +155,7 @@ include 'Model/viewEvents.php';
             </div>
 
             <div class="card p-3 col-12 col-md-6 col-lg-4">
-            <h3>Amplify You</h3>
+            <!-- <h3>Amplify You</h3> -->
                 <div class="card-img pb-3">
                     <span class="mbr-iconfont mbri-growing-chart" style="color: rgb(15, 118, 153); fill: rgb(15, 118, 153); font-size: 120px;"></span>
                 </div>
@@ -260,10 +260,14 @@ include 'Model/viewEvents.php';
     </div>          
 </section>
 
+<section class="progress-bars2 cid-ruXscj5IY2" >
+<div class="container">
+    <div class="row" > 
+        <h2 id="title-text">PROGRAM SCHEDULE</h2>
+    </div>
 <div id="post-slider-container">
     <div class="glide" id="Glide" >
                     <div class="glide__wrapper">
-                        <h2 id="program-title">PROGRAM SCHEDULE</h2>
                         <ul class="glide__track">
 
                         <?php
@@ -278,6 +282,8 @@ include 'Model/viewEvents.php';
                 <ul class="glide__bullets"></ul>
          </div>
 </div>
+</div>
+</section>
 
 <section class="progress-bars2 cid-ruXscj5IY2" id="progress-bars2-1b">
     <!-- <div class="container">
@@ -486,13 +492,14 @@ include 'Model/viewEvents.php';
     <div class="container">
         <div class="row main justify-content-center">
             <div class="media-container-column col-12 col-lg-3 col-md-4">
-                <div class="mbr-section-btn align-left py-4"><a class="btn btn-secondary display-4" href="#">
-                    Lorem ipsum</a></div>
+                <div class="mbr-section-btn align-left py-4">
+                   <div class="row"><a class="btn btn-secondary display-4" href="./contact.php">Contact us</a></div>
+                </div>
             </div>
             <div class="media-container-column title col-12 col-lg-7 col-md-6">
                 <h2 class="align-right mbr-bold mbr-white pb-3 mbr-fonts-style display-2"><span style="font-weight: normal;">
                     Let us help grow your business !</span></h2>
-                <h3 class="mbr-section-subtitle align-right mbr-light mbr-white mbr-fonts-style display-5">Sit amet commodo nulla facilisi nullam vehicula.</h3>
+                <h3 class="mbr-section-subtitle align-right mbr-light mbr-white mbr-fonts-style display-5">Want to find out how CEES can solve problems specific to your business? Let's talk</h3>
             </div>
         </div>
     </div>

@@ -56,8 +56,8 @@
     content: "";
     height: 100%;
     position: absolute;
-    width: 250px;
-    z-index: 999;
+    width: 20%;
+    z-index: 9;
   }
   #slider-logo::after {
     right: 0;
