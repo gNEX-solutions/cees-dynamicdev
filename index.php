@@ -30,6 +30,7 @@ include 'Model/viewEvents.php';
   <link rel="stylesheet" href="assets/logo slider/style.css">
   <link rel="stylesheet" href="assets/theme/css/preloader.css">
   <link rel="stylesheet" href="assets/full-image-viewer/image-viewer.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:700&display=swap" rel="stylesheet">
 
   <script src="assets/web/assets/jquery/jquery.min.js"></script>
 
