@@ -1,3 +1,22 @@
+<?php
+require_once('../Model/dbh.inc.php');
+session_start();
+$dbh = new dbh();
+	if(!empty($_POST["forgot-password"])){
+		if(!empty($_POST["user-email"])) {
+            $sql = "Select * from user WHERE email ='" . $_POST["user-email"] . "'";
+            $result = $dbh->connect()->query($sql);
+            $user = mysqli_fetch_array($result);
+            if(!empty($user)){
+              require_once("AdminModel/forgot-password-recovery-mail.php");
+            } else {
+              $error_message = 'No User Found';
+            }
+  }
+}
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -40,13 +59,23 @@
                     <h1 class="h4 text-gray-900 mb-2">Forgot Your Password?</h1>
                     <p class="mb-4">We get it, stuff happens. Just enter your email address below and we'll send you a link to reset your password!</p>
                   </div>
-                  <form class="user">
-                    <div class="form-group">
-                      <input type="email" class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Enter Email Address...">
+                  <form class="user" name="frmForgot" id="frmForgot" method="post" onSubmit="return validate_forgot();">
+                    <?php if(!empty($success_message)) { ?>
+                    <div class="success_message"><?php echo $success_message; ?></div>
+                    <?php } ?>
+
+                    <div id="validation-message">
+                      <?php if(!empty($error_message)) { ?>
+                    <?php echo $error_message; ?>
+                    <?php } ?>
                     </div>
-                    <a href="login.php" class="btn btn-primary btn-user btn-block">
-                      Reset Password
-                    </a>
+                    <div class="form-group">
+                      <input type="email" class="form-control form-control-user" name="user-email" id="user-email" aria-describedby="emailHelp" placeholder="Enter Email Address...">
+                    </div>
+
+                    <div class="field-group">
+                      <div><input type="submit" name="forgot-password" id="forgot-password" value="Reset Password" class="btn btn-primary btn-user btn-block"></div>
+                    </div>	
                   </form>
                   <hr>
                   <!-- <div class="text-center">
@@ -76,7 +105,15 @@
 
   <!-- Custom scripts for all pages-->
   <script src="js/sb-admin-2.min.js"></script>
-
+  <script>
+  function validate_forgot() {
+    if(document.getElementById("user-email").value == "") {
+      document.getElementById("validation-message").innerHTML = "Email is required!";
+      return false;
+    }
+    return true;
+  }
+</script>
 </body>
 
 </html>
