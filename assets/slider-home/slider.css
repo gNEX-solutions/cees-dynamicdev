@@ -6,12 +6,10 @@
 }
 
 
-
-
 /* ////////////////////////// Post Slider ////////////////////////////////*/
 
 .post-slider-image{
-    background-image:url("../images/mbr-5-1460x973.jpg")  !important;
+    background-image:url("../images/mbr-5-1460x973.jpg");
     background-size: auto 100%;
     width:100%;
     height:250px;
@@ -32,11 +30,13 @@
     opacity: 0;
     transition: .5s ease;
     background-color: rgb(0, 0, 0);
+    pointer-events: none;
   }
   .overlay svg{
       width: 100%;
       height:70px;
       margin-top:22%;
+      pointer-events: none;
   }
   @media only screen and (max-width: 991px) { 
     .overlay svg{
@@ -50,6 +50,7 @@
 
  .post-slider-image:hover .overlay {
     opacity: 0.7;
+    pointer-events: none;
   }
   
 
@@ -100,15 +101,15 @@ font-size:25px;
 }
 
 #post-slider-container{
-    width:80%;
+    width:100%;
     margin:auto;
     margin-bottom:-80px;
     /* margin-top:50px; */
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     color:rgb(0, 15, 29);
     background-color: rgb(255, 255, 255);
-    padding-left: 50px;
-    padding-right: 50px;
+    /* padding-left: 50px;
+    padding-right: 50px; */
 }
 #post-slider-container p{
     /* font-size:  14px !important;
@@ -137,8 +138,26 @@ font-size:25px;
     }
 }
 
+@media (max-width: 768px) {
+    .cid-ruXscj5IY2{
+        margin-top:0px !important;
+    }
+
+}
+@media (max-width: 768px) {
+
+    .glide--horizontal .glide__bullets {
+        bottom: -5% !important;
+    }
+}
+@media (min-width: 768px) {
+    .glide--horizontal .glide__bullets {
+        bottom: -10% !important;
+    }
+}
+
 .glide__wrapper {
-    padding: 15vh 0;
+    /* padding: 15vh 0; */
     }
     .glide__track {
     overflow: visible;
@@ -164,9 +183,7 @@ font-size:25px;
     -webkit-transform: perspective(50em) rotateY(-15deg);
             transform: perspective(50em) rotateY(-15deg);
     }
-    .glide--horizontal .glide__bullets {
-    bottom: 25%;
-    }
+    
     .glide__bullets>*.active {
         background-color:rgb(9, 147, 165)!important;
     }

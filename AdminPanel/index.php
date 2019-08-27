@@ -1,9 +1,14 @@
+<?php
+    session_start();
+
+    if(isset($_SESSION['User']))
+    {
+?>
 <!DOCTYPE html>
 <html lang="en">
 <?php include 'resources/nav.php'; ?>
   <?php include 'resources/footer.php'; ?>
 <head>
-
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -376,3 +381,10 @@
 </body>
 
 </html>
+<?php   
+}
+    else
+    {
+        header("location:login.php");
+    }
+?>
