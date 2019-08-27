@@ -15,7 +15,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST" and isset($_POST["update_table"])){
     $pageOdres = array();
 
 
-    for( $i = 1; $i < 3; $i++){
+    for( $i = 1; $i < 4; $i++){
         // $string = 'desId'.strval($i);
         $desId = null;
         $description = null;
@@ -120,10 +120,15 @@ if($_SERVER['REQUEST_METHOD'] == "POST" and isset($_POST["update_table"])){
     for($i = 0; $i < count($desIds);$i++){
         // echo($desIds[$i]);
         if($desIds[$i] == '-1'){
-                // echo("<h1> null desc id</h1>");
-                $stmt= $conn->prepare($insertSql);
-                $stmt->bind_param("sss",$descriptions[$i],$pageId,$pageOdres[$i]);
-                $stmt->execute();
+                echo("<h1> null desc id</h1>");
+                // echo($pageId.' '.$descriptions[$i]);
+                if($descriptions[$i] != null || $descriptions[$i] != ""){
+                    $stmt= $conn->prepare($insertSql);
+                     $stmt->bind_param("sss",$descriptions[$i],$pageId,$pageOdres[$i]);
+                    $stmt->execute();
+                }
+                
+                
             }
         else {
             // echo("<h1> excuting this </h1>");

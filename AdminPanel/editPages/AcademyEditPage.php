@@ -197,9 +197,12 @@ $conn=$newConnection->connect(); ?>
               $row = $paraRows[0];
               echo($row['idconsultaies_descriptions']);
             } 
+            else {
+              echo('-1');
+            }
           
           ?>>
-          <textarea class="form-control" name="inputDescription1" placeholder="Paragraph" required>
+          <textarea class="form-control" name="inputDescription1" placeholder="Paragraph" >
              <?php
               if($resultPara != null && count($paraRows)>0){
                 $row = $paraRows[0];
@@ -213,17 +216,44 @@ $conn=$newConnection->connect(); ?>
           <label for="inputDescription">Paragraph 2</label>
           <input type="hidden" name="desId2" value=
           <?php 
-            if($resultPara != null && count($paraRows)>0){
+            if($resultPara != null && count($paraRows)>1){
               $row = $paraRows[1];
               echo($row['idconsultaies_descriptions']);
             } 
+            else {
+              echo('-1');
+            }
           
           ?>>
-          <textarea class="form-control" name="inputDescription2" placeholder="Paragraph" required>
+          <textarea class="form-control" name="inputDescription2" placeholder="Paragraph">
           <?php 
              
              if($resultPara != null && count($paraRows)>1){
               $row = $paraRows[1];
+              echo($row['description']); 
+             }
+             ?>
+            
+          </textarea>
+        </div>
+        <div class="form-group">
+          <label for="inputDescription">Paragraph 3</label>
+          <input type="hidden" name="desId3" value=
+          <?php 
+            if($resultPara != null && count($paraRows)>2){
+              $row = $paraRows[2];
+              echo($row['idconsultaies_descriptions']);
+            } 
+            else {
+              echo('-1');
+            }
+          
+          ?>>
+          <textarea class="form-control" name="inputDescription3" placeholder="Paragraph" >
+          <?php 
+             
+             if($resultPara != null && count($paraRows)>2){
+              $row = $paraRows[2];
               echo($row['description']); 
              }
              ?>
