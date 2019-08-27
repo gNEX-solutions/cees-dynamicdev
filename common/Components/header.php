@@ -1,5 +1,5 @@
 <?php
-include 'Model/dbh.inc.php';
+include_once 'Model/dbh.inc.php';
 include 'Model/services.inc.php';
 include 'Model/viewservices.inc.php';
 ?>
