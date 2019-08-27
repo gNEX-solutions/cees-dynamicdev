@@ -223,7 +223,52 @@
         <div class="container-fluid">
 
           <!-- Page Heading -->
-          <h1 class="h3 mb-4 text-gray-800">Blank Page</h1>
+          <h1 class="h3 mb-4 text-gray-800">Add New Event</h1>
+
+          <form class="user">
+          
+                <div class="form-group row">
+                  <div class="col-sm-6 mb-3 mb-sm-0">
+                    <input type="text" class="form-control form-control-user" id="EventName" placeholder="Event Name">
+                  </div>
+                  <div class="col-sm-6 mb-3 mb-sm-0">
+                    <input type="text" class="form-control form-control-user" id="EventLocation" placeholder="Event Location">
+                  </div>
+                </div>
+
+                <div class="form-group row">
+                <div class="col-sm-2">
+                    <label style="float:left;">Event Date</label>
+                  </div>
+                  <div class="col-sm-2">
+                    <input type="date" class="form-control form-control-user" id="EventDate" placeholder="Event Date">
+                  </div>
+                <div class="col-sm-2">
+                    <label style="float:left;">Event Start Time</label>
+                  </div>
+                <div class="col-sm-2" style="float:left;" >
+                  <input type="time" class="form-control form-control-user" id="EventStartTime" placeholder="Email Address">
+                </div>
+                <div class="col-sm-2">
+                    <label style="float:right;">Event End Time</label>
+                  </div>
+                <div class="col-sm-2">
+                  <input type="time" class="form-control form-control-user" id="EventEndTime" placeholder="Email Address">
+                </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="inputDescription">Description</label>
+                  <textarea class="form-control" name="inputDescription1" placeholder="Paragraph" required></textarea>
+                </div>
+
+                <div class="form-group">
+                <label for="inputImage">Upload Event Flyer</label><br>
+                <input type="file"  accept="image/*" name="inputImage">
+                </div>
+
+                <button type="submit" class="btn btn-primary">Add Event</button>
+              </form>
 
         </div>
         <!-- /.container-fluid -->
