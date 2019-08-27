@@ -225,14 +225,14 @@
           <!-- Page Heading -->
           <h1 class="h3 mb-4 text-gray-800">Add New Event</h1>
 
-          <form class="user">
+          <form class="user" action="AdminModel/eventCreate.php" method="POST" enctype="multipart/form-data">
           
                 <div class="form-group row">
                   <div class="col-sm-6 mb-3 mb-sm-0">
-                    <input type="text" class="form-control form-control-user" id="EventName" placeholder="Event Name">
+                    <input type="text" class="form-control form-control-user" name="EventName" placeholder="Event Name">
                   </div>
                   <div class="col-sm-6 mb-3 mb-sm-0">
-                    <input type="text" class="form-control form-control-user" id="EventLocation" placeholder="Event Location">
+                    <input type="text" class="form-control form-control-user" name="EventLocation" placeholder="Event Location">
                   </div>
                 </div>
 
@@ -241,19 +241,19 @@
                     <label style="float:left;">Event Date</label>
                   </div>
                   <div class="col-sm-2">
-                    <input type="date" class="form-control form-control-user" id="EventDate" placeholder="Event Date">
+                    <input type="date" class="form-control form-control-user" name="EventDate" placeholder="Event Date">
                   </div>
                 <div class="col-sm-2">
                     <label style="float:left;">Event Start Time</label>
                   </div>
                 <div class="col-sm-2" style="float:left;" >
-                  <input type="time" class="form-control form-control-user" id="EventStartTime" placeholder="Email Address">
+                  <input type="time" class="form-control form-control-user" name="EventStartTime" placeholder="Email Address">
                 </div>
                 <div class="col-sm-2">
                     <label style="float:right;">Event End Time</label>
                   </div>
                 <div class="col-sm-2">
-                  <input type="time" class="form-control form-control-user" id="EventEndTime" placeholder="Email Address">
+                  <input type="time" class="form-control form-control-user" name="EventEndTime" placeholder="Email Address">
                 </div>
                 </div>
 
