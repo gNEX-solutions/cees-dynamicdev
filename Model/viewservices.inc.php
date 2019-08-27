@@ -9,7 +9,7 @@ class ViewServices extends Services {
        $datas=$this->getAllServices();
        foreach($datas as $data){
          if($data['type']=='CA'){
-          echo '<div class="col-md-3"><h4 class="dropdown-heading"><a  href="Program_template.php?idconsultancies='.$data['idconsultancies'].'&heading='.$data['heading'].'" >'. $data['heading'].'</a></h4><ul class="dropdown-list"><li>'. $data['summary'].' </li></ul></div>';
+          echo '<div class="col-md-3"><h4 class="dropdown-heading"><a  href="program_template.php?idconsultancies='.$data['idconsultancies'].'&heading='.$data['heading'].'" >'. $data['heading'].'</a></h4><ul class="dropdown-list"><li>'. $data['summary'].' </li></ul></div>';
          }
       
 
@@ -21,7 +21,7 @@ class ViewServices extends Services {
        $datas=$this->getAllServices();
        foreach($datas as $data){
          if($data['type']=='CS'){
-          echo '<div class="col-md-3"><h4 class="dropdown-heading"><a  href="Program_template.php?idconsultancies='.$data['idconsultancies'].'&heading='.$data['heading'].'">'. $data['heading'].'</a></h4><ul class="dropdown-list"><li>'. $data['summary'].' </li></ul></div>';
+          echo '<div class="col-md-3"><h4 class="dropdown-heading"><a  href="program_template.php?idconsultancies='.$data['idconsultancies'].'&heading='.$data['heading'].'">'. $data['heading'].'</a></h4><ul class="dropdown-list"><li>'. $data['summary'].' </li></ul></div>';
          }
       
 
@@ -33,7 +33,7 @@ class ViewServices extends Services {
        $datas=$this->getAllServices();
        foreach($datas as $data){
          if($data['type']=='SL'){
-          echo '<div class="col-md-3"><h4 class="dropdown-heading"><a  href="Program_template.php?idconsultancies='.$data['idconsultancies'].'&heading='.$data['heading'].'" >'. $data['heading'].'</a></h4><ul class="dropdown-list"><li>'. $data['summary'].' </li></ul></div>';
+          echo '<div class="col-md-3"><h4 class="dropdown-heading"><a  href="program_template.php?idconsultancies='.$data['idconsultancies'].'&heading='.$data['heading'].'" >'. $data['heading'].'</a></h4><ul class="dropdown-list"><li>'. $data['summary'].' </li></ul></div>';
          }
       
 
