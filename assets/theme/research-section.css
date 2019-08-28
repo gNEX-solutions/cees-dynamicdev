@@ -96,6 +96,9 @@ font-family: 'Open Sans', sans-serif !important;
     #research-section .left-part div button{
         visibility: hidden;
     }
+    #research-section .right-part {
+        top: 20px;
+    }
 }
 
 #research-section .left-part{
