@@ -7,7 +7,7 @@
 // echo("<h1> edit page is workinng </h1>");
 if($_SERVER['REQUEST_METHOD'] == "POST" and isset($_POST["update_table"])){
     // echo("<h1> edit page is workinng </h1>");
-    $pageId = $_POST['inputId']; // id of the page 
+    $pageId = $_POST['page']; // id of the page 
     // $descriptionId1 = $_POST['desId1']; // id of the description 1
     // $descriptionId2 = $_POST['desId2'];// id of the description 2
     $descriptions = array();
@@ -49,7 +49,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST" and isset($_POST["update_table"])){
     // echo($descriptionId1);
 
 
-    $target_dir = "../../assets/images/";
+    $target_dir = "../assets/images/";
     $target_file = $target_dir . basename($_FILES["inputImage"]["name"]);
 
 
@@ -147,10 +147,10 @@ if($_SERVER['REQUEST_METHOD'] == "POST" and isset($_POST["update_table"])){
 
     //adding new image to images table 
     if($uploadOk){
-        $file_url = substr($target_file,6);
+        $file_url = substr($target_file,3);
         echo($file_url.' '.$pageId);
-        $stmt= $conn->prepare("insert into  heroku_3dffaa1b8ca65ff.consultancies_images( status, caption, url, idConsultancies )
-        values ( 1,'',?, ?);");
+        $stmt= $conn->prepare("insert into  heroku_3dffaa1b8ca65ff.consultancies_images( status, caption, url, idConsultancies, position )
+        values ( 1,'',?, ?,'LU');");
         $stmt->bind_param("ss",$file_url,$pageId);
         $stmt->execute();
     }

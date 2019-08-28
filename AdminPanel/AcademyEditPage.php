@@ -162,7 +162,7 @@ $conn=$newConnection->connect(); ?>
       <div class="col-md-6">
       
         <input type="hidden" name="inputType" value="Academy">
-        <input type="hidden" name="inputId" value=<?php echo($page_id); ?>>
+        <input type="hidden" name="page" value=<?php echo($page_id); ?>>
         <div class="form-group">
           <label for="inputTitle">Title</label>
           <input type="text" class="form-control" name="inputTitle" placeholder="Title" 
@@ -273,8 +273,9 @@ $conn=$newConnection->connect(); ?>
               
               echo("
               <input type=\"hidden\" name=\"inputId\" value=" . $row['idconsultancies_images']. ">
-                <img src=../". $row['url']." alt='..' class='img-thumbnail' style=' max-height: 150px'>
-                <button type=\"submit\" name=\"img_remove\" class=\"btn btn-outline-danger\" > Remove </button>
+                <img src=
+                ../". $row['url']." alt='..' class='img-thumbnail' style=' max-height: 150px'>
+                <button type=\"submit\" name=\"img_remove\" class=\"btn btn-outline-danger\" value=".$row['idconsultancies_images']." > Remove </button>
               
               ");
             }
