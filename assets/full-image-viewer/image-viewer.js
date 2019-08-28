@@ -9,7 +9,7 @@ function viewImageFunction(image_id){
   var modalImg = document.getElementById("img01");
 
   modal.style.display = "block";
-  modalImg.src =img.style.backgroundImage.substring(5,img.style.backgroundImage.length-2);
+  modalImg.src =img.style.backgroundImage.substring(4,img.style.backgroundImage.length-2);
 
   // Get the <span> element that closes the modal
   var span = document.getElementsByClassName("close")[0];

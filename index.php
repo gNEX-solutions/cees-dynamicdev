@@ -14,7 +14,11 @@ include 'Model/viewEvents.php';
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
   <link rel="shortcut icon" href="assets/images/logo2.png" type="image/x-icon">
   <meta name="description" content="">
-  
+  <!-- <a href="https://www.freepik.com/free-photos-vectors/people">People photo created by freepik - www.freepik.com</a>
+  <a href="https://www.freepik.com/free-photos-vectors/background">Background photo created by freepik - www.freepik.com</a>
+  <a href="https://www.freepik.com/free-photos-vectors/business">Business photo created by rawpixel.com - www.freepik.com</a> -->
+
+
   <title>Home</title>
   <link rel="stylesheet" href="assets/web/assets/mobirise-icons/mobirise-icons.css">
   <link rel="stylesheet" href="assets/tether/tether.min.css">
@@ -430,7 +434,7 @@ include 'Model/viewEvents.php';
 
 </section>
 <br>
-<section class="cid-ruXscj5IY2">
+<section class="cid-ruXscj5IY2" id="our_Clients">
         <div class="container">
             <div class="row" > 
                 <h1 class="mbr-title pt-2 mbr-fonts-style display-2" style="text-align:center;width:100%">
