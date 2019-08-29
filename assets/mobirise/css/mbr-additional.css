@@ -3516,8 +3516,22 @@ padding-top:100px;
   padding-top: 120px;
   padding-bottom: 30px;
   height: 300px;
-  background-image: url("../../../assets/images/Contact-Us-Hero-Image1.jpg") /*url("../../../assets/images/mbr-1920x1277.jpg");*/
+  background-image: url("../../../assets/images/Contact-Us-Hero-Image1.jpg"); /*url("../../../assets/images/mbr-1920x1277.jpg");*/
 }
+.cid-ruXJBlWiZf2 {
+  padding-top: 120px;
+  padding-bottom: 30px;
+  height: 300px;
+  background-image: url("../../../assets/images/aboutus.jpg") !important;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-y: 30%;
+}
+.cid-ruXJBlWiZf2 H2 {
+  color: #efefef;
+}
+
 .cid-ruXJBlWiZf H2 {
   color: #efefef;
 }

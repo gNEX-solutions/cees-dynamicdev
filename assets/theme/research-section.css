@@ -43,6 +43,7 @@ border-radius: 20px !important;
 
 #research-section .right-part .row::-webkit-scrollbar {
 width: 5px;
+/* overscroll-behavior:auto !important; */
 }
 
 #research-section .right-part p{
