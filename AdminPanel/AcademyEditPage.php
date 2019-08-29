@@ -141,6 +141,7 @@ $conn=$newConnection->connect(); ?>
 
     }
 
+   
     if($_SERVER['REQUEST_METHOD'] == "POST" and isset($_POST["delete"])){
       $page_id = $_POST['page']; //  the id of the page 
       // $title=$_POST['inputTitle'];
@@ -153,6 +154,27 @@ $conn=$newConnection->connect(); ?>
         The page  has been deleted successfully. </div>"
     );
       // echo ("<h1> delete clicked </h1>");
+
+
+    }
+ //  to be fired when the user clicks remove image icon 
+    if($_SERVER['REQUEST_METHOD'] == "POST" and isset($_POST["img_remove"])){
+      // echo("image remove");
+      // echo($_POST['img_remove']);
+      $stmt = $conn->prepare("update heroku_3dffaa1b8ca65ff.consultancies_images set consultancies_images.`status` = 0 
+      where consultancies_images.idconsultancies_images = ?;") ;
+      $stmt->bind_param("s",$_POST['img_remove']);
+      if($stmt->execute()){
+        echo(" <div class=\"alert alert-success\" role=\"alert\">
+        The image  has been deleted successfully. </div>"
+        );
+      }
+      else{
+        echo(" <div class=\"alert alert-danger\" role=\"alert\">
+        There was prolem in deletion of the image  </div>"
+        );
+      }
+      
 
     }
   ?>
