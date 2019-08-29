@@ -57,7 +57,7 @@
                   <div id="collapseCurrentPages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                      
-                      <a class="collapse-item" href="./editPages/AcademyEditPage.php">CEES Academy</a>
+                      <a class="collapse-item" href="./AcademyEditPage.php">CEES Academy</a>
                       <a class="collapse-item" href="#">Consulting Services</a>
                       <a class="collapse-item" href="#">Solutions Lab</a>
                       <div class="collapse-divider"></div>
