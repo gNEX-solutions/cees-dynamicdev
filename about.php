@@ -75,7 +75,7 @@ $no_user ='';
                 <blockquote><strong>Lorem ipsum dolor sit amet, consectetur </strong>adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sed velit dignissim sodales ut eu sem integer vitae justo. Dignissim enim sit amet venenatis urna cursus. Integer enim neque volutpat ac. Ullamcorper malesuada proin libero nunc consequat interdum varius sit. Facilisis sed odio morbi quis commodo odio aenean. Facilisi etiam dignissim diam quis enim lobortis. Eu turpis egestas pretium aenean pharetra magna ac. Justo nec ultrices dui sapien eget mi proin sed. Sit amet luctus venenatis lectus magna fringilla urna porttitor.</blockquote>
             </div>
         </div> -->
-        <section class="features11 cid-ruXpPiazmW" id="features11-19">
+        <section class="features11 cid-ruXpPiazmW2 cid-ruXpPiazmW " id="features11-19">
     <div class="container">   
         <div class="col-md-12">
             <div class="media-container-row">
@@ -130,7 +130,7 @@ $no_user ='';
                         </div>
                     </div>
                 </div>
-                <div class="about-us-image">
+                <div class="about-us-image image-adjust">
                 </div>
             </div>
         </div> 
