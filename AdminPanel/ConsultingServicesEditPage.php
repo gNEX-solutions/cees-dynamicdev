@@ -9,7 +9,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Academy Edit Page</title>
+  <title>Consultancy Services Edit Page</title>
   <?php include './resources/nav.php'; ?>
   <?php include './resources/footer.php'; ?>
   <!-- including the database connection  -->
@@ -51,7 +51,7 @@ $conn=$newConnection->connect(); ?>
   <h1 class="h3 mb-4 text-gray-800">Edit CEES Consultancy Services Pages</h1>
 
   <!-- select the relavant page  -->
-  <form action="./AcademyEditPage.php" method="post">
+  <form action="./ConsultingServicesEditPage.php" method="post">
     <div class="form-group">
       <div class="row">
         <div class="col-lg-10 col-md-6" style="padding-bottom: 1px">
@@ -181,7 +181,7 @@ $conn=$newConnection->connect(); ?>
 
 
   <!-- edit the page content  -->
-  <form method="POST" action="./AcademyEditPage.php" enctype="multipart/form-data">
+  <form method="POST" action="./ConsultingServicesEditPage.php" enctype="multipart/form-data">
     <div class="row">
       <div class="col-md-6">
       
