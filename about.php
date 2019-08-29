@@ -42,6 +42,7 @@ $no_user ='';
   <link rel="stylesheet" href="assets/theme/research-section.css">
   <link rel="stylesheet" href="assets/theme/css/style.css">
   <link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css" type="text/css">
+  <link rel="stylesheet" href="assets/theme/css/preloader.css">
   
 
 
@@ -51,33 +52,23 @@ $no_user ='';
   
 </head>
 <body>
-<section class="menu cid-ruNsw1yRec" once="menu" id="menu1-0">
-    <?php require_once 'common/Components/header.php'; ?>
-  </section>
+<div id="preloader">
+  <div id="status">&nbsp;</div>
+</div>
+<?php require_once 'common/Components/header.php'; ?>
 <section class="mbr-section content5 cid-ruXJBlWi22 mbr-parallax-background" id="content5-1o">
-
-    
-
   <div class="mbr-overlay" style="opacity: 0.6; background-color: rgb(85, 180, 212);" > 
     </div>
-
     <div class="container">
         <div class="media-container-row">
             <div class="title col-12 col-md-8">
                 <h2 class="align-center mbr-bold mbr-white pb-3 mbr-fonts-style display-2">
                     About Us</h2>
-                
-                
-                
             </div>
         </div>
     </div>
 </section>
-
 <section class="mbr-section article content1 cid-ruXHzFNbH4" id="content2-1i">
-
-     
-
     <div class="container">
         <!-- <div class="media-container-row">
             <div class="mbr-text col-12 col-md-8 mbr-fonts-style display-7">
@@ -238,8 +229,8 @@ $no_user ='';
             </div>
         </div>
     </div>
-</section> -->
-<section class="cid-ruOQWZUvF9" id="footer5-w">
+</section>-->
+<section class="cid-ruOTxA2tiD" id="footer5-16">
 <?php require_once ('common/Components/footer.php'); ?>
 </section>
 
@@ -259,6 +250,7 @@ $no_user ='';
   <script src="assets/bootstrapcarouselswipe/bootstrap-carousel-swipe.js"></script>
   <script src="assets/mbr-testimonials-slider/mbr-testimonials-slider.js"></script>
   <script src="assets/theme/js/script.js"></script>
+  <script src="assets/theme/js/preloader.js"></script>
   
   
  <div id="scrollToTop" class="scrollToTop mbr-arrow-up"><a style="text-align: center;"><i class="mbr-arrow-up-icon mbr-arrow-up-icon-cm cm-icon cm-icon-smallarrow-up"></i></a></div>
