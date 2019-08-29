@@ -43,6 +43,7 @@ border-radius: 20px !important;
 
 #research-section .right-part .row::-webkit-scrollbar {
 width: 5px;
+/* overscroll-behavior:auto !important; */
 }
 
 #research-section .right-part p{
@@ -59,7 +60,6 @@ font-family: 'Open Sans', sans-serif !important;
 font-weight:500;
 }
 
-
 #research-section .left-part div:nth-child(1){
 width:100%;
 padding: 20px;
@@ -68,6 +68,7 @@ background-image: linear-gradient(rgba(255,255,255,0), rgba(255,255,255,1), rgba
 background-size:auto 300px;
 background-repeat: no-repeat;
 background-position: bottom;
+padding-bottom: 30px;
 }
 
 #research-section .left-part div h4{
@@ -76,11 +77,45 @@ font-size: 26px !important;
 font-family: 'Open Sans', sans-serif !important;
 }
 
+#research-section .left-part div button{
+    color:#ffff;
+    background-color:#1a91ae;
+    margin:auto;width:100%;
+    height:40px;padding:0;
+}
+#research-section .right-part div button{
+    color:#ffff;
+    background-color:#1a91ae;
+    margin:auto;width:100%;
+    height:40px;padding:0;
+    visibility: hidden;
+}
+
+#see_more_btn{
+    display: none;
+}
+
+@media only screen and (max-width: 770px) {
+
+    #research-section .right-part div button{
+        visibility: visible;
+    }
+    #research-section .left-part div button{
+        visibility: hidden;
+    }
+    #research-section .right-part {
+        top: 20px;
+    }
+    #see_more_btn{
+        display: inline-block;
+    }
+}
+
 #research-section .left-part{
 padding:0px;
 width:100%;
 height:400px;
-background-image: url("../images/mbr-3-1460x973.jpg");
+/* background-image: url("../images/mbr-3-1460x973.jpg"); */
 background-size: auto 100%;
 }
 
@@ -146,6 +181,19 @@ background-repeat:no-repeat;
     background-position: right;
 }
 
+.about-us-image{
+    position: absolute;
+    top:50px;
+    width:  100%;
+    height: 100%;
+    background-image: url("../images/aboutus.jpg") ;
+    background-repeat: no-repeat;
+    background-position: right;
+}
+
+.image-adjust{
+    top:30px !important;
+}
 .aside-content{
     z-index: 3 !important;
     width:50% !important;
@@ -176,6 +224,9 @@ background-repeat:no-repeat;
     }
 
     .why-us-image{
+        background-image: url("") ;
+    }
+    .about-us-image{
         background-image: url("") ;
     }
 } 
