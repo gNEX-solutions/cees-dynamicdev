@@ -59,7 +59,7 @@
                      
                       <a class="collapse-item" href="./AcademyEditPage.php">CEES Academy</a>
                       <a class="collapse-item" href="./ConsultingServicesEditPage.php">Consulting Services</a>
-                      <a class="collapse-item" href="#">Solutions Lab</a>
+                      <a class="collapse-item" href="./SolutionsLabEditPage.php">Solutions Lab</a>
                       <a class="collapse-item" href="./ReserchAndInsights.php">Research and Insights</a>
                       <div class="collapse-divider"></div>
                     </div>
