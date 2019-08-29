@@ -72,6 +72,7 @@
     animation: scroll 40s linear infinite;
     display: flex;
     width: calc(50px * 14);
+    margin-top: 20px;
   }
   #slider-logo .slide {
     height: 100px;
