@@ -39,6 +39,7 @@ $no_user ='';
   <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-reboot.min.css">
   <link rel="stylesheet" href="assets/socicon/css/styles.css">
   <link rel="stylesheet" href="assets/dropdown/css/style.css">
+  <link rel="stylesheet" href="assets/theme/research-section.css">
   <link rel="stylesheet" href="assets/theme/css/style.css">
   <link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css" type="text/css">
   
@@ -53,12 +54,11 @@ $no_user ='';
 <section class="menu cid-ruNsw1yRec" once="menu" id="menu1-0">
     <?php require_once 'common/Components/header.php'; ?>
   </section>
-
-<section class="mbr-section content5 cid-ruXCVKDreY mbr-parallax-background" id="content5-1f">
+<section class="mbr-section content5 cid-ruXJBlWi22 mbr-parallax-background" id="content5-1o">
 
     
 
-    <div class="mbr-overlay" style="opacity: 0.6; background-color: rgb(85, 180, 212);">
+  <div class="mbr-overlay" style="opacity: 0.6; background-color: rgb(85, 180, 212);" > 
     </div>
 
     <div class="container">
@@ -79,11 +79,72 @@ $no_user ='';
      
 
     <div class="container">
-        <div class="media-container-row">
+        <!-- <div class="media-container-row">
             <div class="mbr-text col-12 col-md-8 mbr-fonts-style display-7">
                 <blockquote><strong>Lorem ipsum dolor sit amet, consectetur </strong>adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sed velit dignissim sodales ut eu sem integer vitae justo. Dignissim enim sit amet venenatis urna cursus. Integer enim neque volutpat ac. Ullamcorper malesuada proin libero nunc consequat interdum varius sit. Facilisis sed odio morbi quis commodo odio aenean. Facilisi etiam dignissim diam quis enim lobortis. Eu turpis egestas pretium aenean pharetra magna ac. Justo nec ultrices dui sapien eget mi proin sed. Sit amet luctus venenatis lectus magna fringilla urna porttitor.</blockquote>
             </div>
-        </div>
+        </div> -->
+        <section class="features11 cid-ruXpPiazmW" id="features11-19">
+    <div class="container">   
+        <div class="col-md-12">
+            <div class="media-container-row">
+                <div class=" align-left aside-content">
+                    <div class="block-content">
+                        <div class="card p-2 pr-2">
+                            <div class="media">
+                                <!-- <div class=" align-self-center card-img pb-3">
+                                    <span class="mbr-iconfont mbri-like"></span>
+                                </div>      -->
+                                <div class="media-body">
+                                    <h4 class="card-title mbr-fonts-style display-6"  style="font-size:30px;font-wight:100">Academically & Professionally Qualified</h4>
+                                </div>
+                            </div>                
+                            <div class="card-box">
+                                <p class="block-text mbr-fonts-style display-7">
+                                We are set of academically and professionally qualified business leaders with hands on experience on Enterprise transformation in various countries and industries
+                            </div>
+                        </div>
+
+                        <div class="card p-2 pr-2">
+                            <div class="media">
+                                <!-- <div class="align-self-center card-img pb-3">
+                                    <span class="mbr-iconfont mbri-apple"></span>
+                                </div>      -->
+                                <div class="media-body">
+                                    <h4 class="card-title mbr-fonts-style display-6" style="font-size:30px;font-wight:100">International Exposure</h4>
+                                </div>
+                            </div>                
+
+                            <div class="card-box">
+                                <p class="block-text mbr-fonts-style display-7">
+                                We have been exposed to latest and original enterprise excellence tools and methodologies from Japan, USA and Singapore 
+                            </div>
+                        </div>
+
+
+                        <div class="card p-2 pr-2" >
+                            <div class="media">
+                                <!-- <div class="align-self-center card-img pb-3">
+                                    <span class="mbr-iconfont mbri-apple"></span>
+                                </div>      -->
+                                <div class="media-body">
+                                    <h4 class="card-title mbr-fonts-style display-6" style="font-size:30px;font-wight:100">Tested & Proven Methodologis</h4>
+                                </div>
+                            </div>                
+
+                            <div class="card-box">
+                                <p class="block-text mbr-fonts-style display-7">
+                                And we have tested & proven home grown expertise and access to original worldwide enterprise excellence knowledge sources to guide you in the journey of business transformation. 
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-us-image">
+                </div>
+            </div>
+        </div> 
+    </div>          
+</section>
     </div>
 </section>
 <section class="team1 cid-ruXEWX5uJh" id="team1-1g">   
@@ -133,7 +194,7 @@ $no_user ='';
     </div>
 </section>
 
-<section class="carousel slide testimonials-slider cid-ryEUu17Rx5" data-interval="false" id="testimonials-slider1-0">
+<!-- <section class="carousel slide testimonials-slider cid-ryEUu17Rx5" data-interval="false" id="testimonials-slider1-0">
     <div class="container text-center">
         <h2 class="pb-5 mbr-fonts-style display-2">
             WHAT OUR FANTASTIC USERS SAY
@@ -177,7 +238,7 @@ $no_user ='';
             </div>
         </div>
     </div>
-</section>
+</section> -->
 <section class="cid-ruOQWZUvF9" id="footer5-w">
 <?php require_once ('common/Components/footer.php'); ?>
 </section>
