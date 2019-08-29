@@ -13,8 +13,11 @@ if($_SERVER['REQUEST_METHOD'] == "POST" and isset($_POST["update_table"])){
     $descriptions = array();
     $desIds = array();
     $pageOdres = array();
+    $imgPositions = array(); // positions of the images 
+    $imgIds = array(); // ids of the images 
 
 
+    // getting the paragraph information dynamically 
     for( $i = 1; $i < 4; $i++){
         // $string = 'desId'.strval($i);
         $desId = null;
@@ -33,6 +36,17 @@ if($_SERVER['REQUEST_METHOD'] == "POST" and isset($_POST["update_table"])){
         array_push($descriptions, $description);
         array_push($pageOdres,$pgorder);
 
+    }
+
+
+    // getting the image realted informartion dynamically 
+    for ( $i =1 ; $i < 3; $i++){
+        $imgPos = $_POST['positon_select'.$i];
+        $id = $_POST['imgid'.$i];
+        // echo("\n");
+        // echo($imgIds);
+        array_push($imgPositions, $imgPos);
+        array_push($imgIds,$id );
     }
 
     // echo(count($desIds));
@@ -154,7 +168,16 @@ if($_SERVER['REQUEST_METHOD'] == "POST" and isset($_POST["update_table"])){
         $stmt->bind_param("ss",$file_url,$pageId);
         $stmt->execute();
     }
+    // updating the image information 
+
+    for($i = 0 ; $i < count($imgIds); $i++ ){
+        $stmt = $conn->prepare("update heroku_3dffaa1b8ca65ff.consultancies_images set consultancies_images.position = ?
+         where consultancies_images.idconsultancies_images = ?;");
+        $stmt->bind_param("ss",$imgPositions[$i],$imgIds[$i]);
+        $stmt->execute();
+    }
 }
+
 
 
 
