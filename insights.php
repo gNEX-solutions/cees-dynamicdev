@@ -31,8 +31,8 @@ function showInsights(){
     echo '<div class="image1 left-part col-md-6">';
 
     if(isset($data[0])){
-    
-        echo '<div onclick="location.href=\'index.php\'"> 
+        //onclick="location.href=\'index.php\'"
+        echo '<div > 
         <h4 >
             '.$data[0]['heading'].'
             <br>
@@ -44,7 +44,7 @@ function showInsights(){
         <p>
         '.$data[0]['summary'].'   
         </p>
-        <button id="button1">See more articles</button>
+        <button id="button1"  onclick="window.location.href = \'researchMore.php\'">See more articles</button>
     </div>';
    
     }
@@ -110,7 +110,7 @@ function showInsights(){
                
     if(isset($data)){
         echo '<div class="row">
-        <button id="button1">See more articles</button>
+        <button id="button1" onclick="window.location.href = \'researchMore.php\'">See more articles</button>
     </div>';
     }         
                 

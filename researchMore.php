@@ -115,7 +115,7 @@ include 'Model/researchService.php';
 
   </section>
 
-  <div class="content-slider col-12">
+  <!-- <div class="content-slider col-12">
     <div class="slider">
       <div class="mask">
         <ul>
@@ -134,11 +134,11 @@ include 'Model/researchService.php';
         </ul>
       </div>
     </div>
-  </div>
+  </div> -->
   </div>
   </section>
 
-  <section class="mbr-section info2 cid-ruXIRFRxrA" id="info2-1n">
+  <!-- <section class="mbr-section info2 cid-ruXIRFRxrA" id="info2-1n">
     <div class="container">
       <div class="row main justify-content-center">
         <div class="media-container-column col-12 col-lg-3 col-md-4">
@@ -154,7 +154,7 @@ include 'Model/researchService.php';
         </div>
       </div>
     </div>
-  </section>
+  </section> -->
 
   <!-- <section>
     <div class="col 12">
