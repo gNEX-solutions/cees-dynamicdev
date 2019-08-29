@@ -2,6 +2,9 @@
 include_once 'Model/dbh.inc.php';
 include 'Model/eventWindow.php';
 include 'Model/viewEvents.php';
+include 'Model/getInsights.php';
+include 'insights.php';
+
 ?>
 
 <!DOCTYPE html>
@@ -358,76 +361,12 @@ include 'Model/viewEvents.php';
             </h1>
         </div>
         <br>
+       
         <div class="row" id="research-section">
 
-            <div class="left-part col-md-6">
-                    <div> 
-                        <h4 >
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                            <br>
-                            <span id="date-section">
-                                July 17, 2019  Change & Crisis Leadership, Creativity & Innovation
-                            </span>
-                        </h4>
+           <?php showInsights(); ?>
 
-                        <p>
-                             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sed velit dignissim sodales ut eu sem integer vitae justo.                      
-                        </p>
-                        <button id="button1">See more articles</button>
-                    </div>
-            </div>
-
-            <div class="right-part col-md-6">
-                <div  class="row" >
-                    <div class="col-md-3 col-sm-3 col-lg-3 image1">
-
-                    </div>
-                    <div class="col-md-9 col-sm-9 col-lg-9" style="background-color: #f5f2f2;">
-                        <h5> Lorem ipsum dolor sit amet, consectetur adipiscing elit, scing elit, sed do eiusmod tempor incididunt ut labore </h5>
-                        <p>
-                             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                        </p>  
-                    </div>  
-                </div >
-
-                <div class="row">
-                    <div class="col-md-3 col-sm-3 col-lg-3 image2">
-
-                    </div>
-                    <div class="col-md-9 col-sm-9 col-lg-9" >
-                    <h5> Lorem ipsum dolor sit amet, consectetur adipiscing elit, </h5>
-                    <p>
-                             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                        </p>  
-                    </div> 
-                </div>
-
-                <div class="row" >
-                    <div class="col-md-3 col-sm-3 col-lg-3 image3">
-
-                    </div>
-                    <div class="col-md-9 col-sm-9 col-lg-9" style="background-color: #f5f2f2;">
-                    <h5> Lorem ipsum dolor sit amet, consectetur adipiscing elit, </h5>
-                    <p>
-                             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                        </p>  
-                    </div> 
-                </div>
-
-                <div class="row" >
-                    <div class="col-md-3 col-sm-3 col-lg-3 image4" >
-
-                    </div>
-                    <div class="col-md-9 col-sm-9 col-lg-9" >
-                    <h5> Lorem ipsum dolor sit amet, consectetur adipiscing elit, </h5>
-                    <p>
-                             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                        </p>  
-                    </div> 
-                </div>
-                <div class="row">
-                    <button id="button1">See more articles</button>
-                </div>
+            
             </div>
         </div>
     </div>
