@@ -104,7 +104,7 @@ if($type=='Academy'){
     $status=1;
 $conn->autocommit(false);
 $stmt= $conn->prepare("INSERT INTO consultancies(heading,type,status,summary) VALUES (?,?,?,?)");
-$stmt->bind_param("ssis",$type,$status,$summary);
+$stmt->bind_param("ssis",$title,$type,$status,$summary);
 if(!$stmt->execute()){
     $success=0;
 }
@@ -146,7 +146,7 @@ $conn->autocommit(true);
     $conn->autocommit(false);
 $stmt5= $conn->prepare("INSERT INTO consultancies(heading,type,status,summary) VALUES (?,?,?,?)");
 $stmt5->bind_param("ssis",$title,$type,$status,$summary);
-$stmt5->execute();
+
 if(!$stmt5->execute()){
     $success=0;
 }
@@ -154,21 +154,21 @@ $id=$stmt5->insert_id;
 $stmt6= $conn->prepare("INSERT INTO consultaies_descriptions(description,idconsultancies,description_order) VALUES (?,?,?)");
 $order=1;
 $stmt6->bind_param("sii",$description1,$id,$order);
-$stmt6->execute();
+
 if(!$stmt6->execute()){
     $success=0;
 }
 $stmt7= $conn->prepare("INSERT INTO consultaies_descriptions(description,idconsultancies,description_order) VALUES (?,?,?)");
 $order=2;
 $stmt7->bind_param("sii",$description2,$id,$order);
-$stmt7->execute();
+
 if(!$stmt7->execute()){
     $success=0;
 }
 $stmt8= $conn->prepare("INSERT INTO consultancies_images(status,url,idConsultancies) VALUES (?,?,?)");
 $statusNum=1;
 $stmt8->bind_param("isi",$statusNum,$target_file,$id);
-$stmt8->execute();
+
 if(!$stmt8->execute()){
     $success=0;
 }
@@ -191,7 +191,7 @@ $conn->autocommit(true);
     $conn->autocommit(false);
 $stmt9= $conn->prepare("INSERT INTO consultancies(heading,type,status,summary) VALUES (?,?,?,?)");
 $stmt9->bind_param("ssis",$title,$type,$status,$summary);
-$stmt9->execute();
+
 if(!$stmt9->execute()){
     $success=0;
 }
@@ -199,21 +199,21 @@ $id=$stmt9->insert_id;
 $stmt10= $conn->prepare("INSERT INTO consultaies_descriptions(description,idconsultancies,description_order) VALUES (?,?,?)");
 $order=1;
 $stmt10->bind_param("sii",$description1,$id,$order);
-$stmt10->execute();
+
 if(!$stmt10->execute()){
     $success=0;
 }
 $stmt11= $conn->prepare("INSERT INTO consultaies_descriptions(description,idconsultancies,description_order) VALUES (?,?,?)");
 $order=2;
 $stmt11->bind_param("sii",$description2,$id,$order);
-$stmt11->execute();
+
 if(!$stmt11->execute()){
     $success=0;
 }
 $stmt12= $conn->prepare("INSERT INTO consultancies_images(status,url,idConsultancies) VALUES (?,?,?)");
 $statusNum=1;
 $stmt12->bind_param("isi",$statusNum,$target_file,$id);
-$stmt12->execute();
+
 if(!$stmt12->execute()){
     $success=0;
 }
