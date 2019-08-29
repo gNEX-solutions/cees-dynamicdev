@@ -54,7 +54,7 @@ $conn=$newConnection->connect(); ?>
   <form action="./ReserchAndInsights.php" method="post">
     <div class="form-group">
       <div class="row">
-        <div class="col-lg-10 col-md-6" style="padding-bottom: 1px">
+        <div class="col-lg-9 col-md-6" style="padding-bottom: 1px">
           <select class="custom-select" id="inputGroupSelect04" name="page">
             <!-- <option selected>Select page...</option> -->
             <?php 
@@ -78,6 +78,11 @@ $conn=$newConnection->connect(); ?>
         <div class="col-lg-1 col-md-2">
           <div class="input-group-append" style="padding-bottom: 1px;  width: 100%">
             <button class="btn btn-outline-danger" type="submit" method="post" name="delete"> Delete </button>
+          </div>
+        </div>
+        <div class="col-lg-1 col-md-2">
+          <div class="input-group-append" style="padding-bottom: 1px;  width: 100%">
+            <button class="btn btn-outline-success" type="submit" method="post" name="add_new"> Add New</button>
           </div>
         </div>
       </div>
@@ -145,8 +150,8 @@ $conn=$newConnection->connect(); ?>
     if($_SERVER['REQUEST_METHOD'] == "POST" and isset($_POST["delete"])){
       $page_id = $_POST['page']; //  the id of the page 
       // $title=$_POST['inputTitle'];
-      $stmt = $conn->prepare("update  heroku_3dffaa1b8ca65ff.consultancies 
-        set consultancies.status = 0 where consultancies.idconsultancies = ?;") ;
+      $stmt = $conn->prepare("UPDATE `researches`
+      SET `status` = 0 WHERE `idresearches` = ?;") ;
       $stmt->bind_param("s",$page_id);
       $stmt->execute();
 
@@ -208,6 +213,19 @@ $conn=$newConnection->connect(); ?>
           ?>
           
           </textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="publishedDate">Published Date</label>
+          <input type="date" class="form-control" name="published_date" placeholder="published_date" required value=
+          <?php 
+              if($resultCons != null){
+                 echo($rowCons['published_date']);
+              }
+              
+          ?>
+          >
+          <!-- </textarea> -->
         </div>
 
         

@@ -181,13 +181,16 @@ if($_SERVER['REQUEST_METHOD'] == "POST" and isset($_POST["update_table"])){
 if($_SERVER['REQUEST_METHOD'] == "POST" and isset($_POST["update_table_reserch"])){
     // echo("<h1> update table research is workinng </h1>");
     $pageId = $_POST['page']; // id of the page 
-    // $descriptionId1 = $_POST['desId1']; // id of the description 1
-    // $descriptionId2 = $_POST['desId2'];// id of the description 2
+    $NOW = new DateTime(null, new DateTimeZone('Asia/Colombo')); // CURENT TIME
+
+    
     $descriptions = array();
     $desIds = array();
     $pageOdres = array();
     $imgPositions = array(); // positions of the images 
     $imgIds = array(); // ids of the images 
+
+    $update_reserch_table = 1; 
 
 
     // getting the paragraph information dynamically 
@@ -228,8 +231,16 @@ if($_SERVER['REQUEST_METHOD'] == "POST" and isset($_POST["update_table_reserch"]
 
     $title=$_POST['inputTitle'];
     $summary=$_POST['inputSummary'];
-    // $description1=$_POST['inputDescription1'];
-    // $description2=$_POST['inputDescription2'];
+    $publishedDate = $_POST['published_date'];
+    
+    // echo($NOW->format('Y-m-d H:i:s'));
+    if(new DateTime($publishedDate) < $NOW){
+        $update_reserch_table = 0;
+        echo(" <div class=\"alert alert-danger\" role=\"alert\">
+            The published date cannot be before today
+            </div>"
+        );
+    }
     // $type=$_POST['input'];
 
     // echo($pageId);
@@ -292,10 +303,13 @@ if($_SERVER['REQUEST_METHOD'] == "POST" and isset($_POST["update_table_reserch"]
     $conn=$newConnection->connect();
 
     // updating the reserches  table 
-    $stmt= $conn->prepare("UPDATE `researches`
-    SET `heading` = ?, `summary` = ? WHERE `idresearches` = ?;");
-    $stmt->bind_param("sss",$title,$summary,$pageId);
-    $stmt->execute();
+    if($update_reserch_table){
+        $stmt= $conn->prepare("UPDATE `researches`
+        SET `heading` = ?, `summary` = ? , published_date = ? WHERE `idresearches` = ?;");
+        $stmt->bind_param("ssss",$title,$summary,$publishedDate,$pageId);
+        $stmt->execute();
+    }
+   
 
     // updating the reserches  description table 
     $updateSql = "UPDATE `researches_descriptions`
