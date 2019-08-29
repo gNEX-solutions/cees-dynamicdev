@@ -181,6 +181,16 @@ background-repeat:no-repeat;
     background-position: right;
 }
 
+.about-us-image{
+    position: absolute;
+    top:50px;
+    width:  100%;
+    height: 100%;
+    background-image: url("../images/aboutus.jpg") ;
+    background-repeat: no-repeat;
+    background-position: right;
+}
+
 .aside-content{
     z-index: 3 !important;
     width:50% !important;
@@ -211,6 +221,9 @@ background-repeat:no-repeat;
     }
 
     .why-us-image{
+        background-image: url("") ;
+    }
+    .about-us-image{
         background-image: url("") ;
     }
 } 
