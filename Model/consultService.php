@@ -7,11 +7,13 @@ class consultService extends consultWindow
     public function ShowConsult_List()
     {
         $datas = $this->getAllConsultations();
-        foreach ($datas as $data) {
+        foreach ($datas as $key=>$data) {
 
             $url = explode("/", $data['url']);
 
-            if ($data['position'] == "LU") {
+            $even = $key%2;
+
+            if ($even == 0) {
 
                 echo '<div class="grid-flex hideme">
                     <div class="col col-image">
@@ -26,7 +28,7 @@ class consultService extends consultWindow
                     </div>
             
                     <hr>';
-            } elseif ($data['position'] == "LD") {
+            } elseif ($even == 1) {
                 echo '<div class="grid-flex hideme">
                     <div class="col col-image">
                     <img src="assets/images/consultancy/' . $url[2] . ' " alt="" class="mx-auto d-block" style="max-height: 450px; max-width: 450px;" />
