@@ -3,7 +3,8 @@
 
     if(isset($_SESSION['User']))
     {
-?><!DOCTYPE html>
+?>
+!DOCTYPE html>
 <html lang="en">
 
 <head>
