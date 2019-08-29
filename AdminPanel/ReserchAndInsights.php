@@ -161,8 +161,8 @@ $conn=$newConnection->connect(); ?>
     if($_SERVER['REQUEST_METHOD'] == "POST" and isset($_POST["img_remove"])){
       // echo("image remove");
       // echo($_POST['img_remove']);
-      $stmt = $conn->prepare("update heroku_3dffaa1b8ca65ff.consultancies_images set consultancies_images.`status` = 0 
-      where consultancies_images.idconsultancies_images = ?;") ;
+      $stmt = $conn->prepare("UPDATE `heroku_3dffaa1b8ca65ff`.`researches_images` SET `status` = 0 WHERE 
+      `idresearches_images` = ?;") ;
       $stmt->bind_param("s",$_POST['img_remove']);
       if($stmt->execute()){
         echo(" <div class=\"alert alert-success\" role=\"alert\">
