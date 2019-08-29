@@ -20,6 +20,8 @@
   <link rel="stylesheet" href="assets/socicon/css/styles.css">
   <link rel="stylesheet" href="assets/theme/css/style.css">
   <link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css" type="text/css">
+  <link rel="stylesheet" href="assets/theme/css/preloader.css">
+
   
   <?php 
   if(isset($_GET['contacted'])){
@@ -42,6 +44,9 @@
   
 </head>
 <body>
+<div id="preloader">
+  <div id="status">&nbsp;</div>
+</div>
 <section class="menu cid-ruNsw1yRec"  once="menu" id="menu1-0" style="width:100%; position:fixed; z-index:999;">
         <?php require_once ('common/Components/header.php'); ?>
   </section>
@@ -191,7 +196,7 @@
   <script src="assets/touchswipe/jquery.touch-swipe.min.js"></script>
   <script src="assets/theme/js/script.js"></script>
   <script src="assets/formoid/formoid.min.js"></script>
-  
+  <script src="assets/theme/js/preloader.js"></script>
   
  <div id="scrollToTop" class="scrollToTop mbr-arrow-up"><a style="text-align: center;"><i class="mbr-arrow-up-icon mbr-arrow-up-icon-cm cm-icon cm-icon-smallarrow-up"></i></a></div>
   </body>
