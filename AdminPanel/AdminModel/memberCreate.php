@@ -8,6 +8,7 @@ $contact=$_POST['contact_number'];
 $fburl=$_POST['fburl'];
 $linkedin_url=$_POST['linkedin_url'];
 $twitter_url=$_POST['twitter_url'];
+$photoUrl = $_POST['path'];
 $status = 1;
 
 
@@ -21,20 +22,11 @@ $status = 1;
 $newConnection= new dbh;
 $conn=$newConnection->connect();
 
-$stmt= $conn->prepare("INSERT INTO team_members(first_name,last_name,role,contact_number,status,facebook_url,linkedin_url,twitter_url,quote) VALUES (?,?,?,?,?,?,?,?,?)");
-$stmt->bind_param("ssssissss",$firstName,$lastName,$designation,$contact,$status,$fburl,$linkedin_url,$twitter_url,$quote);
+$stmt= $conn->prepare("INSERT INTO team_members(first_name,last_name,role,contact_number,status,facebook_url,linkedin_url,twitter_url,quote,profilepic_url) VALUES (?,?,?,?,?,?,?,?,?,?)");
+$stmt->bind_param("ssssisssss",$firstName,$lastName,$designation,$contact,$status,$fburl,$linkedin_url,$twitter_url,$quote,$photoUrl);
 $stmt->execute();
-//if(execute()){echo "Success";}
-// $id=$stmt->insert_id;
-
-// $stmt2= $conn->prepare("INSERT INTO events_images(status,caption,url,idEvent) VALUES (?,?,?,?)");
-// $stmt2->bind_param("issi",$status,$caption,$target_file,$id);
-// $stmt2->execute();
 
 $conn->close();
 
-echo $firstName;
 
 ?>
-
-<!-- <script type="text/javascript">alert("Member Added Successfully");history.go(-1);</script> -->

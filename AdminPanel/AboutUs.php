@@ -106,11 +106,14 @@
                    
                     <div class="panel-heading">Select Profile Image</div>
                     <div class="col-sm-4 mb-3 mb-sm-0" style="float: right;">
-                      <img width="70%" src="../assets/images/mbr-510x513.jpg">
+                      <div id="uploaded_image" name="uploaded_image" >
+                        <input type="hidden" id="imgpath" name="imgpath" />
+                      </div>
+                      <!-- <img width="70%" src="../assets/images/mbr-510x513.jpg"> -->
                     </div>
                     <div class="panel-body" align="center">
                       <input type="file" name="upload_image" id="upload_image" />
-                      <div id="uploaded_image"></div>
+                      <!-- <div id="uploaded_image"></div> -->
                     </div>
                  
 
@@ -241,30 +244,12 @@
       });
     </script>
 
-    <script>
-        var $files = $('input:file');
-        var modal = document.getElementById("uploadimageModal");
+    
 
-      // Listen for when file inputs change
-      $files.change(function() {
-        // Do any of these have a file?
-        //modal.style.display = "block";
-       //alert("ok");
-        openModal();
+<script type="text/javascript">
+$(document).ready(function(){
 
-        
-        var hasAnyFile = $files.toArray().some(function(file) {
-          return file.value;
-        });
-        
-      });
-
-     </script>
-<script>
-  function openModal(){
-    modal.style.display = 'block';
-
-    $image_crop = $('#image_demo').croppie({
+  $image_crop = $('#image_demo').croppie({
     enableExif: true,
     viewport: {
       width:370,
@@ -273,7 +258,7 @@
     },
     boundary:{
       width:500,
-      height:400
+      height:500
     }
   });
 
@@ -294,18 +279,22 @@
     $image_crop.croppie('result', {
       type: 'canvas',
       size: 'viewport'
+    }).then(function(response){
+      $.ajax({
+        url:"AdminModel/upload.php",
+        type: "POST",
+        data:{"image": response},
+        success:function(data)
+        {
+          $('#uploadimageModal').modal('hide');
+          $('#uploaded_image').html(data);
+          $('#imgpath').html(data);
+        }
+      });
+    })
   });
 
 });  
-  }
-
-  function closeModal(){
-    modal.style.display = 'none';
-  }
-</script>
-
-<script type="text/javascript">
-
 </script>
 
 
@@ -320,7 +309,7 @@
     <script src="js/sb-admin-2.min.js"></script>
 
   <!-- croppie -->
-    <script src="js/jquery.min.js"></script>  
+    <!-- <script src="js/jquery.min.js"></script>   -->
     <!-- <script src="js/bootstrap.min.js"></script> -->
     <script src="js/croppie.js"></script>
 </body>
