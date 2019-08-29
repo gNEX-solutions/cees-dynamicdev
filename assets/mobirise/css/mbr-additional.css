@@ -1891,7 +1891,9 @@ body {
     background-position: 60%;
   }
 }
-
+.parallax.cid-ruNtyUeTOv2 {
+  background-position: 65%  !important;
+}
 .first p{
   text-align: right !important;
   font-size: 30px !important;
