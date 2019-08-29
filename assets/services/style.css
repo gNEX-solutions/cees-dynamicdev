@@ -316,11 +316,38 @@
   }
   
   .container {
-      max-width: 100rem;
+      /* max-width: 100rem;
       margin: 0 auto;
-      padding: 0 2rem 2rem;
+      padding: 0 2rem 2rem; */
   }
+  section {
+    background-color: #ffffff !important;
   
+  }
+
+  .first-section{
+    position: relative;
+    bottom:-20px;
+    padding-top:100px;
+  }
+  .second-section{
+    position: relative;
+    bottom:-20px;
+    padding-top:100px;
+  }
+  .third-section{
+    position: relative;
+    bottom:-20px;
+    padding-top:100px;
+    padding-bottom: 50px;
+  }
+
+  /* @media (max-width: 992px) {
+    .first-section{
+      position: relative;
+      bottom:-120px;
+    }
+  } */
   .heading {
       font-family: "Montserrat", Arial, sans-serif;
       font-size: 2rem;

@@ -89,7 +89,12 @@ font-family: 'Open Sans', sans-serif !important;
     visibility: hidden;
 }
 
+#see_more_btn{
+    display: none;
+}
+
 @media only screen and (max-width: 770px) {
+
     #research-section .right-part div button{
         visibility: visible;
     }
@@ -98,6 +103,9 @@ font-family: 'Open Sans', sans-serif !important;
     }
     #research-section .right-part {
         top: 20px;
+    }
+    #see_more_btn{
+        display: inline-block;
     }
 }
 

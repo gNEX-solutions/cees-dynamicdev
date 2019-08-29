@@ -425,7 +425,7 @@ include 'Model/viewEvents.php';
                         </p>  
                     </div> 
                 </div>
-                <div class="row">
+                <div class="row" id="see_more_btn">
                     <button id="button1">See more articles</button>
                 </div>
             </div>
@@ -513,9 +513,7 @@ include 'Model/viewEvents.php';
 </section>
 
 <section class="cid-ruOTxA2tiD" id="footer5-16">
-
 <?php require_once ('common/Components/footer.php'); ?>
-        
 </section>
 
 <div id="scrollToTop" class="scrollToTop mbr-arrow-up"><a style="text-align: center;"><i class="mbr-arrow-up-icon mbr-arrow-up-icon-cm cm-icon cm-icon-smallarrow-up"></i></a></div>
