@@ -27,7 +27,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST" and isset($_POST["update_table"])){
         if($desId == null || $desId == ''){
             $desId = '-1';
         }
-        echo($desId);
+        // echo($desId);
 
         $description = $_POST['inputDescription'.strval($i)];
         $pgorder = strval($i);
@@ -67,7 +67,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST" and isset($_POST["update_table"])){
     $target_file = $target_dir . basename($_FILES["inputImage"]["name"]);
 
 
-    echo($target_file);
+    // echo($target_file);
     $uploadOk = 1;
     $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
     // Check if image file is a actual image or fake image
@@ -83,7 +83,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST" and isset($_POST["update_table"])){
     }
     // Check if file already exists
     if (file_exists($target_file)) {
-        // echo "Sorry, file already exists.";
+        echo "Sorry, file already exists.";
         $uploadOk = 0;
     }
     // Check file size
@@ -162,7 +162,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST" and isset($_POST["update_table"])){
     //adding new image to images table 
     if($uploadOk){
         $file_url = substr($target_file,3);
-        echo($file_url.' '.$pageId);
+        // echo($file_url.' '.$pageId);
         $stmt= $conn->prepare("insert into  heroku_3dffaa1b8ca65ff.consultancies_images( status, caption, url, idConsultancies, position )
         values ( 1,'',?, ?,'LU');");
         $stmt->bind_param("ss",$file_url,$pageId);
