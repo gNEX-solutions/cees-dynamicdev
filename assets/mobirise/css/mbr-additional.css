@@ -3518,6 +3518,13 @@ padding-top:100px;
   height: 300px;
   background-image: url("../../../assets/images/Contact-Us-Hero-Image1.jpg"); /*url("../../../assets/images/mbr-1920x1277.jpg");*/
 }
+
+.cid-ruXJBlWi22 {
+  padding-top: 120px;
+  padding-bottom: 30px;
+  height: 300px;
+  background-image: url("../../../assets/images/aboutus1.jpg") /*url("../../../assets/images/mbr-1920x1277.jpg");*/
+}
 .cid-ruXJBlWiZf2 {
   padding-top: 120px;
   padding-bottom: 30px;
@@ -3528,6 +3535,7 @@ padding-top:100px;
   background-size: cover;
   background-position-y: 30%;
 }
+
 .cid-ruXJBlWiZf2 H2 {
   color: #efefef;
 }
