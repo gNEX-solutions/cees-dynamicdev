@@ -87,7 +87,6 @@
             <span>Update Events</span></a>
         </li>
 
-<<<<<<< HEAD
         <!-- Divider -->
           <hr class="sidebar-divider">
           <div class="sidebar-heading">
@@ -100,8 +99,6 @@
             <span>Add New Member</span></a>
           </li>
     
-=======
->>>>>>> 65281c3bd5e38cf08134f9222e55536a3ebd838e
           <!-- Divider -->
           <hr class="sidebar-divider d-none d-md-block">
           
@@ -130,7 +127,7 @@
 
     
           <!-- Divider
-          <!-- <hr class="sidebar-divider">
+           <hr class="sidebar-divider">
     
           <div class="sidebar-heading">
             Addons
