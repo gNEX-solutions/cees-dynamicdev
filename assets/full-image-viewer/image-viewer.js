@@ -1,6 +1,6 @@
 function viewImageFunction(image_id){
   var img = document.getElementById(image_id);
-  alert(img.style.backgroundImage);
+  // alert(img.style.backgroundImage);
     // Get the modal
   var modal = document.getElementById("myModal");
 
