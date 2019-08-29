@@ -367,7 +367,7 @@ include 'insights.php';
            <?php showInsights(); ?>
 
             
-            </div>
+           
         </div>
     </div>
 
@@ -452,9 +452,7 @@ include 'insights.php';
 </section>
 
 <section class="cid-ruOTxA2tiD" id="footer5-16">
-
 <?php require_once ('common/Components/footer.php'); ?>
-        
 </section>
 
 <div id="scrollToTop" class="scrollToTop mbr-arrow-up"><a style="text-align: center;"><i class="mbr-arrow-up-icon mbr-arrow-up-icon-cm cm-icon cm-icon-smallarrow-up"></i></a></div>
