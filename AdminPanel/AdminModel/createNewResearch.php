@@ -111,6 +111,8 @@ if(!$stmt->execute()){
     $success=0;
 }
 $id=$stmt->insert_id;
+
+
 // $stmt2= $conn->prepare("INSERT INTO consultaies_descriptions(description,idconsultancies,description_order) VALUES (?,?,?)");
 // $order=1;
 // $stmt2->bind_param("sii",$description1,$id,$order);
