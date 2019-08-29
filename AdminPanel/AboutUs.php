@@ -1,3 +1,10 @@
+
+<?php
+    session_start();
+
+    if(isset($_SESSION['User']))
+    {
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -27,6 +34,7 @@
 </head>
 
 <body id="page-top">
+
 
   <!-- Page Wrapper -->
   <div id="wrapper">
@@ -68,39 +76,45 @@
         <!-- Begin Page Content -->
         <div class="container-fluid">
 
-          <form class="user" >
+          <form class="user" id="member" name="member" method="post" action="" enctype="multipart/form-data">
           <h4>Genaral Information</h4>
-                <div class="panel panel-default">
-                  <div class="panel-heading">Select Profile Image</div>
-                  <div class="panel-body" align="center">
-                      <input type="file" name="upload_image" id="upload_image" />
-                      <div id="uploaded_image"></div>
-                  </div>
-                </div>
 
                 <div class="form-group row">
                   <div class="col-sm-4 mb-3 mb-sm-0">
                     <label style="float:left;">First Name</label>
-                    <input type="text" class="form-control form-control-user" id="FirstName" placeholder="First Name" required>
-                  </div>
-                  <div class="col-sm-4 mb-3 mb-sm-0">
+                    <input type="text" class="form-control form-control-user" id="firstName" name="firstName" placeholder="First Name" required="">
+                  <!-- </div>
+                  
+                </div>
+                  <div class="col-sm-4 mb-3 mb-sm-0"> -->
                     <label style="float:left;">Last Name</label>
-                    <input type="text" class="form-control form-control-user" id="LastName" placeholder="Last Name" required>
-                  </div>
-                </div>
+                    <input type="text" class="form-control form-control-user" name="lastName" id="lastName" placeholder="Last Name" required="">
+                  <!-- </div>
 
                 <div class="form-group row">
-                  <div class="col-sm-4 mb-3 mb-sm-0">
+                  <div class="col-sm-4 mb-3 mb-sm-0"> -->
                     <label style="float:left;">Designation</label>
-                    <input style="float:left;" type="text" class="form-control form-control-user" id="Designation" placeholder="Designation" required>
-                  </div>
+                    <input style="float:left;" type="text" class="form-control form-control-user" id="designation" name="designation" placeholder="Designation" required="">
+                  <!-- </div>
                 </div>
 
                 <div class="form-group row">
-                  <div class="col-sm-4 mb-3 mb-sm-0">
+                  <div class="col-sm-4 mb-3 mb-sm-0"> -->
                     <label style="float:left;">Contact Number</label>
-                    <input style="float:left;" type="text" class="form-control form-control-user" id="contact_number" placeholder="07xxxxxxxxxxx">
+                    <input style="float:left;" type="text" class="form-control form-control-user" id="contact_number" name="contact_number" placeholder="07xxxxxxxxxxx">
                   </div>
+
+                   
+                    <div class="panel-heading">Select Profile Image</div>
+                    <div class="col-sm-4 mb-3 mb-sm-0" style="float: right;">
+                      <img width="70%" src="../assets/images/mbr-510x513.jpg">
+                    </div>
+                    <div class="panel-body" align="center">
+                      <input type="file" name="upload_image" id="upload_image" />
+                      <div id="uploaded_image"></div>
+                    </div>
+                 
+
                 </div>
 
                 <hr><h4>Social Media Links</h4>
@@ -108,33 +122,34 @@
                 <div class="form-group row">
                   <div class="col-sm-4 mb-3 mb-sm-0">
                     <label style="float:left;">Facebook Profile Url</label>
-                    <input style="float:left;" type="text" class="form-control form-control-user" id="fburl" placeholder="Facebook Profile Url">
+                    <input style="float:left;" type="text" class="form-control form-control-user" id="fburl" name="fburl" placeholder="Facebook Profile Url">
                   </div>
 
                   <div class="col-sm-4 mb-3 mb-sm-0">
                     <label style="float:left;">LinkedIn Profile Url</label>
-                    <input style="float:left;" type="text" class="form-control form-control-user" id="linkedin_url" placeholder="LinkedIn Profile Url">
+                    <input style="float:left;" type="text" class="form-control form-control-user" id="linkedin_url" name="linkedin_url" placeholder="LinkedIn Profile Url">
                   </div>
                 
                   <div class="col-sm-4 mb-3 mb-sm-0">
                     <label style="float:left;">Twitter Profile Url</label>
-                    <input style="float:left;" type="text" class="form-control form-control-user" id="twitter_url" placeholder="Twitter Profile Url">
+                    <input style="float:left;" type="text" class="form-control form-control-user" id="twitter_url" name="twitter_url" placeholder="Twitter Profile Url">
                   </div>
                 </div>
-
+<!-- 
                 <div class="form-group">
                   <label for="inputDescription">Quote</label>
-                  <textarea class="form-control" name="quote" id="quote" placeholder="Quote" required></textarea>
-                </div>
+                  <textarea class="form-control" name="quote" id="quote" placeholder="Quote"></textarea>
+                </div> -->
 
-                <div class="form-group">
-                <label for="inputImage">Upload Event Flyer</label><br>
-                <input type="file"  accept="image/*" name="inputImage">
-                </div>
-
-                <button type="submit" class="btn btn-primary">Add Event</button>
+               <!--  <div class="form-group">
+                <label for="inputImage">Upload Event Flyer</label><br/>
+                <input type="file"  accept="image/*" name="inputImage"/>
+                </div> -->
+            
+                <button type="submit" name="submit" id="submit_btn" class="btn btn-primary">Add Member</button>
               </form>
-         
+
+             <div class="message_box" id="message_box"></div>
         </div>
         <!-- /.container-fluid -->
         
@@ -175,38 +190,82 @@
     </div>
   </div>
 
-
+<!-- Modal -->
 <div id="uploadimageModal" class="modal" role="dialog">
-  <div class="modal-dialog">
-    <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal">&times;</button>
-            <h4 class="modal-title">Upload & Crop Image</h4>
-          </div>
-          <div class="modal-body">
-            <div class="row">
+  <div class="modal-dialog" >
+
+    <!-- Modal content-->
+    <div class="modal-content" style="width: 700px;">
+      <div class="modal-header">
+        <h4 class="modal-title">Crop Image</h4>
+        <button type="button" class="btn btn-default" onclick="closeModal();" data-dismiss="modal">Close</button>
+      </div>
+      <div class="modal-body">
+        <div class="row">
             <div class="col-md-8 text-center">
-              <div id="image_demo" style="width:200px; margin-top:30px"></div>
+              <div id="image_demo" style="width:600px; margin-top:30px"></div>
             </div>
             <div class="col-md-4" style="padding-top:30px;">
-              <br />
-              <br />
-              <br/>
-              <button class="btn btn-success crop_image">Crop & Upload Image</button>
-          </div>
-        </div>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-          </div>
+             
+      </div>
+      <div>
+     </div>
+      <div class="modal-footer">
+        <button class="btn btn-success crop_image">Crop Image</button>
       </div>
     </div>
+
+  </div>
 </div>
 
-<script>  
-$(document).ready(function(){
 
-  $image_crop = $('#image_demo').croppie({
+<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+    <script>
+      
+      $(function () {
+        $('form').on('submit', function (e) {
+
+          e.preventDefault();
+
+          $.ajax({
+            type: 'post',
+            url: 'AdminModel/memberCreate.php',
+            data: $('form').serialize(),
+            success: function () {
+              alert('New Member Added');
+              $("#member")[0].reset();
+            }
+          });
+
+        });
+
+      });
+    </script>
+
+    <script>
+        var $files = $('input:file');
+        var modal = document.getElementById("uploadimageModal");
+
+      // Listen for when file inputs change
+      $files.change(function() {
+        // Do any of these have a file?
+        //modal.style.display = "block";
+       //alert("ok");
+        openModal();
+
+        
+        var hasAnyFile = $files.toArray().some(function(file) {
+          return file.value;
+        });
+        
+      });
+
+     </script>
+<script>
+  function openModal(){
+    modal.style.display = 'block';
+
+    $image_crop = $('#image_demo').croppie({
     enableExif: true,
     viewport: {
       width:370,
@@ -215,7 +274,7 @@ $(document).ready(function(){
     },
     boundary:{
       width:500,
-      height:500
+      height:400
     }
   });
 
@@ -236,22 +295,20 @@ $(document).ready(function(){
     $image_crop.croppie('result', {
       type: 'canvas',
       size: 'viewport'
-    }).then(function(response){
-      $.ajax({
-        url:"upload.php",
-        type: "POST",
-        data:{"image": response},
-        success:function(data)
-        {
-          $('#uploadimageModal').modal('hide');
-          $('#uploaded_image').html(data);
-        }
-      });
-    })
   });
 
 });  
+  }
+
+  function closeModal(){
+    modal.style.display = 'none';
+  }
 </script>
+
+<script type="text/javascript">
+
+</script>
+
 
   <!-- Bootstrap core JavaScript-->
   <script src="vendor/jquery/jquery.min.js"></script>
@@ -265,7 +322,7 @@ $(document).ready(function(){
 
   <!-- croppie -->
     <script src="js/jquery.min.js"></script>  
-    <script src="js/bootstrap.min.js"></script>
+    <!-- <script src="js/bootstrap.min.js"></script> -->
     <script src="js/croppie.js"></script>
 </body>
 
