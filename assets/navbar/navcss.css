@@ -39,8 +39,10 @@ body {
   overflow-x: hidden; */
 }
 
+
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Montserrat', sans-serif ;
+  /* font-weight: 700;  */
   /* color: #11151c;
   font-weight: 700;
   margin: 0px 0px 15px; */
@@ -74,7 +76,7 @@ h4 {
 	height:100%;
 	position: absolute;
 	z-index:0;
-  animation: slide 4s infinite 3s;
+  animation: slide 5s infinite 4s;
   pointer-events: none !important;
   /* 
   CSS Gradient - complete browser support from http://www.colorzilla.com/gradient-editor/ 
@@ -92,7 +94,7 @@ h4 {
 
 @keyframes slide {
 	0% {transform:translateX(-100%);}
-	100% {transform:translateX(100%);}
+	100% {transform:translateX(170%);}
 }
 
 p {
@@ -1590,6 +1592,29 @@ textarea.input {
 /*=========================================================
 	RESPONSIVE
 ===========================================================*/
+@media only screen and (max-width:1125px) {
+  /* #logo{
+    display:inline-block !important;
+    margin-top: 10px;
+    margin-left:2%;
+    width:auto;
+    height: 50%;
+  }
+  #logo-desktop{
+    display:none !important;
+  }
+  #nav{
+    border-bottom:0px solid #ffffff!important;
+    padding-top: 1%;
+    padding-bottom: 3%;
+  }
+  section{
+    background-color: #FFF!important;
+  }
+  #nav-top>.container {
+    position: relative!important;
+  } */
+}
 
 @media only screen and (max-width: 991px) {
 
@@ -1597,6 +1622,8 @@ textarea.input {
     display:inline-block !important;
     margin-top: 10px;
     margin-left:2%;
+    width:auto;
+    height: 50%;
   }
   
   #nav{

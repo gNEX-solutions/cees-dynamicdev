@@ -14,7 +14,11 @@ include 'Model/viewEvents.php';
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
   <link rel="shortcut icon" href="assets/images/logo2.png" type="image/x-icon">
   <meta name="description" content="">
-  
+  <!-- <a href="https://www.freepik.com/free-photos-vectors/people">People photo created by freepik - www.freepik.com</a>
+  <a href="https://www.freepik.com/free-photos-vectors/background">Background photo created by freepik - www.freepik.com</a>
+  <a href="https://www.freepik.com/free-photos-vectors/business">Business photo created by rawpixel.com - www.freepik.com</a> -->
+
+
   <title>Home</title>
   <link rel="stylesheet" href="assets/web/assets/mobirise-icons/mobirise-icons.css">
   <link rel="stylesheet" href="assets/tether/tether.min.css">
@@ -30,6 +34,7 @@ include 'Model/viewEvents.php';
   <link rel="stylesheet" href="assets/logo slider/style.css">
   <link rel="stylesheet" href="assets/theme/css/preloader.css">
   <link rel="stylesheet" href="assets/full-image-viewer/image-viewer.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:700&display=swap" rel="stylesheet">
 
   <script src="assets/web/assets/jquery/jquery.min.js"></script>
 
@@ -368,6 +373,7 @@ include 'Model/viewEvents.php';
                         <p>
                              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sed velit dignissim sodales ut eu sem integer vitae justo.                      
                         </p>
+                        <button id="button1">See more articles</button>
                     </div>
             </div>
 
@@ -419,12 +425,16 @@ include 'Model/viewEvents.php';
                         </p>  
                     </div> 
                 </div>
+                <div class="row">
+                    <button id="button1">See more articles</button>
+                </div>
             </div>
         </div>
     </div>
 
 </section>
-<section class="cid-ruXscj5IY2">
+<br>
+<section class="cid-ruXscj5IY2" id="our_Clients">
         <div class="container">
             <div class="row" > 
                 <h1 class="mbr-title pt-2 mbr-fonts-style display-2" style="text-align:center;width:100%">
