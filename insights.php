@@ -44,7 +44,7 @@ function showInsights(){
         <p>
         '.$data[0]['summary'].'   
         </p>
-        <button id="button1"  onclick="window.location.href = \'researchMore.php\'">See more articles</button>
+        <button id="button1"  onclick= "window.open(\'researchMore.php\',\'_blank\')">See more articles</button>
     </div>';
    
     }
@@ -110,7 +110,7 @@ function showInsights(){
                
     if(isset($data)){
         echo '<div class="row">
-        <button id="button1" onclick="window.location.href = \'researchMore.php\'">See more articles</button>
+        <button id="button1" onclick= "window.open(\'researchMore.php\',\'_blank\')">See more articles</button>
     </div>';
     }         
                 
