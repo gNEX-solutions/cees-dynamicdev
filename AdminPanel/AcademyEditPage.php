@@ -10,18 +10,18 @@
   <meta name="author" content="">
 
   <title>Academy Edit Page</title>
-  <?php include '../resources/nav.php'; ?>
-  <?php include '../resources/footer.php'; ?>
+  <?php include './resources/nav.php'; ?>
+  <?php include './resources/footer.php'; ?>
   <!-- including the database connection  -->
-  <?php include '../../Model/dbh.inc.php'; ?>
-  <?php include '../AdminModel/editPage.php'; ?>
+  <?php include '../Model/dbh.inc.php'; ?>
+  <?php include 'AdminModel/editPage.php'; ?>
   <!-- Custom fonts for this template-->
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
   <!-- Custom styles for this template-->
-  <link href="../css/sb-admin-2.min.css" rel="stylesheet">
+  <link href="./css/sb-admin-2.min.css" rel="stylesheet">
 
 </head>
 
@@ -94,6 +94,8 @@ $conn=$newConnection->connect(); ?>
     $resultPara = null;
     $resultImage = null;
     $paraRows = null;
+    const IMAGE_POSITIONS_CODES = array('RU','RD','CU','CD','LU','LD');
+    const IMAGE_POSITIONS = array('Right Up', 'Right Down', 'Center Up', 'Center Down', 'Left Up', 'Left Down');
     if($_SERVER['REQUEST_METHOD'] == "POST" and isset($_POST["edit"])){
     
       
@@ -139,6 +141,7 @@ $conn=$newConnection->connect(); ?>
 
     }
 
+   
     if($_SERVER['REQUEST_METHOD'] == "POST" and isset($_POST["delete"])){
       $page_id = $_POST['page']; //  the id of the page 
       // $title=$_POST['inputTitle'];
@@ -152,6 +155,27 @@ $conn=$newConnection->connect(); ?>
     );
       // echo ("<h1> delete clicked </h1>");
 
+
+    }
+ //  to be fired when the user clicks remove image icon 
+    if($_SERVER['REQUEST_METHOD'] == "POST" and isset($_POST["img_remove"])){
+      // echo("image remove");
+      // echo($_POST['img_remove']);
+      $stmt = $conn->prepare("update heroku_3dffaa1b8ca65ff.consultancies_images set consultancies_images.`status` = 0 
+      where consultancies_images.idconsultancies_images = ?;") ;
+      $stmt->bind_param("s",$_POST['img_remove']);
+      if($stmt->execute()){
+        echo(" <div class=\"alert alert-success\" role=\"alert\">
+        The image  has been deleted successfully. </div>"
+        );
+      }
+      else{
+        echo(" <div class=\"alert alert-danger\" role=\"alert\">
+        There was prolem in deletion of the image  </div>"
+        );
+      }
+      
+
     }
   ?>
 
@@ -162,7 +186,7 @@ $conn=$newConnection->connect(); ?>
       <div class="col-md-6">
       
         <input type="hidden" name="inputType" value="Academy">
-        <input type="hidden" name="inputId" value=<?php echo($page_id); ?>>
+        <input type="hidden" name="page" value=<?php echo($page_id); ?>>
         <div class="form-group">
           <label for="inputTitle">Title</label>
           <input type="text" class="form-control" name="inputTitle" placeholder="Title" 
@@ -269,14 +293,36 @@ $conn=$newConnection->connect(); ?>
         <!-- <div class=""> -->
         <?php 
           if($resultImage != null){
+            $imgCount = 0;
             while($row = $resultImage->fetch_assoc() ){
-              
+              $imgCount++ ;
               echo("
-              <input type=\"hidden\" name=\"inputId\" value=" . $row['idconsultancies_images']. ">
-                <img src=../../". $row['url']." alt='..' class='img-thumbnail' style=' max-height: 150px'>
-                <button type=\"submit\" name=\"img_remove\" class=\"btn btn-outline-danger\" > Remove </button>
+              <input type=\"hidden\" name=\"imgid" .$imgCount . "\" value=" . $row['idconsultancies_images']. ">
+                <img src=
+                ../". $row['url']." alt='..' class='img-thumbnail' style=' max-height: 150px'>
+                <button type=\"submit\" name=\"img_remove\" class=\"btn btn-outline-danger\" value=".$row['idconsultancies_images']." > Remove </button>
+                            
+              ");
+
+              echo("
+              <p> Image position </p>
+              <select class=\"custom-select\" id=\"inputGroupSelect01\" name = \"positon_select" . $imgCount . "\">
+              
               
               ");
+
+              for($i =0 ; $i < count(IMAGE_POSITIONS_CODES); $i++){
+                // echo(_IMAGE_POSITIONS_CODES[$i]);
+                if($row['position'] == IMAGE_POSITIONS_CODES[$i] ){
+                  echo(" <option value="  . IMAGE_POSITIONS_CODES[$i] ." selected>". IMAGE_POSITIONS[$i] . "</option>" );
+                }
+                else {
+                  echo(" <option value="  . IMAGE_POSITIONS_CODES[$i] .">". IMAGE_POSITIONS[$i] . "</option>" );
+                }
+              }
+
+              echo("</select>");
+
             }
           }
            

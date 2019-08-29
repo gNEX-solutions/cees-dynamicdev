@@ -7,14 +7,17 @@
 // echo("<h1> edit page is workinng </h1>");
 if($_SERVER['REQUEST_METHOD'] == "POST" and isset($_POST["update_table"])){
     // echo("<h1> edit page is workinng </h1>");
-    $pageId = $_POST['inputId']; // id of the page 
+    $pageId = $_POST['page']; // id of the page 
     // $descriptionId1 = $_POST['desId1']; // id of the description 1
     // $descriptionId2 = $_POST['desId2'];// id of the description 2
     $descriptions = array();
     $desIds = array();
     $pageOdres = array();
+    $imgPositions = array(); // positions of the images 
+    $imgIds = array(); // ids of the images 
 
 
+    // getting the paragraph information dynamically 
     for( $i = 1; $i < 4; $i++){
         // $string = 'desId'.strval($i);
         $desId = null;
@@ -24,7 +27,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST" and isset($_POST["update_table"])){
         if($desId == null || $desId == ''){
             $desId = '-1';
         }
-        echo($desId);
+        // echo($desId);
 
         $description = $_POST['inputDescription'.strval($i)];
         $pgorder = strval($i);
@@ -33,6 +36,17 @@ if($_SERVER['REQUEST_METHOD'] == "POST" and isset($_POST["update_table"])){
         array_push($descriptions, $description);
         array_push($pageOdres,$pgorder);
 
+    }
+
+
+    // getting the image realted informartion dynamically 
+    for ( $i =1 ; $i < 3; $i++){
+        $imgPos = $_POST['positon_select'.$i];
+        $id = $_POST['imgid'.$i];
+        // echo("\n");
+        // echo($imgIds);
+        array_push($imgPositions, $imgPos);
+        array_push($imgIds,$id );
     }
 
     // echo(count($desIds));
@@ -49,11 +63,11 @@ if($_SERVER['REQUEST_METHOD'] == "POST" and isset($_POST["update_table"])){
     // echo($descriptionId1);
 
 
-    $target_dir = "../../assets/images/";
+    $target_dir = "../assets/images/";
     $target_file = $target_dir . basename($_FILES["inputImage"]["name"]);
 
 
-    echo($target_file);
+    // echo($target_file);
     $uploadOk = 1;
     $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
     // Check if image file is a actual image or fake image
@@ -69,7 +83,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST" and isset($_POST["update_table"])){
     }
     // Check if file already exists
     if (file_exists($target_file)) {
-        // echo "Sorry, file already exists.";
+        echo "Sorry, file already exists.";
         $uploadOk = 0;
     }
     // Check file size
@@ -147,14 +161,23 @@ if($_SERVER['REQUEST_METHOD'] == "POST" and isset($_POST["update_table"])){
 
     //adding new image to images table 
     if($uploadOk){
-        $file_url = substr($target_file,6);
-        echo($file_url.' '.$pageId);
-        $stmt= $conn->prepare("insert into  heroku_3dffaa1b8ca65ff.consultancies_images( status, caption, url, idConsultancies )
-        values ( 1,'',?, ?);");
+        $file_url = substr($target_file,3);
+        // echo($file_url.' '.$pageId);
+        $stmt= $conn->prepare("insert into  heroku_3dffaa1b8ca65ff.consultancies_images( status, caption, url, idConsultancies, position )
+        values ( 1,'',?, ?,'LU');");
         $stmt->bind_param("ss",$file_url,$pageId);
         $stmt->execute();
     }
+    // updating the image information 
+
+    for($i = 0 ; $i < count($imgIds); $i++ ){
+        $stmt = $conn->prepare("update heroku_3dffaa1b8ca65ff.consultancies_images set consultancies_images.position = ?
+         where consultancies_images.idconsultancies_images = ?;");
+        $stmt->bind_param("ss",$imgPositions[$i],$imgIds[$i]);
+        $stmt->execute();
+    }
 }
+
 
 
 
