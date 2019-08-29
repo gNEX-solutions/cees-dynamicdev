@@ -87,6 +87,18 @@
             <span>Update Events</span></a>
         </li>
 
+        <!-- Divider -->
+          <hr class="sidebar-divider">
+          <div class="sidebar-heading">
+            Team Member   
+          </div>
+          <!-- Nav Item - Pages Collapse Menu -->
+          <li class="nav-item">
+            <a class="nav-link" href="AboutUs.php">
+            <i class="fas fa-fw fa-chart-area"></i>
+            <span>Add New Member</span></a>
+          </li>
+    
           <!-- Divider -->
           <hr class="sidebar-divider d-none d-md-block">
           
@@ -115,7 +127,7 @@
 
     
           <!-- Divider
-          <!-- <hr class="sidebar-divider">
+           <hr class="sidebar-divider">
     
           <div class="sidebar-heading">
             Addons
