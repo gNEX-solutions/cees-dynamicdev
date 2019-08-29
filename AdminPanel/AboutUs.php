@@ -317,7 +317,7 @@
   <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
 
   <!-- Custom scripts for all pages-->
-  <script src="js/sb-admin-2.min.js"></script>
+    <script src="js/sb-admin-2.min.js"></script>
 
   <!-- croppie -->
     <script src="js/jquery.min.js"></script>  
@@ -326,3 +326,11 @@
 </body>
 
 </html>
+
+<?php   
+}
+    else
+    {
+        header("location:login.php");
+    }
+?>
