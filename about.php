@@ -50,14 +50,11 @@ $no_user ='';
   
 </head>
 <body>
-<section class="menu cid-ruNsw1yRec" once="menu" id="menu1-0">
-    <?php require_once 'common/Components/header.php'; ?>
+<section class="menu cid-ruNsw1yRec"  once="menu" id="menu1-0" style="width:100%; position:fixed; z-index:999;">
+        <?php require_once ('common/Components/header.php'); ?>
   </section>
 
-<section class="mbr-section content5 cid-ruXCVKDreY mbr-parallax-background" id="content5-1f">
-
-    
-
+<!-- <section class="mbr-section content5 cid-ruXCVKDreY mbr-parallax-background" id="content5-1f">
     <div class="mbr-overlay" style="opacity: 0.6; background-color: rgb(85, 180, 212);">
     </div>
 
@@ -72,12 +69,23 @@ $no_user ='';
             </div>
         </div>
     </div>
+</section> -->
+
+<section class="cid-ruXJBlWiZf2">
+  <div class="mbr-overlay" style="opacity: 0.6; background-color: rgb(85, 180, 212);" > 
+    </div>
+    <div class="container">
+        <div class="media-container-row">
+            <div class="title col-12 col-md-8">
+            <h2 style="font-size:40px;text-align:center;margin-top:30px"> About Us</h2>
+                   
+                <!-- <p class="align-center mbr-bold mbr-white pb-3 mbr-fonts-style display-4">Want to find out how CEES can solve problems specific to your business? Let's talk.</p>  -->
+            </div>
+        </div>
+    </div>
 </section>
 
 <section class="mbr-section article content1 cid-ruXHzFNbH4" id="content2-1i">
-
-     
-
     <div class="container">
         <div class="media-container-row">
             <div class="mbr-text col-12 col-md-8 mbr-fonts-style display-7">

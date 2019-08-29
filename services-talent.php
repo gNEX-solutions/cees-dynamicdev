@@ -26,23 +26,51 @@ include 'Model/consultService.php';
   <link rel="stylesheet" href="assets/theme/css/style.css">
   <link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css" type="text/css">
   <link rel="stylesheet" href="assets/services/style.css">
-
-
-
+  <link rel="stylesheet" href="assets/theme/css/preloader.css">
 </head>
 
 <body>
-  <section class="menu cid-ruNsw1yRec" once="menu" id="menu1-0">
-    <?php require_once 'common/Components/header.php'; ?>
+
+  <div id="preloader">
+    <div id="status">&nbsp;</div>
+  </div>
+
+  <section class="menu cid-ruNsw1yRec"  once="menu" id="menu1-0" style="width:100%; position:fixed; z-index:999;">
+        <?php require_once ('common/Components/header.php'); ?>
   </section>
 
-  <div class="carousel-inner">
+  <!-- <div class="carousel-inner">
     <img style="  height: 100%;background-position: center;background-repeat: no-repeat;background-size: cover;" src="assets\images\service talent.jpg" alt="" title="">
     <div class="carousel-caption">
       <h5>Consulting Services</h5>
       <p>Feel the Original taste of enterprise excellence tools and techniques</p>
     </div>
-  </div>
+  </div> -->
+
+
+  <section id="header2-1">
+    <div>
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active" >
+            <div class="parallax cid-ruNtyUeTOv2 mbr-fullscreen d-block w-100"  alt="Second slide"></div>
+              <div class="carousel-caption second">
+                  <h5><span class="part1">Consulting</span> 
+                      <br>
+                      <span class="part2">Services</span>
+                  </h5>
+                  <p>Unlocking Opportunities</p>
+              </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <div class="mbr-arrow hidden-sm-down" aria-hidden="true" >
+        <a href="#next">
+            <i class="mbri-down mbr-iconfont"></i>
+        </a>
+    </div>
+</section> 
 
   <section class="header1 cid-ruXI5S6ubv" id="header16-1l">
     <!--Griglia alternata testo e immagine, resposive con flexbox.-->
@@ -138,7 +166,7 @@ include 'Model/consultService.php';
   </div>
   </section>
 
-  <section class="mbr-section info2 cid-ruXIRFRxrA" id="info2-1n">
+  <!-- <section class="mbr-section info2 cid-ruXIRFRxrA" id="info2-1n">
     <div class="container">
       <div class="row main justify-content-center">
         <div class="media-container-column col-12 col-lg-3 col-md-4">
@@ -154,7 +182,7 @@ include 'Model/consultService.php';
         </div>
       </div>
     </div>
-  </section>
+  </section> -->
 
   <!-- <section>
     <div class="col 12">
@@ -209,7 +237,7 @@ include 'Model/consultService.php';
   <script src="assets/parallax/jarallax.min.js"></script>
   <script src="assets/smoothscroll/smooth-scroll.js"></script>
   <script src="assets/theme/js/script.js"></script>
-
+  <script src="assets/theme/js/preloader.js"></script>
   <script>
     $(function() { // $(document).ready shorthand
       $('.monster').fadeIn('slow');

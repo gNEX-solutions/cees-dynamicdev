@@ -21,7 +21,6 @@ include 'insights.php';
   <a href="https://www.freepik.com/free-photos-vectors/background">Background photo created by freepik - www.freepik.com</a>
   <a href="https://www.freepik.com/free-photos-vectors/business">Business photo created by rawpixel.com - www.freepik.com</a> -->
 
-
   <title>Home</title>
   <link rel="stylesheet" href="assets/web/assets/mobirise-icons/mobirise-icons.css">
   <link rel="stylesheet" href="assets/tether/tether.min.css">
@@ -40,7 +39,6 @@ include 'insights.php';
   <link href="https://fonts.googleapis.com/css?family=Montserrat:700&display=swap" rel="stylesheet">
 
   <script src="assets/web/assets/jquery/jquery.min.js"></script>
-
 
 </head>
 <body>
@@ -128,7 +126,7 @@ include 'insights.php';
                     </p>
                   <span class="vspacer"></span>
                   <p class="py-3 mbr-fonts-style">
-                    <a href="http://localhost:8080/cees-dynamicdev/Programs.php" target="_blank">READ MORE » </a>
+                    <a href="https://gnex-cees.herokuapp.com/Programs.php" target="_blank">READ MORE » </a>
                   </p>
                 </div>
             </div>
@@ -145,7 +143,7 @@ include 'insights.php';
                     </p>
                   <span class="vspacer"></span>
                   <p class="py-3 mbr-fonts-style">
-                    <a href="http://localhost:8080/cees-dynamicdev/services-talent.php" target="_blank">READ MORE » </a>
+                    <a href="https://gnex-cees.herokuapp.com/services-talent.php" target="_blank">READ MORE » </a>
                   </p>
                 </div>
             </div>
@@ -162,7 +160,7 @@ include 'insights.php';
                     </p>
                   <span class="vspacer"></span>
                   <p class="py-3 mbr-fonts-style">
-                    <a href="http://localhost:8080/cees-dynamicdev/services2.php" target="_blank">READ MORE » </a>
+                    <a href="https://gnex-cees.herokuapp.com/services2.php" target="_blank">READ MORE » </a>
                   </p>
                 </div>
             </div>
@@ -468,6 +466,8 @@ include 'insights.php';
   <script src="assets/smoothscroll/smooth-scroll.js"></script>
   <script src="assets/theme/js/script.js"></script>
   <script src="assets/full-image-viewer/image-viewer.js"></script>
+
+  <script src="assets/theme/js/preloader.js"></script>
   
   <link rel="stylesheet" href="https://cdn.rawgit.com/jedrzejchalubek/glidejs/8eabfbb9/dist/css/glide.core.min.css" >
   <link rel="stylesheet" href="https://cdn.rawgit.com/jedrzejchalubek/glidejs/8eabfbb9/dist/css/glide.theme.min.css" >
@@ -492,12 +492,6 @@ include 'insights.php';
   
   
   <script>
-            $(window).on('load', function() { // makes sure the whole site is loaded 
-            $('#status').fadeOut(); // will first fade out the loading animation 
-            $('#preloader').delay(350).fadeOut('slow'); // will fade out the white DIV that covers the website. 
-            $('body').delay(350).css({'overflow':'visible'});
-            })
-            
             window.addEventListener('load', function(){
             function coverflow(i, el) {
                 el.removeClass('pre following')
