@@ -191,6 +191,9 @@ background-repeat:no-repeat;
     background-position: right;
 }
 
+.image-adjust{
+    top:30px !important;
+}
 .aside-content{
     z-index: 3 !important;
     width:50% !important;
