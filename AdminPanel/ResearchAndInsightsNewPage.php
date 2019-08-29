@@ -48,7 +48,7 @@
 
           <!-- Page Heading -->
           <h1 class="h3 mb-4 text-gray-800">New CEES Academy Page</h1>
-          <form method="POST" action="AdminModel/create.php" enctype="multipart/form-data">
+<form method="POST" action="AdminModel/createNewResearch.php" enctype="multipart/form-data">
          
   <input type="hidden" name="inputType" value="Academy">
     <div class="form-group">
@@ -60,13 +60,32 @@
       <textarea class="form-control" name="inputSummary" placeholder="Summary" required></textarea>
     </div>
     <div class="form-group">
+      <label for="inputTitle">Published Date</label>
+      <input type="date" class="form-control" name="inputPublishedDate"  required>
+    </div>
+    <div class="form-group">
       <label for="inputDescription">Paragraph 1</label>
-      <textarea class="form-control" name="inputDescription1" placeholder="Paragraph" required></textarea>
+      <textarea class="form-control" name="inputDescription1" placeholder="Paragraph" ></textarea>
     </div>
 
     <div class="form-group">
       <label for="inputDescription">Paragraph 2</label>
-      <textarea class="form-control" name="inputDescription2" placeholder="Paragraph" required></textarea>
+      <textarea class="form-control" name="inputDescription2" placeholder="Paragraph" ></textarea>
+    </div>
+
+    <div class="form-group">
+      <label for="inputDescription">Paragraph 3</label>
+      <textarea class="form-control" name="inputDescription3" placeholder="Paragraph" ></textarea>
+    </div>
+
+    <div class="form-group">
+      <label for="inputDescription">Paragraph 4</label>
+      <textarea class="form-control" name="inputDescription4" placeholder="Paragraph" ></textarea>
+    </div>
+
+    <div class="form-group">
+      <label for="inputDescription">Paragraph 5</label>
+      <textarea class="form-control" name="inputDescription5" placeholder="Paragraph" ></textarea>
     </div>
   
   <div class="form-group">
