@@ -7,6 +7,7 @@ function removeImg(imgId){
       url: "./AdminModel/editPage.php",
       data: {img_remove: imgId, req:'imgRemove'},
       success: function(){
+        alert('image has been deleted succesfully');
         $(imageSection).css("display","none");
       },
       error: function(){
@@ -81,7 +82,7 @@ function removeImg(imgId){
   
                 
           }
-          if(document.getElementById('file').files[0].size > 5000000){
+          if(document.getElementById('uploadImage').files[0].size > 5000000){
             fileUpload = 0;
             alert('file is too large to upload, please upload a file with smaller size');
           }
