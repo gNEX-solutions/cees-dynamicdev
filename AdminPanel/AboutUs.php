@@ -236,6 +236,7 @@
             success: function () {
               alert('New Member Added');
               $("#member")[0].reset();
+              $("#image_uploaded")[0].reset();
             }
           });
 

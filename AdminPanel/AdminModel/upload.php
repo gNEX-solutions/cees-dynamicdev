@@ -23,7 +23,7 @@ if(isset($_POST["image"]))
 
 	$imgpath = "assets/images/members/".$imageName;
 
-	echo '<img src="../assets/images/members/'.$imageName.'" class="img-thumbnail" />';
+	echo '<img id="image_uploaded" src="../assets/images/members/'.$imageName.'" class="img-thumbnail" />';
 	echo '<input id="path" name="path" type="hidden" value="'.$imgpath.'">';
 	//echo $path;
 
