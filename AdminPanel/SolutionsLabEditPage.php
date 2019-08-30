@@ -18,7 +18,6 @@
   <!-- Custom fonts for this template-->
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script type="text/javascript" src="./js/acadamyEditPage.js"></script> 
-  
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -80,7 +79,7 @@ $conn=$newConnection->connect(); ?>
         </div>
         <div class="col-lg-1 col-md-2">
           <div class="input-group-append" style="padding-bottom: 1px;  width: 100%">
-            <button class="btn btn-outline-danger" type="button" onclick="deletePage()" method="post" name="delete"> Delete </button>
+            <button class="btn btn-outline-danger" type="button" onclick="deletePage()" name="delete"> Delete </button>
           </div>
         </div>
       </div>
@@ -189,8 +188,8 @@ $conn=$newConnection->connect(); ?>
       <div class="col-md-6">
       
         <input type="hidden" name="inputType" value="Academy">
-        <input type="hidden"  id="pageId" value=<?php echo($page_id); ?>>
-        <div class="form-group">
+        <input type="hidden" id="pageId" value=<?php echo($page_id); ?>>
+          <div class="form-group">
           <label for="inputTitle">Title</label>
           <input type="text" class="form-control" name="inputTitle" placeholder="Title" 
               required value=<?php 
@@ -303,7 +302,7 @@ $conn=$newConnection->connect(); ?>
               <div id=" .$row['idconsultancies_images'] . " name='img_container'>
                 <img src=
                 ../". $row['url']." alt='..' class='img-thumbnail' style=' max-height: 150px'>
-                <button type=\"submit\" onclick=\"removeImg(" .$row['idconsultancies_images'] .")\" name=\"img_remove\" class=\"btn btn-outline-danger\" value=".$row['idconsultancies_images']." > Remove </button>
+                <button type=\"button\"  onclick=\"removeImg(" .$row['idconsultancies_images'] .")\" name=\"img_remove\" class=\"btn btn-outline-danger\" value=".$row['idconsultancies_images']." > Remove </button>
                             
               ");
 

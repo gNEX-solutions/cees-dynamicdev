@@ -38,7 +38,7 @@ function removeImg(imgId){
 
 
     function submitChanges(){
-        // console.log("submit");
+        console.log("submit");
         var fileUpload = 1;
         var submitDb = 1;
         var pageId = document.getElementById("pageId").value;
