@@ -14,8 +14,11 @@
   <?php include './resources/footer.php'; ?>
   <!-- including the database connection  -->
   <?php include '../Model/dbh.inc.php'; ?>
-  <?php include 'AdminModel/editPage.php'; ?>
+  
   <!-- Custom fonts for this template-->
+  <!-- <script type="text/javascript" src="./lib/jquery-3.3.1.min.js"></script> -->
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script type="text/javascript" src="./js/acadamyEditPage.js"></script> 
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -77,7 +80,7 @@ $conn=$newConnection->connect(); ?>
         </div>
         <div class="col-lg-1 col-md-2">
           <div class="input-group-append" style="padding-bottom: 1px;  width: 100%">
-            <button class="btn btn-outline-danger" type="submit" method="post" name="delete"> Delete </button>
+            <button class="btn btn-outline-danger" type="button" onclick="deletePage()" name="delete"> Delete </button>
           </div>
         </div>
       </div>
@@ -142,41 +145,8 @@ $conn=$newConnection->connect(); ?>
     }
 
    
-    if($_SERVER['REQUEST_METHOD'] == "POST" and isset($_POST["delete"])){
-      $page_id = $_POST['page']; //  the id of the page 
-      // $title=$_POST['inputTitle'];
-      $stmt = $conn->prepare("update  heroku_3dffaa1b8ca65ff.consultancies 
-        set consultancies.status = 0 where consultancies.idconsultancies = ?;") ;
-      $stmt->bind_param("s",$page_id);
-      $stmt->execute();
-
-      echo(" <div class=\"alert alert-success\" role=\"alert\">
-        The page  has been deleted successfully. </div>"
-    );
-      // echo ("<h1> delete clicked </h1>");
-
-
-    }
- //  to be fired when the user clicks remove image icon 
-    if($_SERVER['REQUEST_METHOD'] == "POST" and isset($_POST["img_remove"])){
-      // echo("image remove");
-      // echo($_POST['img_remove']);
-      $stmt = $conn->prepare("update heroku_3dffaa1b8ca65ff.consultancies_images set consultancies_images.`status` = 0 
-      where consultancies_images.idconsultancies_images = ?;") ;
-      $stmt->bind_param("s",$_POST['img_remove']);
-      if($stmt->execute()){
-        echo(" <div class=\"alert alert-success\" role=\"alert\">
-        The image  has been deleted successfully. </div>"
-        );
-      }
-      else{
-        echo(" <div class=\"alert alert-danger\" role=\"alert\">
-        There was prolem in deletion of the image  </div>"
-        );
-      }
+    
       
-
-    }
   ?>
 
 
@@ -186,10 +156,10 @@ $conn=$newConnection->connect(); ?>
       <div class="col-md-6">
       
         <input type="hidden" name="inputType" value="Academy">
-        <input type="hidden" name="page" value=<?php echo($page_id); ?>>
+        <input type="hidden" id="pageId" value=<?php echo($page_id); ?>>
         <div class="form-group">
           <label for="inputTitle">Title</label>
-          <input type="text" class="form-control" name="inputTitle" placeholder="Title" 
+          <input type="text" class="form-control" id="inputTitle" placeholder="Title" 
               required value=<?php 
                 if($resultCons != null){
                   echo($rowCons['heading']); 
@@ -199,7 +169,7 @@ $conn=$newConnection->connect(); ?>
         </div>
         <div class="form-group">
           <label for="inputSummary">Summary</label>
-          <textarea class="form-control" name="inputSummary" placeholder="Summary" required >
+          <textarea class="form-control" id="inputSummary" placeholder="Summary" required >
           <?php 
               if($resultCons != null){
                  echo($rowCons['summary']);
@@ -215,7 +185,7 @@ $conn=$newConnection->connect(); ?>
 
         <div class="form-group">
           <label for="inputDescription">Paragraph 1</label>
-          <input type="hidden" name="desId1" value=
+          <input type="hidden" name="desId" value=
           <?php 
             if($resultPara != null && count($paraRows)>0){
               $row = $paraRows[0];
@@ -226,7 +196,7 @@ $conn=$newConnection->connect(); ?>
             }
           
           ?>>
-          <textarea class="form-control" name="inputDescription1" placeholder="Paragraph" >
+          <textarea class="form-control" name="inputDescription" placeholder="Paragraph" >
              <?php
               if($resultPara != null && count($paraRows)>0){
                 $row = $paraRows[0];
@@ -238,7 +208,7 @@ $conn=$newConnection->connect(); ?>
 
         <div class="form-group">
           <label for="inputDescription">Paragraph 2</label>
-          <input type="hidden" name="desId2" value=
+          <input type="hidden" name="desId" value=
           <?php 
             if($resultPara != null && count($paraRows)>1){
               $row = $paraRows[1];
@@ -249,7 +219,7 @@ $conn=$newConnection->connect(); ?>
             }
           
           ?>>
-          <textarea class="form-control" name="inputDescription2" placeholder="Paragraph">
+          <textarea class="form-control" name="inputDescription" placeholder="Paragraph">
           <?php 
              
              if($resultPara != null && count($paraRows)>1){
@@ -262,7 +232,7 @@ $conn=$newConnection->connect(); ?>
         </div>
         <div class="form-group">
           <label for="inputDescription">Paragraph 3</label>
-          <input type="hidden" name="desId3" value=
+          <input type="hidden" name="desId" value=
           <?php 
             if($resultPara != null && count($paraRows)>2){
               $row = $paraRows[2];
@@ -273,7 +243,7 @@ $conn=$newConnection->connect(); ?>
             }
           
           ?>>
-          <textarea class="form-control" name="inputDescription3" placeholder="Paragraph" >
+          <textarea class="form-control" name="inputDescription" placeholder="Paragraph" >
           <?php 
              
              if($resultPara != null && count($paraRows)>2){
@@ -293,20 +263,21 @@ $conn=$newConnection->connect(); ?>
         <!-- <div class=""> -->
         <?php 
           if($resultImage != null){
-            $imgCount = 0;
+            // $imgCount = 0;
             while($row = $resultImage->fetch_assoc() ){
-              $imgCount++ ;
+              // $imgCount++ ;
               echo("
-              <input type=\"hidden\" name=\"imgid" .$imgCount . "\" value=" . $row['idconsultancies_images']. ">
+              <div id=" .$row['idconsultancies_images'] . " name='img_container'>
+              
                 <img src=
-                ../". $row['url']." alt='..' class='img-thumbnail' style=' max-height: 150px'>
-                <button type=\"submit\" name=\"img_remove\" class=\"btn btn-outline-danger\" value=".$row['idconsultancies_images']." > Remove </button>
+                ../". $row['url']." alt='..' class='img-thumbnail' style=' max-height: 150px' >
+                <button type=\"button\" onclick=\"removeImg(" .$row['idconsultancies_images'] .")\"  name=\"img_remove\" class=\"btn btn-outline-danger\" value=".$row['idconsultancies_images']." > Remove </button>
                             
               ");
 
               echo("
               <p> Image position </p>
-              <select class=\"custom-select\" id=\"inputGroupSelect01\" name = \"positon_select" . $imgCount . "\">
+              <select class=\"custom-select\" id=\"inputGroupSelect01\" name ='img_pos'>
               
               
               ");
@@ -321,7 +292,10 @@ $conn=$newConnection->connect(); ?>
                 }
               }
 
-              echo("</select>");
+              echo("</select>
+              </div>
+              
+              ");
 
             }
           }
@@ -330,18 +304,18 @@ $conn=$newConnection->connect(); ?>
         <!-- <p> Add Images </p>  -->
       <div >
           <label for="inputImage" >Add Image</label><br>
-          <input type="file"  accept="image/*" name="inputImage" >
+          <input type="file"  accept="image/*" id="uploadImage" >
         </div> 
       </div> 
         
     </div>
     <div>
-        <button type="submit" method="post" name="update_table" class="btn btn-success">Save Changes</button>
+        <button type="button" onclick="submitChanges()" name="update_table" class="btn btn-success">Save Changes</button>
     </div>
     
   </form>
     
-    
+  
     
     
     
