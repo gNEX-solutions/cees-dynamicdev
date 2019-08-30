@@ -53,6 +53,7 @@ $type=$_POST['inputType'];
 
 $target_dir = "../../assets/images/";
 $target_file = $target_dir . basename($_FILES["inputImage"]["name"]);
+$target_file_relative_path = "assets/images/" . basename($_FILES["inputImage"]["name"]);
 $uploadOk = 1;
 $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
 // Check if image file is a actual image or fake image
@@ -123,7 +124,7 @@ if(!$stmt3->execute()){
 }
 $stmt4= $conn->prepare("INSERT INTO consultancies_images(status,url,idConsultancies) VALUES (?,?,?)");
 $statusNum=1;
-$stmt4->bind_param("isi",$statusNum,$target_file,$id);
+$stmt4->bind_param("isi",$statusNum,$target_file_relative_path,$id);
 if(!$stmt4->execute()){
     $success=0;
 }
@@ -167,7 +168,7 @@ if(!$stmt7->execute()){
 }
 $stmt8= $conn->prepare("INSERT INTO consultancies_images(status,url,idConsultancies) VALUES (?,?,?)");
 $statusNum=1;
-$stmt8->bind_param("isi",$statusNum,$target_file,$id);
+$stmt8->bind_param("isi",$statusNum,$target_file_relative_path,$id);
 
 if(!$stmt8->execute()){
     $success=0;
@@ -212,7 +213,7 @@ if(!$stmt11->execute()){
 }
 $stmt12= $conn->prepare("INSERT INTO consultancies_images(status,url,idConsultancies) VALUES (?,?,?)");
 $statusNum=1;
-$stmt12->bind_param("isi",$statusNum,$target_file,$id);
+$stmt12->bind_param("isi",$statusNum,$target_file_relative_path,$id);
 
 if(!$stmt12->execute()){
     $success=0;
