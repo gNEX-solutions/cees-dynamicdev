@@ -9,19 +9,19 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Academy Edit Page</title>
-  <?php include '../resources/nav.php'; ?>
-  <?php include '../resources/footer.php'; ?>
+  <title>Reserch and Insights Modify Page</title>
+  <?php include './resources/nav.php'; ?>
+  <?php include './resources/footer.php'; ?>
   <!-- including the database connection  -->
-  <?php include '../../Model/dbh.inc.php'; ?>
-  <?php include '../AdminModel/editPage.php'; ?>
+  <?php include '../Model/dbh.inc.php'; ?>
+  <?php include 'AdminModel/editPage.php'; ?>
   <!-- Custom fonts for this template-->
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
   <!-- Custom styles for this template-->
-  <link href="../css/sb-admin-2.min.css" rel="stylesheet">
+  <link href="./css/sb-admin-2.min.css" rel="stylesheet">
 
 </head>
 
@@ -41,25 +41,34 @@ $conn=$newConnection->connect(); ?>
 
   <!-- Main Content -->
   <div id="content">
+  <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
 
+<!-- Sidebar Toggle (Topbar) -->
+  <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+    <i class="fa fa-bars"></i>
+  </button>
+
+
+<!-- Page Heading -->
+  <h1 class="h3 mb-4 text-gray-800">Modify CEES Reserch and Insights Pages</h1>
+  </nav>
     
 
   <!-- Begin Page Content -->
   <div class="container-fluid">
 
   <!-- Page Heading -->
-  <h1 class="h3 mb-4 text-gray-800">Edit CEES Academy Pages</h1>
 
   <!-- select the relavant page  -->
-  <form action="./AcademyEditPage.php" method="post">
+  <form action="./ReserchAndInsights.php" method="post">
     <div class="form-group">
       <div class="row">
-        <div class="col-lg-10 col-md-6" style="padding-bottom: 1px">
+        <div class="col-lg-9 col-md-6" style="padding-bottom: 1px">
           <select class="custom-select" id="inputGroupSelect04" name="page">
             <!-- <option selected>Select page...</option> -->
             <?php 
-              $result = $conn->query("SELECT consultancies.idconsultancies as id , consultancies.heading  as heading
-              FROM heroku_3dffaa1b8ca65ff.consultancies where consultancies.type = 'CA' and consultancies.status = '1';");
+              $result = $conn->query("SELECT `researches`.`idresearches` as id ,`researches`.`heading` as heading 
+              FROM `heroku_3dffaa1b8ca65ff`.`researches` where researches.`status` = 1 ;");
               while($row = $result->fetch_assoc()){
                 // echo($row[1]);
                
@@ -80,6 +89,11 @@ $conn=$newConnection->connect(); ?>
             <button class="btn btn-outline-danger" type="submit" method="post" name="delete"> Delete </button>
           </div>
         </div>
+        <div class="col-lg-1 col-md-2">
+          <div class="input-group-append" style="padding-bottom: 1px;  width: 100%">
+            <button class="btn btn-outline-success" type="submit" method="post" name="add_new"> Add New</button>
+          </div>
+        </div>
       </div>
       
       
@@ -94,6 +108,8 @@ $conn=$newConnection->connect(); ?>
     $resultPara = null;
     $resultImage = null;
     $paraRows = null;
+    const IMAGE_POSITIONS_CODES = array('RU','RD','CU','CD','LU','LD');
+    const IMAGE_POSITIONS = array('Right Up', 'Right Down', 'Center Up', 'Center Down', 'Left Up', 'Left Down');
     if($_SERVER['REQUEST_METHOD'] == "POST" and isset($_POST["edit"])){
     
       
@@ -105,12 +121,12 @@ $conn=$newConnection->connect(); ?>
       $connPara=$newConnection->connect(); 
       $connImage=$newConnection->connect();
 
-      $stmntCons = $conn->prepare("select * from heroku_3dffaa1b8ca65ff.consultancies
-           where consultancies.idconsultancies = ? and consultancies.status = '1';") ;
-      $stmntPara = $connPara->prepare("SELECT * FROM heroku_3dffaa1b8ca65ff.consultaies_descriptions 
-          where consultaies_descriptions.idconsultancies = ?;");
-      $stmntImage = $connImage->prepare("SELECT * FROM heroku_3dffaa1b8ca65ff.consultancies_images 
-      where consultancies_images.idConsultancies = ? and consultancies_images.status = 1;");
+      $stmntCons = $conn->prepare("SELECT * FROM `researches` 
+      where researches.idresearches = ?  and researches.`status` = 1 ;") ;
+      $stmntPara = $connPara->prepare("SELECT * FROM researches_descriptions 
+      where researches_descriptions.idresearches = ?;");
+      $stmntImage = $connImage->prepare("SELECT * FROM researches_images 
+      where researches_images.idresearches = ? and researches_images.status = 1;");
 
 
       $stmntCons->bind_param("s", $page_id);
@@ -139,11 +155,12 @@ $conn=$newConnection->connect(); ?>
 
     }
 
+   
     if($_SERVER['REQUEST_METHOD'] == "POST" and isset($_POST["delete"])){
       $page_id = $_POST['page']; //  the id of the page 
       // $title=$_POST['inputTitle'];
-      $stmt = $conn->prepare("update  heroku_3dffaa1b8ca65ff.consultancies 
-        set consultancies.status = 0 where consultancies.idconsultancies = ?;") ;
+      $stmt = $conn->prepare("UPDATE `researches`
+      SET `status` = 0 WHERE `idresearches` = ?;") ;
       $stmt->bind_param("s",$page_id);
       $stmt->execute();
 
@@ -152,17 +169,38 @@ $conn=$newConnection->connect(); ?>
     );
       // echo ("<h1> delete clicked </h1>");
 
+
+    }
+ //  to be fired when the user clicks remove image icon 
+    if($_SERVER['REQUEST_METHOD'] == "POST" and isset($_POST["img_remove"])){
+      // echo("image remove");
+      // echo($_POST['img_remove']);
+      $stmt = $conn->prepare("UPDATE `heroku_3dffaa1b8ca65ff`.`researches_images` SET `status` = 0 WHERE 
+      `idresearches_images` = ?;") ;
+      $stmt->bind_param("s",$_POST['img_remove']);
+      if($stmt->execute()){
+        echo(" <div class=\"alert alert-success\" role=\"alert\">
+        The image  has been deleted successfully. </div>"
+        );
+      }
+      else{
+        echo(" <div class=\"alert alert-danger\" role=\"alert\">
+        There was prolem in deletion of the image  </div>"
+        );
+      }
+      
+
     }
   ?>
 
 
   <!-- edit the page content  -->
-  <form method="POST" action="./AcademyEditPage.php" enctype="multipart/form-data">
+  <form method="POST" action="./ReserchAndInsights.php" enctype="multipart/form-data">
     <div class="row">
       <div class="col-md-6">
       
         <input type="hidden" name="inputType" value="Academy">
-        <input type="hidden" name="inputId" value=<?php echo($page_id); ?>>
+        <input type="hidden" name="page" value=<?php echo($page_id); ?>>
         <div class="form-group">
           <label for="inputTitle">Title</label>
           <input type="text" class="form-control" name="inputTitle" placeholder="Title" 
@@ -186,6 +224,19 @@ $conn=$newConnection->connect(); ?>
           </textarea>
         </div>
 
+        <div class="form-group">
+          <label for="publishedDate">Published Date</label>
+          <input type="date" class="form-control" name="published_date" placeholder="published_date" required value=
+          <?php 
+              if($resultCons != null){
+                 echo($rowCons['published_date']);
+              }
+              
+          ?>
+          >
+          <!-- </textarea> -->
+        </div>
+
         
 
 
@@ -195,7 +246,7 @@ $conn=$newConnection->connect(); ?>
           <?php 
             if($resultPara != null && count($paraRows)>0){
               $row = $paraRows[0];
-              echo($row['idconsultaies_descriptions']);
+              echo($row['idresearches_descriptions']);
             } 
             else {
               echo('-1');
@@ -218,7 +269,7 @@ $conn=$newConnection->connect(); ?>
           <?php 
             if($resultPara != null && count($paraRows)>1){
               $row = $paraRows[1];
-              echo($row['idconsultaies_descriptions']);
+              echo($row['idresearches_descriptions']);
             } 
             else {
               echo('-1');
@@ -242,7 +293,7 @@ $conn=$newConnection->connect(); ?>
           <?php 
             if($resultPara != null && count($paraRows)>2){
               $row = $paraRows[2];
-              echo($row['idconsultaies_descriptions']);
+              echo($row['idresearches_descriptions']);
             } 
             else {
               echo('-1');
@@ -261,6 +312,56 @@ $conn=$newConnection->connect(); ?>
           </textarea>
         </div>
 
+        <div class="form-group">
+          <label for="inputDescription">Paragraph 4</label>
+          <input type="hidden" name="desId4" value=
+          <?php 
+            if($resultPara != null && count($paraRows)>3){
+              $row = $paraRows[3];
+              echo($row['idresearches_descriptions']);
+            } 
+            else {
+              echo('-1');
+            }
+          
+          ?>>
+          <textarea class="form-control" name="inputDescription4" placeholder="Paragraph" >
+          <?php 
+             
+             if($resultPara != null && count($paraRows)>3){
+              $row = $paraRows[3];
+              echo($row['description']); 
+             }
+             ?>
+            
+          </textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="inputDescription">Paragraph 5</label>
+          <input type="hidden" name="desId5" value=
+          <?php 
+            if($resultPara != null && count($paraRows)>4){
+              $row = $paraRows[4];
+              echo($row['idresearches_descriptions']);
+            } 
+            else {
+              echo('-1');
+            }
+          
+          ?>>
+          <textarea class="form-control" name="inputDescription5" placeholder="Paragraph" >
+          <?php 
+             
+             if($resultPara != null && count($paraRows)>4){
+              $row = $paraRows[4];
+              echo($row['description']); 
+             }
+             ?>
+            
+          </textarea>
+        </div>
+
         
       </div>
       <div class="col-md-6">
@@ -269,14 +370,36 @@ $conn=$newConnection->connect(); ?>
         <!-- <div class=""> -->
         <?php 
           if($resultImage != null){
+            $imgCount = 0;
             while($row = $resultImage->fetch_assoc() ){
-              
+              $imgCount++ ;
               echo("
-              <input type=\"hidden\" name=\"inputId\" value=" . $row['idconsultancies_images']. ">
-                <img src=../../". $row['url']." alt='..' class='img-thumbnail' style=' max-height: 150px'>
-                <button type=\"submit\" name=\"img_remove\" class=\"btn btn-outline-danger\" > Remove </button>
+              <input type=\"hidden\" name=\"imgid" .$imgCount . "\" value=" . $row['idresearches_images']. ">
+                <img src=
+                ../". $row['url']." alt='..' class='img-thumbnail' style=' max-height: 150px'>
+                <button type=\"submit\" name=\"img_remove\" class=\"btn btn-outline-danger\" value=".$row['idresearches_images']." > Remove </button>
+                            
+              ");
+
+              echo("
+              <p> Image position </p>
+              <select class=\"custom-select\" id=\"inputGroupSelect01\" name = \"positon_select" . $imgCount . "\">
+              
               
               ");
+
+              for($i =0 ; $i < count(IMAGE_POSITIONS_CODES); $i++){
+                // echo(_IMAGE_POSITIONS_CODES[$i]);
+                if($row['position'] == IMAGE_POSITIONS_CODES[$i] ){
+                  echo(" <option value="  . IMAGE_POSITIONS_CODES[$i] ." selected>". IMAGE_POSITIONS[$i] . "</option>" );
+                }
+                else {
+                  echo(" <option value="  . IMAGE_POSITIONS_CODES[$i] .">". IMAGE_POSITIONS[$i] . "</option>" );
+                }
+              }
+
+              echo("</select>");
+
             }
           }
            
@@ -290,7 +413,7 @@ $conn=$newConnection->connect(); ?>
         
     </div>
     <div>
-        <button type="submit" method="post" name="update_table" class="btn btn-success">Save Changes</button>
+        <button type="submit" method="post" name="update_table_reserch" class="btn btn-success">Save Changes</button>
     </div>
     
   </form>

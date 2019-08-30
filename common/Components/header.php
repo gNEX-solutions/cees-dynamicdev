@@ -28,13 +28,13 @@ include 'Model/viewservices.inc.php';
 
             <!-- Main Nav -->
             <div id="logo" style="display:none;">
-                <img src="assets/images/wef2.png" alt="cees-logo" style="width:auto;height:50px;margin-left:10%;">
+                <a href="./index.php"> <img src="assets/images/wef2.png" alt="cees-logo" style="width:auto;height:50px;margin-left:10%;"></a>
              </div>
 
 			<div id="nav-bottom">
                 <div class = "row" >
                     <div class="col-md-2" style="margin:auto" id="logo-desktop">
-                        <img src="assets/images/wef2.png" alt="cees-logo" style="width:auto;height:50px;margin-left:30%;">
+                    <a href="./index.php"> <img src="assets/images/wef3.png" alt="cees-logo" style="width:auto;height:50px;margin-left:30%;"></a>
                     </div>
                 
                     <div class="col-md-10"  style="padding-top:7px;padding-bottom:7px;padding-right:5%;" >

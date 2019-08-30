@@ -1171,17 +1171,6 @@ a.img{
   }
 }
 
-@media only screen and (min-width: 40.063em) {
-  button, .button {
-    display: inline-block;
-  }
-  .footer-logo{
-    width:50px !important;
-    height:50px !important;
-    margin-top:5% !important;
-  }
-  
-}
 
 /* Contact Form */
 
@@ -1282,8 +1271,19 @@ a.img{
   margin: 15px 0;
 }
 
+@media only screen and (min-width: 40.063em) {
+  button, .button {
+    display: inline-block;
+  }
+  .footer-logo{
+    width:50px !important;
+    height:50px !important;
+    padding: 30px;
+  }
+  
+}
 .footer-logo{
-  width:auto !important;
-  height:120px !important;
-  margin-top:5% !important;
+  width: 100%!important;
+  height: auto !important;
+  padding: 30px;
 }

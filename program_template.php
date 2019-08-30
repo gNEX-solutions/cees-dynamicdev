@@ -38,7 +38,7 @@
   <div id="status">&nbsp;</div>
 </div>
 
-<section class="menu cid-ruNsw1yRec" once="menu" id="menu1-0">
+<section class="menu cid-ruNsw1yRec" once="menu" id="menu1-0" style="width:100%; position:fixed; z-index:999;">
     <?php require_once 'common/Components/header.php'; ?>
 </section>
 <?php
@@ -49,24 +49,41 @@ $datas=$services->ShowCA_CONTENT($compname);
 $images=$services->showCA_IMAGES($compname);
 ?>
 <section class="features1 cid-ruNBDZ0eEF" >
-<h1 class="mbr-title pt-2 mbr-fonts-style display-2" style="text-align:center;"><?php echo $heading?></h1>
+<h1 class="display-3 font-weight-bolder" style="text-align:center;padding-top: 100px;    letter-spacing: -.025em;
+    font-family: LabGrotesque,helvetica,sans-serif;
+    font-weight: 900;
+    text-transform: none;"><?php echo $heading?></h1>
 </section>
 
-<section class="features11 cid-ruXpPiazmW" id="features11-19">
+<section class="features11 cid-ruXpPiazmW" id="features11-19" style="margin-top:100px;">
     <div class="container">   
         <div class="col-md-12">
             <div class="media-container-row">
                  <div class="col-md-6" style="overflow:hidden">
-                     <img src="<?php echo $images[0]['url']?>">
+                     <img src="<?php echo $images[0]['url']?>" class="img-fluid">
                  </div>
                  <div class="col-md-6" >
-                    <p class="mbr-text mbr-fonts-style display-7"><?php echo $datas[0]['description'] ?>'</p>
+                    <p style="    font-size: 18px;
+    line-height: 1.67em;
+    letter-spacing: .006em;
+    font-family: BreveText,helvetica,sans-serif;
+    font-weight: 400;
+    text-transform: none;
+    padding: 0;
+    color: #1a1a1a;"><?php echo $datas[0]['description'] ?>'</p>
                  </div>
             </div>
 
             <div class="media-container-row" style="margin-top:40px">
                 <div class="col-md-12" >
-                    <p class="mbr-text mbr-fonts-style display-7"><?php echo $datas[1]['description'] ?>'</p>
+                    <p style="    font-size: 18px;
+    line-height: 1.67em;
+    letter-spacing: .006em;
+    font-family: BreveText,helvetica,sans-serif;
+    font-weight: 400;
+    text-transform: none;
+    padding: 0;
+    color: #1a1a1a;" ><?php echo $datas[1]['description'] ?>'</p>
                 </div>
             </div>
 

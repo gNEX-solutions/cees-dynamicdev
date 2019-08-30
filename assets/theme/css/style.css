@@ -342,6 +342,7 @@ nav .mbr-section-btn {
 /*! Arrow Down */
 .mbr-arrow {
   position: absolute;
+  z-index:99;
   bottom: 45px;
   left: 50%;
   width: 60px;

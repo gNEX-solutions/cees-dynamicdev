@@ -1,3 +1,9 @@
+<?php
+    session_start();
+
+    if(isset($_SESSION['User']))
+    {
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -34,14 +40,23 @@
 
       <!-- Main Content -->
       <div id="content">
+<nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
 
+<!-- Sidebar Toggle (Topbar) -->
+  <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+    <i class="fa fa-bars"></i>
+  </button>
+
+
+<!-- Page Heading -->
+  <h1 class="h3 mb-4 text-gray-800">New Consultancy Page</h1>
+  </nav>
       
 
         <!-- Begin Page Content -->
         <div class="container-fluid">
 
           <!-- Page Heading -->
-          <h1 class="h3 mb-4 text-gray-800">New Consultancy Page</h1>
           <form action="AdminModel/create.php" method="POST" enctype="multipart/form-data">
           <input type="hidden" name="inputType" value="Consultancy">
     <div class="form-group">
@@ -122,3 +137,11 @@
 </body>
 
 </html>
+<?php   
+}
+    else
+    {
+        header("location:login.php");
+    }
+?>
+
