@@ -43,7 +43,7 @@ $no_user ='';
   <link rel="stylesheet" href="assets/theme/css/style.css">
   <link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css" type="text/css">
   <link rel="stylesheet" href="assets/theme/css/preloader.css">
-  
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:700&display=swap" rel="stylesheet">
 
 
   <meta name="generator" content="Mobirise v4.10.7, mobirise.com">

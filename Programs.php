@@ -21,6 +21,7 @@
   <link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css" type="text/css">
   <link rel="stylesheet" href="assets/services/style.css">
   <link rel="stylesheet" href="assets/theme/css/preloader.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:700&display=swap" rel="stylesheet">
 
 </head>
 <body>
