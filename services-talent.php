@@ -127,8 +127,9 @@ include 'Model/consultService.php';
       </div> -->
 
       <?php
-      // $consultInfo = new consultService();
-      // $consultInfo->ShowConsult_List();
+      
+      $consultInfo = new consultService();
+      $consultInfo->ShowConsult_List();
       ?>
 
     </div>
