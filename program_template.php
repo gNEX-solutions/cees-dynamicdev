@@ -70,48 +70,7 @@ $images=$services->showCA_IMAGES($compname);
                 </div>
             </div>
 
-            <div class="media-container-row">
-                <div>
-                <table>
-                    <tr>
-                        <th>Program code: &nbsp </th>
-                        <td>Maria Anders</td>
-                    </tr>
-                    <tr>
-                        <th>Program Name:&nbsp</th>
-                        <td>Francisco Chang</td>
-                    </tr>
-                    <tr>
-                        <th>Venue:&nbsp</th>
-                        <td>Francisco Chang</td>
-                    </tr>
-                    <tr>
-                        <th>time:&nbsp</th>
-                        <td>4.00PM-6.00PM</td>
-                    </tr>
-                    <tr>
-                        <th>Content:&nbsp</th>
-                        <td>Lorem Ipsum is simply dummy text</td>
-                    </tr>
-                    <tr>
-                        <th></th>
-                        <td>Lorem Ipsum is simply dummy text</td>
-                    </tr>
-                    <tr>
-                        <th></th>
-                        <td>Lorem Ipsum is simply dummy text</td>
-                    </tr>
-                    <tr>
-                        <th></th>
-                        <td>Lorem Ipsum is simply dummy text</td>
-                    </tr>
-                    <tr>
-                        <th></th>
-                        <td>Lorem Ipsum is simply dummy text</td>
-                    </tr>
-                    </table>
-                </div>
-            </div>
+          
         </div>
     </div>
 </section>
