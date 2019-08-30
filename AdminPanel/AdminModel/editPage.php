@@ -445,6 +445,80 @@ if( $_POST["req"] == "delete_page_research"){
      
 }
 
+if($_POST["req"]== "create_table_reserch"){
+    $succesfulUpdate ;
+    $id ;
+    $descriptions = array();
+    $descriptions = $_POST['paragraphs'];
+    $update_reserch_table = 1; 
+    $title=$_POST['title'];
+    $summary=$_POST['summary'];
+    $publishedDate = $_POST['publishedDate'];
+
+    $target_dir = "../assets/images/";
+    $target_file = $target_dir .$_POST['fileloc'] ;
+    $fileUpload = $_POST['fileupload'] ;
+
+    // creating the new db connection
+    $newConnection= new dbh;
+    $conn=$newConnection->connect();
+
+    // insert into the  the reserches  table 
+   
+    $stmt= $conn->prepare("INSERT INTO `researches`
+    (`heading`, `status`, `summary`,`published_date`) 
+    VALUES ( ?, 1, ?, ?);");
+    $stmt->bind_param("sss",$title,$summary,$publishedDate);
+    if(!$stmt->execute()){
+        $succesfulUpdate = 0;
+    };
+    $id=$stmt->insert_id;
+    echo($id);
+
+    $insertSql = "INSERT INTO `researches_descriptions`
+    (`description`, `idresearches`, `description_order`) VALUES ( ?, ?, ?);";
+    // update the paragraphs 
+    for($i = 0; $i < count($descriptions);$i++){
+        
+               
+        if($descriptions[$i] != null || $descriptions[$i] != ""){
+            $pageOrder = $i+1 ;
+            $stmt= $conn->prepare($insertSql);
+                $stmt->bind_param("sss",$descriptions[$i],$id,$pageOrder);
+            
+            if(!$stmt->execute()){
+                $succesfulUpdate = 0;
+            }
+            
+        }
+    
+                
+           
+    }
+
+    // adding new image 
+    if($fileUpload == '1'){
+        $file_url = substr($target_file,3);
+        // echo($file_url.' '.$pageId);
+        $stmt= $conn->prepare("INSERT INTO `researches_images` ( `status`, `caption`, `url`, `idresearches`, `position`)
+        VALUES ( 1, '', ?,?,'LU');");
+        $stmt->bind_param("ss",$file_url,$id);
+
+        if(!$stmt->execute()){
+            $succesfulUpdate = 0;
+        }
+        
+    }
+
+    if($succesfulUpdate){
+        $response_array['status'] = 'success';
+    }
+    else {
+        $response_array['status'] = 'error';
+    }
+
+}
+
 ?>
 
 

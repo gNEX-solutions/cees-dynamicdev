@@ -372,6 +372,31 @@ function createResearch(){
     }
   });
   }
+  if(submitDb){
+    $.ajax({
+      type:'POST', 
+      url: "./AdminModel/editPage.php",
+      // ProceData: false,
+      data: {
+          title: title,
+          summary:summary,
+          publishedDate: publishedDate,
+          req:'create_table_reserch',
+          paragraphs: paragraphs,
+          fileloc: fileLocation,
+          fileupload:fileUpload
+      
+      },
+      success: function(){
+          alert('page has been created succesfully');
+          location.reload();
+      //   $(imageSection).css("display","none");
+      },
+      error: function(){
+        alert('page creation failed');
+      }
+    });
+  }
 
   
 }
