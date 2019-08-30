@@ -29,6 +29,8 @@ $mail->SetFrom(SERDER_EMAIL, SENDER_NAME);
 $mail->AddReplyTo(SERDER_EMAIL, SENDER_NAME);
 $mail->ReturnPath=SERDER_EMAIL;	
 $mail->AddAddress($user["email"]);
+$mail->addBcc("dumindu@gnexsolutions.com");
+$mail->addBcc("akalanka@gnexsolutions.com");
 $mail->Subject = "Forgot Password Recovery";		
 $mail->MsgHTML($emailBody);
 $mail->IsHTML(true);

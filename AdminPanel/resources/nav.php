@@ -25,7 +25,7 @@
           <!-- Divider -->
           <hr class="sidebar-divider">
           <div class="sidebar-heading">
-            New Pages   
+            Pages   
           </div>
               <li class="nav-item">
                   <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseNewPages" aria-expanded="true" aria-controls="collapseNewPages">
@@ -42,13 +42,7 @@
                     </div>
                   </div>
                 </li>
-    
-          <hr class="sidebar-divider">
-          
-          <!-- Divider -->
-          <div class="sidebar-heading">
-            Current Pages
-          </div>
+                
               <li class="nav-item">
                   <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseCurrentPages" aria-expanded="true" aria-controls="collapseCurrentPages">
                     <i class="fas fa-fw fa-folder"></i>

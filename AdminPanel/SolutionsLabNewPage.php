@@ -41,13 +41,22 @@
       <!-- Main Content -->
       <div id="content">
 
-      
+      <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+
+<!-- Sidebar Toggle (Topbar) -->
+  <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+    <i class="fa fa-bars"></i>
+  </button>
+
+
+<!-- Page Heading -->
+  <h1 class="h3 mb-4 text-gray-800">New Solutions Lab Page</h1>
+  </nav>
 
         <!-- Begin Page Content -->
         <div class="container-fluid">
 
           <!-- Page Heading -->
-          <h1 class="h3 mb-4 text-gray-800">New Solutions Lab Page</h1>
           <form action="AdminModel/create.php" method="POST" enctype="multipart/form-data">
           <input type="hidden" name="inputType" value="Solutions">
     <div class="form-group">
