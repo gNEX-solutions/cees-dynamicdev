@@ -143,7 +143,7 @@ $no_user ='';
         <h2 class="pb-3 mbr-fonts-style mbr-section-title display-2">
             OUR AWESOME TEAM
         </h2>
-        <h3 class="pb-5 mbr-section-subtitle mbr-fonts-style mbr-light display-5">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sed velit dignissim sodales ut eu sem integer vitae justo.</h3>
+        <h3 class="pb-5 mbr-section-subtitle mbr-fonts-style mbr-light display-5">Alone we can do so little, together we can do so much.</h3>
         <div class="row media-row">
 
         <?php
