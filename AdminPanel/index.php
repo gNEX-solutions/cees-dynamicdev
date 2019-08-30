@@ -46,7 +46,7 @@
 
           <!-- Page Heading -->
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">Welcome <?php echo $_SESSION['User'];?>!</h1>
+          <br><h1 class="h3 mb-0 text-gray-800">Welcome <?php echo $_SESSION['User'];?>!</h1>
           </div>
           <div style="margin-top: 20%;margin-left: 20%;margin-right: -20%;">
             <img src="../assets/images/wef2.png" alt="" title="" style="width:50%;"> 
