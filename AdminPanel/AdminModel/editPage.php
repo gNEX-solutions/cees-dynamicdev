@@ -18,6 +18,7 @@ if($_POST["req"] == 'update_table'){
 
     $target_dir = "../../assets/images/";
     $target_file = $target_dir .$_POST['fileloc'] ;
+    $fileUpload = $_POST['fileupload'] ;
 
 
     $desIds = array();
@@ -170,7 +171,7 @@ if($_POST["req"] == 'update_table'){
     // echo($descriptionId1);
    //adding new image to images table 
 //    if($uploadOk){
-    if(1){
+    if($fileUpload == '1'){
         $file_url = substr($target_file,6);
         echo($file_url.' '.$pageId);
         $stmt= $con->prepare("insert into  consultancies_images( status, caption, url, idConsultancies, position )
