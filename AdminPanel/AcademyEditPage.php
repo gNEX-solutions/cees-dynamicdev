@@ -1,3 +1,11 @@
+<?php
+    session_start();
+
+    if(isset($_SESSION['User']))
+    {
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -106,8 +114,8 @@ $conn=$newConnection->connect(); ?>
     $resultPara = null;
     $resultImage = null;
     $paraRows = null;
-    const IMAGE_POSITIONS_CODES = array('RU','RD','CU','CD','LU','LD');
-    const IMAGE_POSITIONS = array('Right Up', 'Right Down', 'Center Up', 'Center Down', 'Left Up', 'Left Down');
+    $IMAGE_POSITIONS_CODES = array('RU','RD','CU','CD','LU','LD');
+    $IMAGE_POSITIONS = array('Right Up', 'Right Down', 'Center Up', 'Center Down', 'Left Up', 'Left Down');
     if($_SERVER['REQUEST_METHOD'] == "POST" and isset($_POST["edit"])){
     
       
@@ -291,13 +299,13 @@ $conn=$newConnection->connect(); ?>
               
               ");
 
-              for($i =0 ; $i < count(IMAGE_POSITIONS_CODES); $i++){
+              for($i =0 ; $i < count($IMAGE_POSITIONS_CODES); $i++){
                 // echo(_IMAGE_POSITIONS_CODES[$i]);
-                if($row['position'] == IMAGE_POSITIONS_CODES[$i] ){
-                  echo(" <option value="  . IMAGE_POSITIONS_CODES[$i] ." selected>". IMAGE_POSITIONS[$i] . "</option>" );
+                if($row['position'] == $IMAGE_POSITIONS_CODES[$i] ){
+                  echo(" <option value="  . $IMAGE_POSITIONS_CODES[$i] ." selected>". $IMAGE_POSITIONS[$i] . "</option>" );
                 }
                 else {
-                  echo(" <option value="  . IMAGE_POSITIONS_CODES[$i] .">". IMAGE_POSITIONS[$i] . "</option>" );
+                  echo(" <option value="  . $IMAGE_POSITIONS_CODES[$i] .">". $IMAGE_POSITIONS[$i] . "</option>" );
                 }
               }
 
@@ -382,3 +390,10 @@ $conn=$newConnection->connect(); ?>
 </body>
 
 </html>
+<?php   
+}
+    else
+    {
+        header("location:login.php");
+    }
+?>
