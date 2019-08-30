@@ -191,7 +191,7 @@ $conn=$newConnection->connect(); ?>
         <input type="hidden" id="pageId" value=<?php echo($page_id); ?>>
           <div class="form-group">
           <label for="inputTitle">Title</label>
-          <input type="text" class="form-control" name="inputTitle" placeholder="Title" 
+          <input type="text" class="form-control" id="inputTitle" placeholder="Title" 
               required value=<?php 
                 if($resultCons != null){
                   echo($rowCons['heading']); 
