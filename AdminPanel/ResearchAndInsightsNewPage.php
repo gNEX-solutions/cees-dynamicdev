@@ -19,6 +19,8 @@
   <?php include 'resources/nav.php'; ?>
   <?php include 'resources/footer.php'; ?>
   <!-- Custom fonts for this template-->
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script type="text/javascript" src="./js/acadamyEditPage.js"></script> 
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
@@ -53,47 +55,47 @@
   <input type="hidden" name="inputType" value="Academy">
     <div class="form-group">
       <label for="inputTitle">Title</label>
-      <input type="text" class="form-control" name="inputTitle" placeholder="Title" required>
+      <input type="text" class="form-control" id="inputTitle" placeholder="Title" required>
     </div>
     <div class="form-group">
       <label for="inputSummary">Summary</label>
-      <textarea class="form-control" name="inputSummary" placeholder="Summary" required></textarea>
+      <textarea class="form-control" id="inputSummary" placeholder="Summary" required></textarea>
     </div>
     <div class="form-group">
       <label for="inputTitle">Published Date</label>
-      <input type="date" class="form-control" name="inputPublishedDate"  required>
+      <input type="date" class="form-control" id="published_date"  required>
     </div>
     <div class="form-group">
       <label for="inputDescription">Paragraph 1</label>
-      <textarea class="form-control" name="inputDescription1" placeholder="Paragraph" ></textarea>
+      <textarea class="form-control" name="inputDescription" placeholder="Paragraph" ></textarea>
     </div>
 
     <div class="form-group">
       <label for="inputDescription">Paragraph 2</label>
-      <textarea class="form-control" name="inputDescription2" placeholder="Paragraph" ></textarea>
+      <textarea class="form-control" name="inputDescription" placeholder="Paragraph" ></textarea>
     </div>
 
     <div class="form-group">
       <label for="inputDescription">Paragraph 3</label>
-      <textarea class="form-control" name="inputDescription3" placeholder="Paragraph" ></textarea>
+      <textarea class="form-control" name="inputDescription" placeholder="Paragraph" ></textarea>
     </div>
 
     <div class="form-group">
       <label for="inputDescription">Paragraph 4</label>
-      <textarea class="form-control" name="inputDescription4" placeholder="Paragraph" ></textarea>
+      <textarea class="form-control" name="inputDescription" placeholder="Paragraph" ></textarea>
     </div>
 
     <div class="form-group">
       <label for="inputDescription">Paragraph 5</label>
-      <textarea class="form-control" name="inputDescription5" placeholder="Paragraph" ></textarea>
+      <textarea class="form-control" name="inputDescription" placeholder="Paragraph" ></textarea>
     </div>
   
   <div class="form-group">
-    <label for="inputImage" >Image</label><br>
-    <input type="file"  accept="image/*" name="inputImage" required>
+    <label for="inputImage" >Add Image</label><br>
+    <input type="file"  accept="image/*" id="uploadImage"  required>
   </div>
   
-  <button type="submit" class="btn btn-primary">Create</button>
+  <button type="button" onclick="createResearch()" class="btn btn-primary">Create</button>
 </form>
         </div>
         <!-- /.container-fluid -->
