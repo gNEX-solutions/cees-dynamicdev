@@ -50,15 +50,15 @@
         <!-- End of Topbar -->
         <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
 
-<!-- Sidebar Toggle (Topbar) -->
-  <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
-    <i class="fa fa-bars"></i>
-  </button>
+        <!-- Sidebar Toggle (Topbar) -->
+          <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+            <i class="fa fa-bars"></i>
+          </button>
 
 
-<!-- Page Heading -->
-  <h1 class="h3 mb-4 text-gray-800">Update Events</h1>
-  </nav>
+        <!-- Page Heading -->
+          <h1 class="h3 mb-4 text-gray-800">Update Events</h1>
+        </nav>
         <!-- Begin Page Content -->
         <div class="container-fluid">
 
