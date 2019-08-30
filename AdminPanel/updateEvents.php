@@ -48,12 +48,22 @@
       <!-- Main Content -->
       <div id="content">
         <!-- End of Topbar -->
+        <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
 
+<!-- Sidebar Toggle (Topbar) -->
+  <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+    <i class="fa fa-bars"></i>
+  </button>
+
+
+<!-- Page Heading -->
+  <h1 class="h3 mb-4 text-gray-800">Update Events</h1>
+  </nav>
         <!-- Begin Page Content -->
         <div class="container-fluid">
 
           <!-- Page Heading -->
-          <h1 class="h3 mb-4 text-gray-800">Update Events</h1>
+          
 
           <form action="./updateEvents.php" method="post">
             <div class="form-group">
@@ -216,8 +226,10 @@
                     <button type=\"submit\" name=\"img_remove\" class=\"btn btn-outline-danger\" > Remove </button>
 
                   ");}?> 
-            <div >
-
+            </div>
+            <div>
+              <button type="submit" method="post" name="update_table" class="btn btn-success">Save Changes</button>
+            </div>
       </form>
       
     </div>
