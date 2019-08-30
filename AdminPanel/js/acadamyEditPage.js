@@ -194,6 +194,16 @@ function removeImg(imgId){
     var summary = document.getElementById("inputSummary").value;
     var publishedDate = document.getElementById("published_date").value;
 
+    var now = new Date();
+    var publishedDateObj = new Date(publishedDate);
+    if(now > publishedDateObj){
+      alert("published date cannot be before today");
+      fileUpload = 0;
+      submitDb =0;
+    }
+
+
+
     var paragraphIds = [];
         document.getElementsByName('desId')
             .forEach(desId => paragraphIds.push(desId.value));
