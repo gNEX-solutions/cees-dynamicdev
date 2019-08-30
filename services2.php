@@ -26,6 +26,7 @@
   <!-- <link rel="stylesheet" href="assets/css/colors/blue.css"> -->
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Ruda:400,900,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:700&display=swap" rel="stylesheet">
   <!-- Libraries CSS Files -->
   <link href="assets/font-awesome/css/font-awesome.min.css" rel="stylesheet">
 </head>
