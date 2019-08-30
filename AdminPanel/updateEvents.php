@@ -48,12 +48,22 @@
       <!-- Main Content -->
       <div id="content">
         <!-- End of Topbar -->
+        <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
 
+        <!-- Sidebar Toggle (Topbar) -->
+          <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+            <i class="fa fa-bars"></i>
+          </button>
+
+
+        <!-- Page Heading -->
+          <h1 class="h3 mb-4 text-gray-800">Update Events</h1>
+        </nav>
         <!-- Begin Page Content -->
         <div class="container-fluid">
 
           <!-- Page Heading -->
-          <h1 class="h3 mb-4 text-gray-800">Update Events</h1>
+          
 
           <form action="./updateEvents.php" method="post">
             <div class="form-group">
@@ -138,14 +148,40 @@
       
             $rowCons = $resultCons->fetch_assoc();
             $paraRows = $resultPara->fetch_assoc();
-            print_r($paraRows);
-            print_r($rowCons);
+          }
+
+          
+          if($_SERVER['REQUEST_METHOD'] == "POST" and isset($_POST["update_table"])){
+          
+            $pageId = $_POST['page'];
+            $title=$_POST['EventName'];
+            $location=$_POST['EventLocation'];
+            $date = $_POST['EventDate'];
+            $startTime=$_POST['EventStartTime'];
+            $endTime=$_POST['EventEndTime'];
+            $description=$_POST['inputDescription1'];
+
+            // creating the new db connection
+            $newConnection= new dbh;
+            $conn=$newConnection->connect();
+
+            $stmt= $conn->prepare("update heroku_3dffaa1b8ca65ff.events set
+            events.name = ?, events.date = ?, events.start_time = ?, events.end_time = ?, events.description = ?, events.location = ? 
+            where events.event_id = ?;");
+            $stmt->bind_param("ssssssi",$title,$date,$startTime,$endTime,$description,$location,$pageId);
+            $stmt->execute();
+
+            echo(" <div class=\"alert alert-success\" role=\"alert\">
+              Details updated successfully..! Reload the page to see new content... </div>"
+          );
+           echo "<meta http-equiv='refresh' content='0'>";
+
           }
         ?>            
 
-      <form method="POST" action="./AcademyEditPage.php" enctype="multipart/form-data">
+      <form method="POST" action="./updateEvents.php" enctype="multipart/form-data">
 
-        <input type="hidden" name="inputId" value=<?php echo($page_id); ?>>
+        <input type="hidden" name="page" value=<?php echo($page_id); ?>>
 
           <div class="form-group row">
             <div class="col-sm-6 mb-3 mb-sm-0">
@@ -216,8 +252,10 @@
                     <button type=\"submit\" name=\"img_remove\" class=\"btn btn-outline-danger\" > Remove </button>
 
                   ");}?> 
-            <div >
-
+            </div>
+            <div>
+              <button type="submit" method="post" name="update_table" class="btn btn-success">Save Changes</button>
+            </div>
       </form>
       
     </div>

@@ -2,6 +2,9 @@
 include_once 'Model/dbh.inc.php';
 include 'Model/eventWindow.php';
 include 'Model/viewEvents.php';
+include 'Model/getInsights.php';
+include 'insights.php';
+
 ?>
 
 <!DOCTYPE html>
@@ -17,7 +20,6 @@ include 'Model/viewEvents.php';
   <!-- <a href="https://www.freepik.com/free-photos-vectors/people">People photo created by freepik - www.freepik.com</a>
   <a href="https://www.freepik.com/free-photos-vectors/background">Background photo created by freepik - www.freepik.com</a>
   <a href="https://www.freepik.com/free-photos-vectors/business">Business photo created by rawpixel.com - www.freepik.com</a> -->
-
 
   <title>Home</title>
   <link rel="stylesheet" href="assets/web/assets/mobirise-icons/mobirise-icons.css">
@@ -37,7 +39,6 @@ include 'Model/viewEvents.php';
   <link href="https://fonts.googleapis.com/css?family=Montserrat:700&display=swap" rel="stylesheet">
 
   <script src="assets/web/assets/jquery/jquery.min.js"></script>
-
 
 </head>
 <body>
@@ -125,7 +126,7 @@ include 'Model/viewEvents.php';
                     </p>
                   <span class="vspacer"></span>
                   <p class="py-3 mbr-fonts-style">
-                    <a href="http://localhost:8080/cees-dynamicdev/Programs.php" target="_blank">READ MORE » </a>
+                    <a href="https://gnex-cees.herokuapp.com/Programs.php" target="_blank">READ MORE » </a>
                   </p>
                 </div>
             </div>
@@ -142,7 +143,7 @@ include 'Model/viewEvents.php';
                     </p>
                   <span class="vspacer"></span>
                   <p class="py-3 mbr-fonts-style">
-                    <a href="http://localhost:8080/cees-dynamicdev/services-talent.php" target="_blank">READ MORE » </a>
+                    <a href="https://gnex-cees.herokuapp.com/services-talent.php" target="_blank">READ MORE » </a>
                   </p>
                 </div>
             </div>
@@ -159,7 +160,7 @@ include 'Model/viewEvents.php';
                     </p>
                   <span class="vspacer"></span>
                   <p class="py-3 mbr-fonts-style">
-                    <a href="http://localhost:8080/cees-dynamicdev/services2.php" target="_blank">READ MORE » </a>
+                    <a href="https://gnex-cees.herokuapp.com/services2.php" target="_blank">READ MORE » </a>
                   </p>
                 </div>
             </div>
@@ -358,77 +359,13 @@ include 'Model/viewEvents.php';
             </h1>
         </div>
         <br>
+       
         <div class="row" id="research-section">
 
-            <div class="left-part col-md-6">
-                    <div> 
-                        <h4 >
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                            <br>
-                            <span id="date-section">
-                                July 17, 2019  Change & Crisis Leadership, Creativity & Innovation
-                            </span>
-                        </h4>
+           <?php showInsights(); ?>
 
-                        <p>
-                             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sed velit dignissim sodales ut eu sem integer vitae justo.                      
-                        </p>
-                        <button id="button1">See more articles</button>
-                    </div>
-            </div>
-
-            <div class="right-part col-md-6">
-                <div  class="row" >
-                    <div class="col-md-3 col-sm-3 col-lg-3 image1">
-
-                    </div>
-                    <div class="col-md-9 col-sm-9 col-lg-9" style="background-color: #f5f2f2;">
-                        <h5> Lorem ipsum dolor sit amet, consectetur adipiscing elit, scing elit, sed do eiusmod tempor incididunt ut labore </h5>
-                        <p>
-                             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                        </p>  
-                    </div>  
-                </div >
-
-                <div class="row">
-                    <div class="col-md-3 col-sm-3 col-lg-3 image2">
-
-                    </div>
-                    <div class="col-md-9 col-sm-9 col-lg-9" >
-                    <h5> Lorem ipsum dolor sit amet, consectetur adipiscing elit, </h5>
-                    <p>
-                             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                        </p>  
-                    </div> 
-                </div>
-
-                <div class="row" >
-                    <div class="col-md-3 col-sm-3 col-lg-3 image3">
-
-                    </div>
-                    <div class="col-md-9 col-sm-9 col-lg-9" style="background-color: #f5f2f2;">
-                    <h5> Lorem ipsum dolor sit amet, consectetur adipiscing elit, </h5>
-                    <p>
-                             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                        </p>  
-                    </div> 
-                </div>
-
-                <div class="row" >
-                    <div class="col-md-3 col-sm-3 col-lg-3 image4" >
-
-                    </div>
-                    <div class="col-md-9 col-sm-9 col-lg-9" >
-                    <h5> Lorem ipsum dolor sit amet, consectetur adipiscing elit, </h5>
-                    <p>
-                             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                        </p>  
-                    </div> 
-                </div>
-                <div class="row" id="see_more_btn">
-                    <button id="button1">See more articles</button>
-                </div>
-            </div>
+            
+           
         </div>
     </div>
 
@@ -437,7 +374,7 @@ include 'Model/viewEvents.php';
 <section class="cid-ruXscj5IY2" id="our_Clients">
         <div class="container">
             <div class="row" > 
-                <h1 class="mbr-title pt-2 mbr-fonts-style display-2" style="text-align:center;width:100%">
+                <h1 id="title-text" class="mbr-title pt-2 mbr-fonts-style display-2" style="text-align:center;width:100%">
                         Our Clients
                 </h1>
             </div>
@@ -529,6 +466,8 @@ include 'Model/viewEvents.php';
   <script src="assets/smoothscroll/smooth-scroll.js"></script>
   <script src="assets/theme/js/script.js"></script>
   <script src="assets/full-image-viewer/image-viewer.js"></script>
+
+  <script src="assets/theme/js/preloader.js"></script>
   
   <link rel="stylesheet" href="https://cdn.rawgit.com/jedrzejchalubek/glidejs/8eabfbb9/dist/css/glide.core.min.css" >
   <link rel="stylesheet" href="https://cdn.rawgit.com/jedrzejchalubek/glidejs/8eabfbb9/dist/css/glide.theme.min.css" >
@@ -553,12 +492,6 @@ include 'Model/viewEvents.php';
   
   
   <script>
-            $(window).on('load', function() { // makes sure the whole site is loaded 
-            $('#status').fadeOut(); // will first fade out the loading animation 
-            $('#preloader').delay(350).fadeOut('slow'); // will fade out the white DIV that covers the website. 
-            $('body').delay(350).css({'overflow':'visible'});
-            })
-            
             window.addEventListener('load', function(){
             function coverflow(i, el) {
                 el.removeClass('pre following')

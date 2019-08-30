@@ -21,6 +21,7 @@
   <link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css" type="text/css">
   <link rel="stylesheet" href="assets/services/style.css">
   <link rel="stylesheet" href="assets/theme/css/preloader.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:700&display=swap" rel="stylesheet">
 
 </head>
 <body>
@@ -67,34 +68,6 @@
     </div>
 </section> -->
 <section class="first-section">
-    <style>
-      .card {
-        background: white;
-        border-radius: 8px;
-        box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
-        cursor: pointer;
-        height: 300px;
-        margin: 20px;
-        padding: 0 20px;
-        position: relative;
-        -webkit-tap-highlight-color: rgba(0,0,0,0.025);
-        text-align: center;
-        transform: translateY(0px);
-        transition: transform 500ms;
-        width: 260px;
-      }
-      @media (max-width: 767px) {
-        .card {
-          left: calc(50% - 20px);
-          transform: translateX(-50%);
-        }
-      }
-      .card:hover{
-        transform: translateY(10px);
-        transition: transform 500ms;
-      }
-    </style>
-
     <div class="container">
             <div class="row ">
               <div class="col-12 general-title text-center">
@@ -172,6 +145,7 @@
               </div>
             </div>
           </div>
+
 
           <div class="divider"></div>
         </div>
@@ -258,9 +232,11 @@
           </div>
       </div>
 
-      
+
       <div class="divider"></div>
     </div>
+
+
     <!-- end container -->
     <div class="col 12">
   
@@ -396,6 +372,7 @@
       </div>
       <!-- large-3 -->
 
+      
       <div class="divider"></div>
      </div>
     <!-- end container -->
@@ -436,27 +413,9 @@
   <script src="assets/parallax/jarallax.min.js"></script>
   <script src="assets/smoothscroll/smooth-scroll.js"></script>
   <script src="assets/theme/js/script.js"></script>
+  
+  <script src="assets/theme/js/preloader.js"></script>
     
-  <script>
-            $(window).on('load', function() { // makes sure the whole site is loaded 
-            $('#status').fadeOut(); // will first fade out the loading animation 
-            $('#preloader').delay(350).fadeOut('slow'); // will fade out the white DIV that covers the website. 
-            $('body').delay(350).css({'overflow':'visible'});
-            })
-            
-            window.addEventListener('load', function(){
-            function coverflow(i, el) {
-                el.removeClass('pre following')
-                    .nextAll()
-                        .removeClass('pre following')
-                        .addClass('following')
-                    .end()
-                    .prevAll()
-                        .removeClass('pre following')
-                        .addClass('pre');
-             }
-            });
-      </script>
 </body>
 
 </html>
