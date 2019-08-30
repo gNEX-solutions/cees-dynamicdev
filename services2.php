@@ -74,11 +74,11 @@
     <div class="col-lg-4 col-md-4 col-sm-12">
           <div class="widget" data-effect="slide-left">
            <!--  <h3 class="title"><i class="fa fa-laptop"></i> Web Design Service</h3> -->
-            <div class="card text-white  mb-3" style="background-image: linear-gradient(-90deg, #00c464 ,#006e63);">
+             <div class="card text-black  mb-3" style="background-image: linear-gradient(-90deg ,#bdc7c7, #ebeded);">  <!--  style="background-image: linear-gradient(-90deg, #00c464 ,#006e63);" -->
                 <div class="card-header"><h5 class="card-title">Enterprise Excellence Apps</h5></div>
-                <div class="card-body" style="height: 350px;">
+                <div class="card-body" style="height: 450px;">
                 <img src="assets/img/phone.png"  width= 90% style="display: block; margin-left: auto; margin-right: auto;">
-                  <p style="color: white;">Mobile and software applications which amplify the lean implementation procedures while creating online platforms for cross functional teams to work collaboratively
+                  <p style="color: black;">Mobile and software applications which amplify the lean implementation procedures while creating online platforms for cross functional teams to work collaboratively
                     <!-- <ul class="a" style="margin-left: 25px; margin-right: 10px;">
                       <li>Web-based assessment surveys, completed by participant, direct reports, peers & superiors.</li>
                       <li>Program faculty exchanges to address any questions.</li>
@@ -96,11 +96,12 @@
         <div class="col-lg-4 col-md-4 col-sm-12">
           <div class="widget" data-effect="slide-bottom">
            <!--  <h3 class="title"><i class="fa fa-laptop"></i> Web Design Service</h3> -->
-            <div class="card text-white mb-3" style="background-image: linear-gradient(-90deg, #f6cf3f ,#f68029);">
+           <!--  style="background-image: linear-gradient(-90deg, #f6cf3f ,#f68029);" -->
+            <div class="card text-black mb-3" style="background-image: linear-gradient(-90deg ,#bdc7c7, #ebeded);">
                 <div class="card-header"><h5 class="card-title">Research & Development</h5></div>
-                <div class="card-body" style="height: 350px;">
+                <div class="card-body" style="height: 450px;">
                   <img src="assets/img/r&d.png"  width= 90% style="display: block; margin-left: auto; margin-right: auto;">
-                  <p style="color: white;">Continuously exploring the latest knowledge sources while testing on the shop floor. Newly generated knowledge will be published after validated through the research methodology
+                  <p style="color: black;">Continuously exploring the latest knowledge sources while testing on the shop floor. Newly generated knowledge will be published after validated through the research methodology
                     <!-- <ul class="a" style="margin-left: 25px; margin-right: 10px;">
                       <li>Highly relevant, research-based content to expand knowledge & address essential challenges.</li>
                       <li>Experiential activities to add depth to feedback &  key ideas.</li>
@@ -118,11 +119,12 @@
         <div class="col-lg-4 col-md-4 col-sm-12">
           <div class="widget" data-effect="slide-right">
             <!-- <h3 class="title"><i class="fa fa-cogs"></i> Web Development Service</h3> -->
-            <div class="card text-white mb-3" style="background-image: linear-gradient(-90deg, #f66d6a ,#e1261c);">
+            <!-- style="background-image: linear-gradient(-90deg, #f66d6a ,#e1261c);" -->
+            <div class="card text-black mb-3" style="background-image: linear-gradient(-90deg ,#bdc7c7, #ebeded);">
                 <div class="card-header"><h5 class="card-title">Industry 4.0</h5></div>
-                <div class="card-body" style="height: 350px;">
+                <div class="card-body" style="height: 450px;">
                 <img src="assets/img/industry.png"  width= 90% style="display: block; margin-left: auto; margin-right: auto;">
-                  <p style="color: white;">Experimenting on Industry 4.0 solutions including Big Data Analytics, Automation and Digitization applications to enhance the lean six sigma based environments.
+                  <p style="color: black;">Experimenting on Industry 4.0 solutions including Big Data Analytics, Automation and Digitization applications to enhance the lean six sigma based environments.
                     <!-- <ul class="a" style="margin-left: 25px; margin-right: 10px;">
                       <li>Highly relevant, research-based content to expand knowledge & address essential challenges.</li>
                       <li>Experiential activities to add depth to feedback &  key ideas.</li>
