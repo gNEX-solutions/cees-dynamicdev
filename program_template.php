@@ -52,23 +52,28 @@ $images=$services->showCA_IMAGES($compname);
 <img src="https://blog.gathercontent.com/wp-content/themes/gc-blog/images/article.png" alt="Snow" style="width:100%;">
 <div class="bottom-left">Bottom Left</div>
 <div class="centered mw55 center pa3 pa5-ns pa4-m bg-white ba b--gc-silver br2 gc-box-shadow mb5 relative">
-<section >
-<h1><?php echo $heading?></h1>
+<section class="text-center">
+<h1 style="background-color: white;"><?php echo $heading?></h1>
 </section>
-<section id="features11-19" style="margin-top:100px;">
-    <div class="container">   
-        <div class="col">
+<section id="features11-19" style="margin-top:100px;background-color: white;">
+<div class="landing-wrapper text-center" style="background-color: white;">
+    
+        <div class="col" style="background-color: white; padding:5%">
            
-                 <div>
-                     <img src="<?php echo $images[0]['url']?>" class="img-fluid">
+                 <div class="landing">
+                   <img src="<?php echo $images[0]['url']?>" alt="Nature" class="image" width="600" height="400">
+                    
                  </div>
-                 <div>
-                    <p style="font-size: 18px;"><?php echo $datas[0]['description'] ?>'</p>
+                 <section id="features11-19" style="margin-top:100px;background-color: white;">
+                 <div class="row">
+                    <p style="font-size: 18px; color:black"><?php echo $datas[0]['description'] ?>'</p>
                  </div>
-                <div >
-                    <p style="font-size: 18px;" ><?php echo $datas[1]['description'] ?>'</p>
+                
+                 
+                <div class="row">
+                    <p style="font-size: 18px;color:black" ><?php echo $datas[1]['description'] ?>'</p>
                 </div>
-         
+          </section>
 
           
         </div>

@@ -97,32 +97,33 @@ include 'Model/viewservices.inc.php';
 			<div id="nav-aside">
 				<ul class="nav-aside-menu">
 					<li><a href="index.php">Home</a></li>
-					<li class="has-dropdown"><a class="side_a">Technology Solutions</a>
-						<ul class="dropdown">
-							<li><a href="services-talent.php">Technology (Active)</a></li>
-                            <li><a href="#">Main 1</a></li>
-                            <li><a href="#">Main 2</a></li>
-                            <li><a href="#">Main 3</a></li>
-                            <li><a href="#">Main 5</a></li>
-						</ul>
-					</li>
+					
                     <li class="has-dropdown"><a class="side_a">CEES Academy</a>
 						<ul class="dropdown">
-							<li><a href="Programs.php">CEES Academy Pragrams (Active)</a></li>
-                            <li><a href="#">Main 1</a></li>
-                            <li><a href="#">Main 2</a></li>
-                            <li><a href="#">Main 3</a></li>
-                            <li><a href="#">Main 5</a></li>
+                        <?php
+                            $services=new ViewServices();
+                            $services->ShowCAMOB_MENU();
+                            ?> 
+                           
 						</ul>
 					</li>
-                    <li class="has-dropdown"><a class="side_a">Consultancy</a>
+                    <li class="has-dropdown"><a class="side_a">Consulting services</a>
 						<ul class="dropdown">
-							<li><a href="services2.php">Technology (Active)</a></li>
-                            <li><a href="#">Main 1</a></li>
-                            <li><a href="#">Main 2</a></li>
-                            <li><a href="#">Main 3</a></li>
-                            <li><a href="#">Main 5</a></li>
+							
+                            <?php
+                            $services=new ViewServices();
+                            $services->ShowCSMOB_MENU();
+                            ?> 
                         </ul>
+                    </li>
+                    <li class="has-dropdown"><a class="side_a">Solutions Lab</a>
+						<ul class="dropdown">
+                        <?php
+                            $services=new ViewServices();
+                            $services->ShowSLMOB_MENU();
+                            ?> 
+                           
+						</ul>
 					</li>
                     <li><a href="about.php">About CEES</a></li>
 					<li><a href="contact.php">Contact Us</a></li>

@@ -77,3 +77,19 @@ height: auto;
     transform: translate(-50%, -50%);
     background-color: white;margin-top: 10%;
   }
+  .image{
+    max-width: 100%;
+    height: auto;
+
+  }
+
+  .landing {
+    height: 100%;
+    width: 100%;
+    position: fixed;
+}
+
+.landing-wrapper {
+  height: 100%;
+}
+
