@@ -247,12 +247,18 @@
           <p> Images </p>
             <?php 
               if($paraRows != null){
-                  echo("<input type=\"hidden\" name=\"inputId\" value=" . $paraRows['url']. ">
+                  echo("
+                  <div id=" .$paraRows['idImages'] . " name='img_container'>
+                    <input type=\"hidden\" name=\"inputId\" value=" . $paraRows['url']. ">
                     <img src=". substr($paraRows['url'], 3)." alt='..' class='img-thumbnail' style=' max-height: 150px'>
-                    <button type=\"submit\" name=\"img_remove\" class=\"btn btn-outline-danger\" > Remove </button>
-
+                    <button type=\"button\" onclick=\"removeImg(" .$paraRows['idImages'] .")\" name=\"img_remove\" class=\"btn btn-outline-danger\" > Remove </button>
+                  </div>
                   ");}?> 
             </div>
+            <div >
+          <label for="inputImage" >Add Image</label><br>
+          <input type="file"  accept="image/*" id="uploadImage" >
+        </div> <br> <br>
             <div>
               <button type="submit" method="post" name="update_table" class="btn btn-success">Save Changes</button>
             </div>
@@ -307,6 +313,28 @@
 
   <!-- Custom scripts for all pages-->
   <script src="js/sb-admin-2.min.js"></script>
+
+  <script>
+
+    function removeImg(imgId){
+    console.log(imgId);
+
+    var imageSection = document.getElementById(imgId);
+    $.ajax({
+      type:'POST', 
+      url: "./AdminModel/editPage.php",
+      data: {img_remove: imgId, req:'imgRemove'},
+      success: function(){
+        alert('image has been deleted succesfully');
+        $(imageSection).css("display","none");
+      },
+      error: function(){
+        alert('image deletion failed');
+      }
+    });
+
+  }
+  </script>
 
 </body>
 
