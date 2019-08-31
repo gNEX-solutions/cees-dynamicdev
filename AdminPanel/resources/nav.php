@@ -38,6 +38,7 @@
                       <a class="collapse-item" href="AcademyNewPage.php">CEES Academy</a>
                       <a class="collapse-item" href="ConsultancyNewPage.php">Consulting Services</a>
                       <a class="collapse-item" href="SolutionsLabNewPage.php">Solutions Lab</a>
+                      <a class="collapse-item" href="./ResearchAndInsightsNewPage.php">Research and Insights</a>
                       <div class="collapse-divider"></div>
                     </div>
                   </div>
