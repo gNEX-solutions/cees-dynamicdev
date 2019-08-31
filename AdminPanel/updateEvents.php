@@ -322,7 +322,7 @@
     var imageSection = document.getElementById(imgId);
     $.ajax({
       type:'POST', 
-      url: "./AdminModel/editPage.php",
+      url: "./AdminModel/editEvent.php",
       data: {img_remove: imgId, req:'imgRemove'},
       success: function(){
         alert('image has been deleted succesfully');
