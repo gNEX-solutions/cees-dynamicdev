@@ -387,7 +387,7 @@ if( $_POST['req'] == "imgRemove"){
     // echo("image remove");
     // echo($_POST['img_remove']);
     echo('running');
-    $stmt = $con->prepare("update heroku_3dffaa1b8ca65ff.consultancies_images set consultancies_images.`status` = 0 
+    $stmt = $con->prepare("update consultancies_images set consultancies_images.`status` = 0 
     where consultancies_images.idconsultancies_images = ?;") ;
     $stmt->bind_param("s",$_POST["img_remove"]);
     if($stmt->execute()){
@@ -417,7 +417,7 @@ if( $_POST["req"] == "delete_page"){
     echo("delete_page is executed");
     $page_id = $_POST['page']; //  the id of the page 
     // $title=$_POST['inputTitle'];
-    $stmt = $con->prepare("update  heroku_3dffaa1b8ca65ff.consultancies 
+    $stmt = $con->prepare("update  consultancies 
       set consultancies.status = 0 where consultancies.idconsultancies = ?;") ;
     $stmt->bind_param("s",$page_id);
     if($stmt->execute()){
