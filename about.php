@@ -43,7 +43,7 @@ $no_user ='';
   <link rel="stylesheet" href="assets/theme/css/style.css">
   <link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css" type="text/css">
   <link rel="stylesheet" href="assets/theme/css/preloader.css">
-  
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:700&display=swap" rel="stylesheet">
 
 
   <meta name="generator" content="Mobirise v4.10.7, mobirise.com">
@@ -75,7 +75,7 @@ $no_user ='';
                 <blockquote><strong>Lorem ipsum dolor sit amet, consectetur </strong>adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sed velit dignissim sodales ut eu sem integer vitae justo. Dignissim enim sit amet venenatis urna cursus. Integer enim neque volutpat ac. Ullamcorper malesuada proin libero nunc consequat interdum varius sit. Facilisis sed odio morbi quis commodo odio aenean. Facilisi etiam dignissim diam quis enim lobortis. Eu turpis egestas pretium aenean pharetra magna ac. Justo nec ultrices dui sapien eget mi proin sed. Sit amet luctus venenatis lectus magna fringilla urna porttitor.</blockquote>
             </div>
         </div> -->
-        <section class="features11 cid-ruXpPiazmW" id="features11-19">
+        <section class="features11 cid-ruXpPiazmW2 cid-ruXpPiazmW " id="features11-19">
     <div class="container">   
         <div class="col-md-12">
             <div class="media-container-row">
@@ -130,7 +130,7 @@ $no_user ='';
                         </div>
                     </div>
                 </div>
-                <div class="about-us-image">
+                <div class="about-us-image image-adjust">
                 </div>
             </div>
         </div> 
@@ -143,7 +143,7 @@ $no_user ='';
         <h2 class="pb-3 mbr-fonts-style mbr-section-title display-2">
             OUR AWESOME TEAM
         </h2>
-        <h3 class="pb-5 mbr-section-subtitle mbr-fonts-style mbr-light display-5">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sed velit dignissim sodales ut eu sem integer vitae justo.</h3>
+        <h3 class="pb-5 mbr-section-subtitle mbr-fonts-style mbr-light display-5">Alone we can do so little, together we can do so much.</h3>
         <div class="row media-row">
 
         <?php

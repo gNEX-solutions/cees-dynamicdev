@@ -374,7 +374,7 @@ include 'insights.php';
 <section class="cid-ruXscj5IY2" id="our_Clients">
         <div class="container">
             <div class="row" > 
-                <h1 class="mbr-title pt-2 mbr-fonts-style display-2" style="text-align:center;width:100%">
+                <h1 id="title-text" class="mbr-title pt-2 mbr-fonts-style display-2" style="text-align:center;width:100%">
                         Our Clients
                 </h1>
             </div>

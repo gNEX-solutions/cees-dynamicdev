@@ -25,7 +25,7 @@
           <!-- Divider -->
           <hr class="sidebar-divider">
           <div class="sidebar-heading">
-            New Pages   
+            Pages   
           </div>
               <li class="nav-item">
                   <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseNewPages" aria-expanded="true" aria-controls="collapseNewPages">
@@ -38,17 +38,12 @@
                       <a class="collapse-item" href="AcademyNewPage.php">CEES Academy</a>
                       <a class="collapse-item" href="ConsultancyNewPage.php">Consulting Services</a>
                       <a class="collapse-item" href="SolutionsLabNewPage.php">Solutions Lab</a>
+                      <a class="collapse-item" href="./ResearchAndInsightsNewPage.php">Research and Insights</a>
                       <div class="collapse-divider"></div>
                     </div>
                   </div>
                 </li>
-    
-          <hr class="sidebar-divider">
-          
-          <!-- Divider -->
-          <div class="sidebar-heading">
-            Current Pages
-          </div>
+                
               <li class="nav-item">
                   <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseCurrentPages" aria-expanded="true" aria-controls="collapseCurrentPages">
                     <i class="fas fa-fw fa-folder"></i>
@@ -87,6 +82,18 @@
             <span>Update Events</span></a>
         </li>
 
+        <!-- Divider -->
+          <hr class="sidebar-divider">
+          <div class="sidebar-heading">
+            Team Member   
+          </div>
+          <!-- Nav Item - Pages Collapse Menu -->
+          <li class="nav-item">
+            <a class="nav-link" href="AboutUs.php">
+            <i class="fas fa-fw fa-chart-area"></i>
+            <span>Add New Member</span></a>
+          </li>
+    
           <!-- Divider -->
           <hr class="sidebar-divider d-none d-md-block">
           
@@ -115,7 +122,7 @@
 
     
           <!-- Divider
-          <!-- <hr class="sidebar-divider">
+           <hr class="sidebar-divider">
     
           <div class="sidebar-heading">
             Addons
