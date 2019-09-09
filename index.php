@@ -516,7 +516,7 @@ include 'insights.php';
                         }
                     });
                 });
-      </script>
+       </script>
 
 </body>
 </html>
