@@ -8,7 +8,7 @@
 <html lang="en">
 
 <head>
-
+<link rel="shortcut icon" href="../assets/images/logo2.png" type="image/x-icon">
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -24,6 +24,7 @@
 
   <!-- Custom styles for this template-->
   <link href="css/sb-admin-2.min.css" rel="stylesheet">
+  <!-- <link href="css/style.css" rel="stylesheet"> -->
 
 </head>
 
@@ -79,8 +80,8 @@
     </div>
   
   <div class="form-group">
-    <label for="inputImage" >Image</label><br>
-    <input type="file"  accept="image/*" name="inputImage" required>
+    <label for="inputImage" class="btn-2" >Image</label><br>
+    <input type="file" id="file"  accept="image/*" name="inputImage" required>
   </div>
   
   <button type="submit" class="btn btn-primary">Create</button>

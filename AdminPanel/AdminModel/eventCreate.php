@@ -11,9 +11,9 @@ $caption="test";
 $status = 1;
 
 
-$insertDate = date("Y-m-d H:i:s", strtotime($date));
-$insertStartTime = date("Y-m-d H:i:s", strtotime($startTime));
-$insertEndTime = date("Y-m-d H:i:s", strtotime($endTime));
+$insertDate = date("Y-m-d", strtotime($date));
+$insertStartTime = date("H:i:s", strtotime($startTime));
+$insertEndTime = date("H:i:s", strtotime($endTime));
 
 $target_dir = "../../assets/images/";
 $target_file = $target_dir . basename($_FILES["inputImage"]["name"]);

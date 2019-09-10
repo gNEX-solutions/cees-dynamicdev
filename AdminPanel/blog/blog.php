@@ -6,10 +6,8 @@
 ?>
 <!DOCTYPE html>
 <html lang="en">
-<?php include 'resources/nav.php'; ?>
-  <?php include 'resources/footer.php'; ?>
-<head>
 
+<head>
 <link rel="shortcut icon" href="../assets/images/logo2.png" type="image/x-icon">
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -17,53 +15,59 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Admin- Dashboard</title>
+  <title>CEES Admin - Blog Articles</title>
+
+  <?php include '../resources/nav.php'; ?>
+  <?php include '../resources/footer.php'; ?>
 
   <!-- Custom fonts for this template-->
-  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
   <!-- Custom styles for this template-->
-  <link href="css/sb-admin-2.min.css" rel="stylesheet">
+  <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+  <link href="../css/sb-admin-2.min.css" rel="stylesheet">
+  <script src="https://cdn.tiny.cloud/1/u2kioan9rc6y5xb04zvvx19t9mlat41vnzfintbgg50tl7fa/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+  <script>tinymce.init({selector:'textarea'});</script>
+
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
 
 </head>
 
 <body id="page-top">
-
   <!-- Page Wrapper -->
   <div id="wrapper">
-
   <?php showNavBar(); ?>
+    <!-- End of Sidebar -->
 
     <!-- Content Wrapper -->
     <div id="content-wrapper" class="d-flex flex-column">
 
       <!-- Main Content -->
       <div id="content">
-      <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
-
-<!-- Sidebar Toggle (Topbar) -->
-  <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
-    <i class="fa fa-bars"></i>
-  </button>
-
-
-<!-- Page Heading -->
-  <h1 class="h3 mb-4 text-gray-800">Welcome <?php echo $_SESSION['User'];?>!</h1>
-</nav>
-    
-
+        <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+          <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+            <i class="fa fa-bars"></i>
+          </button>
+          <h1 class="h3 mb-4 text-gray-800">Articles</h1>
+        </nav>
         <!-- Begin Page Content -->
         <div class="container-fluid">
 
-          <!-- Page Heading -->
-          <div style="margin-top: 20%;margin-left: 20%;margin-right: -20%;">
-            <img src="../assets/images/wef2.png" alt="" title="" style="width:50%;"> 
-          </div>
-        </div>
+        <textarea>Next, use our Get Started docs to setup Tiny!</textarea>
         <!-- /.container-fluid -->
+        <div id="editor1">
+        <p>Hello World!</p>
+        <p>Some initial <strong>bold</strong> text</p>
+        <p><br></p>
+        <div>
 
-      </div>
+        <div id="editor2"></div>
+
+        <div id="ed-output"></div>
+
+        </div>
       <!-- End of Main Content -->
 
       <!-- Footer -->
@@ -110,13 +114,20 @@
   <!-- Custom scripts for all pages-->
   <script src="js/sb-admin-2.min.js"></script>
 
-  <!-- Page level plugins -->
-  <script src="vendor/chart.js/Chart.min.js"></script>
+  <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+  <script src="blackedit.js"></script>
 
-  <!-- Page level custom scripts -->
-  <script src="js/demo/chart-area-demo.js"></script>
-  <script src="js/demo/chart-pie-demo.js"></script>
+<!-- Initialize Quill editor -->
+<script>
+  var quill = new Quill('#editor1', {
+    theme: 'snow'
+  });
+</script>
 
+<script>
+var ed = new Editor('editor2');
+ed.init();
+</script>
 </body>
 
 </html>
@@ -124,6 +135,7 @@
 }
     else
     {
-        header("location:login.php");
+        header("location:../login.php");
     }
 ?>
+
