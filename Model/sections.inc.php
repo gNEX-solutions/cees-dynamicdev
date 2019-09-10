@@ -16,9 +16,9 @@ class Sections extends dbh{
       }
     }
 
-   protected function getRequestedServiceData ($idconsultancies)
+   protected function getConsultingServicesPrograms ()
    { 
-      $sql="SELECT * FROM consultaies_descriptions WHERE idconsultancies=".$idconsultancies;
+      $sql="SELECT * FROM program WHERE page_type=CS";
       $result=$this->connect()->query($sql);
       $numRows=$result->num_rows;
       if($numRows>0){
@@ -29,17 +29,6 @@ class Sections extends dbh{
       }
     }
 
-    protected function getRequestedServiceImages ($idconsultancies)
-   { 
-      $sql="SELECT * FROM consultancies_images WHERE idconsultancies=".$idconsultancies;
-      $result=$this->connect()->query($sql);
-      $numRows=$result->num_rows;
-      if($numRows>0){
-          while($row=$result->fetch_assoc()){
-             $data[]=$row;
-          }
-          return $data;
-      }
-    }
+  
 }
 ?>
