@@ -2,21 +2,45 @@
 
 class Sections extends dbh{
     
-  
+  // DS: 10.09.2019: getAllSections
    protected function getAllSections ()
    { 
-      $sql="SELECT * FROM consultancies";
+      $sql="SELECT * FROM program ORDER BY program_order";
       $result=$this->connect()->query($sql);
       $numRows=$result->num_rows;
       if($numRows>0){
           while($row=$result->fetch_assoc()){
-             $data[]=$row;
+             $program[]=$row;
           }
-          return $data;
+          return $program;
       }
     }
 
-   protected function getConsultingServicesPrograms ()
+    // End of getAllSections
+    // DS: 10.09.2019: getAllCourses
+    protected function getAllCourses ()
+   { 
+      $sql="SELECT * FROM courses ORDER BY course_order";
+      $result=$this->connect()->query($sql);
+      $numRows=$result->num_rows;
+      if($numRows>0){
+          while($row=$result->fetch_assoc()){
+             $course[]=$row;
+          }
+          return $course;
+      }
+    }    
+    // End of getAllCourses
+    // DS: 11.09.2019: get card count
+    protected function getCardDesign ($id)
+   { 
+      $sql="SELECT * FROM courses WHERE idprogram = '$id'";
+      $result=$this->connect()->query($sql);
+      $numRows=$result->num_rows;
+          return $numRows;
+    }
+    //End of get card count
+    protected function getConsultingServicesPrograms ()
    { 
       $sql="SELECT * FROM program WHERE page_type=CS";
       $result=$this->connect()->query($sql);
