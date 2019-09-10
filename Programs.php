@@ -1,3 +1,8 @@
+<?php
+include_once 'Model/dbh.inc.php';
+include 'Model/sections.inc.php';
+include 'Model/viewSections.inc.php';
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -421,9 +426,10 @@
 </section>
 <!-- DS: 10.09.2019: Dyanamic section  -->
 <section class="dynamic-section">
-      <?php
-
-      ?>
+  <?php
+    $services=new ViewSections();
+    $services->ShowCA_MENU();
+  ?> 
 </section>
 <!-- End of dynamic content -->
 <section class="cid-ruOTxA2tiD" id="footer5-16">
