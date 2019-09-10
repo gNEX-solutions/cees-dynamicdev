@@ -14,15 +14,6 @@
 
   @media only screen and (max-width: 767px) {
 
-    .slide img{ 
-      width:100px !important;
-      height: auto !important;
-    }
-    #slider-logo .slide {
-      height: auto !important;
-      width: 100px !important;
-    }
-
     @keyframes scroll {
       0% {
         transform: translateX(0);
@@ -63,6 +54,7 @@
   }
   #slider-logo #slider-logo-track {
     /* animation: scroll 10s linear infinite; */
+    position: absolute;
     display: flex;
     /* width: calc(50px * 7); */
     margin-top: 20px;
