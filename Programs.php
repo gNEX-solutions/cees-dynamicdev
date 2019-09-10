@@ -419,7 +419,13 @@
 </div>
   </div>
 </section>
+<!-- DS: 10.09.2019: Dyanamic section  -->
+<section class="dynamic-section">
+      <?php
 
+      ?>
+</section>
+<!-- End of dynamic content -->
 <section class="cid-ruOTxA2tiD" id="footer5-16">
 <?php require_once ('common/Components/footer.php'); ?>
 </section>
