@@ -36,7 +36,7 @@
 <body id="page-top">
   <!-- Page Wrapper -->
   <div id="wrapper">
-  <?php showNavBar(); ?>
+  <?php showNavBarToModel(); ?>
     <!-- End of Sidebar -->
 
     <!-- Content Wrapper -->
