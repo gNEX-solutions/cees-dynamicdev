@@ -384,7 +384,7 @@ include 'Model/getClientLogos.php';
                         $getClientLogos = new getClientLogos();
                         $data = $getClientLogos->getAllClientLogos();
                         foreach ($data as $key=>$img1) {
-                            echo "<div class='slide' style='margin-left: 50px;'>
+                            echo "<div class='slide' style='margin-left: 100px;'>
                             <img src='$img1[imageUrl]' height='60' width='auto' alt='' />
                             </div>";
                         }
