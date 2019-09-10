@@ -71,7 +71,7 @@ include 'Model/viewservices.inc.php';
                                     </div>
                                 </li>
                                 <li class="has-dropdown megamenu">
-                                    <a href="services2.php">Solutions Lab</a>
+                                    <a href="solutionslab.php">Solutions Lab</a>
                                     <div class="dropdown">
                                         <div class="dropdown-body">
                                             <div class="row">
@@ -109,7 +109,6 @@ include 'Model/viewservices.inc.php';
 					</li>
                     <li class="has-dropdown"><a class="side_a">Consulting services</a>
 						<ul class="dropdown">
-							
                             <?php
                             $services=new ViewServices();
                             $services->ShowCSMOB_MENU();
