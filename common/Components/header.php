@@ -71,7 +71,7 @@ include 'Model/viewservices.inc.php';
                                     </div>
                                 </li>
                                 <li class="has-dropdown megamenu">
-                                    <a href="services2.php">Solutions Lab</a>
+                                    <a href="solutionslab.php">Solutions Lab</a>
                                     <div class="dropdown">
                                         <div class="dropdown-body">
                                             <div class="row">
@@ -117,7 +117,7 @@ include 'Model/viewservices.inc.php';
 					</li>
                     <li class="has-dropdown"><a class="side_a">Consultancy</a>
 						<ul class="dropdown">
-							<li><a href="services2.php">Technology (Active)</a></li>
+							<li><a href="solutionslab.php">Technology (Active)</a></li>
                             <li><a href="#">Main 1</a></li>
                             <li><a href="#">Main 2</a></li>
                             <li><a href="#">Main 3</a></li>
