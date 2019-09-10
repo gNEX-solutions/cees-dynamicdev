@@ -485,7 +485,7 @@ include 'Model/getClientLogos.php';
                         }
                     });
                 });
-      </script>
+       </script>
 
 </body>
 </html>
