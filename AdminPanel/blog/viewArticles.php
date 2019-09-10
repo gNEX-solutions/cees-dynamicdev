@@ -25,17 +25,8 @@
   <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
   <!-- Custom styles for this template-->
-  <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
   <link href="../css/sb-admin-2.min.css" rel="stylesheet">
-  <script src="https://cdn.tiny.cloud/1/u2kioan9rc6y5xb04zvvx19t9mlat41vnzfintbgg50tl7fa/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
-  <script>tinymce.init({selector:'#blogArticle',
-    plugins: [
-      'advlist autolink link image lists charmap print preview hr anchor pagebreak spellchecker',
-      'searchreplace autoresize wordcount visualblocks visualchars code fullscreen insertdatetime  nonbreaking',
-      'save table contextmenu directionality emoticons template paste textcolor'
-    ],
-    toolbar: 'insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | print preview media fullpage | forecolor backcolor emoticons'
- });</script>
+  
 
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
   <link rel="stylesheet" href="style.css">
@@ -61,30 +52,20 @@
         </nav>
         <!-- Begin Page Content -->
         <div class="container-fluid">
-
-
-        <form method="POST" action="saveArticle.php">
-        <div class="form-group">
-          <label for="title">Title</label>
-          <input type="text" class="form-control" name="title" placeholder="Title of the Article" required>
-        </div>
-        <div class="form-group">
-        <textarea name="article" id="blogArticle" required>Next, use our Get Started docs to setup Tiny!</textarea>
-        </div>
-        <div class="form-group">
-        <button type="submit">Create Article</button> 
-        </div>
-        </form>
-        <!-- /.container-fluid -->
-        <!-- <div id="editor1">
-        <p>Hello World!</p>
-        <p>Some initial <strong>bold</strong> text</p>
-        <p><br></p>
-        <div> -->
-
-        <!-- <div id="editor2"></div>
-
-        <div id="ed-output"></div> -->
+<?php
+$thelist='';
+        if ($handle = opendir('../../articles/')) {
+    while (false !== ($file = readdir($handle)))
+    {
+        if ($file != "." && $file != ".." && strtolower(substr($file, strrpos($file, '.') + 1)) == 'php')
+        {
+           $thelist .= '<li><a href="'.'../../articles/'.$file.'">'.$file.'</a></li>    <button onclick="window.location.href=\'editArticle.php?title='.$file.'\'">Edit</button>';
+        }
+    }
+    echo $thelist;
+    closedir($handle);
+}
+?>
 
         </div>
       <!-- End of Main Content -->
@@ -123,30 +104,10 @@
     </div>
   </div>
 
-  <!-- Bootstrap core JavaScript-->
-  <script src="vendor/jquery/jquery.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+ 
 
-  <!-- Core plugin JavaScript-->
-  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
 
-  <!-- Custom scripts for all pages-->
-  <script src="js/sb-admin-2.min.js"></script>
 
-  <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
-  <script src="blackedit.js"></script>
-
-<!-- Initialize Quill editor -->
-<script>
-  var quill = new Quill('#editor1', {
-    theme: 'snow'
-  });
-</script>
-
-<script>
-var ed = new Editor('editor2');
-ed.init();
-</script>
 </body>
 
 </html>
