@@ -33,17 +33,20 @@ function showInsights(){
     if(isset($data[0])){
         //onclick="location.href=\'index.php\'"
         echo '<div > 
-        <h4 >
-            '.$data[0]['heading'].'
+        <h4 > 
+            <a href="researchView.php?artID='.$data[0]['idresearches'].'" target="_blank">
+            '.$data[0]['heading'].'            
             <br>
             <span id="date-section">
-                July 17, 2019  Change & Crisis Leadership, Creativity & Innovation
+                Published on - ' . $data[0]['published_date'] . '
             </span>
         </h4>
     
         <p>
         '.$data[0]['summary'].'   
         </p>
+
+        </a>
         <button id="button1"  onclick= "window.open(\'researchMore.php\',\'_blank\')">See more articles</button>
     </div>';
    
@@ -56,10 +59,12 @@ function showInsights(){
 
         </div>
         <div class="col-md-9 col-sm-9 col-lg-9" style="background-color: #f5f2f2;">
+            <a href="researchView.php?artID='.$data[1]['idresearches'].'" target="_blank">
             <h5> '.$data[1]['heading'].' </h5>
             <p>
             '.$data[1]['summary'].'   
-            </p>  
+            </p> 
+            </a> 
         </div>  
     </div >';
     }
@@ -70,10 +75,12 @@ function showInsights(){
 
         </div>
         <div class="col-md-9 col-sm-9 col-lg-9" >
+        <a href="researchView.php?artID='.$data[2]['idresearches'].'" target="_blank">
         <h5>  '.$data[2]['heading'].'</h5>
         <p>
         '.$data[2]['summary'].'   
             </p>  
+        </a>
         </div> 
     </div>';
     }        
@@ -84,10 +91,12 @@ function showInsights(){
 
         </div>
         <div class="col-md-9 col-sm-9 col-lg-9" style="background-color: #f5f2f2;">
+        <a href="researchView.php?artID='.$data[3]['idresearches'].'" target="_blank">
         <h5> '.$data[3]['heading'].' </h5>
         <p>
         '.$data[3]['summary'].'   
             </p>  
+        </a>    
         </div> 
     </div>';
 
@@ -99,19 +108,19 @@ function showInsights(){
 
         </div>
         <div class="col-md-9 col-sm-9 col-lg-9" >
+        <a href="researchView.php?artID='.$data[4]['idresearches'].'" target="_blank">
         <h5>  '.$data[4]['heading'].'</h5>
         <p>
         '.$data[4]['summary'].'   
-            </p>  
+        </p>
+        </a>  
         </div> 
     </div>';
     
     }
                
     if(isset($data)){
-        echo '<div class="row">
-        <button id="button1" onclick= "window.open(\'researchMore.php\',\'_blank\')">See more articles</button>
-    </div>';
+
     }         
                 
 }
