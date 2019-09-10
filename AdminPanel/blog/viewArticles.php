@@ -23,7 +23,7 @@
   <!-- Custom fonts for this template-->
   <link href="../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
-
+  <script src="../vendor/jquery/jquery.min.js"></script>
   <!-- Custom styles for this template-->
   <link href="../css/sb-admin-2.min.css" rel="stylesheet">
   
@@ -52,6 +52,20 @@
         </nav>
         <!-- Begin Page Content -->
         <div class="container-fluid">
+          <script>
+          function delArticle(fileName) {
+            $.ajax({
+          url: 'deleteArticle.php',
+          data: {'file' : "../../articles/".concat(fileName) },
+          success: function (response) {
+           location.reload();
+          },
+          error: function () {
+           location.reload();
+          }
+        });
+      }
+          </script>
 <?php
 $thelist='';
         if ($handle = opendir('../../articles/')) {
@@ -59,7 +73,8 @@ $thelist='';
     {
         if ($file != "." && $file != ".." && strtolower(substr($file, strrpos($file, '.') + 1)) == 'php')
         {
-           $thelist .= '<li><a href="'.'../../articles/'.$file.'">'.$file.'</a></li>    <button onclick="window.location.href=\'editArticle.php?title='.$file.'\'">Edit</button>';
+           $thelist .= '<li><a href="'.'../../articles/'.$file.'">'.$file.'</a></li>  <button align="left" onclick="window.location.href=\'editArticle.php?title='.$file.'\'">Edit</button>
+           <button align="left" onclick="delArticle(\''.$file.'\')">Delete</button>';
         }
     }
     echo $thelist;
