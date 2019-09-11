@@ -35,7 +35,7 @@
       'save table contextmenu directionality emoticons template paste textcolor'
     ],
     toolbar: 'insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | print preview media fullpage | forecolor backcolor emoticons',
-    //images_upload_url: 'postAcceptor.php',
+    images_upload_url: 'postAcceptor.php'
     
  });  </script>
 
@@ -66,6 +66,7 @@
 
 
         <form method="POST" action="saveArticle.php">
+          <input type="hidden" value="new" name="status">
         <div class="form-group">
           <label for="title">Title</label>
           <input type="text" class="form-control" name="title" placeholder="Title of the Article" required>

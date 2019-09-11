@@ -36,7 +36,8 @@
       'searchreplace autoresize wordcount visualblocks visualchars code fullscreen insertdatetime  nonbreaking',
       'save table contextmenu directionality emoticons template paste textcolor'
     ],
-    toolbar: 'insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | print preview media fullpage | forecolor backcolor emoticons'
+    toolbar: 'insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | print preview media fullpage | forecolor backcolor emoticons',
+    images_upload_url: 'postAcceptor.php'
  });
 </script>
 
@@ -67,6 +68,8 @@
 
 
         <form method="POST" action="saveArticle.php" id="editForm">
+          <input type="hidden" name="articleID" value="<?php echo $_GET['id'] ?>">
+          <input type="hidden" name="status" value="update">
         <div class="form-group">
           <label for="title">Title</label>
           <input type="text" class="form-control" id="articleTitle" name="title" placeholder="Title of the Article" required>
@@ -79,18 +82,32 @@
         </div>
         </form>
 
-        
+        <?php
+ 
+  include '../../Model/dbh.inc.php';
+  $newConnection= new dbh;
+  $conn=$newConnection->connect();
+  
+  if(isset($_GET['id'])){
+  
+
+      $id = $_GET['id'];
+          $sql="SELECT * FROM blog_posts WHERE idblog_posts='$id' AND status=1";
+          $result=$conn->query($sql);
+          $row=$result->fetch_assoc();
+    $title=$row['title'];
+    $content=$row['htmlString'];
+
+  }
+  $conn->close();
+  unset($newConnection);
+  
+  ?>
+
+
+ 
         <!-- /.container-fluid -->
-        <!-- <div id="editor1">
-        <p>Hello World!</p>
-        <p>Some initial <strong>bold</strong> text</p>
-        <p><br></p>
-        <div> -->
-
-        <!-- <div id="editor2"></div>
-
-        <div id="ed-output"></div> -->
-
+        
         </div>
       <!-- End of Main Content -->
 
@@ -139,31 +156,13 @@
   <script src="js/sb-admin-2.min.js"></script>
 
   <script src="blackedit.js"></script>
-  <?php  $tt=$_GET['title']?>
   <script>
-     
-        $.get("../../articles/<?php echo $_GET['title']?>", function(content) { 
+    var content='<?php echo $content ?>';
     $('#blogArticle').html(content);
-});
-    var name="<?php echo $_GET['title']?>";
-    document.getElementById('articleTitle').value=name.split(".")[0];
+    var name="<?php echo $title ?>";
+    document.getElementById('articleTitle').value=name;
 
-      $('#editForm').submit(function() {
-      var comparison=name.localeCompare(document.getElementById('articleTitle').value)
-      if(comparison!=0){
-        $.ajax({
-          url: 'deleteArticle.php',
-          data: {'file' : "../../articles/<?php echo $tt?>" },
-          success: function (response) {
-             // do something
-          },
-          error: function () {
-             // do something
-          }
-        });
-      }
-      return true; // return false to cancel form action
-  });
+     
 
   </script>
 
