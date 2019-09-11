@@ -8,23 +8,24 @@ function showInsights(){
     echo '<style>';
     if(isset($data[0])){
     echo ' .image1{
-    background-image: url("'.$data[0]['url'].'");}';
+    background-image: url("assets/images/article-512.png");}';
     }
      if(isset($data[1])){
     echo ' .image2{
-    background-image: url("'.$data[1]['url'].'");}';
+    background-image: url("assets/images/article-512.png");
+    background-size: auto 100%;}';
     }
     if(isset($data[2])){
         echo ' .image3{
-        background-image: url("'.$data[2]['url'].'");}';
+        background-image: url("assets/images/article-512.png");}';
     }
      if(isset($data[3])){
     echo ' .image4{
-    background-image: url("'.$data[3]['url'].'");}';
+    background-image: url("assets/images/article-512.png");}';
     }
     if(isset($data[4])){
-        echo ' .image4{
-        background-image: url("'.$data[4]['url'].'");}';
+        echo ' .image5{
+        background-image: url("assets/images/article-512.png");}';
     }
    
     echo '</style>';
@@ -33,18 +34,18 @@ function showInsights(){
     if(isset($data[0])){
         //onclick="location.href=\'index.php\'"
         echo '<div > 
+        <br>
+        <br>
         <h4 > 
-            <a href="researchView.php?artID='.$data[0]['idresearches'].'" target="_blank">
-            '.$data[0]['heading'].'            
+            <a href="researchView.php?artID='.$data[0]['idblog_posts'].'" target="_blank">
+            '.$data[0]['title'].'            
             <br>
             <span id="date-section">
-                Published on - ' . $data[0]['published_date'] . '
+                Published on - ' . $data[0]['modified_at'] . '
             </span>
         </h4>
     
-        <p>
-        '.$data[0]['summary'].'   
-        </p>
+
 
         </a>
         <button id="button1"  onclick= "window.open(\'researchMore.php\',\'_blank\')">See more articles</button>
@@ -58,11 +59,13 @@ function showInsights(){
         <div class="col-md-3 col-sm-3 col-lg-3 image2">
 
         </div>
+        <br>
+        <br>
         <div class="col-md-9 col-sm-9 col-lg-9" style="background-color: #f5f2f2;">
-            <a href="researchView.php?artID='.$data[1]['idresearches'].'" target="_blank">
-            <h5> '.$data[1]['heading'].' </h5>
+            <a href="researchView.php?artID='.$data[1]['idblog_posts'].'" target="_blank">
+            <h5> '.$data[1]['title'].' </h5>
             <p>
-            '.$data[1]['summary'].'   
+            Published on - ' . $data[1]['modified_at'] . '   
             </p> 
             </a> 
         </div>  
@@ -75,10 +78,10 @@ function showInsights(){
 
         </div>
         <div class="col-md-9 col-sm-9 col-lg-9" >
-        <a href="researchView.php?artID='.$data[2]['idresearches'].'" target="_blank">
-        <h5>  '.$data[2]['heading'].'</h5>
+        <a href="researchView.php?artID='.$data[2]['idblog_posts'].'" target="_blank">
+        <h5>  '.$data[2]['title'].'</h5>
         <p>
-        '.$data[2]['summary'].'   
+        Published on - ' . $data[2]['modified_at'] . '   
             </p>  
         </a>
         </div> 
@@ -91,10 +94,10 @@ function showInsights(){
 
         </div>
         <div class="col-md-9 col-sm-9 col-lg-9" style="background-color: #f5f2f2;">
-        <a href="researchView.php?artID='.$data[3]['idresearches'].'" target="_blank">
-        <h5> '.$data[3]['heading'].' </h5>
+        <a href="researchView.php?artID='.$data[3]['idblog_posts'].'" target="_blank">
+        <h5> '.$data[3]['title'].' </h5>
         <p>
-        '.$data[3]['summary'].'   
+        Published on - ' . $data[3]['modified_at'] . '   
             </p>  
         </a>    
         </div> 
@@ -108,16 +111,17 @@ function showInsights(){
 
         </div>
         <div class="col-md-9 col-sm-9 col-lg-9" >
-        <a href="researchView.php?artID='.$data[4]['idresearches'].'" target="_blank">
-        <h5>  '.$data[4]['heading'].'</h5>
+        <a href="researchView.php?artID='.$data[4]['idblog_posts'].'" target="_blank">
+        <h5>  '.$data[4]['title'].'</h5>
         <p>
-        '.$data[4]['summary'].'   
+        Published on - ' . $data[4]['modified_at'] . '   
         </p>
         </a>  
         </div> 
     </div>';
     
     }
+    echo '</div>';
                
     if(isset($data)){
 
