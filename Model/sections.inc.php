@@ -40,18 +40,8 @@ class Sections extends dbh{
           return $numRows;
     }
     //End of get card count
-    protected function getConsultingServicesPrograms ()
-   { 
-      $sql="SELECT * FROM program WHERE page_type=CS";
-      $result=$this->connect()->query($sql);
-      $numRows=$result->num_rows;
-      if($numRows>0){
-          while($row=$result->fetch_assoc()){
-             $data[]=$row;
-          }
-          return $data;
-      }
-    }
+
+   
 
   
 }

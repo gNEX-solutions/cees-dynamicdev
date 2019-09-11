@@ -13,7 +13,7 @@ class ViewSections extends Sections {
        $classlen=12/$count;
        foreach($programs as $program){
          if($program['page_type']=='CA' && $program['status']==1){
-          echo ' <div class="container">
+          echo '<div class="container">
                   <div class="row ">
                      <div class="col-12 general-title text-center">
                         <h2>'.$program['program_title'].'</h2>
@@ -22,7 +22,7 @@ class ViewSections extends Sections {
                      </div>';
                foreach($courses as $course){
                   if($course['idprogram']==2 && $course['status']==1){
-                     echo '<div class="col-lg-'.$classlen.' col-md-'.$classlen.' col-sm-12">
+                     echo '<div class="col-lg-'.$classlen.' col-md-'.$classlen.'
                         <div class="servicebox text-center">
                            <div class="service-icon">
                               <div class="dm-icon-effect-1" data-effect="slide-bottom">
@@ -45,30 +45,116 @@ class ViewSections extends Sections {
       
    }
    // End of CA sections list
+
+   // KDW: 11.09.2019: Show CS page sections list
    public function ShowCS_MENU()
    { 
-       $datas=$this->getAllServices();
-       foreach($datas as $data){
-         if($data['type']=='CS'){
-          echo '<div class="col-md-3"><h4 class="dropdown-heading"><a  href="program_template.php?idconsultancies='.$data['idconsultancies'].'&heading='.$data['heading'].'">'. $data['heading'].'</a></h4><ul class="dropdown-list"><li>'. $data['summary'].' </li></ul></div>';
+      $programs=$this->getAllSections();
+      $courses=$this->getAllCourses();
+     
+      foreach($programs as $program){
+         $programid= $program['idprogram'];
+         $count=$this->getCardDesign($programid);
+        
+         if($program['page_type']=='CS' && $program['status']==1){
+         
+            if($program['Menu_type']=='NCIL' ){ 
+               echo '<div class="container">
+
+               <div class="grid-flex hideme">
+               <div class="col col-image">
+                  <img src="'.$program['image_url'].'" alt="" class="mx-auto d-block" />
+               </div>
+               <div class="col col-text">
+                  <div class="Aligner-item text-left">
+                     <h3 class="text-left display-2 font-weight-normal">'.$program['program_title'].'</h3>
+                     <p class="text-justify">'.$program['summary'].'</p>
+                  </div>
+               </div>
+               </div>
+         
+               <hr>
+               </div><br>';
+            }
+           elseif($program['Menu_type']=='NCIR' ){ 
+           
+            echo' <div class="container">
+            <div class="grid-flex hideme">
+              <div class="col col-image">
+                <img src="'.$program['image_url'].'" alt="" class="mx-auto d-block" />
+              </div>
+              <div class="col col-text col-left" style="margin-left:75px;">
+                <div class="Aligner-item">
+                  <h3 class="text-left display-2 font-weight-normal">'.$program['program_title'].'</h3>
+                  <p class="text-justify">'.$program['summary'].'</p>
+                 
+                </div>
+              </div>
+            </div>
+            <hr>
+          </div><br>';
+           }
+           elseif($program['Menu_type']=='WCCV' ){ 
+            $classlen=12/$count;
+              echo '<div class="container">
+              <div class="row ">
+      
+              <div class="text-center col-12 display-2 font-weight-normal">
+                  <p>'.$program['program_title'].'</p>
+              </div>
+              <div class="col-12 general-title text-center">
+                <!-- <h2>Focused Business Improvement</h2> -->
+                <p>'.$program['summary'].'</p>
+                <hr>
+              </div>';
+              
+              foreach($courses as $course){
+               if($course['idprogram']==  $programid && $course['status']==1){
+                      echo'<div class="col-lg-'.$classlen.' col-md-'.$classlen.' col-sm-12">
+                      <div class="servicebox text-center">
+                        <div class="service-icon">
+                          <div class="dm-icon-effect-1" data-effect="slide-right">
+                            <a href="#" class=""> <i class="dm-icon '.$course['course_icon_url'].' fa-3x"></i> </a>
+                          </div>
+                          <div class="servicetitle">
+                            <h4>'.$course['course_heading'].'</h4>
+                            <hr>
+                          </div>
+                        
+                        </div>
+                        <!-- service-icon -->
+                      </div>
+                      <!-- servicebox -->
+                    </div>';
+                 }
+               }
+
+              echo' </div></div>';
+           }
          }
       
 
       }
       
    }
-   public function ShowSL_MENU()
-   { 
-       $datas=$this->getAllServices();
-       foreach($datas as $data){
-         if($data['type']=='SL'){
-          echo '<div class="col-md-3"><h4 class="dropdown-heading"><a  href="program_template.php?idconsultancies='.$data['idconsultancies'].'&heading='.$data['heading'].'" >'. $data['heading'].'</a></h4><ul class="dropdown-list"><li>'. $data['summary'].' </li></ul></div>';
+   // End of CS sections list
+ // KDW: 11.09.2019: Show CS page Slider
+   public function ShowCS_Slider()
+   {
+      $programs=$this->getAllSections();
+      foreach($programs as $program){
+         
+         if($program['page_type']=='CS' && $program['status']==1){
+            echo'<li class="anim'.$program['program_order'].'">
+            <div class="quote">'.$program['program_title'].'</div>
+            <div class="source">'.$program['summary'].'....</div>
+          </li>';
          }
-      
-
       }
-      
+
    }
+ 
+// End of CS sections list
    public function ShowCA_CONTENT($idconsultancies)
    { 
        $datas=$this->  getRequestedServiceData ($idconsultancies);

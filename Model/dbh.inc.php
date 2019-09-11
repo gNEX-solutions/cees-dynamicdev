@@ -1,4 +1,5 @@
 <?php
+// KDW: August 24th, 2019 10:52pm : DB Connection Class
 class dbh{
     
     private $serverName;
@@ -13,14 +14,7 @@ class dbh{
        $this->dbName="heroku_3dffaa1b8ca65ff";
       $conn=new mysqli($this->serverName, $this->userName,$this->password,$this->dbName);
       return $conn;
- 
-    //   $this->serverName="localhost";
-    //   $this->userName="root";
-    //   $this->password="";
-    //   $this->dbName="heroku_3dffaa1b8ca65ff";
-    //  $conn=new mysqli($this->serverName, $this->userName,$this->password,$this->dbName);
-    //  return $conn;
-        
+   
    }
 }
 ?>
