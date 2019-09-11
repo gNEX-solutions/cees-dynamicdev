@@ -15,7 +15,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Add New Program</title>
+  <title>Academy New Page</title>
   <?php include 'resources/nav.php'; ?>
   <?php include 'resources/footer.php'; ?>
   <!-- Custom fonts for this template-->
@@ -57,8 +57,7 @@
         <!-- Begin Page Content -->
         <div class="container-fluid">
 
-
-          <!-- Page Heading -->
+          <h1 class="h3 mb-4 text-gray-800">New CEES Academy Page</h1>
 
           <form method="POST" action="AdminModel/create.php" enctype="multipart/form-data">
          
@@ -72,7 +71,7 @@
       <textarea class="form-control" name="inputSummary" placeholder="Summary" required></textarea>
     </div>
     <div class="form-group">
-      <label for="inputDescription">Page type</label>
+    <label for="inputDescription">Page type</label>
       <select class="form-control" name="inputPageType">
         <option>Select page type</option>
         <option value="CA">CEES Academy</option>
@@ -82,7 +81,7 @@
     </div>
 
     <div class="form-group">
-      <label for="inputDescription">Program design type</label>
+    <label for="inputDescription">Program design type</label>
       <select class="form-control" name="inputDesignType">
         <option>Select the design type</option>
         <option value="NCIL">No Courses Image Left</option>
@@ -102,8 +101,10 @@
   <div class="form-group">
 
     <label for="inputImage" class="btn-2" >Image</label><br>
-    <input type="file" id="file"  accept="image/*" name="inputImage" required>
+    <input type="file" id="file"  accept="image/*" name="inputImage">
 
+
+   
   </div>
   
   <button type="submit" class="btn btn-primary">Create</button>
