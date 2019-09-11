@@ -42,9 +42,9 @@ include 'Model/getClientLogos.php';
 
 </head>
 <body>
-<!-- <div id="preloader">
+<div id="preloader">
   <div id="status">&nbsp;</div>
-</div> -->
+</div>
   <section class="menu cid-ruNsw1yRec"  once="menu" id="menu1-0" style="width:100%; position:fixed; z-index:999;">
         <?php require_once ('common/Components/header.php'); ?>
   </section>
@@ -384,7 +384,7 @@ include 'Model/getClientLogos.php';
                         $getClientLogos = new getClientLogos();
                         $data = $getClientLogos->getAllClientLogos();
                         foreach ($data as $key=>$img1) {
-                            echo "<div class='slide' style='margin-left: 50px;'>
+                            echo "<div class='slide' style='margin-left: 100px;'>
                             <img src='$img1[imageUrl]' height='60' width='auto' alt='' />
                             </div>";
                         }

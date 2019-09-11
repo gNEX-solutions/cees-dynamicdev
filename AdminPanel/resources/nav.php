@@ -93,6 +93,24 @@
             <i class="fas fa-fw fa-chart-area"></i>
             <span>Add New Member</span></a>
           </li>
+
+          <!-- Divider -->
+          <hr class="sidebar-divider">
+          <div class="sidebar-heading">
+            Articles   
+          </div>
+          <!-- Nav Item - Pages Collapse Menu -->
+          <li class="nav-item">
+            <a class="nav-link" href="blog/blog.php">
+            <i class="fas fa-fw fa-chart-area"></i>
+            <span>Add New Article</span></a>
+          </li>
+          <!-- Nav Item - Pages Collapse Menu -->
+          <li class="nav-item">
+            <a class="nav-link" href="blog/viewArticles.php">
+            <i class="fas fa-fw fa-chart-area"></i>
+            <span>View Articles</span></a>
+          </li>
     
           <!-- Divider -->
           <hr class="sidebar-divider d-none d-md-block">
@@ -262,6 +280,38 @@
         <a class="nav-link" href="../updateEvents.php">
           <i class="fas fa-fw fa-chart-area"></i>
           <span>Update Events</span></a>
+      </li>
+
+
+      <!-- Divider -->
+      <hr class="sidebar-divider">
+      <div class="sidebar-heading">
+        Team Member   
+      </div>
+      <!-- Nav Item - Pages Collapse Menu -->
+      <li class="nav-item">
+        <a class="nav-link" href="../AboutUs.php">
+        <i class="fas fa-fw fa-chart-area"></i>
+        <span>Add New Member</span></a>
+      </li>
+
+
+      <!-- Divider -->
+      <hr class="sidebar-divider">
+      <div class="sidebar-heading">
+        Articles   
+      </div>
+      <!-- Nav Item - Pages Collapse Menu -->
+      <li class="nav-item">
+        <a class="nav-link" href="../blog/blog.php">
+        <i class="fas fa-fw fa-chart-area"></i>
+        <span>Add New Article</span></a>
+      </li>
+      <!-- Nav Item - Pages Collapse Menu -->
+      <li class="nav-item">
+        <a class="nav-link" href="../blog/viewArticles.php">
+        <i class="fas fa-fw fa-chart-area"></i>
+        <span>View Articles</span></a>
       </li>
   
         <!-- Divider -->
