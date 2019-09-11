@@ -13,7 +13,9 @@ class ViewSections extends Sections {
        $classlen=12/$count;
        foreach($programs as $program){
          if($program['page_type']=='CA' && $program['status']==1){
-          echo ' <div class="container">
+            //With courses columb view
+            if($program['Menu_type']=="WCCV"){
+               echo ' <div class="container">
                   <div class="row ">
                      <div class="col-12 general-title text-center">
                         <h2>'.$program['program_title'].'</h2>
@@ -21,12 +23,12 @@ class ViewSections extends Sections {
                         <hr>
                      </div>';
                foreach($courses as $course){
-                  if($course['idprogram']==2 && $course['status']==1){
+                  if($course['idprogram']==$program['idprogram'] && $course['status']==1){
                      echo '<div class="col-lg-'.$classlen.' col-md-'.$classlen.' col-sm-12">
                         <div class="servicebox text-center">
                            <div class="service-icon">
                               <div class="dm-icon-effect-1" data-effect="slide-bottom">
-                                 <a href="#" class=""> <i class="dm-icon fa fa-trophy fa-3x"></i> </a>
+                                 <a href="#" class=""> <img src="'.$course['course_icon_url'].'" style="width:50%"> </a>
                               </div>
                            <div class="servicetitle">
                               <h4>'.$course['course_heading'].'</h4>
@@ -38,6 +40,37 @@ class ViewSections extends Sections {
                      </div>';
                   }
                }
+            }
+            //With courses block view
+            if($program['Menu_type']=="WCBV"){
+               echo '<div class="container">
+                        <div class="row ">
+                           <div class="col-12 general-title text-center">
+                              <h2>'.$program['program_title'].'</h2>
+                              <p>'.$program['summary'].'</p>s
+                              <hr>
+                           </div>';
+                     foreach($courses as $course){
+                        if($course['idprogram']==$program['idprogram'] && $course['status']==1){
+                           echo '<div class="col-lg-'.$classlen.' col-md-'.$classlen.' col-sm-12">
+                                    <div class="servicebox text-center">
+                                       <div class="card">
+                                          <div class="service-icon">
+                                             <div class="dm-icon-effect-1" data-effect="slide-left">
+                                                <img src="'.$course['course_icon_url'].'" alt="" title="" style="width:30%; margin-bottom:10px; margin-top:10px;"><br>
+                                             </div>
+                                          <div class="servicetitle">
+                                          <h4>.'.$course['course_heading'].'</h4>
+                                          <hr>
+                                       </div>
+                                       <p>'.$course['summary'].'</p>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>';
+                        }
+                     }
+            }
          }
       
 

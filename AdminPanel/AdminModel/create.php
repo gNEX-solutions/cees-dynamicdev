@@ -47,9 +47,11 @@ include '../../Model/dbh.inc.php';
 
 $title=$_POST['inputTitle'];
 $summary=$_POST['inputSummary'];
-$description1=$_POST['inputDescription1'];
-$description2=$_POST['inputDescription2'];
-$type=$_POST['inputType'];
+//DS: 11.09.2019: Peogram inputs
+$pageType=$_POST['inputPageType'];
+$designType=$_POST['inputDesignType'];
+//$status=$_POST['status'];
+//$type=$_POST['inputType'];
 
 $target_dir = "../../assets/images/";
 $target_file = $target_dir . basename($_FILES["inputImage"]["name"]);
@@ -96,6 +98,7 @@ if ($uploadOk == 0) {
         echo "Sorry, there was an error uploading your file. Please try again<br>";
     }
 }
+
 if($uploadOk == 1){
 $newConnection= new dbh;
 $success=1;
@@ -128,6 +131,7 @@ $stmt4->bind_param("isi",$statusNum,$target_file_relative_path,$id);
 if(!$stmt4->execute()){
     $success=0;
 }
+
 if($success==1){
     $conn->commit();
     echo 'New Page was created successfully';
@@ -141,7 +145,7 @@ if($success==1){
 
 $conn->autocommit(true);
 
-} elseif($type=='Solutions'){
+} elseif($pageType=='Solutions'){
     $type='SL';
     $status=1;
     $conn->autocommit(false);
@@ -186,7 +190,9 @@ if($success==1){
 }
 
 $conn->autocommit(true);
-}elseif($type='Consultancy'){
+}
+elseif($pageType=='Consultancy')
+{
     $type='CS';
     $status=1;
     $conn->autocommit(false);
@@ -234,7 +240,7 @@ $conn->autocommit(true);
 }
 
 $conn->close();
-}
+//}
 ?>
           <p>You will be redirected in <span id="counter">6</span> second(s).</p>
 <script type="text/javascript">
