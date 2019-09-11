@@ -57,41 +57,35 @@
         <div class="container-fluid">
 
         <?php
-// include '../../Model/dbh.inc.php';
-// $newConnection= new dbh;
-// $conn=$newConnection->connect();
-function save_html_to_file($content, $path){
-  return (bool) file_put_contents($path, $content);
-}
-if(isset($_POST['title'])){
+include '../../Model/dbh.inc.php';
+$newConnection= new dbh;
+$conn=$newConnection->connect();
+
+if($_POST['status']=='new'){
 
     $title=$_POST['title'];
     $content=$_POST['article'];
     $status=1;
-    $target_dir = "../../articles/";
-    $target_file = $target_dir.$title.'.php';
-
-    
-
-    if(save_html_to_file($content,$target_file)){
-        // $stmt= $conn->prepare("INSERT INTO blog_posts(html_string,status) VALUES (?,?)");
-        // $stmt->bind_param("si",$title,$status);
-        // $stmt->execute();
+        $stmt= $conn->prepare("INSERT INTO blog_posts(title,htmlString,status) VALUES (?,?,?)");
+        $stmt->bind_param("ssi",$title,$content,$status);
+        $stmt->execute();
 
 
-    }else{
-
-    }
-    
-
+} else if($_POST['status']=='update'){
+  $id=$_POST['articleID'];
+  $title=$_POST['title'];
+  $content=$_POST['article'];
+      $stmt1= $conn->prepare("UPDATE blog_posts SET htmlString=?, title=? WHERE idblog_posts=?");
+      $stmt1->bind_param("ssi",$content,$title,$id);
+      $stmt1->execute();
 }
 
 
-// $conn->close();
-
+$conn->close();
+unset($newConnection);
 
 ?>
- <p>You will be redirected in <span id="counter">4</span> second(s).</p>
+ <p>You will be redirected in <span id="counter">3</span> second(s).</p>
 <script type="text/javascript">
 function countdown() {
     var i = document.getElementById('counter');

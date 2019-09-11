@@ -56,7 +56,7 @@
           function delArticle(fileName) {
             $.ajax({
           url: 'deleteArticle.php',
-          data: {'file' : "../../articles/".concat(fileName) },
+          data: {'id' : fileName },
           success: function (response) {
            location.reload();
           },
@@ -67,19 +67,33 @@
       }
           </script>
 <?php
-$thelist='';
-        if ($handle = opendir('../../articles/')) {
-    while (false !== ($file = readdir($handle)))
-    {
-        if ($file != "." && $file != ".." && strtolower(substr($file, strrpos($file, '.') + 1)) == 'php')
-        {
-           $thelist .= '<li><a href="'.'../../articles/'.$file.'">'.$file.'</a></li>  <button align="left" onclick="window.location.href=\'editArticle.php?title='.$file.'\'">Edit</button>
-           <button align="left" onclick="delArticle(\''.$file.'\')">Delete</button>';
+
+
+
+include '../../Model/dbh.inc.php';
+  $newConnection= new dbh;
+  $conn=$newConnection->connect();
+  
+  
+  
+     
+          $sql="SELECT idblog_posts,title FROM blog_posts WHERE status=1";
+          $result=$conn->query($sql);
+          $numRows=$result->num_rows;
+        
+          if($numRows>0){
+              while($row=$result->fetch_assoc()){
+              echo '  <div class="form-group"><li><a href="#">'.$row['title'].'</a></li>  <button onclick="window.location.href=\'editArticle.php?id='.$row['idblog_posts'].'\'">Edit</button>
+                         <button align="left" onclick="delArticle('.$row['idblog_posts'].')">Delete</button></div>';
+              }
+             
+          
         }
-    }
-    echo $thelist;
-    closedir($handle);
-}
+      
+
+  
+  $conn->close();
+  unset($newConnection);
 ?>
 
         </div>
@@ -133,4 +147,3 @@ $thelist='';
         header("location:../login.php");
     }
 ?>
-

@@ -37,7 +37,7 @@ include 'Model/researchService.php';
   </section>
 
   <div class="carousel-inner">
-    <img style="  height: 100%;background-position: center;background-repeat: no-repeat;background-size: cover;" src="assets\images\research.jpg" alt="" title="">
+    <img style="  height: 100%;background-position: center;background-repeat: no-repeat;background-size: cover;" src="assets\images\blue-header-1.jpg" alt="" title="">
     <div class="carousel-caption">
       <h5>Insights & Research</h5>
       <p>Try to Do Something Beyond What have been already mastered, Thats the growth.</p>
