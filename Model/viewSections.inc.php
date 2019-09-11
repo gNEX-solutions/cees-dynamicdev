@@ -52,7 +52,7 @@ class ViewSections extends Sections {
                         <div class="row ">
                            <div class="col-12 general-title text-center">
                               <h2>'.$program['program_title'].'</h2>
-                              <p>'.$program['summary'].'</p>s
+                              <p>'.$program['summary'].'</p>
                               <hr>
                            </div>';
                      foreach($courses as $course){
@@ -92,7 +92,7 @@ class ViewSections extends Sections {
      
       foreach($programs as $program){
          $programid= $program['idprogram'];
-         $count=$this->getCardDesign($programid);
+    
         
          if($program['page_type']=='CS' && $program['status']==1){
          
@@ -133,7 +133,7 @@ class ViewSections extends Sections {
           </div><br>';
            }
            elseif($program['Menu_type']=='WCGV' ){ 
-            $classlen=12/$count;
+         
               echo '<div class="container">
               <div class="row ">
       
@@ -144,11 +144,13 @@ class ViewSections extends Sections {
                 <!-- <h2>Focused Business Improvement</h2> -->
                 <p>'.$program['summary'].'</p>
                 <hr>
-              </div>';
+              </div><div class="container">
+              <div class="row justify-content-md-center">';
               
               foreach($courses as $course){
                if($course['idprogram']==  $programid && $course['status']==1){
-                      echo'<div class="col-lg-'.$classlen.' col-md-'.$classlen.' col-sm-12">
+                      echo'
+                      <div class="col-md-4">
                       <div class="servicebox text-center">
                         <div class="service-icon">
                           <div class="dm-icon-effect-1" data-effect="slide-right">
@@ -167,7 +169,7 @@ class ViewSections extends Sections {
                  }
                }
 
-              echo' </div></div>';
+              echo'</div></div></div></div>';
            }
          }
       
