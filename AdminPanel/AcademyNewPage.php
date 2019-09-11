@@ -8,7 +8,7 @@
 <html lang="en">
 
 <head>
-
+<link rel="shortcut icon" href="../assets/images/logo2.png" type="image/x-icon">
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -24,6 +24,7 @@
 
   <!-- Custom styles for this template-->
   <link href="css/sb-admin-2.min.css" rel="stylesheet">
+  <!-- <link href="css/style.css" rel="stylesheet"> -->
 
 </head>
 
@@ -40,14 +41,25 @@
 
       <!-- Main Content -->
       <div id="content">
+      <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
 
+<!-- Sidebar Toggle (Topbar) -->
+  <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+    <i class="fa fa-bars"></i>
+  </button>
+
+
+<!-- Page Heading -->
+  <h1 class="h3 mb-4 text-gray-800">New CEES Academy Page</h1>
+  </nav>
       
 
         <!-- Begin Page Content -->
         <div class="container-fluid">
 
-          <!-- Page Heading --> 
-          <h1 class="h3 mb-4 text-gray-800">New CEES Program</h1>
+
+          <!-- Page Heading -->
+
           <form method="POST" action="AdminModel/create.php" enctype="multipart/form-data">
          
   <input type="hidden" name="inputType" value="Academy">
@@ -88,8 +100,10 @@
     </div>
   
   <div class="form-group">
-    <label for="inputImage" >Image</label><br>
-    <input type="file"  accept="image/*" name="inputImage">
+
+    <label for="inputImage" class="btn-2" >Image</label><br>
+    <input type="file" id="file"  accept="image/*" name="inputImage" required>
+
   </div>
   
   <button type="submit" class="btn btn-primary">Create</button>

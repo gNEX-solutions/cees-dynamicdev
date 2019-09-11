@@ -8,7 +8,7 @@
 <html lang="en">
 
 <head>
-
+<link rel="shortcut icon" href="../assets/images/logo2.png" type="image/x-icon">
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -40,14 +40,23 @@
 
       <!-- Main Content -->
       <div id="content">
+<nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
 
+<!-- Sidebar Toggle (Topbar) -->
+  <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+    <i class="fa fa-bars"></i>
+  </button>
+
+
+<!-- Page Heading -->
+  <h1 class="h3 mb-4 text-gray-800">New Consultancy Page</h1>
+  </nav>
       
 
         <!-- Begin Page Content -->
         <div class="container-fluid">
 
           <!-- Page Heading -->
-          <h1 class="h3 mb-4 text-gray-800">New Consultancy Page</h1>
           <form action="AdminModel/create.php" method="POST" enctype="multipart/form-data">
           <input type="hidden" name="inputType" value="Consultancy">
     <div class="form-group">

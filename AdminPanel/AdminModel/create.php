@@ -55,6 +55,7 @@ $designType=$_POST['inputDesignType'];
 
 $target_dir = "../../assets/images/";
 $target_file = $target_dir . basename($_FILES["inputImage"]["name"]);
+$target_file_relative_path = "assets/images/" . basename($_FILES["inputImage"]["name"]);
 $uploadOk = 1;
 $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
 // Check if image file is a actual image or fake image
@@ -97,44 +98,40 @@ if ($uploadOk == 0) {
         echo "Sorry, there was an error uploading your file. Please try again<br>";
     }
 }
-//if($uploadOk == 0){
-    $newConnection= new dbh;
-    $success=1;
-    $conn=$newConnection->connect();
-    echo "<script>alert('.$title.')</script>";
-    if($pageType=='CA'){
-    //$type='CA'; 
-    //$status=1;s
-    $conn->autocommit(false);
-//$stmt= $conn->prepare("INSERT INTO program(program_title, summary, page_type, status, image_url, Menu_type) VALUES (?,?,?,?,?,?)");
-//$stmt->bind_param($title, $summary, $pageType, $status, $target_dir, $designType);
-    $stmt= $conn->prepare("INSERT INTO program(description,program_title, summary) VALUES (?,?,?)");
-    $stmt->bind_param("sii",$title, $summary);
-    $stmt->execute();
-    echo "<script>alert(".$summary.")</script>";
-    if($stmt->execute()){
-        $success=0;
-        //echo "<script>alert('.$summary.')</script>";
-    }
-    $id=$stmt->insert_id;
-    $stmt2= $conn->prepare("INSERT INTO consultaies_descriptions(description,idconsultancies,description_order) VALUES (?,?,?)");
-    $order=1;
-    $stmt2->bind_param("sii",$description1,$id,$order);
-    if(!$stmt2->execute()){
-        $success=0;
-    }
-    $stmt3= $conn->prepare("INSERT INTO consultaies_descriptions(description,idconsultancies,description_order) VALUES (?,?,?)");
-    $order=2;
-    $stmt3->bind_param("sii",$description2,$id,$order);
-    if(!$stmt3->execute()){
-        $success=0;
-    }
-    $stmt4= $conn->prepare("INSERT INTO consultancies_images(status,url,idConsultancies) VALUES (?,?,?)");
-    $statusNum=1;
-    $stmt4->bind_param("isi",$statusNum,$target_file,$id);
-    if(!$stmt4->execute()){
-        $success=0;
-    }
+
+if($uploadOk == 1){
+$newConnection= new dbh;
+$success=1;
+$conn=$newConnection->connect();
+if($type=='Academy'){
+    $type='CA';
+    $status=1;
+$conn->autocommit(false);
+$stmt= $conn->prepare("INSERT INTO consultancies(heading,type,status,summary) VALUES (?,?,?,?)");
+$stmt->bind_param("ssis",$title,$type,$status,$summary);
+if(!$stmt->execute()){
+    $success=0;
+}
+$id=$stmt->insert_id;
+$stmt2= $conn->prepare("INSERT INTO consultaies_descriptions(description,idconsultancies,description_order) VALUES (?,?,?)");
+$order=1;
+$stmt2->bind_param("sii",$description1,$id,$order);
+if(!$stmt2->execute()){
+    $success=0;
+}
+$stmt3= $conn->prepare("INSERT INTO consultaies_descriptions(description,idconsultancies,description_order) VALUES (?,?,?)");
+$order=2;
+$stmt3->bind_param("sii",$description2,$id,$order);
+if(!$stmt3->execute()){
+    $success=0;
+}
+$stmt4= $conn->prepare("INSERT INTO consultancies_images(status,url,idConsultancies) VALUES (?,?,?)");
+$statusNum=1;
+$stmt4->bind_param("isi",$statusNum,$target_file_relative_path,$id);
+if(!$stmt4->execute()){
+    $success=0;
+}
+
 if($success==1){
     $conn->commit();
     echo 'New Page was created successfully';
@@ -154,7 +151,7 @@ $conn->autocommit(true);
     $conn->autocommit(false);
 $stmt5= $conn->prepare("INSERT INTO consultancies(heading,type,status,summary) VALUES (?,?,?,?)");
 $stmt5->bind_param("ssis",$title,$type,$status,$summary);
-$smtt5->execute();
+
 if(!$stmt5->execute()){
     $success=0;
 }
@@ -162,21 +159,21 @@ $id=$stmt5->insert_id;
 $stmt6= $conn->prepare("INSERT INTO consultaies_descriptions(description,idconsultancies,description_order) VALUES (?,?,?)");
 $order=1;
 $stmt6->bind_param("sii",$description1,$id,$order);
-$stmt6->execute();
+
 if(!$stmt6->execute()){
     $success=0;
 }
 $stmt7= $conn->prepare("INSERT INTO consultaies_descriptions(description,idconsultancies,description_order) VALUES (?,?,?)");
 $order=2;
 $stmt7->bind_param("sii",$description2,$id,$order);
-$stmt7->execute();
+
 if(!$stmt7->execute()){
     $success=0;
 }
 $stmt8= $conn->prepare("INSERT INTO consultancies_images(status,url,idConsultancies) VALUES (?,?,?)");
 $statusNum=1;
-$stmt8->bind_param("isi",$statusNum,$target_file,$id);
-$stmt8->execute();
+$stmt8->bind_param("isi",$statusNum,$target_file_relative_path,$id);
+
 if(!$stmt8->execute()){
     $success=0;
 }
@@ -201,7 +198,7 @@ elseif($pageType=='Consultancy')
     $conn->autocommit(false);
 $stmt9= $conn->prepare("INSERT INTO consultancies(heading,type,status,summary) VALUES (?,?,?,?)");
 $stmt9->bind_param("ssis",$title,$type,$status,$summary);
-$stmt9->execute();
+
 if(!$stmt9->execute()){
     $success=0;
 }
@@ -209,21 +206,21 @@ $id=$stmt9->insert_id;
 $stmt10= $conn->prepare("INSERT INTO consultaies_descriptions(description,idconsultancies,description_order) VALUES (?,?,?)");
 $order=1;
 $stmt10->bind_param("sii",$description1,$id,$order);
-$stmt10->execute();
+
 if(!$stmt10->execute()){
     $success=0;
 }
 $stmt11= $conn->prepare("INSERT INTO consultaies_descriptions(description,idconsultancies,description_order) VALUES (?,?,?)");
 $order=2;
 $stmt11->bind_param("sii",$description2,$id,$order);
-$stmt11->execute();
+
 if(!$stmt11->execute()){
     $success=0;
 }
 $stmt12= $conn->prepare("INSERT INTO consultancies_images(status,url,idConsultancies) VALUES (?,?,?)");
 $statusNum=1;
-$stmt12->bind_param("isi",$statusNum,$target_file,$id);
-$stmt12->execute();
+$stmt12->bind_param("isi",$statusNum,$target_file_relative_path,$id);
+
 if(!$stmt12->execute()){
     $success=0;
 }

@@ -8,7 +8,7 @@
 <html lang="en">
 
 <head>
-
+<link rel="shortcut icon" href="../assets/images/logo2.png" type="image/x-icon">
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -48,12 +48,22 @@
       <!-- Main Content -->
       <div id="content">
         <!-- End of Topbar -->
+        <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
 
+        <!-- Sidebar Toggle (Topbar) -->
+          <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+            <i class="fa fa-bars"></i>
+          </button>
+
+
+        <!-- Page Heading -->
+          <h1 class="h3 mb-4 text-gray-800">Update Events</h1>
+        </nav>
         <!-- Begin Page Content -->
         <div class="container-fluid">
 
           <!-- Page Heading -->
-          <h1 class="h3 mb-4 text-gray-800">Update Events</h1>
+          
 
           <form action="./updateEvents.php" method="post">
             <div class="form-group">
@@ -138,14 +148,40 @@
       
             $rowCons = $resultCons->fetch_assoc();
             $paraRows = $resultPara->fetch_assoc();
-            print_r($paraRows);
-            print_r($rowCons);
+          }
+
+          
+          if($_SERVER['REQUEST_METHOD'] == "POST" and isset($_POST["update_table"])){
+          
+            $pageId = $_POST['page'];
+            $title=$_POST['EventName'];
+            $location=$_POST['EventLocation'];
+            $date = $_POST['EventDate'];
+            $startTime=$_POST['EventStartTime'];
+            $endTime=$_POST['EventEndTime'];
+            $description=$_POST['inputDescription1'];
+
+            // creating the new db connection
+            $newConnection= new dbh;
+            $conn=$newConnection->connect();
+
+            $stmt= $conn->prepare("update heroku_3dffaa1b8ca65ff.events set
+            events.name = ?, events.date = ?, events.start_time = ?, events.end_time = ?, events.description = ?, events.location = ? 
+            where events.event_id = ?;");
+            $stmt->bind_param("ssssssi",$title,$date,$startTime,$endTime,$description,$location,$pageId);
+            $stmt->execute();
+
+            echo(" <div class=\"alert alert-success\" role=\"alert\">
+              Details updated successfully..! Reload the page to see new content... </div>"
+          );
+           echo "<meta http-equiv='refresh' content='0'>";
+
           }
         ?>            
 
-      <form method="POST" action="./AcademyEditPage.php" enctype="multipart/form-data">
+      <form method="POST" action="./updateEvents.php" enctype="multipart/form-data">
 
-        <input type="hidden" name="inputId" value=<?php echo($page_id); ?>>
+        <input type="hidden" name="page" value=<?php echo($page_id); ?>>
 
           <div class="form-group row">
             <div class="col-sm-6 mb-3 mb-sm-0">
@@ -211,13 +247,22 @@
           <p> Images </p>
             <?php 
               if($paraRows != null){
-                  echo("<input type=\"hidden\" name=\"inputId\" value=" . $paraRows['url']. ">
+                  echo("
+                  <div id=" .$paraRows['idImages'] . " name='img_container'>
+                    <input type=\"hidden\" name=\"inputId\" value=" . $paraRows['url']. ">
                     <img src=". substr($paraRows['url'], 3)." alt='..' class='img-thumbnail' style=' max-height: 150px'>
-                    <button type=\"submit\" name=\"img_remove\" class=\"btn btn-outline-danger\" > Remove </button>
-
+                    <button type=\"button\" onclick=\"removeImg(" .$paraRows['idImages'] .")\" name=\"img_remove\" class=\"btn btn-outline-danger\" > Remove Flyer </button>
+                  </div>
                   ");}?> 
+            </div>
             <div >
-
+          <label for="inputImage" >Add Image</label><br>
+          <input type="file"  accept="image/*" id="uploadImage" >
+          <button type="buttomn" onclick=changeImg() class="btn btn-success">Change Flyer</button>
+        </div> <br> <br>
+            <div>
+              <button type="submit" method="post" name="update_table" class="btn btn-success">Save Changes</button>
+            </div>
       </form>
       
     </div>
@@ -269,6 +314,43 @@
 
   <!-- Custom scripts for all pages-->
   <script src="js/sb-admin-2.min.js"></script>
+
+  <script>
+
+    function removeImg(imgId){
+      console.log(imgId);
+      var imageSection = document.getElementById(imgId);
+      $.ajax({
+        type:'POST', 
+        url: "./AdminModel/editEvent.php",
+        data: {img_remove: imgId, req:'imgRemove'},
+        success: function(){
+          alert('image has been deleted succesfully');
+          $(imageSection).css("display","none");
+        },
+        error: function(){
+          alert('image deletion failed');
+        }
+      }); 
+    }
+
+    function changeImg(){
+      console.log(imgId);
+      var image = document.getElementById('uploadImage').value.substring(12);
+      $.ajax({
+        type:'POST', 
+        url: "./AdminModel/editEvent.php",
+        data: {img_remove: imgId, req:'imgRemove'},
+        success: function(){
+          alert('image has been deleted succesfully');
+          $(imageSection).css("display","none");
+        },
+        error: function(){
+          alert('image deletion failed');
+        }
+      }); 
+    }
+  </script>
 
 </body>
 

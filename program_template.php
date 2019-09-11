@@ -1,9 +1,3 @@
-<?php 
-
-
-
-?>
-
 <!DOCTYPE html>
 <html>
 
@@ -26,6 +20,7 @@
   <link rel="stylesheet" href="assets/socicon/css/styles.css">
   <link rel="stylesheet" href="assets/dropdown/css/style.css">
   <link rel="stylesheet" href="assets/theme/css/style.css">
+  <link rel="stylesheet" href="assets/theme/css/programstyle.css">
   <link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css" type="text/css">
   <link rel="stylesheet" href="assets/theme/css/preloader.css">
 
@@ -37,8 +32,11 @@
 <div id="preloader">
   <div id="status">&nbsp;</div>
 </div>
-
-<section class="menu cid-ruNsw1yRec" once="menu" id="menu1-0">
+<div class="container relative pt5-l">
+  
+ 
+</div>
+<section class="menu cid-ruNsw1yRec" once="menu" id="menu1-0" style="width:100%; position:fixed; z-index:999;">
     <?php require_once 'common/Components/header.php'; ?>
 </section>
 <?php
@@ -48,73 +46,45 @@ $services=new ViewServices();
 $datas=$services->ShowCA_CONTENT($compname);
 $images=$services->showCA_IMAGES($compname);
 ?>
-<section class="features1 cid-ruNBDZ0eEF" >
-<h1 class="mbr-title pt-2 mbr-fonts-style display-2" style="text-align:center;"><?php echo $heading?></h1>
+
+ <div class="relative pt5-l">
+<!-- <img src="https://blog.gathercontent.com/wp-content/themes/gc-blog/images/article.png" alt="" class="headline-image"> -->
+<img src="https://blog.gathercontent.com/wp-content/themes/gc-blog/images/article.png" alt="Snow" style="width:100%;">
+<div class="bottom-left">Bottom Left</div>
+<div class="centered mw55 center pa3 pa5-ns pa4-m bg-white ba b--gc-silver br2 gc-box-shadow mb5 relative">
+<section class="text-center">
+<h1 style="background-color: white;"><?php echo $heading?></h1>
 </section>
-
-<section class="features11 cid-ruXpPiazmW" id="features11-19">
-    <div class="container">   
-        <div class="col-md-12">
-            <div class="media-container-row">
-                 <div class="col-md-6" style="overflow:hidden">
-                     <img src="<?php echo $images[0]['url']?>">
+<section id="features11-19" style="margin-top:100px;background-color: white;">
+<div class="landing-wrapper text-center" style="background-color: white;">
+    
+        <div class="col" style="background-color: white; padding:5%">
+           
+                 <div class="landing">
+                   <img src="<?php echo $images[0]['url']?>" alt="Nature" class="image" width="600" height="400">
+                    
                  </div>
-                 <div class="col-md-6" >
-                    <p class="mbr-text mbr-fonts-style display-7"><?php echo $datas[0]['description'] ?>'</p>
+                 <section id="features11-19" style="margin-top:100px;background-color: white;">
+                 <div class="row">
+                    <p style="font-size: 18px; color:black"><?php echo $datas[0]['description'] ?>'</p>
                  </div>
-            </div>
-
-            <div class="media-container-row" style="margin-top:40px">
-                <div class="col-md-12" >
-                    <p class="mbr-text mbr-fonts-style display-7"><?php echo $datas[1]['description'] ?>'</p>
+                
+                 
+                <div class="row">
+                    <p style="font-size: 18px;color:black" ><?php echo $datas[1]['description'] ?>'</p>
                 </div>
-            </div>
+          </section>
 
-            <div class="media-container-row">
-                <div>
-                <table>
-                    <tr>
-                        <th>Program code: &nbsp </th>
-                        <td>Maria Anders</td>
-                    </tr>
-                    <tr>
-                        <th>Program Name:&nbsp</th>
-                        <td>Francisco Chang</td>
-                    </tr>
-                    <tr>
-                        <th>Venue:&nbsp</th>
-                        <td>Francisco Chang</td>
-                    </tr>
-                    <tr>
-                        <th>time:&nbsp</th>
-                        <td>4.00PM-6.00PM</td>
-                    </tr>
-                    <tr>
-                        <th>Content:&nbsp</th>
-                        <td>Lorem Ipsum is simply dummy text</td>
-                    </tr>
-                    <tr>
-                        <th></th>
-                        <td>Lorem Ipsum is simply dummy text</td>
-                    </tr>
-                    <tr>
-                        <th></th>
-                        <td>Lorem Ipsum is simply dummy text</td>
-                    </tr>
-                    <tr>
-                        <th></th>
-                        <td>Lorem Ipsum is simply dummy text</td>
-                    </tr>
-                    <tr>
-                        <th></th>
-                        <td>Lorem Ipsum is simply dummy text</td>
-                    </tr>
-                    </table>
-                </div>
-            </div>
+          
         </div>
     </div>
 </section>
+
+</div>
+</div> 
+
+
+
 <br><br>
 <section class="cid-ruOTxA2tiD" id="footer5-16">
 
