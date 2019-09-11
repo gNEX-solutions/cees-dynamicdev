@@ -52,7 +52,7 @@ class ViewSections extends Sections {
                         <div class="row ">
                            <div class="col-12 general-title text-center">
                               <h2>'.$program['program_title'].'</h2>
-                              <p>'.$program['summary'].'</p>s
+                              <p>'.$program['summary'].'</p>
                               <hr>
                            </div>';
                      foreach($courses as $course){
