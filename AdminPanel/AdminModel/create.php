@@ -306,8 +306,4 @@ setInterval(function(){ countdown(); },1000);
   <script src="../js/sb-admin-2.min.js"></script>
 
 </body>
-
 </html>
-
-
-
