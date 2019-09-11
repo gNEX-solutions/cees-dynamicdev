@@ -23,7 +23,7 @@ class ViewSections extends Sections {
                         <hr>
                      </div>';
                foreach($courses as $course){
-                  if($course['idprogram']==2 && $course['status']==1){
+                  if($course['idprogram']==$program['idprogram'] && $course['status']==1){
                      echo '<div class="col-lg-'.$classlen.' col-md-'.$classlen.' col-sm-12">
                         <div class="servicebox text-center">
                            <div class="service-icon">
@@ -47,11 +47,11 @@ class ViewSections extends Sections {
                         <div class="row ">
                            <div class="col-12 general-title text-center">
                               <h2>'.$program['program_title'].'</h2>
-                              <p>'.$program['summary'].'</p>
+                              <p>'.$program['summary'].'</p>s
                               <hr>
                            </div>';
                      foreach($courses as $course){
-                        if($course['idprogram']==2 && $course['status']==1){
+                        if($course['idprogram']==$program['idprogram'] && $course['status']==1){
                            echo '<div class="col-lg-'.$classlen.' col-md-'.$classlen.' col-sm-12">
                                     <div class="servicebox text-center">
                                        <div class="card">
