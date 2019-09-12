@@ -43,6 +43,7 @@
                     </div>
                   </div>
                 </li>
+              
                 
               <li class="nav-item">
                   <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseCurrentPages" aria-expanded="true" aria-controls="collapseCurrentPages">
@@ -110,6 +111,18 @@
             <a class="nav-link" href="blog/viewArticles.php">
             <i class="fas fa-fw fa-chart-area"></i>
             <span>View Articles</span></a>
+          </li>
+
+          <!-- Divider -->
+          <hr class="sidebar-divider">
+          <div class="sidebar-heading">
+            Clients   
+          </div>
+          <!-- Nav Item - Pages Collapse Menu -->
+          <li class="nav-item">
+            <a class="nav-link" href="clients.php">
+            <i class="fas fa-fw fa-chart-area"></i>
+            <span>Add / Update Clients</span></a>
           </li>
     
           <!-- Divider -->
@@ -216,6 +229,15 @@
           <a class="nav-link" href="../index.php">
             <i class="fas fa-fw fa-tachometer-alt"></i>
             <span>Dashboard</span></a>
+        </li>
+        <hr class="sidebar-divider">
+        <div class="sidebar-heading">
+          Manage programs   
+        </div>
+        <li class="nav-item active">
+          <a class="nav-link" href="../AcademyNewPage.php">
+          <i class="fas fa-fw fa-folder"></i>
+            <span>Create new program</span></a>
         </li>
   
         <!-- Divider -->
