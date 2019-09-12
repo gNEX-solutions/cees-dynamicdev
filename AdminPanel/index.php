@@ -7,7 +7,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <?php include 'resources/nav.php'; ?>
-  <?php include 'resources/footer.php'; ?>
+<?php include 'resources/footer.php'; ?>
 <head>
 
 <link rel="shortcut icon" href="../assets/images/logo2.png" type="image/x-icon">
