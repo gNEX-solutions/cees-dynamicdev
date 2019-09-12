@@ -171,9 +171,9 @@
 
   <script src="blackedit.js"></script>
   <script>
-    var content='<?php echo $content ?>';
-    var cvrimg='<?php echo $image ?>';
-    var summary='<?php echo $summary ?>';
+    var content=`<?php echo $content; ?>`;
+    var cvrimg='<?php echo $image; ?>';
+    var summary='<?php echo $summary; ?>';
     $('#blogArticle').html(content);
     var name="<?php echo $title ?>";
     document.getElementById('articleTitle').value=name;
