@@ -15,8 +15,8 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Academy New Page</title>
-  <?php include 'resources/nav.php'; ?>
+  <title>Create New Program</title>
+  <?php include 'resources/nav.php'; ?> 
   <?php include 'resources/footer.php'; ?>
   <!-- Custom fonts for this template-->
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -33,8 +33,7 @@
   <!-- Page Wrapper -->
   <div id="wrapper">
 
-   
-  <?php showNavBar(); ?>
+  <?php showNavBarToModel(); ?>
 
     <!-- Content Wrapper -->
     <div id="content-wrapper" class="d-flex flex-column">
@@ -43,46 +42,37 @@
       <div id="content">
       <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
 
-<!-- Sidebar Toggle (Topbar) -->
-  <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
-    <i class="fa fa-bars"></i>
-  </button>
-
-
-<!-- Page Heading -->
-  <h1 class="h3 mb-4 text-gray-800">New CEES Academy Page</h1>
-  </nav>
+        <!-- Sidebar Toggle (Topbar) -->
+        <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+          <i class="fa fa-bars"></i>
+        </button>
+      <!-- Page Heading -->
+        <h1 class="h3 mb-4 text-gray-800">Create New Program</h1>
+      </nav>
       
+
 
         <!-- Begin Page Content -->
         <div class="container-fluid">
 
-          <h1 class="h3 mb-4 text-gray-800">New CEES Academy Page</h1>
 
-          <form method="POST" action="AdminModel/create.php" enctype="multipart/form-data">
-         
-  <input type="hidden" name="inputType" value="Academy">
-    <div class="form-group">
-      <label for="inputTitle">Title</label>
-      <input type="text" class="form-control" name="inputTitle" placeholder="Title" required>
-    </div>
-    <div class="form-group">
-      <label for="inputSummary">Summary</label>
-      <textarea class="form-control" name="inputSummary" placeholder="Summary" required></textarea>
-    </div>
-    <div class="form-group">
-    <label for="inputDescription">Page type</label>
-      <select class="form-control" name="inputPageType">
+          <!-- Page Heading -->
+
+  <form method="POST" action="AdminModel/create.php" enctype="multipart/form-data">
+  <div class="row">
+  <div class="col col-sm-4">
+  <div class="form-group">
+     <strong> <label for="inputDescription">Page Type</label> </strong>
+      <select class="form-control" name="page_type">
         <option>Select page type</option>
         <option value="CA">CEES Academy</option>
         <option value="CS">Consultancy Services</option>
         <option value="SL">Solutions Lab</option>
       </select>
-    </div>
-
-    <div class="form-group">
-    <label for="inputDescription">Program design type</label>
-      <select class="form-control" name="inputDesignType">
+  </div> 
+  <div class="form-group">
+  <strong> <label for="inputDescription">Program design type</label></strong>
+      <select class="form-control" name="inputDesignType" id="proType">
         <option>Select the design type</option>
         <option value="NCIL">No Courses Image Left</option>
         <option value="NCIR">No Courses Image Right</option>
@@ -90,57 +80,74 @@
         <option value="WCCV">With Courses Column View</option>
         <option value="WCBV">With Courses Block View</option>
       </select>
-    </div>
-
+  </div> 
+   <input type="hidden" name="inputType" value="Academy">
     <div class="form-group">
-      <label for="inputDescription">Show program</label><br>
+    <strong> <label for="inputTitle">Title</label></strong>
+      <input type="text" class="form-control" name="inputTitle" placeholder="Title" required>
+    </div>
+  </div>
+  <div class="col col-sm-8">
+  <img src="img/NCIL.png" class="rounded float-left" alt="..." style="width:80%" id="sample">
+  </div>
+  </div>
+  
+    <div class="form-group col-12">
+    <strong> <label for="inputSummary">Summary</label></strong>
+      <textarea class="form-control" name="inputSummary" placeholder="Summary" required></textarea>
+    </div>
+    
+
+  
+
+    <div class="form-group col-6">
+    <strong> <label for="inputDescription">Show program</label></strong><br>
       <input type="radio" name="status" value="1">Show &nbsp;
       <input type="radio" name="status" value="0">Don't Show 
     </div>
   
-  <div class="form-group">
+  <div class="form-group col-6">
 
-    <label for="inputImage" class="btn-2" >Image</label><br>
-    <input type="file" id="file"  accept="image/*" name="inputImage">
+  <strong><label for="inputImage" class="btn-2" >Image</label></strong><br>
+    <input type="file" id="file"  accept="image/*" name="inputImage" required>
 
-
-   
   </div>
-  
+  <div class="form-group col-6">
   <button type="submit" class="btn btn-primary">Create</button>
+  </div>
 </form>
         </div>
         <!-- /.container-fluid -->
 
-      </div>
-      <!-- End of Main Content -->
 
-      <!-- Footer -->
-      <?php showFooter(); ?>
-      <!-- End of Footer -->
-
+        <!-- /.container-fluid -->
     </div>
+      <!-- End of Main Content -->
+      <!-- Footer -->
+     <?php showFooter(); ?>
+      <!-- End of Footer -->
+  </div>
     <!-- End of Content Wrapper -->
 
-  </div>
+</div>
   <!-- End of Page Wrapper -->
 
   <!-- Scroll to Top Button-->
-  <a class="scroll-to-top rounded" href="#page-top">
-    <i class="fas fa-angle-up"></i>
-  </a>
+<a class="scroll-to-top rounded" href="#page-top">
+  <i class="fas fa-angle-up"></i>
+</a>
 
   <!-- Logout Modal-->
-  <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-          <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">×</span>
-          </button>
-        </div>
-        <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+<div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">×</span>
+        </button>
+      </div>
+      <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
         <div class="modal-footer">
           <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
           <a class="btn btn-primary" href="login.html">Logout</a>
@@ -148,17 +155,27 @@
       </div>
     </div>
   </div>
-
+</div>
   <!-- Bootstrap core JavaScript-->
-  <script src="vendor/jquery/jquery.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="vendor/jquery/jquery.min.js"></script>
+<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
   <!-- Core plugin JavaScript-->
-  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+<script src="vendor/jquery-easing/jquery.easing.min.js"></script>
 
   <!-- Custom scripts for all pages-->
-  <script src="js/sb-admin-2.min.js"></script>
 
+  <script src="js/sb-admin-2.min.js"></script>
+<script>
+$('#proType').on('change', function() {
+
+  $("#sample").attr("src","img/"+this.value +".PNG");
+});
+
+
+
+
+</script>
 </body>
 
 </html>
