@@ -8,23 +8,49 @@ function showInsights(){
     echo '<style>';
     if(isset($data[0])){
     echo ' .image1{
-    background-image: url("'.$data[0]['imageUrl'].'");}';
+    background-image: url("'.$data[0]['imageUrl'].'");
+    background-size: auto 100%;}';
     }
-     if(isset($data[1])){
+    if(isset($data[1])){
     echo ' .image2{
-    background-image: url("'.$data[1]['imageUrl'].'");}';
+    background-image: url("'.$data[1]['imageUrl'].'");
+    background-size: auto 100%;}';
     }
     if(isset($data[2])){
         echo ' .image3{
-        background-image: url("'.$data[2]['imageUrl'].'");}';
+        background-image: url("'.$data[2]['imageUrl'].'");
+        background-size: auto 100%;}';
     }
      if(isset($data[3])){
     echo ' .image4{
-    background-image: url("'.$data[3]['imageUrl'].'");}';
+    background-image: url("'.$data[3]['imageUrl'].'");
+    background-size: auto 100%;}';
     }
     if(isset($data[4])){
+        echo ' .image5{
+        background-image: url("'.$data[4]['imageUrl'].'");
+        background-size: auto 100%;}';
+    }
+
+    if($data[1]['imageUrl'] == null)
+    {
+        echo ' .image2{
+        background-image: url("assets/coverImages/article-512.png");}';
+    }
+    if($data[2]['imageUrl'] == null)
+    {
+        echo ' .image3{
+        background-image: url("assets/coverImages/article-512.png");}';
+    }
+    if($data[3]['imageUrl'] == null)
+    {
+        echo ' .image3{
+        background-image: url("assets/coverImages/article-512.png");}';
+    }
+    if($data[4]['imageUrl'] == null)
+    {
         echo ' .image4{
-        background-image: url("'.$data[4]['imageUrl'].'");}';
+        background-image: url("assets/coverImages/article-512.png");}';
     }
    
     echo '</style>';
