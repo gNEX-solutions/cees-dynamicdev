@@ -24,7 +24,7 @@
 <body id="page-top">
   <!-- Page Wrapper -->
   <div id="wrapper">
-    <?php showNavBarToModel(); ?>
+    <?php showNavBar(); ?>
 
     <!-- Content Wrapper -->
     <div id="content-wrapper" class="d-flex flex-column">
