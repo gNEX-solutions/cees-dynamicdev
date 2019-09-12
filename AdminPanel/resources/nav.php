@@ -111,6 +111,18 @@
             <i class="fas fa-fw fa-chart-area"></i>
             <span>View Articles</span></a>
           </li>
+
+          <!-- Divider -->
+          <hr class="sidebar-divider">
+          <div class="sidebar-heading">
+            Clients   
+          </div>
+          <!-- Nav Item - Pages Collapse Menu -->
+          <li class="nav-item">
+            <a class="nav-link" href="clients.php">
+            <i class="fas fa-fw fa-chart-area"></i>
+            <span>Add / Update Clients</span></a>
+          </li>
     
           <!-- Divider -->
           <hr class="sidebar-divider d-none d-md-block">
