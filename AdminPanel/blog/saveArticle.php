@@ -57,7 +57,7 @@
         <div class="container-fluid">
 
         <?php
-if(is_uploaded_file($_FILES['image']['tmp_name'])){
+if($_FILES['image']['error'] !== UPLOAD_ERR_NO_FILE){
 $target_dir = "../../assets/coverImages/";
 $target_file = $target_dir . basename($_FILES["image"]["name"]);
 $target_file_relative_path = "assets/coverImages/" . basename($_FILES["image"]["name"]);
@@ -74,13 +74,13 @@ if(isset($_POST["submit"])) {
         $uploadOk = 0;
     }
 }
-// // Check if file already exists
-// if($_POST['status']=='new'){
-//   if (file_exists($target_file)) {
-//     echo "Sorry, file already exists.<br>";
-//     $uploadOk = 0;
-// }
-// }
+// Check if file already exists
+
+  if (file_exists($target_file)) {
+    echo "Sorry, file already exists.<br>";
+    $uploadOk = 0;
+}
+
 
 // Check file size
 if ($_FILES["image"]["size"] > 5000000) {
@@ -135,21 +135,25 @@ if($_POST['status']=='new'){
   $content=$_POST['article'];
   
   $summary=$_POST['summary'];
-  if(is_uploaded_file($_FILES['image']['tmp_name'])){
-   
+  if($_FILES['image']['error'] !== UPLOAD_ERR_NO_FILE){
+    $sql="SELECT imageUrl FROM blog_posts WHERE idblog_posts='$id'";
+    $result=$conn->query($sql);
+    $row=$result->fetch_assoc();
+    $path=$row['imageUrl'];
     if($uploadOk==1 ){
       $image=$target_file_relative_path;
+      if($path!=''){
+        if(file_exists('../../'.$path)){
+          unlink('../../'.$path);
+          echo 'deleted';
+        }
+      }
     }else{
-      $image='';
+      $image=$path;
     }
-    // $sql="SELECT imageUrl FROM blog_posts WHERE idblog_posts='$id'";
-    // $result=$conn->query($sql);
-    // $row=$result->fetch_assoc();
-    // $path=$row['imageUrl'];
-    // if(file_exists('../../'.$path)){
-    //   unlink('../../'.$path);
-    //   echo 'deleted';
-    // }
+   
+    
+   
    
     $stmt1= $conn->prepare("UPDATE blog_posts SET htmlString=?, title=?, summary=?, imageUrl=? WHERE idblog_posts=?");
     $stmt1->bind_param("ssssi",$content,$title,$summary,$image,$id);
