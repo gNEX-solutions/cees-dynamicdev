@@ -57,6 +57,57 @@
         <div class="container-fluid">
 
         <?php
+if(is_uploaded_file($_FILES['image']['tmp_name'])){
+$target_dir = "../../assets/coverImages/";
+$target_file = $target_dir . basename($_FILES["image"]["name"]);
+$target_file_relative_path = "assets/coverImages/" . basename($_FILES["image"]["name"]);
+$uploadOk = 1;
+$imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+// Check if image file is a actual image or fake image
+if(isset($_POST["submit"])) {
+    $check = getimagesize($_FILES["image"]["tmp_name"]);
+    if($check !== false) {
+        echo "File is an image - " . $check["mime"] . ".";
+        $uploadOk = 1;
+    } else {
+        echo "File is not an image.<br>";
+        $uploadOk = 0;
+    }
+}
+// // Check if file already exists
+// if($_POST['status']=='new'){
+//   if (file_exists($target_file)) {
+//     echo "Sorry, file already exists.<br>";
+//     $uploadOk = 0;
+// }
+// }
+
+// Check file size
+if ($_FILES["image"]["size"] > 5000000) {
+    echo "Sorry, your cover image is too large.<br>";
+    $uploadOk = 0;
+}
+// Allow certain file formats
+if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
+&& $imageFileType != "gif" ) {
+    echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.<br>";
+    $uploadOk = 0;
+}
+// Check if $uploadOk is set to 0 by an error
+if ($uploadOk == 0) {
+    echo "Sorry, your cover image was not uploaded.Please Try Again By editing the article<br>";
+   
+// if everything is ok, try to upload file
+} else {
+    if (move_uploaded_file($_FILES["image"]["tmp_name"], $target_file)) {
+       //echo "The file ". basename( $_FILES["inputImage"]["name"]). " has been uploaded.".$title;
+    } else {
+     
+        echo "Sorry, there was an error uploading your file. Please try again<br>";
+    }
+}
+}
+
 include '../../Model/dbh.inc.php';
 $newConnection= new dbh;
 $conn=$newConnection->connect();
@@ -65,9 +116,16 @@ if($_POST['status']=='new'){
 
     $title=$_POST['title'];
     $content=$_POST['article'];
+    if($uploadOk==1 ){
+      $image=$target_file_relative_path;
+    }else{
+      $image='';
+    }
+    
+    $summary=$_POST['summary'];
     $status=1;
-        $stmt= $conn->prepare("INSERT INTO blog_posts(title,htmlString,status) VALUES (?,?,?)");
-        $stmt->bind_param("ssi",$title,$content,$status);
+        $stmt= $conn->prepare("INSERT INTO blog_posts(title,htmlString,status,imageUrl,summary) VALUES (?,?,?,?,?)");
+        $stmt->bind_param("ssiss",$title,$content,$status,$image,$summary);
         $stmt->execute();
 
 
@@ -75,9 +133,33 @@ if($_POST['status']=='new'){
   $id=$_POST['articleID'];
   $title=$_POST['title'];
   $content=$_POST['article'];
-      $stmt1= $conn->prepare("UPDATE blog_posts SET htmlString=?, title=? WHERE idblog_posts=?");
-      $stmt1->bind_param("ssi",$content,$title,$id);
-      $stmt1->execute();
+  
+  $summary=$_POST['summary'];
+  if(is_uploaded_file($_FILES['image']['tmp_name'])){
+   
+    if($uploadOk==1 ){
+      $image=$target_file_relative_path;
+    }else{
+      $image='';
+    }
+    // $sql="SELECT imageUrl FROM blog_posts WHERE idblog_posts='$id'";
+    // $result=$conn->query($sql);
+    // $row=$result->fetch_assoc();
+    // $path=$row['imageUrl'];
+    // if(file_exists('../../'.$path)){
+    //   unlink('../../'.$path);
+    //   echo 'deleted';
+    // }
+   
+    $stmt1= $conn->prepare("UPDATE blog_posts SET htmlString=?, title=?, summary=?, imageUrl=? WHERE idblog_posts=?");
+    $stmt1->bind_param("ssssi",$content,$title,$summary,$image,$id);
+    $stmt1->execute();
+  }else{
+    $stmt2= $conn->prepare("UPDATE blog_posts SET htmlString=?, title=?, summary=? WHERE idblog_posts=?");
+    $stmt2->bind_param("sssi",$content,$title,$summary,$id);
+    $stmt2->execute();
+  }
+     
 }
 
 

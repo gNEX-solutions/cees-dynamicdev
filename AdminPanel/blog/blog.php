@@ -65,14 +65,22 @@
         <div class="container-fluid">
 
 
-        <form method="POST" action="saveArticle.php">
+        <form method="POST" action="saveArticle.php" enctype="multipart/form-data">
           <input type="hidden" value="new" name="status">
         <div class="form-group">
           <label for="title">Title</label>
           <input type="text" class="form-control" name="title" placeholder="Title of the Article" required>
         </div>
         <div class="form-group">
-        <textarea name="article" id="blogArticle" required>Next, use our Get Started docs to setup Tiny!</textarea>
+          <label for="title">Summary</label>
+          <input type="text" class="form-control" name="summary" placeholder="Summary of the Article" required>
+        </div>
+        <div class="form-group">
+          <label for="title">Cover Image</label><br>
+          <input type="file"  name="image"  accept="image/*" required>
+        </div>
+        <div class="form-group">
+        <textarea name="article" id="blogArticle" required> Get Started :)</textarea>
         </div>
         <div class="form-group">
         <button type="submit">Create Article</button> 

@@ -67,12 +67,24 @@
         <div class="container-fluid">
 
 
-        <form method="POST" action="saveArticle.php" id="editForm">
+        <form method="POST" action="saveArticle.php" id="editForm" enctype="multipart/form-data">
           <input type="hidden" name="articleID" value="<?php echo $_GET['id'] ?>">
           <input type="hidden" name="status" value="update">
         <div class="form-group">
           <label for="title">Title</label>
           <input type="text" class="form-control" id="articleTitle" name="title" placeholder="Title of the Article" required>
+        </div>
+        <div class="form-group">
+          <label for="title">Summary</label>
+          <input type="text" class="form-control" id="artsummary" name="summary" placeholder="Summary of the Article" required>
+        </div>
+        <div class="form-group">
+          <label for="title">Change Cover Image</label><br>
+          <input type="file"  name="image"  accept="image/*" >
+        </div>
+        <div class="form-group">
+          <label for="title">Cover Image</label><br>
+          <img id="coverimg"  class="img-thumbnail">
         </div>
         <div class="form-group">
         <textarea name="article" id="blogArticle" required></textarea>
@@ -97,6 +109,8 @@
           $row=$result->fetch_assoc();
     $title=$row['title'];
     $content=$row['htmlString'];
+    $image=$row['imageUrl'];
+    $summary=$row['summary'];
 
   }
   $conn->close();
@@ -158,10 +172,13 @@
   <script src="blackedit.js"></script>
   <script>
     var content='<?php echo $content ?>';
+    var cvrimg='<?php echo $image ?>';
+    var summary='<?php echo $summary ?>';
     $('#blogArticle').html(content);
     var name="<?php echo $title ?>";
     document.getElementById('articleTitle').value=name;
-
+    document.getElementById('coverimg').src='../../'.concat(cvrimg);
+    document.getElementById('artsummary').value=summary;
      
 
   </script>

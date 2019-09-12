@@ -57,7 +57,8 @@
         <!-- Begin Page Content -->
         <div class="container-fluid">
 
-          <!-- Page Heading -->
+          <h1 class="h3 mb-4 text-gray-800">New CEES Academy Page</h1>
+
           <form method="POST" action="AdminModel/create.php" enctype="multipart/form-data">
          
   <input type="hidden" name="inputType" value="Academy">
@@ -70,18 +71,40 @@
       <textarea class="form-control" name="inputSummary" placeholder="Summary" required></textarea>
     </div>
     <div class="form-group">
-      <label for="inputDescription">Paragraph 1</label>
-      <textarea class="form-control" name="inputDescription1" placeholder="Paragraph" required></textarea>
+    <label for="inputDescription">Page type</label>
+      <select class="form-control" name="inputPageType">
+        <option>Select page type</option>
+        <option value="CA">CEES Academy</option>
+        <option value="CS">Consultancy Services</option>
+        <option value="SL">Solutions Lab</option>
+      </select>
     </div>
 
     <div class="form-group">
-      <label for="inputDescription">Paragraph 2</label>
-      <textarea class="form-control" name="inputDescription2" placeholder="Paragraph" required></textarea>
+    <label for="inputDescription">Program design type</label>
+      <select class="form-control" name="inputDesignType">
+        <option>Select the design type</option>
+        <option value="NCIL">No Courses Image Left</option>
+        <option value="NCIR">No Courses Image Right</option>
+        <option value="WCGV">With Courses Grid View</option>
+        <option value="WCCV">With Courses Column View</option>
+        <option value="WCBV">With Courses Block View</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="inputDescription">Show program</label><br>
+      <input type="radio" name="status" value="1">Show &nbsp;
+      <input type="radio" name="status" value="0">Don't Show 
     </div>
   
   <div class="form-group">
+
     <label for="inputImage" class="btn-2" >Image</label><br>
-    <input type="file" id="file"  accept="image/*" name="inputImage" required>
+    <input type="file" id="file"  accept="image/*" name="inputImage">
+
+
+   
   </div>
   
   <button type="submit" class="btn btn-primary">Create</button>

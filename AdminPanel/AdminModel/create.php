@@ -47,9 +47,11 @@ include '../../Model/dbh.inc.php';
 
 $title=$_POST['inputTitle'];
 $summary=$_POST['inputSummary'];
-$description1=$_POST['inputDescription1'];
-$description2=$_POST['inputDescription2'];
-$type=$_POST['inputType'];
+//DS: 11.09.2019: Peogram inputs
+$pageType=$_POST['inputPageType'];
+$designType=$_POST['inputDesignType'];
+//$status=$_POST['status'];
+//$type=$_POST['inputType'];
 
 $target_dir = "../../assets/images/";
 $target_file = $target_dir . basename($_FILES["inputImage"]["name"]);
@@ -95,39 +97,45 @@ if ($uploadOk == 0) {
      
         echo "Sorry, there was an error uploading your file. Please try again<br>";
     }
-}
-if($uploadOk == 1){
-$newConnection= new dbh;
-$success=1;
-$conn=$newConnection->connect();
-if($type=='Academy'){
-    $type='CA';
-    $status=1;
-$conn->autocommit(false);
-$stmt= $conn->prepare("INSERT INTO consultancies(heading,type,status,summary) VALUES (?,?,?,?)");
-$stmt->bind_param("ssis",$title,$type,$status,$summary);
-if(!$stmt->execute()){
-    $success=0;
-}
-$id=$stmt->insert_id;
-$stmt2= $conn->prepare("INSERT INTO consultaies_descriptions(description,idconsultancies,description_order) VALUES (?,?,?)");
-$order=1;
-$stmt2->bind_param("sii",$description1,$id,$order);
-if(!$stmt2->execute()){
-    $success=0;
-}
-$stmt3= $conn->prepare("INSERT INTO consultaies_descriptions(description,idconsultancies,description_order) VALUES (?,?,?)");
-$order=2;
-$stmt3->bind_param("sii",$description2,$id,$order);
-if(!$stmt3->execute()){
-    $success=0;
-}
-$stmt4= $conn->prepare("INSERT INTO consultancies_images(status,url,idConsultancies) VALUES (?,?,?)");
-$statusNum=1;
-$stmt4->bind_param("isi",$statusNum,$target_file_relative_path,$id);
-if(!$stmt4->execute()){
-    $success=0;
-}
+//if($uploadOk == 0){
+    $newConnection= new dbh;
+    $success=1;
+    $conn=$newConnection->connect();
+    echo "<script>alert('.$title.')</script>";
+    if($pageType=='CA'){
+    //$type='CA'; 
+    //$status=1;s
+    $conn->autocommit(false);
+//$stmt= $conn->prepare("INSERT INTO program(program_title, summary, page_type, status, image_url, Menu_type) VALUES (?,?,?,?,?,?)");
+//$stmt->bind_param($title, $summary, $pageType, $status, $target_dir, $designType);
+    $stmt= $conn->prepare("INSERT INTO program(description,program_title, summary) VALUES (?,?,?)");
+    $stmt->bind_param("sii",$title, $summary);
+    $stmt->execute();
+    echo "<script>alert(".$summary.")</script>";
+    if($stmt->execute()){
+        $success=0;
+        //echo "<script>alert('.$summary.')</script>";
+    }
+    $id=$stmt->insert_id;
+    $stmt2= $conn->prepare("INSERT INTO consultaies_descriptions(description,idconsultancies,description_order) VALUES (?,?,?)");
+    $order=1;
+    $stmt2->bind_param("sii",$description1,$id,$order);
+    if(!$stmt2->execute()){
+        $success=0;
+    }
+    $stmt3= $conn->prepare("INSERT INTO consultaies_descriptions(description,idconsultancies,description_order) VALUES (?,?,?)");
+    $order=2;
+    $stmt3->bind_param("sii",$description2,$id,$order);
+    if(!$stmt3->execute()){
+        $success=0;
+    }
+    $stmt4= $conn->prepare("INSERT INTO consultancies_images(status,url,idConsultancies) VALUES (?,?,?)");
+    $statusNum=1;
+    $stmt4->bind_param("isi",$statusNum,$target_file,$id);
+    if(!$stmt4->execute()){
+        $success=0;
+    }
+
 if($success==1){
     $conn->commit();
     echo 'New Page was created successfully';
@@ -141,7 +149,7 @@ if($success==1){
 
 $conn->autocommit(true);
 
-} elseif($type=='Solutions'){
+} elseif($pageType=='Solutions'){
     $type='SL';
     $status=1;
     $conn->autocommit(false);
@@ -186,7 +194,7 @@ if($success==1){
 }
 
 $conn->autocommit(true);
-}elseif($type='Consultancy'){
+}elseif($pageType='Consultancy'){
     $type='CS';
     $status=1;
     $conn->autocommit(false);
@@ -246,7 +254,7 @@ function countdown() {
 if (parseInt(i.innerHTML)!=0) {
     i.innerHTML = parseInt(i.innerHTML)-1;
 }
-}
+}}}
 setInterval(function(){ countdown(); },1000);
 </script>
         </div>
@@ -300,8 +308,4 @@ setInterval(function(){ countdown(); },1000);
   <script src="../js/sb-admin-2.min.js"></script>
 
 </body>
-
 </html>
-
-
-
