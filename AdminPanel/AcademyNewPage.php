@@ -16,7 +16,7 @@
   <meta name="author" content="">
 
   <title>Create New Program</title>
-  <?php include 'resources/nav.php'; ?>
+  <?php include 'resources/nav.php'; ?> 
   <?php include 'resources/footer.php'; ?>
   <!-- Custom fonts for this template-->
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -33,7 +33,7 @@
   <!-- Page Wrapper -->
   <div id="wrapper">
 
-  <?php showNavBar(); ?>
+  <?php showNavBarToModel(); ?>
 
     <!-- Content Wrapper -->
     <div id="content-wrapper" class="d-flex flex-column">

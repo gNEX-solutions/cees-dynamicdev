@@ -218,9 +218,13 @@
             <i class="fas fa-fw fa-tachometer-alt"></i>
             <span>Dashboard</span></a>
         </li>
+        <hr class="sidebar-divider">
+        <div class="sidebar-heading">
+          Manage programs   
+        </div>
         <li class="nav-item active">
           <a class="nav-link" href="../AcademyNewPage.php">
-            <i class="fas fa-fw fa-tachometer-alt"></i>
+          <i class="fas fa-fw fa-folder"></i>
             <span>Create new program</span></a>
         </li>
   
