@@ -1,7 +1,7 @@
 <?php
 include_once 'Model/dbh.inc.php';
 include 'Model/researchWindow.php';
-include 'Model/researchService.php';
+include 'AdminPanel/blog/researchService.php';
 ?>
 <!DOCTYPE html>
 <html>
