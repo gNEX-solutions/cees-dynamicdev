@@ -103,18 +103,19 @@ if ($uploadOk == 0) {
     $conn=$newConnection->connect();
     echo "<script>alert('.$title.')</script>";
     if($pageType=='CA'){
+        echo "<script>alert('hi')</script>";
     //$type='CA'; 
     //$status=1;s
     $conn->autocommit(false);
 //$stmt= $conn->prepare("INSERT INTO program(program_title, summary, page_type, status, image_url, Menu_type) VALUES (?,?,?,?,?,?)");
 //$stmt->bind_param($title, $summary, $pageType, $status, $target_dir, $designType);
-    $stmt= $conn->prepare("INSERT INTO program(description,program_title, summary) VALUES (?,?,?)");
-    $stmt->bind_param("sii",$title, $summary);
+    $stmt= $conn->prepare("INSERT INTO program(program_title) VALUES(?)");
+    $stmt->bind_param("s",$title);
     $stmt->execute();
-    echo "<script>alert(".$summary.")</script>";
-    if($stmt->execute()){
+    
+    if(!$stmt->execute()){
         $success=0;
-        //echo "<script>alert('.$summary.')</script>";
+        echo "<script>alert('.$title.')</script>";
     }
     $id=$stmt->insert_id;
     $stmt2= $conn->prepare("INSERT INTO consultaies_descriptions(description,idconsultancies,description_order) VALUES (?,?,?)");
