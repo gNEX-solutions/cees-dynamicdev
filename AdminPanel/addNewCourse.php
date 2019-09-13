@@ -15,7 +15,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Create New Program</title>
+  <title>Create New Course</title>
   <?php include 'resources/nav.php'; ?> 
   <?php include 'resources/footer.php'; ?>
   <!-- Custom fonts for this template-->
@@ -33,7 +33,12 @@
   <!-- Page Wrapper -->
   <div id="wrapper">
 
-  <?php showNavBar(); ?>
+  <?php 
+    showNavBar(); 
+    include '../Model/dbh.inc.php';
+    $newConnection= new dbh;
+    $conn=$newConnection->connect();
+  ?>
 
     <!-- Content Wrapper -->
     <div id="content-wrapper" class="d-flex flex-column">
@@ -47,79 +52,53 @@
           <i class="fa fa-bars"></i>
         </button>
       <!-- Page Heading -->
-        <h1 class="h3 mb-4 text-gray-800">Create New Program</h1>
+        <h1 class="h3 mb-4 text-gray-800">Create New Course</h1>
       </nav>
       
+      <!-- Begin Page Content -->
+      <div class="container-fluid">
+        <form method="POST" action="AdminModel/create.php" enctype="multipart/form-data">
+         
+          <input type="hidden" name="inputType" value="Academy">
+          <div class="form-group">
+            <label for="inputTitle">Title</label>
+            <input type="text" class="form-control" name="inputTitle" placeholder="Title" required>
+          </div>
+          <div class="form-group">
+            <label for="inputSummary">Summary</label>
+            <textarea class="form-control" name="inputSummary" placeholder="Summary"></textarea>
+          </div>
 
-
-        <!-- Begin Page Content -->
-        <div class="container-fluid">
-
-
-          <!-- Page Heading -->
-
-  <form method="POST" action="AdminModel/create.php" enctype="multipart/form-data">
-  <div class="row">
-  <div class="col col-sm-4">
-  <div class="form-group">
-     <strong> <label for="inputDescription">Page Type</label> </strong>
-      <select class="form-control" name="page_type">
-        <option>Select page type</option>
-        <option value="CA">CEES Academy</option>
-        <option value="CS">Consultancy Services</option>
-        <option value="SL">Solutions Lab</option>
-      </select>
-  </div> 
-  <div class="form-group">
-  <strong> <label for="inputDescription">Program design type</label></strong>
-      <select class="form-control" name="inputDesignType" id="proType">
-        <option>Select the design type</option>
-        <option value="NCIL">No Courses Image Left</option>
-        <option value="NCIR">No Courses Image Right</option>
-        <option value="WCGV">With Courses Grid View</option>
-        <option value="WCCV">With Courses Column View</option>
-        <option value="WCBV">With Courses Block View</option>
-      </select>
-  </div> 
-   <input type="hidden" name="inputType" value="Academy">
-    <div class="form-group">
-    <strong> <label for="inputTitle">Title</label></strong>
-      <input type="text" class="form-control" name="inputTitle" placeholder="Title" required>
-    </div>
-  </div>
-  <div class="col col-sm-8">
-  <img src="img/NCIL.png" class="rounded float-left" alt="..." style="width:80%" id="sample">
-  </div>
-  </div>
+          <div class="form-group">
+            <label for="inputDescription">Show program</label><br>
+            <input type="radio" name="status" value="1">Show &nbsp;
+            <input type="radio" name="status" value="0">Don't Show 
+          </div>
   
-    <div class="form-group col-12">
-    <strong> <label for="inputSummary">Summary</label></strong>
-      <textarea class="form-control" name="inputSummary" placeholder="Summary" required></textarea>
-    </div>
-    
-
-  
-
-    <div class="form-group col-6">
-    <strong> <label for="inputDescription">Show program</label></strong><br>
-      <input type="radio" name="status" value="1">Show &nbsp;
-      <input type="radio" name="status" value="0">Don't Show 
-    </div>
-  
-  <div class="form-group col-6">
-
-  <strong><label for="inputImage" class="btn-2" >Image</label></strong><br>
-    <input type="file" id="file"  accept="image/*" name="inputImage" required>
-
-  </div>
-  <div class="form-group col-6">
-  <button type="submit" class="btn btn-primary">Create</button>
-  </div>
-</form>
-        </div>
-        <!-- /.container-fluid -->
-
-
+            <div class="form-group">
+                <label for="inputImage" class="btn-2" >Image</label><br>
+                <input type="file" id="file"  accept="image/*" name="inputImage">
+            </div>
+            <div class="form-group">
+        		<label for="product">Select program</label>
+        		<select class="form-control" id="idprogram" name="idprogram">
+                    <option>Select a program</option>
+                    <?php 
+                        //Fetch programs which have courses
+                        $sql="SELECT * FROM program WHERE Menu_type != 'NCIL' OR Menu_type != 'NCIR'";
+                        $program = $conn->query($sql);
+                        if ($program->num_rows > 0) {
+                            // output data of each row 
+                            while($row = $program->fetch_assoc()) {
+                                echo "<option value= ".$row["idprogram"].">".$row["program_title"]."</option>";
+                            }
+                        }
+                    ?>
+        		</select>
+     		</div>
+          <button type="submit" name="submitCourse" class="btn btn-primary">Create</button>
+        </form>
+      </div>
         <!-- /.container-fluid -->
     </div>
       <!-- End of Main Content -->
@@ -164,18 +143,8 @@
 <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
 
   <!-- Custom scripts for all pages-->
+<script src="js/sb-admin-2.min.js"></script>
 
-  <script src="js/sb-admin-2.min.js"></script>
-<script>
-$('#proType').on('change', function() {
-
-  $("#sample").attr("src","img/"+this.value +".PNG");
-});
-
-
-
-
-</script>
 </body>
 
 </html>
