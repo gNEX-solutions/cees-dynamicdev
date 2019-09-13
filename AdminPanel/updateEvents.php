@@ -8,7 +8,7 @@
 <html lang="en">
 
 <head>
-
+<link rel="shortcut icon" href="../assets/images/logo2.png" type="image/x-icon">
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -131,7 +131,7 @@
             $stmntCons = $conn->prepare("select * from heroku_3dffaa1b8ca65ff.events
                  where events.event_id = ? and events.status = '1';") ;
             $stmntPara = $connPara->prepare("SELECT * FROM heroku_3dffaa1b8ca65ff.events_images 
-                where events_images.idEvent = ?;");
+                where events_images.idEvent = ? and events_images.status = '1';");
       
             $stmntCons->bind_param("s", $page_id);
             $stmntPara->bind_param("s", $page_id);
@@ -247,12 +247,19 @@
           <p> Images </p>
             <?php 
               if($paraRows != null){
-                  echo("<input type=\"hidden\" name=\"inputId\" value=" . $paraRows['url']. ">
+                  echo("
+                  <div id=" .$paraRows['idImages'] . " name='img_container'>
+                    <input type=\"hidden\" name=\"inputId\" value=" . $paraRows['url']. ">
                     <img src=". substr($paraRows['url'], 3)." alt='..' class='img-thumbnail' style=' max-height: 150px'>
-                    <button type=\"submit\" name=\"img_remove\" class=\"btn btn-outline-danger\" > Remove </button>
-
+                    <button type=\"button\" onclick=\"removeImg(" .$paraRows['idImages'] .")\" name=\"img_remove\" class=\"btn btn-outline-danger\" > Remove Flyer </button>
+                  </div>
                   ");}?> 
             </div>
+            <div >
+          <label for="inputImage" >Add Image</label><br>
+          <input type="file"  accept="image/*" id="uploadImage" >
+          <button type="button" onclick="changeImg(<?php echo($page_id) ?>)" class="btn btn-success">Change Flyer</button>
+        </div> <br> <br>
             <div>
               <button type="submit" method="post" name="update_table" class="btn btn-success">Save Changes</button>
             </div>
@@ -307,6 +314,55 @@
 
   <!-- Custom scripts for all pages-->
   <script src="js/sb-admin-2.min.js"></script>
+
+  <script>
+
+    function removeImg(imgId){
+      console.log(imgId);
+      var imageSection = document.getElementById(imgId);
+      $.ajax({
+        type:'POST', 
+        url: "./AdminModel/editEvent.php",
+        data: {img_remove: imgId, req:'imgRemove'},
+        success: function(){
+          alert('image has been deleted succesfully');
+          $(imageSection).css("display","none");
+        },
+        error: function(){
+          alert('image deletion failed');
+        }
+      }); 
+    }
+
+    function changeImg(imgId){
+      console.log(imgId);
+      var image = document.getElementById('uploadImage').value.substring(12);
+      console.log(image);
+      var file_data = $('#uploadImage').prop('files')[0];   
+      var form_data = new FormData();                  
+      form_data.append("file", file_data);
+      form_data.append("img_Id", imgId);
+      form_data.append("req", "imgUpdate");
+      for (var pair of form_data.entries()) {
+          console.log(pair[0]+ ', ' + pair[1]); 
+        }
+
+      $.ajax({
+        type:'POST', 
+        url: "./AdminModel/editEvent.php",
+        data: form_data,
+        processData: false,
+        contentType: false,
+        success: function(){
+          alert('image has been Updated succesfully');
+          $(imageSection).css("display","none");
+        },
+        error: function(){
+          alert('image Updating failed');
+        }
+      }); 
+    }
+  </script>
 
 </body>
 

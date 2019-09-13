@@ -4,7 +4,7 @@ include 'Model/eventWindow.php';
 include 'Model/viewEvents.php';
 include 'Model/getInsights.php';
 include 'insights.php';
-
+include 'Model/getClientLogos.php';
 ?>
 
 <!DOCTYPE html>
@@ -134,7 +134,7 @@ include 'insights.php';
             <div class="card p-3 col-12 col-md-6 col-lg-4">
             <!-- <h3>Transform You</h3> -->
                 <div class="card-img pb-3">
-                    <span class="mbr-iconfont mbri-like" style="color: rgb(15, 118, 153); fill: rgb(15, 118, 153); font-size: 120px;"></span>
+                    <span class="mbr-iconfont mbri-unlock" style="color: rgb(15, 118, 153); fill: rgb(15, 118, 153); font-size: 120px;"></span>
                 </div>
                 <div class="card-box">
                     <h4 class="card-title py-3 mbr-fonts-style display-5"><a href="#">Consulting Services&nbsp;</a></h4>
@@ -380,50 +380,18 @@ include 'insights.php';
             </div>
             <div id="slider-logo">
                 <div id="slider-logo-track">
-                    <div class="slide">
-                        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/1.png" height="100" width="250" alt="" />
-                    </div>
-                    <div class="slide">
-                        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/2.png" height="100" width="250" alt="" />
-                    </div>
-                    <div class="slide">
-                        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/3.png" height="100" width="250" alt="" />
-                    </div>
-                    <div class="slide">
-                        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/4.png" height="100" width="250" alt="" />
-                    </div>
-                    <div class="slide">
-                        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/5.png" height="100" width="250" alt="" />
-                    </div>
-                    <div class="slide">
-                        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/6.png" height="100" width="250" alt="" />
-                    </div>
-                    <div class="slide">
-                        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/7.png" height="100" width="250" alt="" />
-                    </div>
-                    <div class="slide">
-                        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/1.png" height="100" width="250" alt="" />
-                    </div>
-                    <div class="slide">
-                        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/2.png" height="100" width="250" alt="" />
-                    </div>
-                    <div class="slide">
-                        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/3.png" height="100" width="250" alt="" />
-                    </div>
-                    <div class="slide">
-                        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/4.png" height="100" width="250" alt="" />
-                    </div>
-                    <div class="slide">
-                        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/5.png" height="100" width="250" alt="" />
-                    </div>
-                    <div class="slide">
-                        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/6.png" height="100" width="250" alt="" />
-                    </div>
-                    <div class="slide">
-                        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/7.png" height="100" width="250" alt="" />
-                    </div>
+                  <?php
+                        $getClientLogos = new getClientLogos();
+                        $data = $getClientLogos->getAllClientLogos();
+                        foreach ($data as $key=>$img1) {
+                            echo "<div class='slide' style='margin-left: 100px;'>
+                            <img src='$img1[imageUrl]' height='60' width='auto' alt='' />
+                            </div>";
+                        }
+                    ?>
                 </div>
             </div>
+
         </div>
 
 </section>
@@ -466,6 +434,7 @@ include 'insights.php';
   <script src="assets/smoothscroll/smooth-scroll.js"></script>
   <script src="assets/theme/js/script.js"></script>
   <script src="assets/full-image-viewer/image-viewer.js"></script>
+  <script src="assets/logo slider/logoSlider.js"></script>
 
   <script src="assets/theme/js/preloader.js"></script>
   
@@ -516,7 +485,7 @@ include 'insights.php';
                         }
                     });
                 });
-      </script>
+       </script>
 
 </body>
 </html>
