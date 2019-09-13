@@ -32,11 +32,7 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" href="css/jquery-ui.css">
   <link rel="stylesheet" href="css/sectionEdit.css">
-  <style>
-  #sortable { list-style-type: none; margin: 0; padding: 0; width: 60%; }
-  #sortable li { margin: 0 3px 3px 3px; padding: 0.4em; padding-left: 1.5em; font-size: 1.4em; height: 18px; }
-  #sortable li span { position: absolute; margin-left: -1.3em; }
-  </style>
+ 
  
  
 
@@ -153,17 +149,39 @@
 <div class="container" style="margin-bottom:5%" id="oder">
   <div class="row justify-content-md-center">
     <div class="form-group col-lg-10">
-      <ul id="sortable">
-        <li class="oder"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 1</li>
-        <li class="ui-state-default oder"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 2</li>
-        <li class="ui-state-default oder"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 3</li>
-        <li class="ui-state-default oder"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 4</li>
-        <li class="ui-state-default oder"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 5</li>
-        <li class="ui-state-default oder"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 6</li>
-        <li class="ui-state-default oder"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 7</li>
-      </ul>
+      <div class="row" id="th">
+        <div class="col col-md-2">
+        Current Oder
+        </div>
+        <div class="col col-md-6">
+        Title
+        </div>
+        <div class="col col-md-4">
+          Privious Oder
+        </div>
+      </div>
+     <div class="row">
+      <div class="col col-md-2 text-center">
+          <ul id="notsortable" style="width:100px">
+          
+          </ul>
+      </div>
+      <div class="col col-md-10">
+          <ul id="sortable">
+          
+          </ul>
+      </div>
+    </div>
+     
+      
     </div>
   </div>
+  <div class="row row justify-content-end">
+        <div class="col-sm-4">
+          <button type="button" class="btn btn-primary submitBtn" id="save_oder" style="margin-top:10px">Update Oder</button>
+          <p class="statusMsg"></p> 
+        </div>
+      </div>
 </div>
 
 

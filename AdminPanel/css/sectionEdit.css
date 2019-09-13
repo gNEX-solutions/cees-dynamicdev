@@ -1,8 +1,19 @@
 .oder{
-background-color:red;
+background-color:#0e99cc;
 color: #fff;
 font-family: "Font Awesome 5 Pro";
 font-size: 100%;
 height:50px
 }
+#sortable { list-style-type: none; margin: 0; padding: 5px; width: 80%; }
+#sortable li { margin: 0 3px 3px 3px; padding: 0.4em; padding-left: 1.5em; font-size: 1em; height: 50px;border-radius: 10px; margin-left: -20px}
+#sortable li span { position: absolute; margin-left: -1.3em; }
 
+.index
+{
+    margin: 2px 3px 3px 3px; padding: 0.4em; 
+    padding-left: 1.5em; font-size: 1em; height: 50px;
+    border-radius: 10px;
+    background-color:#0e99cc;
+    color: #fff;
+}
