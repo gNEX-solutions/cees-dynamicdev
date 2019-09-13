@@ -123,10 +123,8 @@ $("#Program_form").on('submit', function(e){
             $.alert('action is canceled');
         }
     }
-});
-
-   
   });
+});
 // add Choosed image to image View
   $("#file").change(function() {
     var file = this.files[0];
@@ -177,20 +175,28 @@ $("#Program_form").on('submit', function(e){
 
  //Show Oder 
   $( "#searchOder" ).click(function() {
-
+    $("#sortable").empty();
+    $('#notsortable').empty();
     var PageType=$('#pageType').val();
     $.ajax({
         type: "POST",
         async: false,
         url: "AdminModel/EditSectionHedder.php",
         data: {PageType:PageType,method:'searchTitle'},
+       
         success: function(data){
            var res = $.parseJSON(data);
            var len = res.length;
+           var count=1
+           $("#save_oder").show();
+           $("#th").show();
            for(var i=0; i<len; i++){
-           $('#Title').val(res[i].program_title);
-           
-          
+             if(res[i].status=="1"){
+           $('#Title').val();
+           $('#notsortable').append('<div class="col-col-md-4 index text-center">'+count+'</div>')
+           $('#sortable').append('<li class="oder"><div class=row><div class="col col-md-10">'+res[i].program_title+'</div><div class="col col-md-2 text-center">'+count+'</div></div></li>')
+           count=count+1;
+             }
          }
           
         },
@@ -210,4 +216,49 @@ $("#Program_form").on('submit', function(e){
     $("#searcTitle").show();
     $("#searchOder").hide();
     $("#oder").hide();
+    $("#save_oder").hide();
+     $("#th").hide();
   } );
+
+//Update Program Oder
+  $("#save_oder").on('click', function(e){
+             
+   $.confirm({
+    title: 'Update Oder?',
+    content: 'This dialog will automatically trigger \'cancel\' in 6 seconds if you don\'t respond.',
+    autoClose: 'cancelAction|8000',
+    icon: 'fa fa-warning',
+    type: 'green',
+    buttons: {
+        deleteUser: {
+            text: 'Update Data',
+            action: function () {
+              
+                $.ajax({
+                  type: "POST",
+                  data:formdata ,
+                  contentType: false,
+                  cache: false,
+                  processData:false,
+                  url: "AdminModel/EditSectionHedder.php",
+                
+                    success: function(msg) {
+                   
+                      if(msg.trim() == '"ok"'){
+                       
+                          $.alert('successfully Oder is Updated');
+                      }else{
+                        
+                          $.alert('Some problem occurred, please try again.!');
+                      }
+                    
+                }
+                })
+            }
+        },
+        cancelAction: function () {
+            $.alert('action is canceled');
+        }
+    }
+  });
+});
