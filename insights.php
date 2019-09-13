@@ -8,23 +8,49 @@ function showInsights(){
     echo '<style>';
     if(isset($data[0])){
     echo ' .image1{
-    background-image: url("'.$data[0]['url'].'");}';
+    background-image: url("'.$data[0]['imageUrl'].'");
+    background-size: auto 100%;}';
     }
-     if(isset($data[1])){
+    if(isset($data[1])){
     echo ' .image2{
-    background-image: url("'.$data[1]['url'].'");}';
+    background-image: url("'.$data[1]['imageUrl'].'");
+    background-size: auto 100%;}';
     }
     if(isset($data[2])){
         echo ' .image3{
-        background-image: url("'.$data[2]['url'].'");}';
+        background-image: url("'.$data[2]['imageUrl'].'");
+        background-size: auto 100%;}';
     }
      if(isset($data[3])){
     echo ' .image4{
-    background-image: url("'.$data[3]['url'].'");}';
+    background-image: url("'.$data[3]['imageUrl'].'");
+    background-size: auto 100%;}';
     }
     if(isset($data[4])){
+        echo ' .image5{
+        background-image: url("'.$data[4]['imageUrl'].'");
+        background-size: auto 100%;}';
+    }
+
+    if($data[1]['imageUrl'] == null)
+    {
+        echo ' .image2{
+        background-image: url("assets/coverImages/article-512.png");}';
+    }
+    if($data[2]['imageUrl'] == null)
+    {
+        echo ' .image3{
+        background-image: url("assets/coverImages/article-512.png");}';
+    }
+    if($data[3]['imageUrl'] == null)
+    {
+        echo ' .image3{
+        background-image: url("assets/coverImages/article-512.png");}';
+    }
+    if($data[4]['imageUrl'] == null)
+    {
         echo ' .image4{
-        background-image: url("'.$data[4]['url'].'");}';
+        background-image: url("assets/coverImages/article-512.png");}';
     }
    
     echo '</style>';
@@ -32,13 +58,14 @@ function showInsights(){
 
     if(isset($data[0])){
         //onclick="location.href=\'index.php\'"
-        echo '<div > 
+        echo '<div >
+        <br> 
         <h4 > 
-            <a href="researchView.php?artID='.$data[0]['idresearches'].'" target="_blank">
-            '.$data[0]['heading'].'            
+            <a href="AdminPanel/blog/researchView.php?artID='.$data[0]['idblog_posts'].'" target="_blank">
+            '.$data[0]['title'].'            
             <br>
             <span id="date-section">
-                Published on - ' . $data[0]['published_date'] . '
+                Published on - ' . $data[0]['created_at'] . '
             </span>
         </h4>
     
@@ -59,8 +86,8 @@ function showInsights(){
 
         </div>
         <div class="col-md-9 col-sm-9 col-lg-9" style="background-color: #f5f2f2;">
-            <a href="researchView.php?artID='.$data[1]['idresearches'].'" target="_blank">
-            <h5> '.$data[1]['heading'].' </h5>
+            <a href="AdminPanel/blog/researchView.php?artID='.$data[1]['idblog_posts'].'" target="_blank">
+            <h5> '.$data[1]['title'].' </h5>
             <p>
             '.$data[1]['summary'].'   
             </p> 
@@ -75,8 +102,8 @@ function showInsights(){
 
         </div>
         <div class="col-md-9 col-sm-9 col-lg-9" >
-        <a href="researchView.php?artID='.$data[2]['idresearches'].'" target="_blank">
-        <h5>  '.$data[2]['heading'].'</h5>
+        <a href="AdminPanel/blog/researchView.php?artID='.$data[2]['idblog_posts'].'" target="_blank">
+        <h5>  '.$data[2]['title'].'</h5>
         <p>
         '.$data[2]['summary'].'   
             </p>  
@@ -91,8 +118,8 @@ function showInsights(){
 
         </div>
         <div class="col-md-9 col-sm-9 col-lg-9" style="background-color: #f5f2f2;">
-        <a href="researchView.php?artID='.$data[3]['idresearches'].'" target="_blank">
-        <h5> '.$data[3]['heading'].' </h5>
+        <a href="AdminPanel/blog/researchView.php?artID='.$data[3]['idblog_posts'].'" target="_blank">
+        <h5> '.$data[3]['title'].' </h5>
         <p>
         '.$data[3]['summary'].'   
             </p>  
@@ -108,8 +135,8 @@ function showInsights(){
 
         </div>
         <div class="col-md-9 col-sm-9 col-lg-9" >
-        <a href="researchView.php?artID='.$data[4]['idresearches'].'" target="_blank">
-        <h5>  '.$data[4]['heading'].'</h5>
+        <a href="AdminPanel/blog/researchView.php?artID='.$data[4]['idblog_posts'].'" target="_blank">
+        <h5>  '.$data[4]['title'].'</h5>
         <p>
         '.$data[4]['summary'].'   
         </p>

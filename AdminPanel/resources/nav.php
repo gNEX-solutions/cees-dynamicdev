@@ -113,6 +113,18 @@
             <i class="fas fa-fw fa-chart-area"></i>
             <span>View Articles</span></a>
           </li>
+
+          <!-- Divider -->
+          <hr class="sidebar-divider">
+          <div class="sidebar-heading">
+            Clients   
+          </div>
+          <!-- Nav Item - Pages Collapse Menu -->
+          <li class="nav-item">
+            <a class="nav-link" href="clients.php">
+            <i class="fas fa-fw fa-chart-area"></i>
+            <span>Add / Update Clients</span></a>
+          </li>
     
           <!-- Divider -->
           <hr class="sidebar-divider d-none d-md-block">
@@ -264,7 +276,7 @@
                 <div id="collapseCurrentPages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                   <div class="bg-white py-2 collapse-inner rounded">
                    
-                    <a class="collapse-item" href="#">CEES Academy</a>
+                    <a class="collapse-item" href="AcademyEditPage.php">CEES Academy</a>
                     <a class="collapse-item" href="#">Consulting Services</a>
                     <a class="collapse-item" href="#">Solutions Lab</a>
                     <div class="collapse-divider"></div>

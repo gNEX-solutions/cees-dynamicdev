@@ -15,6 +15,7 @@ class Sections extends dbh{
           return $program;
       }
     }
+
     // End of getAllSections
     // DS: 10.09.2019: getAllCourses
     protected function getAllCourses ()
@@ -39,30 +40,9 @@ class Sections extends dbh{
           return $numRows;
     }
     //End of get card count
-   protected function getRequestedServiceData ($idconsultancies)
-   { 
-      $sql="SELECT * FROM consultaies_descriptions WHERE idconsultancies=".$idconsultancies;
-      $result=$this->connect()->query($sql);
-      $numRows=$result->num_rows;
-      if($numRows>0){
-          while($row=$result->fetch_assoc()){
-             $data[]=$row;
-          }
-          return $data;
-      }
-    }
 
-    protected function getRequestedServiceImages ($idconsultancies)
-   { 
-      $sql="SELECT * FROM consultancies_images WHERE idconsultancies=".$idconsultancies;
-      $result=$this->connect()->query($sql);
-      $numRows=$result->num_rows;
-      if($numRows>0){
-          while($row=$result->fetch_assoc()){
-             $data[]=$row;
-          }
-          return $data;
-      }
-    }
+   
+
+  
 }
 ?>
