@@ -35,7 +35,9 @@
 <body id="page-top">
   <?php
     $newConnection= new dbh;
-    $conn=$newConnection->connect(); 
+    $conn=$newConnection->connect();
+    
+    
   ?>
   <!-- Page Wrapper -->
   <div id="wrapper">
@@ -63,6 +65,8 @@
         <div class="container-fluid">
 
             <section>
+            <label for="">Add a New Client</label>
+            <hr>
                 <form method="POST" action="./AdminModel/clientlogo.php" enctype="multipart/form-data">
                     <div class="form-group">
                         <label for="inputImage">Upload Client logo (Please upload only png files)</label><br>
@@ -72,7 +76,31 @@
                     <button type="submit" class="btn btn-primary">Add Client</button>
                 </form>
             </section>
-
+            <br><br><br>
+            <section>
+              <label for="">Remove Clients</label>
+              <hr>
+              <form action="">
+                <?php
+                $sql="SELECT * FROM clients WHERE status=1";
+                $result=$conn->query($sql);
+                $numRows=$result->num_rows;
+                $target_dir = "../";
+                if($numRows>0){
+                while($row=$result->fetch_assoc()){
+                  echo("
+                  <div id=" .$row['idclients'] . " name='img_container'>
+                    <input type=\"hidden\" name=\"inputId\" value=" . $row['imageUrl']. ">
+                    <img src=".$target_dir.$row['imageUrl']." alt='..' class='img-thumbnail' style=' max-height: 150px'>
+                    <button type=\"button\" onclick=\"removeImg(" .$row['idclients'] .")\" name=\"img_remove\" class=\"btn btn-outline-danger\" > Remove client </button>
+                  </div>
+                  <br>
+                  ");
+                  }
+                }
+                ?>
+              </form>
+            </section>
 
           </div>
         <!-- /.container-fluid -->
