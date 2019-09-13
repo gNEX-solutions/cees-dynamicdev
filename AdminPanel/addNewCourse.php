@@ -66,7 +66,7 @@
           </div>
           <div class="form-group">
             <label for="inputSummary">Summary</label>
-            <textarea class="form-control" name="inputSummary" placeholder="Summary" required></textarea>
+            <textarea class="form-control" name="inputSummary" placeholder="Summary"></textarea>
           </div>
 
           <div class="form-group">

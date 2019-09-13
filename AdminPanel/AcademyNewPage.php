@@ -93,7 +93,7 @@
   
           <div class="form-group">
             <label for="inputImage" class="btn-2" >Image</label><br>
-            <input type="file" id="file"  accept="image/*" name="inputImage" required>
+            <input type="file" id="file"  accept="image/*" name="inputImage">
           </div>
             
           <button type="submit" name="submit" class="btn btn-primary">Create</button>

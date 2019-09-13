@@ -36,7 +36,9 @@
       
             <?php 
             include '../../Model/dbh.inc.php';
-
+            $newConnection= new dbh;
+            $success=1;
+            $conn=$newConnection->connect();
             
             //$type=$_POST['inputType'];
 
@@ -50,21 +52,67 @@
 
                 $title=$_POST['inputTitle'];
                 $summary=$_POST['inputSummary'];
-            //DS: 11.09.2019: Peogram inputs
                 $pageType=$_POST['inputPageType'];
                 $designType=$_POST['inputDesignType'];
                 $status=$_POST['status'];
 
-                $check = getimagesize($_FILES["inputImage"]["tmp_name"]);
-                if($check !== false) {
-                    echo "File is an image - " . $check["mime"] . ".";
-                    $uploadOk = 1;
-                } else {
-                    echo "File is not an image.<br>";
-                    $uploadOk = 0;
+                $image=$_POST['inputImage'];
+                //If an image is uploaded
+                if($image!=''){
+                    $check = getimagesize($_FILES["inputImage"]["tmp_name"]);
+                    if($check !== false) {
+                        echo "File is an image - " . $check["mime"] . ".";
+                        $uploadOk = 1;
+                    } else {
+                        echo "File is not an image.<br>";
+                        $uploadOk = 0;
+                    }
+                    if ($_FILES["inputImage"]["size"] > 5000000) {
+                        echo "Sorry, your file is too large.<br>";
+                        $uploadOk = 0;
+                    }
+                    // Allow certain file formats
+                    if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
+                    && $imageFileType != "gif" ) {
+                        echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.<br>";
+                        $uploadOk = 0;
+                    }
+                    // Check if $uploadOk is set to 0 by an error
+                    if ($uploadOk == 0) {
+                        echo "Sorry, your file was not uploaded.Please Try Again<br>";
+                    
+                    // if everything is ok, try to upload file
+                    } else {
+                        if (move_uploaded_file($_FILES["inputImage"]["tmp_name"], $target_file)) {
+                    //echo "The file ". basename( $_FILES["inputImage"]["name"]). " has been uploaded.".$title;
+                    } else { 
+                        echo "Sorry, there was an error uploading your file. Please try again<br>";
+                    }
+                    //if($uploadOk == 0){
+                    }   
+                }  
+                //if an image is not uploaded
+                else{
+                    $target_dir = '';
                 }
+                
+                $conn->autocommit(false);
+                $stmt= $conn->prepare("INSERT INTO program(program_title, summary, status, image_url, page_type, Menu_type) VALUES (?,?,?,?,?,?)");
+                $stmt->bind_param('ssisss',$title, $summary, $status, $target_dir, $pageType, $designType);
+                
+                if(!$stmt->execute()){
+                    $success=0;
+                    echo '<script>swal("Good job!", "You clicked the button!", "success");</script>';
+                }
+                if($success==1){
+                    $conn->commit();
+                    echo '<script>swal("Good job!", "You clicked the button!", "success");</script>';
+                }
+                echo " <script type='text/javascript'>
+                        location.href = '../AcademyNewPage.php';
+                        </script>";
             }
-
+        
             if(isset($_POST["submitCourse"])) {
 
                 $title=$_POST['inputTitle'];
@@ -80,67 +128,69 @@
                     echo "File is not an image.<br>";
                     $uploadOk = 0;
                 }
+                if ($_FILES["inputImage"]["size"] > 5000000) {
+                    echo "Sorry, your file is too large.<br>";
+                    $uploadOk = 0;
+                }
+                // Allow certain file formats
+                if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
+                && $imageFileType != "gif" ) {
+                    echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.<br>";
+                    $uploadOk = 0;
+                }
+                // Check if $uploadOk is set to 0 by an error
+                if ($uploadOk == 0) {
+                    echo "Sorry, your file was not uploaded.Please Try Again<br>";
+                
+                // if everything is ok, try to upload file
+                } else {
+                    if (move_uploaded_file($_FILES["inputImage"]["tmp_name"], $target_file)) {
+                //echo "The file ". basename( $_FILES["inputImage"]["name"]). " has been uploaded.".$title;
+                } else { 
+                    echo "Sorry, there was an error uploading your file. Please try again<br>";
+                }
+                //if($uploadOk == 0){
+                        
+                $newConnection= new dbh;
+                $success=1;
+                $conn=$newConnection->connect();
+                //echo "<script>alert('.$title.')</script>";
+                //if($pageType=="CA"){
+               // echo "<script>alert(".$pageType.")</script>";
+                //$type='CA'; 
+                //$status=1;s
+                //$x=40;
+                $conn->autocommit(false);
+                $stmt= $conn->prepare("INSERT INTO courses(course_heading, summary, status, course_icon_url, idprogram) VALUES (?,?,?,?,?)");
+                $stmt->bind_param('ssisi',$title, $summary, $status, $target_dir, $idprogram);
+                //$stmt= $conn->prepare("INSERT INTO program(program_title) VALUES(?)");
+                //$stmt->bind_param('s',$title);
+                //$stmt->execute();
+                
+                if(!$stmt->execute()){
+                    $success=0;
+                    echo '<script>swal("Good job!", "You clicked the button!", "success");</script>';
+                }
+                if($success==1){
+                    $conn->commit();
+                    echo '<script>swal("Good job!", "You clicked the button!", "success");</script>';
+                }
+                echo " <script type='text/javascript'>
+                        location.href = '../addNewCourse.php';
+                        </script>";
             }
+        }
             // Check if file already exists
             /*if (file_exists($target_file)) {
                 echo "Sorry, file already exists.<br>";
                 $uploadOk = 0;
             }*/
             // Check file size
-            if ($_FILES["inputImage"]["size"] > 5000000) {
-                echo "Sorry, your file is too large.<br>";
-                $uploadOk = 0;
-            }
-            // Allow certain file formats
-            if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
-            && $imageFileType != "gif" ) {
-                echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.<br>";
-                $uploadOk = 0;
-            }
-            // Check if $uploadOk is set to 0 by an error
-            if ($uploadOk == 0) {
-                echo "Sorry, your file was not uploaded.Please Try Again<br>";
             
-            // if everything is ok, try to upload file
-            } else {
-                if (move_uploaded_file($_FILES["inputImage"]["tmp_name"], $target_file)) {
-            //echo "The file ". basename( $_FILES["inputImage"]["name"]). " has been uploaded.".$title;
-            } else { 
-                echo "Sorry, there was an error uploading your file. Please try again<br>";
-            }
-            //if($uploadOk == 0){
-                    
-            $newConnection= new dbh;
-            $success=1;
-            $conn=$newConnection->connect();
-            //echo "<script>alert('.$title.')</script>";
-            //if($pageType=="CA"){
-           // echo "<script>alert(".$pageType.")</script>";
-            //$type='CA'; 
-            //$status=1;s
-            //$x=40;
-            $conn->autocommit(false);
-            $stmt= $conn->prepare("INSERT INTO courses(course_heading, summary, status, course_icon_url, idprogram) VALUES (?,?,?,?,?)");
-            $stmt->bind_param('ssisi',$title, $summary, $status, $target_dir, $idprogram);
-            //$stmt= $conn->prepare("INSERT INTO program(program_title) VALUES(?)");
-            //$stmt->bind_param('s',$title);
-            //$stmt->execute();
-            
-            if(!$stmt->execute()){
-                $success=0;
-                echo '<script>swal("Good job!", "You clicked the button!", "success");</script>';
-            }
-            if($success==1){
-                $conn->commit();
-                echo '<script>swal("Good job!", "You clicked the button!", "success");</script>';
-            }
             $conn->autocommit(true);
             $conn->close();
-}
+
 ?>
-            <script type='text/javascript'>
-                location.href = '../addNewCourse.php';
-            </script>";
             </div>
         <!-- /.container-fluid -->
         </div>
