@@ -18,21 +18,36 @@ class researchService extends researchWindow
                 $url[2] = "article-512.png"; 
             }
 
-                echo '<div class="grid-flex hideme">
-                    <div class="col col-image">
-                    <img src="assets/coverImages/' . $url[2] . ' " alt="" class="mx-auto d-block"  style="max-height: 300px; max-width: 300px;"/>
-                    </div>
-                    <div class="col col-text">
-                    <div class="Aligner-item text-left">
-                        <h3 class="text-left display-2 font-weight-normal"><a href="researchView.php?artID='.$data['idblog_posts'].'">' . $data['title'] . '</a></h3>
-                        <p> Published on - ' . $data['created_at'] . '</p>
-                        <br>
-                        <p class="text-justify">' . $data['summary'] . '</p>
-                    </div>
-                    </div>
-                    </div>
+                // echo '<div class="grid-flex hideme">
+                //     <div class="col col-image">
+                //     <img src="assets/coverImages/' . $url[2] . ' " alt="" class="mx-auto d-block"  style="max-height: 300px; max-width: 300px;"/>
+                //     </div>
+                //     <div class="col col-text">
+                //     <div class="Aligner-item text-left">
+                //         <h3 class="text-left display-2 font-weight-normal"><a href="researchView.php?artID='.$data['idblog_posts'].'">' . $data['title'] . '</a></h3>
+                //         <p> Published on - ' . $data['created_at'] . '</p>
+                //         <br>
+                //         <p class="text-justify">' . $data['summary'] . '</p>
+                //     </div>
+                //     </div>
+                //     </div>
             
-                    <hr>';
+                //     <hr>';
+
+                    echo '<div class="grid-flex hideme">
+                    <div class="table-responsive">
+                    <table class="table" style="width:100%">
+                        <tr>
+                            <th><img src="assets/coverImages/' . $url[2] . ' " alt="" class="mx-auto d-block"  style="padding:50px; max-height: 100%; max-width: 100%;"/> </th>
+                            <th> <h3 class="text-left display-2 font-weight-normal"><a href="AdminPanel/blog/researchView.php?artID='.$data['idblog_posts'].'">' . $data['title'] . '</a></h3>
+                            <p> Published on - ' . $data['created_at'] . '</p>
+                            <br>
+                            <p class="text-justify">' . $data['summary'] . '</p></th>
+                        </tr>
+                    </table>
+                    </div>
+                    </div>
+                    ';
             
         }
     }
@@ -54,7 +69,7 @@ class researchService extends researchWindow
                 echo '
                 
                 <div class="carousel-inner">
-                <img style="  height: 100%;background-position: center;background-repeat: no-repeat;background-size: cover;" src="assets\images\blue-header-1.jpg" alt="" title="">
+                <img style="  height: 100%;background-position: center;background-repeat: no-repeat;background-size: cover;" src="Components/blue-header-1.jpg" alt="" title="">
                 <div class="carousel-caption">
                   <h5>' . $data1['title'] . '</h5>
                   <p>Published on - ' . $data1['created_at'] . '</p>
