@@ -162,6 +162,7 @@ $("#Program_form").on('submit', function(e){
       $("#proTitlediv").hide();
       $("#searcTitle").hide();
       $("#searchOder").show();
+      $("#oder").show();
       
       
     }else{
@@ -169,6 +170,7 @@ $("#Program_form").on('submit', function(e){
       $("#proTitlediv").show();
       $("#searcTitle").show();
       $("#searchOder").hide();
+      $("#oder").hide();
     }
   
   })
@@ -203,4 +205,9 @@ $("#Program_form").on('submit', function(e){
   window.onload = $(function () {
     $( "#sortable" ).sortable();
     $( "#sortable" ).disableSelection();
+    $("#Program_form").show();
+    $("#proTitlediv").show();
+    $("#searcTitle").show();
+    $("#searchOder").hide();
+    $("#oder").hide();
   } );
