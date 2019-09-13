@@ -3,32 +3,31 @@
 
 class ViewSections extends Sections {
     
- 
+   
   // DS: 10.09.2019: Show CA page sections list
   public function ShowCA_MENU()
    { 
        $programs=$this->getAllSections();
        $courses=$this->getAllCourses();
-       $count=$this->getCardDesign(2);
-       $classlen=12/$count;
+       //$count=$this->getCardDesign(2);
+      // $classlen=12/$count;
        foreach($programs as $program){
          if($program['page_type']=='CA' && $program['status']==1){
-
+            
             //With courses columb view
-            if($program['Menu_type']=="WCCV"){
+            if($program['Menu_type']=='WCCV'){
+               //echo "<script>alert(".$program['program_title'].");</script>";
                echo ' <div class="container">
 
-                  <div class="row ">
+                  <div class="row justify-content-md-center">
                      <div class="col-12 general-title text-center">
                         <h2>'.$program['program_title'].'</h2>
                         <p>'.$program['summary'].'</p>
                         <hr>
                      </div>';
                foreach($courses as $course){
-
-
                   if($course['idprogram']==$program['idprogram'] && $course['status']==1){
-                     echo '<div class="col-lg-'.$classlen.' col-md-'.$classlen.' col-sm-12">
+                     echo '<div class="col-lg-4 col-md-4 col-sm-12">
 
                         <div class="servicebox text-center">
                            <div class="service-icon">
@@ -47,9 +46,9 @@ class ViewSections extends Sections {
                }
             }
             //With courses block view
-            if($program['Menu_type']=="WCBV"){
+            if($program['Menu_type']=='WCBV' && $program['status']==1){
                echo '<div class="container">
-                        <div class="row ">
+                        <div class="row justify-content-md-center ">
                            <div class="col-12 general-title text-center">
                               <h2>'.$program['program_title'].'</h2>
                               <p>'.$program['summary'].'</p>
@@ -57,7 +56,7 @@ class ViewSections extends Sections {
                            </div>';
                      foreach($courses as $course){
                         if($course['idprogram']==$program['idprogram'] && $course['status']==1){
-                           echo '<div class="col-lg-'.$classlen.' col-md-'.$classlen.' col-sm-12">
+                           echo '<div class="col-lg-4 col-md-4 col-sm-12">
                                     <div class="servicebox text-center">
                                        <div class="card">
                                           <div class="service-icon">

@@ -77,7 +77,7 @@
   
             <div class="form-group">
                 <label for="inputImage" class="btn-2" >Image</label><br>
-                <input type="file" id="file"  accept="image/*" name="inputImage">
+                <input type="file" id="file"  accept="image/*" name="inputImage" required>
             </div>
             <div class="form-group">
         		<label for="product">Select program</label>
