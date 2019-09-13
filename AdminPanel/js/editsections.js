@@ -194,7 +194,7 @@ $("#Program_form").on('submit', function(e){
              if(res[i].status=="1"){
            $('#Title').val();
            $('#notsortable').append('<div class="col-col-md-4 index text-center">'+count+'</div>')
-           $('#sortable').append('<li class="oder"><div class=row><div class="col col-md-10">'+res[i].program_title+'</div><div class="col col-md-2 text-center">'+count+'</div></div></li>')
+           $('#sortable').append('<li class="oder"><div class=row><div class="col col-md-10">'+res[i].program_title+'</div><div class="col col-md-2 text-center">'+count+'</div> <input  type="hidden"  id="programID" value="'+res[i].idprogram+'" ></div></li>')
            count=count+1;
              }
          }
@@ -222,7 +222,8 @@ $("#Program_form").on('submit', function(e){
 
 //Update Program Oder
   $("#save_oder").on('click', function(e){
-             
+  var oderlist= getOderList()   
+  var oderlist_json = JSON.stringify(oderlist);       
    $.confirm({
     title: 'Update Oder?',
     content: 'This dialog will automatically trigger \'cancel\' in 6 seconds if you don\'t respond.',
@@ -236,14 +237,12 @@ $("#Program_form").on('submit', function(e){
               
                 $.ajax({
                   type: "POST",
-                  data:formdata ,
-                  contentType: false,
-                  cache: false,
-                  processData:false,
+
+                  data:{oderlist_json:oderlist_json,method:'oder'},
                   url: "AdminModel/EditSectionHedder.php",
                 
                     success: function(msg) {
-                   
+                     // $("#error").append(msg)
                       if(msg.trim() == '"ok"'){
                        
                           $.alert('successfully Oder is Updated');
@@ -262,3 +261,21 @@ $("#Program_form").on('submit', function(e){
     }
   });
 });
+
+
+//Create OderList Obj
+function getOderList() 
+{
+  var obj_array = new Array();
+
+  var ul = document.getElementById("sortable");
+  var items = ul.getElementsByTagName("li");
+  for (var i = 0; i < items.length; ++i)
+  {
+    obj = new Object();
+    obj.programID= items[i].getElementsByTagName("input")[0].value; 
+    obj.program_order=i+1;
+   obj_array.push(obj);
+  }
+  return  obj_array;
+}
