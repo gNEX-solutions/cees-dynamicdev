@@ -35,7 +35,8 @@
                   <div id="collapseNewPages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                      
-                      <a class="collapse-item" href="AcademyNewPage.php">CEES Academy</a>
+                      <a class="collapse-item" href="AcademyNewPage.php">Add new program</a>
+                      <a class="collapse-item" href="addNewCourse.php">Add new course</a>
                       <a class="collapse-item" href="ConsultancyNewPage.php">Consulting Services</a>
                       <a class="collapse-item" href="SolutionsLabNewPage.php">Solutions Lab</a>
                       <a class="collapse-item" href="./ResearchAndInsightsNewPage.php">Research and Insights</a>

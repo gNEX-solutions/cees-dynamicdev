@@ -15,7 +15,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Create New Program</title>
+  <title>Create New Course</title>
   <?php include 'resources/nav.php'; ?> 
   <?php include 'resources/footer.php'; ?>
   <!-- Custom fonts for this template-->
@@ -33,7 +33,12 @@
   <!-- Page Wrapper -->
   <div id="wrapper">
 
-  <?php showNavBar(); ?>
+  <?php 
+    showNavBar(); 
+    include '../Model/dbh.inc.php';
+    $newConnection= new dbh;
+    $conn=$newConnection->connect();
+  ?>
 
     <!-- Content Wrapper -->
     <div id="content-wrapper" class="d-flex flex-column">
@@ -47,7 +52,7 @@
           <i class="fa fa-bars"></i>
         </button>
       <!-- Page Heading -->
-        <h1 class="h3 mb-4 text-gray-800">Create New Program</h1>
+        <h1 class="h3 mb-4 text-gray-800">Create New Course</h1>
       </nav>
       
       <!-- Begin Page Content -->
@@ -63,27 +68,6 @@
             <label for="inputSummary">Summary</label>
             <textarea class="form-control" name="inputSummary" placeholder="Summary" required></textarea>
           </div>
-           <div class="form-group">
-            <label for="inputDescription">Page type</label>
-            <select class="form-control" name="inputPageType">
-              <option>Select page type</option>
-              <option value="CA">CEES Academy</option>
-              <option value="CS">Consultancy Services</option>
-              <option value="SL">Solutions Lab</option>
-            </select>
-          </div>
-
-          <div class="form-group">
-            <label for="inputDescription">Program design type</label>
-            <select class="form-control" name="inputDesignType">
-              <option>Select the design type</option>
-              <option value="NCIL">No Courses Image Left</option>
-              <option value="NCIR">No Courses Image Right</option>
-              <option value="WCGV">With Courses Grid View</option>
-              <option value="WCCV">With Courses Column View</option>
-              <option value="WCBV">With Courses Block View</option>
-            </select>
-          </div>
 
           <div class="form-group">
             <label for="inputDescription">Show program</label><br>
@@ -91,12 +75,28 @@
             <input type="radio" name="status" value="0">Don't Show 
           </div>
   
-          <div class="form-group">
-            <label for="inputImage" class="btn-2" >Image</label><br>
-            <input type="file" id="file"  accept="image/*" name="inputImage" required>
-          </div>
-            
-          <button type="submit" name="submit" class="btn btn-primary">Create</button>
+            <div class="form-group">
+                <label for="inputImage" class="btn-2" >Image</label><br>
+                <input type="file" id="file"  accept="image/*" name="inputImage">
+            </div>
+            <div class="form-group">
+        		<label for="product">Select program</label>
+        		<select class="form-control" id="idprogram" name="idprogram">
+                    <option>Select a program</option>
+                    <?php 
+                        //Fetch programs which have courses
+                        $sql="SELECT * FROM program WHERE Menu_type != 'NCIL' OR Menu_type != 'NCIR'";
+                        $program = $conn->query($sql);
+                        if ($program->num_rows > 0) {
+                            // output data of each row 
+                            while($row = $program->fetch_assoc()) {
+                                echo "<option value= ".$row["idprogram"].">".$row["program_title"]."</option>";
+                            }
+                        }
+                    ?>
+        		</select>
+     		</div>
+          <button type="submit" name="submitCourse" class="btn btn-primary">Create</button>
         </form>
       </div>
         <!-- /.container-fluid -->

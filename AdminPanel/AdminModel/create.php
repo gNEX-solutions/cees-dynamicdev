@@ -15,7 +15,8 @@
   <!-- Custom fonts for this template-->
   <link href="../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
-
+  <!-- Custom JS alerts-->
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
   <!-- Custom styles for this template-->
   <link href="../css/sb-admin-2.min.css" rel="stylesheet">
 
@@ -36,12 +37,7 @@
             <?php 
             include '../../Model/dbh.inc.php';
 
-            $title=$_POST['inputTitle'];
-            $summary=$_POST['inputSummary'];
-            //DS: 11.09.2019: Peogram inputs
-            $pageType=$_POST['inputPageType'];
-            $designType=$_POST['inputDesignType'];
-            $status=$_POST['status'];
+            
             //$type=$_POST['inputType'];
 
             $target_dir = "../../assets/images/";
@@ -50,7 +46,32 @@
             $uploadOk = 1;
             $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
             // Check if image file is a actual image or fake image
-           if(isset($_POST["submit"])) {
+            if(isset($_POST["submit"])) {
+
+                $title=$_POST['inputTitle'];
+                $summary=$_POST['inputSummary'];
+            //DS: 11.09.2019: Peogram inputs
+                $pageType=$_POST['inputPageType'];
+                $designType=$_POST['inputDesignType'];
+                $status=$_POST['status'];
+
+                $check = getimagesize($_FILES["inputImage"]["tmp_name"]);
+                if($check !== false) {
+                    echo "File is an image - " . $check["mime"] . ".";
+                    $uploadOk = 1;
+                } else {
+                    echo "File is not an image.<br>";
+                    $uploadOk = 0;
+                }
+            }
+
+            if(isset($_POST["submitCourse"])) {
+
+                $title=$_POST['inputTitle'];
+                $summary=$_POST['inputSummary'];
+                $status=$_POST['status'];
+                $idprogram=$_POST['idprogram'];
+
                 $check = getimagesize($_FILES["inputImage"]["tmp_name"]);
                 if($check !== false) {
                     echo "File is an image - " . $check["mime"] . ".";
@@ -94,32 +115,32 @@
             $conn=$newConnection->connect();
             //echo "<script>alert('.$title.')</script>";
             //if($pageType=="CA"){
-            echo "<script>alert(".$pageType.")</script>";
+           // echo "<script>alert(".$pageType.")</script>";
             //$type='CA'; 
             //$status=1;s
             //$x=40;
             $conn->autocommit(false);
-            $stmt= $conn->prepare("INSERT INTO program(program_title, summary, page_type, status, image_url, Menu_type) VALUES (?,?,?,?,?,?)");
-            $stmt->bind_param('sssiss',$title, $summary, $pageType, $status, $target_dir, $designType);
+            $stmt= $conn->prepare("INSERT INTO courses(course_heading, summary, status, course_icon_url, idprogram) VALUES (?,?,?,?,?)");
+            $stmt->bind_param('ssisi',$title, $summary, $status, $target_dir, $idprogram);
             //$stmt= $conn->prepare("INSERT INTO program(program_title) VALUES(?)");
             //$stmt->bind_param('s',$title);
             //$stmt->execute();
-    
+            
             if(!$stmt->execute()){
                 $success=0;
-                echo "<script>alert('.$title.')</script>";
+                echo '<script>swal("Good job!", "You clicked the button!", "success");</script>';
             }
             if($success==1){
                 $conn->commit();
-                echo 'New Page was created successfully';
+                echo '<script>swal("Good job!", "You clicked the button!", "success");</script>';
             }
             $conn->autocommit(true);
             $conn->close();
 }
 ?>
-            <script type="text/javascript">
-               location.href = '../AcademyNewPage.php';
-            </script>
+            <script type='text/javascript'>
+                location.href = '../addNewCourse.php';
+            </script>";
             </div>
         <!-- /.container-fluid -->
         </div>
