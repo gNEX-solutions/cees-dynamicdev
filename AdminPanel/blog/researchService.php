@@ -38,7 +38,7 @@ class researchService extends researchWindow
                     <div class="table-responsive">
                     <table class="table" style="width:100%">
                         <tr>
-                            <th><img src="assets/coverImages/' . $url[2] . ' " alt="" class="mx-auto d-block"  style="padding:50px; max-height: 100%; max-width: 100%;"/> </th>
+                            <th><img src="assets/coverImages/' . $url[2] . ' " alt="" class="mx-auto d-block"  style="padding:50px; max-height: 300px; max-width: 400px;"/> </th>
                             <th> <h3 class="text-left display-2 font-weight-normal"><a href="AdminPanel/blog/researchView.php?artID='.$data['idblog_posts'].'">' . $data['title'] . '</a></h3>
                             <p> Published on - ' . $data['created_at'] . '</p>
                             <br>
