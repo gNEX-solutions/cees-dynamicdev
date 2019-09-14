@@ -41,7 +41,8 @@
 
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
   <link rel="stylesheet" href="style.css">
-
+  <script src="../../assets/customjs/sweetalert2.all.min.js"></script>
+  
 </head>
 
 <body id="page-top">
@@ -63,9 +64,8 @@
         </nav>
         <!-- Begin Page Content -->
         <div class="container-fluid">
-
-
-        <form method="POST" action="saveArticle.php" enctype="multipart/form-data">
+        
+        <form method="POST" action="saveArticle.php" enctype="multipart/form-data" id="createForm">
           <input type="hidden" value="new" name="status">
         <div class="form-group">
           <label for="title">Title</label>
@@ -83,9 +83,31 @@
         <textarea name="article" id="blogArticle" required> Get Started :)</textarea>
         </div>
         <div class="form-group">
-        <button type="submit">Create Article</button> 
+        <button type="button" onclick="confirm()">Create Article</button> 
         </div>
         </form>
+
+        <script>
+        function confirm() {
+            Swal.fire({
+  title: 'You are about to save your work',
+  text: "",
+  type: 'info',
+  showCancelButton: true,
+  confirmButtonColor: '#3085d6',
+  cancelButtonColor: '#d33',
+  confirmButtonText: 'Yes, save it!'
+}).then((result)=>{
+  if(result.value){
+   
+document.getElementById('createForm').submit();
+  }else{
+    
+  }
+});
+        
+      }
+</script>
         <!-- /.container-fluid -->
         <!-- <div id="editor1">
         <p>Hello World!</p>
