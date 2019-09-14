@@ -90,11 +90,11 @@
             <textarea class="form-control" name="inputSummary" placeholder="Summary" required></textarea>
           </div>
 
-          <div class="form-group col-6">
+          <!--<div class="form-group col-6">
           <strong> <label for="inputStatus">Show program</label></strong><br>
             <input type="radio" name="status" value="1">Show &nbsp;
             <input type="radio" name="status" value="0">Don't Show 
-          </div>
+          </div>-->
   
           <div class="form-group col-6">
             <strong><label for="inputImage" class="btn-2" >Image</label></strong><br>
