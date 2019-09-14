@@ -65,7 +65,7 @@
         <!-- Begin Page Content -->
         <div class="container-fluid">
         
-        <form method="POST" action="saveArticle.php" enctype="multipart/form-data" id="createForm">
+        <form method="POST" action="saveArticle.php" enctype="multipart/form-data">
           <input type="hidden" value="new" name="status">
         <div class="form-group">
           <label for="title">Title</label>
@@ -83,7 +83,8 @@
         <textarea name="article" id="blogArticle" required> Get Started :)</textarea>
         </div>
         <div class="form-group">
-        <button type="button" onclick="confirm()">Create Article</button> 
+        <button type="button" onclick="confirm()" >Create Article</button> 
+        <input type="submit" id="subButton" hidden>
         </div>
         </form>
 
@@ -100,7 +101,7 @@
 }).then((result)=>{
   if(result.value){
    
-document.getElementById('createForm').submit();
+    $('#subButton').trigger('click');
   }else{
     
   }
@@ -157,11 +158,11 @@ document.getElementById('createForm').submit();
   </div>
 
   <!-- Bootstrap core JavaScript-->
-  <script src="vendor/jquery/jquery.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="../vendor/jquery/jquery.min.js"></script>
+  <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
   <!-- Core plugin JavaScript-->
-  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+  <script src="../vendor/jquery-easing/jquery.easing.min.js"></script>
 
   <!-- Custom scripts for all pages-->
   <script src="js/sb-admin-2.min.js"></script>
