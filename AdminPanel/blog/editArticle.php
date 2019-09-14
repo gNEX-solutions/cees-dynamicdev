@@ -92,6 +92,7 @@
         </div>
         <div class="form-group">
         <button type="button" onclick="confirmEdit()">Edit Article</button> 
+        <input type="submit" id="subButtonEdit" hidden>
         </div>
         </form>
         <script>
@@ -108,7 +109,7 @@
  
   if(result.value){
    
-document.getElementById('editForm').submit();
+    $('#subButtonEdit').trigger('click');
   }else{
     
   }
