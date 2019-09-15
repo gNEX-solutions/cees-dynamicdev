@@ -139,7 +139,7 @@
             $conn->autocommit(true);
             $conn->close();
    
-<?php 
+
 include '../../Model/dbh.inc.php';
 
 
