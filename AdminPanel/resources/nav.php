@@ -118,13 +118,13 @@
           <!-- Divider -->
           <hr class="sidebar-divider">
           <div class="sidebar-heading">
-            Clients   
+            Partners   
           </div>
           <!-- Nav Item - Pages Collapse Menu -->
           <li class="nav-item">
             <a class="nav-link" href="clients.php">
             <i class="fas fa-fw fa-chart-area"></i>
-            <span>Add / Update Clients</span></a>
+            <span>Add / Update Partners</span></a>
           </li>
     
           <!-- Divider -->
@@ -340,9 +340,21 @@
   
         <!-- Divider -->
         <hr class="sidebar-divider">
-  
+        <!-- Divider -->
+        <hr class="sidebar-divider">
+        <div class="sidebar-heading">
+          Partners   
+        </div>
+        <!-- Nav Item - Pages Collapse Menu -->
+        <li class="nav-item">
+          <a class="nav-link" href="clients.php">
+          <i class="fas fa-fw fa-chart-area"></i>
+          <span>Add / Update Partners</span></a>
+        </li>
        
-  
+        <!-- Divider -->
+          <hr class="sidebar-divider d-none d-md-block">
+          
         <!-- Sidebar Toggler (Sidebar) -->
         <div class="text-center d-none d-md-inline">
           <button class="rounded-circle border-0" id="sidebarToggle"></button>
