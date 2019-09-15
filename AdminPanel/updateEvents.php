@@ -29,7 +29,7 @@
 
   <!-- Custom styles for this template-->
   <link href="css/sb-admin-2.min.css" rel="stylesheet">
-
+  <script src="../assets/customjs/sweetalert2.all.min.js"></script>
 </head>
 
 <body id="page-top">
@@ -118,7 +118,12 @@
               The page  has been deleted successfully. </div>"
           );
             // echo ("<h1> delete clicked </h1>");
-      
+           echo(" <script>
+            if ( window.history.replaceState ) {
+                window.history.replaceState( null, null, window.location.href );
+            }
+            </script>");
+            echo("<script> window.location.reload() </script>");
           }
 
           if($_SERVER['REQUEST_METHOD'] == "POST" and isset($_POST["edit"])){
@@ -320,18 +325,37 @@
     function removeImg(imgId){
       console.log(imgId);
       var imageSection = document.getElementById(imgId);
+      Swal.fire({
+      title: 'Are you sure?',
+      text: "You won't be able to revert this!",
+      type: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, delete it!'
+      }).then((result) => {
+      if (result.value) {
       $.ajax({
         type:'POST', 
         url: "./AdminModel/editEvent.php",
         data: {img_remove: imgId, req:'imgRemove'},
         success: function(){
-          alert('image has been deleted succesfully');
+          
           $(imageSection).css("display","none");
         },
         error: function(){
           alert('image deletion failed');
         }
-      }); 
+      });
+      Swal.fire(
+          'Deleted!',
+          'Your file has been deleted.',
+          'success'
+        ).then( function(){
+          window.location.reload();
+        });
+  }
+})
     }
 
     function changeImg(imgId){
@@ -354,8 +378,9 @@
         processData: false,
         contentType: false,
         success: function(){
-          alert('image has been Updated succesfully');
+          alert("image has been Updated succesfully");
           $(imageSection).css("display","none");
+          window.location.reload();
         },
         error: function(){
           alert('image Updating failed');
