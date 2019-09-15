@@ -41,7 +41,8 @@
 
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
   <link rel="stylesheet" href="style.css">
-
+  <script src="../../assets/customjs/sweetalert2.all.min.js"></script>
+  
 </head>
 
 <body id="page-top">
@@ -63,21 +64,51 @@
         </nav>
         <!-- Begin Page Content -->
         <div class="container-fluid">
-
-
-        <form method="POST" action="saveArticle.php">
+        
+        <form method="POST" action="saveArticle.php" enctype="multipart/form-data">
           <input type="hidden" value="new" name="status">
         <div class="form-group">
           <label for="title">Title</label>
           <input type="text" class="form-control" name="title" placeholder="Title of the Article" required>
         </div>
         <div class="form-group">
-        <textarea name="article" id="blogArticle" required>Next, use our Get Started docs to setup Tiny!</textarea>
+          <label for="title">Summary</label>
+          <input type="text" class="form-control" name="summary" placeholder="Summary of the Article" required>
         </div>
         <div class="form-group">
-        <button type="submit">Create Article</button> 
+          <label for="title">Cover Image</label><br>
+          <input type="file"  name="image"  accept="image/*" required>
+        </div>
+        <div class="form-group">
+        <textarea name="article" id="blogArticle" required> Get Started :)</textarea>
+        </div>
+        <div class="form-group">
+        <button type="button" onclick="confirm()" >Create Article</button> 
+        <input type="submit" id="subButton" hidden>
         </div>
         </form>
+
+        <script>
+        function confirm() {
+            Swal.fire({
+  title: 'You are about to save your work',
+  text: "",
+  type: 'info',
+  showCancelButton: true,
+  confirmButtonColor: '#3085d6',
+  cancelButtonColor: '#d33',
+  confirmButtonText: 'Yes, save it!'
+}).then((result)=>{
+  if(result.value){
+   
+    $('#subButton').trigger('click');
+  }else{
+    
+  }
+});
+        
+      }
+</script>
         <!-- /.container-fluid -->
         <!-- <div id="editor1">
         <p>Hello World!</p>
@@ -127,11 +158,11 @@
   </div>
 
   <!-- Bootstrap core JavaScript-->
-  <script src="vendor/jquery/jquery.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="../vendor/jquery/jquery.min.js"></script>
+  <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
   <!-- Core plugin JavaScript-->
-  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+  <script src="../vendor/jquery-easing/jquery.easing.min.js"></script>
 
   <!-- Custom scripts for all pages-->
   <script src="js/sb-admin-2.min.js"></script>

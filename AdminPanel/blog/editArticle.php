@@ -43,7 +43,8 @@
 
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
   <link rel="stylesheet" href="style.css">
-
+  <script src="../../assets/customjs/sweetalert2.all.min.js"></script>
+  
 </head>
 
 <body id="page-top">
@@ -67,7 +68,7 @@
         <div class="container-fluid">
 
 
-        <form method="POST" action="saveArticle.php" id="editForm">
+        <form method="POST" action="saveArticle.php" id="editForm" enctype="multipart/form-data">
           <input type="hidden" name="articleID" value="<?php echo $_GET['id'] ?>">
           <input type="hidden" name="status" value="update">
         <div class="form-group">
@@ -75,13 +76,47 @@
           <input type="text" class="form-control" id="articleTitle" name="title" placeholder="Title of the Article" required>
         </div>
         <div class="form-group">
+          <label for="title">Summary</label>
+          <input type="text" class="form-control" id="artsummary" name="summary" placeholder="Summary of the Article" required>
+        </div>
+        <div class="form-group">
+          <label for="title">Change Cover Image</label><br>
+          <input type="file"  name="image"  accept="image/*" >
+        </div>
+        <div class="form-group">
+          <label for="title">Cover Image</label><br>
+          <img id="coverimg"  class="img-thumbnail">
+        </div>
+        <div class="form-group">
         <textarea name="article" id="blogArticle" required></textarea>
         </div>
         <div class="form-group">
-        <button type="submit">Edit Article</button> 
+        <button type="button" onclick="confirmEdit()">Edit Article</button> 
+        <input type="submit" id="subButtonEdit" hidden>
         </div>
         </form>
-
+        <script>
+        function confirmEdit() {
+            Swal.fire({
+  title: 'You are about to save your work',
+  text: "",
+  type: 'info',
+  showCancelButton: true,
+  confirmButtonColor: '#3085d6',
+  cancelButtonColor: '#d33',
+  confirmButtonText: 'Yes, save it!'
+}).then((result)=>{
+ 
+  if(result.value){
+   
+    $('#subButtonEdit').trigger('click');
+  }else{
+    
+  }
+});
+        
+      }
+</script>
         <?php
  
   include '../../Model/dbh.inc.php';
@@ -97,6 +132,8 @@
           $row=$result->fetch_assoc();
     $title=$row['title'];
     $content=$row['htmlString'];
+    $image=$row['imageUrl'];
+    $summary=$row['summary'];
 
   }
   $conn->close();
@@ -157,11 +194,14 @@
 
   <script src="blackedit.js"></script>
   <script>
-    var content='<?php echo $content ?>';
+    var content=`<?php echo $content; ?>`;
+    var cvrimg='<?php echo $image; ?>';
+    var summary='<?php echo $summary; ?>';
     $('#blogArticle').html(content);
     var name="<?php echo $title ?>";
     document.getElementById('articleTitle').value=name;
-
+    document.getElementById('coverimg').src='../../'.concat(cvrimg);
+    document.getElementById('artsummary').value=summary;
      
 
   </script>

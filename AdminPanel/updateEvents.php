@@ -131,7 +131,7 @@
             $stmntCons = $conn->prepare("select * from heroku_3dffaa1b8ca65ff.events
                  where events.event_id = ? and events.status = '1';") ;
             $stmntPara = $connPara->prepare("SELECT * FROM heroku_3dffaa1b8ca65ff.events_images 
-                where events_images.idEvent = ?;");
+                where events_images.idEvent = ? and events_images.status = '1';");
       
             $stmntCons->bind_param("s", $page_id);
             $stmntPara->bind_param("s", $page_id);
@@ -258,7 +258,7 @@
             <div >
           <label for="inputImage" >Add Image</label><br>
           <input type="file"  accept="image/*" id="uploadImage" >
-          <button type="buttomn" onclick=changeImg() class="btn btn-success">Change Flyer</button>
+          <button type="button" onclick="changeImg(<?php echo($page_id) ?>)" class="btn btn-success">Change Flyer</button>
         </div> <br> <br>
             <div>
               <button type="submit" method="post" name="update_table" class="btn btn-success">Save Changes</button>
@@ -334,19 +334,31 @@
       }); 
     }
 
-    function changeImg(){
+    function changeImg(imgId){
       console.log(imgId);
       var image = document.getElementById('uploadImage').value.substring(12);
+      console.log(image);
+      var file_data = $('#uploadImage').prop('files')[0];   
+      var form_data = new FormData();                  
+      form_data.append("file", file_data);
+      form_data.append("img_Id", imgId);
+      form_data.append("req", "imgUpdate");
+      for (var pair of form_data.entries()) {
+          console.log(pair[0]+ ', ' + pair[1]); 
+        }
+
       $.ajax({
         type:'POST', 
         url: "./AdminModel/editEvent.php",
-        data: {img_remove: imgId, req:'imgRemove'},
+        data: form_data,
+        processData: false,
+        contentType: false,
         success: function(){
-          alert('image has been deleted succesfully');
+          alert('image has been Updated succesfully');
           $(imageSection).css("display","none");
         },
         error: function(){
-          alert('image deletion failed');
+          alert('image Updating failed');
         }
       }); 
     }

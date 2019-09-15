@@ -26,10 +26,11 @@
   <script src="../vendor/jquery/jquery.min.js"></script>
   <!-- Custom styles for this template-->
   <link href="../css/sb-admin-2.min.css" rel="stylesheet">
-  
-
+  <script src="../../assets/customjs/sweetalert2.all.min.js"></script>
+ 
+ 
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="../css/style.css">
 
 </head>
 
@@ -53,17 +54,41 @@
         <!-- Begin Page Content -->
         <div class="container-fluid">
           <script>
+          
           function delArticle(fileName) {
-            $.ajax({
+            Swal.fire({
+  title: 'Are you sure?',
+  text: "You won't be able to revert this!",
+  type: 'warning',
+  showCancelButton: true,
+  confirmButtonColor: '#3085d6',
+  cancelButtonColor: '#d33',
+  confirmButtonText: 'Yes, delete it!'
+}).then((result) => {
+  if (result.value) {
+    $.ajax({
           url: 'deleteArticle.php',
           data: {'id' : fileName },
           success: function (response) {
-           location.reload();
+          
           },
           error: function () {
-           location.reload();
+          
           }
         });
+    Swal.fire(
+      'Deleted!',
+      'Your file has been deleted.',
+      'success'
+    ).then( function(){
+      window.location.reload();
+    });
+   
+    
+  }
+
+})
+        
       }
           </script>
 <?php
@@ -83,11 +108,26 @@ include '../../Model/dbh.inc.php';
         
           if($numRows>0){
               while($row=$result->fetch_assoc()){
-              echo '  <div class="form-group"><li><a href="#">'.$row['title'].'</a></li>  <button onclick="window.location.href=\'editArticle.php?id='.$row['idblog_posts'].'\'">Edit</button>
-                         <button align="left" onclick="delArticle('.$row['idblog_posts'].')">Delete</button></div>';
-              }
              
-          
+          echo '<div class="row">
+           <div class="col-md-3 col-md-10 mb-4">
+          <div class="card border-left-primary shadow h-100 py-2">
+            <div class="card-body">
+              <div class="row no-gutters align-items-center">
+                <div class="col mr-2">
+                 <a href="researchView.php?artID='.$row['idblog_posts'].'"> <div class="text-s font-weight-bold text-primary text-uppercase mb-1" >'.$row['title'].'</div></a>
+                 
+                </div>
+                <div class="col-auto">
+                <button type="button" class="btn btn-primary" onclick="window.location.href=\'editArticle.php?id='.$row['idblog_posts'].'\'">Edit</button>
+                <button type="button" class="btn btn-danger" onclick="delArticle('.$row['idblog_posts'].')">Delete</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          </div>
+        </div>';
+            }
         }
       
 
