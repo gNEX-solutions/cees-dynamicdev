@@ -73,7 +73,7 @@
                     <!-- <option selected>Select page...</option> -->
                     <?php 
                       $result = $conn->query("SELECT events.event_id as id , events.name  as name
-                      FROM heroku_3dffaa1b8ca65ff.events where events.status = '1';");
+                      FROM events where events.status = '1';");
                       while($row = $result->fetch_assoc()){
                         // echo($row[1]);
                       
@@ -109,7 +109,7 @@
           if($_SERVER['REQUEST_METHOD'] == "POST" and isset($_POST["delete"])){
             $page_id = $_POST['page']; //  the id of the page 
             // $title=$_POST['inputTitle'];
-            $stmt = $conn->prepare("update  heroku_3dffaa1b8ca65ff.events 
+            $stmt = $conn->prepare("update  events 
               set events.status = 0 where events.event_id = ?;") ;
             $stmt->bind_param("s",$page_id);
             $stmt->execute();
@@ -128,9 +128,9 @@
             // creating two connections for paragraphs and images 
             $connPara=$newConnection->connect();
       
-            $stmntCons = $conn->prepare("select * from heroku_3dffaa1b8ca65ff.events
+            $stmntCons = $conn->prepare("select * from events
                  where events.event_id = ? and events.status = '1';") ;
-            $stmntPara = $connPara->prepare("SELECT * FROM heroku_3dffaa1b8ca65ff.events_images 
+            $stmntPara = $connPara->prepare("SELECT * FROM events_images 
                 where events_images.idEvent = ? and events_images.status = '1';");
       
             $stmntCons->bind_param("s", $page_id);
@@ -165,7 +165,7 @@
             $newConnection= new dbh;
             $conn=$newConnection->connect();
 
-            $stmt= $conn->prepare("update heroku_3dffaa1b8ca65ff.events set
+            $stmt= $conn->prepare("update events set
             events.name = ?, events.date = ?, events.start_time = ?, events.end_time = ?, events.description = ?, events.location = ? 
             where events.event_id = ?;");
             $stmt->bind_param("ssssssi",$title,$date,$startTime,$endTime,$description,$location,$pageId);

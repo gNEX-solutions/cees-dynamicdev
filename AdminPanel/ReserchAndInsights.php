@@ -78,7 +78,7 @@ $conn=$newConnection->connect(); ?>
             <!-- <option selected>Select page...</option> -->
             <?php 
               $result = $conn->query("SELECT `researches`.`idresearches` as id ,`researches`.`heading` as heading 
-              FROM `heroku_3dffaa1b8ca65ff`.`researches` where researches.`status` = 1 ;");
+              FROM `researches` where researches.`status` = 1 ;");
               while($row = $result->fetch_assoc()){
                 // echo($row[1]);
                
@@ -185,7 +185,7 @@ $conn=$newConnection->connect(); ?>
 //     if($_SERVER['REQUEST_METHOD'] == "POST" and isset($_POST["img_remove"])){
 //       // echo("image remove");
 //       // echo($_POST['img_remove']);
-//       $stmt = $conn->prepare("UPDATE `heroku_3dffaa1b8ca65ff`.`researches_images` SET `status` = 0 WHERE 
+//       $stmt = $conn->prepare("UPDATE `researches_images` SET `status` = 0 WHERE 
 //       `idresearches_images` = ?;") ;
 //       $stmt->bind_param("s",$_POST['img_remove']);
 //       if($stmt->execute()){
