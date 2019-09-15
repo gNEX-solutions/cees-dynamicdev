@@ -29,7 +29,7 @@
 
   <!-- Custom styles for this template-->
   <link href="css/sb-admin-2.min.css" rel="stylesheet">
-
+  <script src="../assets/customjs/sweetalert2.all.min.js"></script>
 </head>
 
 <body id="page-top">
@@ -141,6 +141,7 @@
       </div>
     </div>
   </div>
+  
 
   <!-- Bootstrap core JavaScript-->
   <script src="vendor/jquery/jquery.min.js"></script>
@@ -152,6 +153,42 @@
   <!-- Custom scripts for all pages-->
   <script src="js/sb-admin-2.min.js"></script>
 
+  <script>
+    function removeImg(imgId){
+      Swal.fire({
+      title: 'Are you sure?',
+      text: "You won't be able to revert this!",
+      type: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, delete it!'
+      }).then((result) => {
+      if (result.value) {
+        $.ajax({
+          type:'POST', 
+          url: "./AdminModel/deleteclients.php",
+          data: {img_remove: imgId, req:'imgRemove'},
+          success: function(){
+          },
+          error: function(){
+          }
+        });
+        Swal.fire(
+          'Deleted!',
+          'Your file has been deleted.',
+          'success'
+        ).then( function(){
+          window.location.reload();
+        });
+   
+    
+  }
+
+})
+    }
+  
+  </script>
 </body>
 
 </html>

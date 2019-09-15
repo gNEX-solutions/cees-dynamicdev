@@ -55,34 +55,34 @@
         <div class="container-fluid">
           <script>
           
-          function delArticle(fileName) {
-            Swal.fire({
-  title: 'Are you sure?',
-  text: "You won't be able to revert this!",
-  type: 'warning',
-  showCancelButton: true,
-  confirmButtonColor: '#3085d6',
-  cancelButtonColor: '#d33',
-  confirmButtonText: 'Yes, delete it!'
-}).then((result) => {
-  if (result.value) {
-    $.ajax({
-          url: 'deleteArticle.php',
-          data: {'id' : fileName },
-          success: function (response) {
-          
-          },
-          error: function () {
-          
-          }
+    function delArticle(fileName) {
+      Swal.fire({
+      title: 'Are you sure?',
+      text: "You won't be able to revert this!",
+      type: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, delete it!'
+      }).then((result) => {
+      if (result.value) {
+        $.ajax({
+              url: 'deleteArticle.php',
+              data: {'id' : fileName },
+              success: function (response) {
+              
+              },
+              error: function () {
+              
+              }
+            });
+        Swal.fire(
+          'Deleted!',
+          'Your file has been deleted.',
+          'success'
+        ).then( function(){
+          window.location.reload();
         });
-    Swal.fire(
-      'Deleted!',
-      'Your file has been deleted.',
-      'success'
-    ).then( function(){
-      window.location.reload();
-    });
    
     
   }
