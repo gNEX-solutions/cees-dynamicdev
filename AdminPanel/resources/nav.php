@@ -277,8 +277,8 @@
                 <div id="collapseCurrentPages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                   <div class="bg-white py-2 collapse-inner rounded">
                    
-                    <a class="collapse-item" href="EditProgram.php">Edit Program</a>
-                    <a class="collapse-item" href="EditCourses.php">Edit Course</a>
+                    <a class="collapse-item" href="../EditProgram.php">Edit Program</a>
+                    <a class="collapse-item" href="../EditCourses.php">Edit Course</a>
                     <a class="collapse-item" href="#">Solutions Lab</a>
                     <div class="collapse-divider"></div>
                   </div>
