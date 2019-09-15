@@ -210,46 +210,32 @@ class ViewSections extends Sections {
   public function ShowSL_MENU()
   { 
        $programs=$this->getAllSections();
-       $courses=$this->getAllCourses();
-       $count=$this->getCardDesign(2);
-       $classlen=12/$count;
+       
+       echo '<div class="media-container-row">';
+       
        foreach($programs as $program){
          if($program['page_type']=='SL' && $program['status']==1){
 
-            //With courses column view
-            // if($program['Menu_type']=="card"){
-               echo '<h1 class="mbr-title pt-2 mbr-fonts-style display-2" style="text-align:center">'.$program['program_title'].'</h1>
-                      
-                        <hr>
-                        <div class="media-container-row">';
-
-               foreach($courses as $course){
-
-
-                  if($course['idprogram']==$program['idprogram'] && $course['status']==1){
+            //No Courses Image Card View
+            if($program['Menu_type']=="NCICV"){
+              
                      
-                     echo '
-                             <div class="col-lg-4 col-md-4 col-sm-12">
+                     echo '<div class="col-lg-4 col-md-4 col-sm-12">
                                 <div class="widget" data-effect="slide-left">
                                   <div class="card text-black  mb-3" style="background-image: linear-gradient(-90deg ,#bdc7c7, #ebeded);">
 
-                                  <div class="card-header"><h5 class="card-title">'.$course['course_heading'].'</h5></div>
+                                  <div class="card-header"><h5 class="card-title">'.$program['program_title'].'</h5></div>
                                     <div class="card-body" style="height: 450px;">
-                                    <img src="'.$course['course_icon_url'].'"  width= 90% style="display: block; margin-left: auto; margin-right: auto;">
+                                    <img src="'.$program['image_url'].'"  width= 90% style="display: block; margin-left: auto; margin-right: auto;">
 
-                                        <p style="color: black;">'.$course['summary'].'</p>
+                                        <p style="color: black;">'.$program['summary'].'</p>
                                       </div>
                                     </div>
                                   </div>
                                 <!-- end widget -->
-                                </div>';
-                  }
-               }
-
-             
-            // }
-            
-      echo '</div>';
+                              </div>';
+                  
+              }
 
      }
 
