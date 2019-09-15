@@ -77,7 +77,7 @@ $conn=$newConnection->connect(); ?>
             <!-- <option selected>Select page...</option> -->
             <?php 
               $result = $conn->query("SELECT consultancies.idconsultancies as id , consultancies.heading  as heading
-              FROM heroku_3dffaa1b8ca65ff.consultancies where consultancies.type = 'SL' and consultancies.status = '1';");
+              FROM consultancies where consultancies.type = 'SL' and consultancies.status = '1';");
               while($row = $result->fetch_assoc()){
                 // echo($row[1]);
                
@@ -125,11 +125,11 @@ $conn=$newConnection->connect(); ?>
       $connPara=$newConnection->connect(); 
       $connImage=$newConnection->connect();
 
-      $stmntCons = $conn->prepare("select * from heroku_3dffaa1b8ca65ff.consultancies
+      $stmntCons = $conn->prepare("select * from consultancies
            where consultancies.idconsultancies = ? and consultancies.status = '1';") ;
-      $stmntPara = $connPara->prepare("SELECT * FROM heroku_3dffaa1b8ca65ff.consultaies_descriptions 
+      $stmntPara = $connPara->prepare("SELECT * FROM consultaies_descriptions 
           where consultaies_descriptions.idconsultancies = ?;");
-      $stmntImage = $connImage->prepare("SELECT * FROM heroku_3dffaa1b8ca65ff.consultancies_images 
+      $stmntImage = $connImage->prepare("SELECT * FROM consultancies_images 
       where consultancies_images.idConsultancies = ? and consultancies_images.status = 1;");
 
 
@@ -163,7 +163,7 @@ $conn=$newConnection->connect(); ?>
     // if($_SERVER['REQUEST_METHOD'] == "POST" and isset($_POST["delete"])){
     //   $page_id = $_POST['page']; //  the id of the page 
     //   // $title=$_POST['inputTitle'];
-    //   $stmt = $conn->prepare("update  heroku_3dffaa1b8ca65ff.consultancies 
+    //   $stmt = $conn->prepare("update  consultancies 
     //     set consultancies.status = 0 where consultancies.idconsultancies = ?;") ;
     //   $stmt->bind_param("s",$page_id);
     //   $stmt->execute();
@@ -179,7 +179,7 @@ $conn=$newConnection->connect(); ?>
     // if($_SERVER['REQUEST_METHOD'] == "POST" and isset($_POST["img_remove"])){
     //   // echo("image remove");
     //   // echo($_POST['img_remove']);
-    //   $stmt = $conn->prepare("update heroku_3dffaa1b8ca65ff.consultancies_images set consultancies_images.`status` = 0 
+    //   $stmt = $conn->prepare("update consultancies_images set consultancies_images.`status` = 0 
     //   where consultancies_images.idconsultancies_images = ?;") ;
     //   $stmt->bind_param("s",$_POST['img_remove']);
     //   if($stmt->execute()){
