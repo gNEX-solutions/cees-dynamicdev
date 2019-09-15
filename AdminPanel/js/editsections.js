@@ -186,6 +186,12 @@ $("#Program_form").on('submit', function(e){
  function showOder() {
     $("#sortable").empty();
     $('#notsortable').empty();
+    if ($("#option2").is(":checked")) {
+      $("#oder").hide();
+   }
+   if ($("#option").is(":checked")) {
+    $("#oder").show();
+ }
     var PageType=$('#pageType').val();
     $.ajax({
         type: "POST",
