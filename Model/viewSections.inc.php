@@ -4,21 +4,19 @@
 class ViewSections extends Sections {
     
    
-  // DS: 10.09.2019: Show CA page sections list
+  // DS: 10.09.2019: All the types of courses (WCCV/ WCBV/ WCGV/ NCIL/ NCIR/ NCICV)
   public function ShowCA_MENU()
    { 
        $programs=$this->getAllSections();
        $courses=$this->getAllCourses();
-       //$count=$this->getCardDesign(2);
-      // $classlen=12/$count;
+       
        foreach($programs as $program){
          if($program['page_type']=='CA' && $program['status']==1){
             
-            //With courses columb view
+            //With Courses Column View
             if($program['Menu_type']=='WCCV'){
-               //echo "<script>alert(".$program['program_title'].");</script>";
+               
                echo ' <div class="container">
-
                   <div class="row justify-content-md-center">
                      <div class="col-12 general-title text-center">
                         <h2>'.$program['program_title'].'</h2>
@@ -45,8 +43,8 @@ class ViewSections extends Sections {
                   }
                }
             }
-            //With courses block view
-            if($program['Menu_type']=='WCBV' && $program['status']==1){
+            //With Courses Block View
+            elseif($program['Menu_type']=='WCBV' && $program['status']==1){
                echo '<div class="container">
                         <div class="row justify-content-md-center ">
                            <div class="col-12 general-title text-center">
@@ -75,8 +73,105 @@ class ViewSections extends Sections {
                         }
                      }
             }
+            //No Courses Image Left
+            elseif($program['Menu_type']=='NCIL' && $program['status']==1)
+            { 
+               echo '<div class="container">
+                  <div class="grid-flex">
+                     <div class="col col-image img-div">
+                        <img src="'.$program['image_url'].'" alt="" class="mx-auto d-block proimg" />
+                     </div>
+                  <div class="col col-text ">
+                     <div class="Aligner-item text-left">
+                        <h3 class="text-left display-2 font-weight-normal">'.$program['program_title'].'</h3>
+                        <p class="text-justify">'.$program['summary'].'</p>
+                     </div>
+                  </div>
+               </div>     
+               <hr>
+               <br>';
+            }
+            //No Courses Image Right
+            elseif($program['Menu_type']=='NCIR' && $program['status']==1){ 
+               echo' <div class="container">
+                  <div class="grid-flex hideme">
+                     <div class="col col-image img-div">
+                        <img src="'.$program['image_url'].'" alt="" class="mx-auto d-block proimg" />
+                     </div>
+                     <div class="col col-text col-left">
+                        <div class="Aligner-item">
+                           <h3 class="text-left display-2 font-weight-normal">'.$program['program_title'].'</h3>
+                           <p class="text-justify">'.$program['summary'].'</p>        
+                        </div>
+                     </div>
+                  </div>
+                  <hr>
+               </div><br>';
+            }
+            //With Courses Grid View
+            elseif($program['Menu_type']=='WCGV' && $program['status']==1)
+            {         
+              echo '<div class="container">
+              <div class="row ">
+               <div class="text-center col-12 display-2 font-weight-normal">
+                     <p>'.$program['program_title'].'</p>
+               </div>
+               <div class="col-12 general-title text-center">
+                  <!-- <h2>Focused Business Improvement</h2> -->
+                  <p>'.$program['summary'].'</p>
+                  <hr>
+               </div><div class="container">
+              <div class="row justify-content-md-center">';
+              
+               foreach($courses as $course)
+               {
+                  if($course['idprogram']==$program['idprogram'] && $course['status']==1)
+                  {
+                     echo'
+                     <div class="col-md-4">
+                        <div class="servicebox text-center">
+                           <div class="service-icon">
+                              <div class="dm-icon-effect-1" data-effect="slide-right">
+                                 <a href="#" class=""> <i class="dm-icon '.$course['course_icon_url'].' fa-3x"></i> </a>
+                              </div>
+                              <div class="servicetitle">
+                                 <h4>'.$course['course_heading'].'</h4>
+                                 <hr>
+                              </div>
+                           </div>
+                           <!-- service-icon -->
+                        </div>
+                     <!-- servicebox -->
+                     </div>';
+                  }
+               }
+              echo'</div></div></div></div>';
+            }
+            //No Courses Image Card View DS: 15.09.2019 
+            elseif($program['Menu_type']=='NCICV' && $program['status']==1)
+            {
+               echo "NCICV";
+               echo '<div class="container">
+                        <div class="row justify-content-md-center">
+                           <div class="col-lg-4 col-md-4 col-sm-12">
+                              <div class="widget" data-effect="slide-left">
+                                 <div class="card text-black  mb-3" style="background-image: linear-gradient(-90deg ,#bdc7c7, #ebeded);">
+                                    <div class="card-header"><h5 class="card-title">'.$program['program_title'].'</h5></div>
+                                       <div class="card-body" style="height: 450px;">
+                                          <img src="'.$program['image_url'].'"  width= 90% style="display: block; margin-left: auto; margin-right: auto;">
+                                          <p style="color: black;">'.$program['summary'].'</p>
+                                    </div>
+                                    </div>
+                                 </div>
+                              </div>
+                     <!-- end widget -->
+                           </div>
+                        s</div>
+                     </div>';
+            
+            }
+
          }
-      
 
       }
       
@@ -93,12 +188,14 @@ class ViewSections extends Sections {
          $programid= $program['idprogram'];
     
         
-         if($program['page_type']=='CS' && $program['status']==1){
+         if($program['page_type']=='CS' && $program['status']==1)
+         {
          
-            if($program['Menu_type']=='NCIL' ){ 
+            if($program['Menu_type']=='NCIL' )
+            { 
                echo '<div class="container">
 
-               <div class="grid-flex hideme">
+               <div class="grid-flex">
                <div class="col col-image img-div">
                   <img src="'.$program['image_url'].'" alt="" class="mx-auto d-block proimg" />
                </div>
@@ -113,66 +210,61 @@ class ViewSections extends Sections {
                <hr>
                </div><br>';
             }
-           elseif($program['Menu_type']=='NCIR' ){ 
-           
-            echo' <div class="container">
-            <div class="grid-flex hideme">
-              <div class="col col-image img-div">
-                <img src="'.$program['image_url'].'" alt="" class="mx-auto d-block proimg" />
-              </div>
-              <div class="col col-text col-left">
-                <div class="Aligner-item">
-                  <h3 class="text-left display-2 font-weight-normal">'.$program['program_title'].'</h3>
-                  <p class="text-justify">'.$program['summary'].'</p>
-                 
-                </div>
-              </div>
-            </div>
-            <hr>
-          </div><br>';
-           }
-           elseif($program['Menu_type']=='WCGV' ){ 
-         
+            elseif($program['Menu_type']=='NCIR' ){ 
+               echo' <div class="container">
+                  <div class="grid-flex hideme">
+                     <div class="col col-image img-div">
+                        <img src="'.$program['image_url'].'" alt="" class="mx-auto d-block proimg" />
+                     </div>
+                     <div class="col col-text col-left">
+                        <div class="Aligner-item">
+                           <h3 class="text-left display-2 font-weight-normal">'.$program['program_title'].'</h3>
+                           <p class="text-justify">'.$program['summary'].'</p>        
+                        </div>
+                     </div>
+                  </div>
+                  <hr>
+               </div><br>';
+            }
+            elseif($program['Menu_type']=='WCGV' )
+            {         
               echo '<div class="container">
               <div class="row ">
-      
-              <div class="text-center col-12 display-2 font-weight-normal">
-                  <p>'.$program['program_title'].'</p>
-              </div>
-              <div class="col-12 general-title text-center">
-                <!-- <h2>Focused Business Improvement</h2> -->
-                <p>'.$program['summary'].'</p>
-                <hr>
-              </div><div class="container">
+               <div class="text-center col-12 display-2 font-weight-normal">
+                     <p>'.$program['program_title'].'</p>
+               </div>
+               <div class="col-12 general-title text-center">
+                  <!-- <h2>Focused Business Improvement</h2> -->
+                  <p>'.$program['summary'].'</p>
+                  <hr>
+               </div><div class="container">
               <div class="row justify-content-md-center">';
               
-              foreach($courses as $course){
-               if($course['idprogram']==  $programid && $course['status']==1){
-                      echo'
-                      <div class="col-md-4">
-                      <div class="servicebox text-center">
-                        <div class="service-icon">
-                          <div class="dm-icon-effect-1" data-effect="slide-right">
-                            <a href="#" class=""> <i class="dm-icon '.$course['course_icon_url'].' fa-3x"></i> </a>
-                          </div>
-                          <div class="servicetitle">
-                            <h4>'.$course['course_heading'].'</h4>
-                            <hr>
-                          </div>
-                        
+               foreach($courses as $course)
+               {
+                  if($course['idprogram']==  $programid && $course['status']==1)
+                  {
+                     echo'
+                     <div class="col-md-4">
+                        <div class="servicebox text-center">
+                           <div class="service-icon">
+                              <div class="dm-icon-effect-1" data-effect="slide-right">
+                                 <a href="#" class=""> <i class="dm-icon '.$course['course_icon_url'].' fa-3x"></i> </a>
+                              </div>
+                              <div class="servicetitle">
+                                 <h4>'.$course['course_heading'].'</h4>
+                                 <hr>
+                              </div>
+                           </div>
+                           <!-- service-icon -->
                         </div>
-                        <!-- service-icon -->
-                      </div>
-                      <!-- servicebox -->
-                    </div>';
-                 }
+                     <!-- servicebox -->
+                     </div>';
+                  }
                }
-
               echo'</div></div></div></div>';
-           }
+            }
          }
-      
-
       }
       
    }
