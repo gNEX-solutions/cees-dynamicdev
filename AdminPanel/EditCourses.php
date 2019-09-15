@@ -125,7 +125,7 @@
        <div class="row justify-content-md-start">
         <div class="form-group col col-sm-8">
           <strong><label for="inputTitle">Summary</label></strong>
-          <textarea type="text" class="form-control" name="Summary" placeholder="Summary" id="Summary" required></textarea>
+          <textarea type="text" class="form-control" name="Summary" placeholder="Summary" id="Summary" ></textarea>
         </div>
        </div>
        <div class="row justify-content-md-start">
