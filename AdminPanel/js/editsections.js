@@ -186,12 +186,7 @@ $("#Program_form").on('submit', function(e){
  function showOder() {
     $("#sortable").empty();
     $('#notsortable').empty();
-    if ($("#option2").is(":checked")) {
-      $("#oder").hide();
-   }
-   if ($("#option").is(":checked")) {
-    $("#oder").show();
- }
+  
     var PageType=$('#pageType').val();
     $.ajax({
         type: "POST",
@@ -204,7 +199,12 @@ $("#Program_form").on('submit', function(e){
            var count=1
            $("#save_oder").show();
            $("#th").show();
-           $("#oder").show();
+           if ($("#option2").is(":checked")) {
+            $("#oder").hide();
+         }
+         if ($("#option1").is(":checked")) {
+          $("#oder").show();
+       }
            $('.statusMsg').html('<span style="font-size:15px;color:#34A853"></span>');
             
            for(var i=0; i<len; i++){
