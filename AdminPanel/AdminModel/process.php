@@ -10,7 +10,7 @@ $dbh = new dbh();
        }
        else
        {
-            $query="select * from user where username='".$_POST['UName']."' and password='".$_POST['Password']."'";
+            $query="select * from user where BINARY username= BINARY '".$_POST['UName']."' and BINARY password='".$_POST['Password']."'";
             $result=$dbh->connect()->query($query);
             if(mysqli_fetch_assoc($result))
             {
