@@ -45,13 +45,20 @@
               <li class="nav-item">
                   <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseCurrentPages" aria-expanded="true" aria-controls="collapseCurrentPages">
                     <i class="fas fa-fw fa-folder"></i>
+
+               
+
                     <span>Edit Content</span>
+
                   </a>
                   <div id="collapseCurrentPages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                      
-                      <a class="collapse-item" href="./AcademyEditPage.php">Edit Pages</a>
-                      <a class="collapse-item" href="./ConsultingServicesEditPage.php">Edit Courses</a>                      
+
+                      <a class="collapse-item" href="EditProgram.php">Edit Program</a>
+                      <a class="collapse-item" href="EditCourses.php">Edit Course</a>
+                    
+
                       <div class="collapse-divider"></div>
                     </div>
                   </div>
@@ -265,13 +272,13 @@
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseCurrentPages" aria-expanded="true" aria-controls="collapseCurrentPages">
                   <i class="fas fa-fw fa-folder"></i>
-                  <span>Edit Current Pages</span>
+                  <span>Edit Pages</span>
                 </a>
                 <div id="collapseCurrentPages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                   <div class="bg-white py-2 collapse-inner rounded">
                    
-                    <a class="collapse-item" href="AcademyEditPage.php">CEES Academy</a>
-                    <a class="collapse-item" href="#">Consulting Services</a>
+                    <a class="collapse-item" href="EditProgram.php">Edit Program</a>
+                    <a class="collapse-item" href="EditCourses.php">Edit Course</a>
                     <a class="collapse-item" href="#">Solutions Lab</a>
                     <div class="collapse-divider"></div>
                   </div>

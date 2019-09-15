@@ -17,7 +17,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Academy Edit Page</title>
+  <title>Edit Programs</title>
   <?php include './resources/nav.php'; ?>
   <?php include './resources/footer.php'; ?>
   <!-- including the database connection  -->
@@ -50,16 +50,14 @@
     <div id="content-wrapper" class="d-flex flex-column">
       <div id="content">
         <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
-         <h1 class="h3 mb-4 text-gray-800">Edit CEES Academy Pages</h1>
+         <h1 class="h3 mb-4 text-gray-800">Edit Programs</h1>
         </nav>
 
 <!-- KDW: 11-09-2010 : -->
-        <div class="container" style="margin-bottom:5%;margin-top:5%" >
+        <div class="container" style="margin-bottom:5%;margin-top:5%;margin-right:5%;margin-left:15%" >
           <div class="row justify-content-md-center">
-          <div class="col col-lg-2">
-          Edit Program Order
-          </div>
-          <div class="col col-lg-2">
+         
+          <div class="col col-md-4">
           <div class="btn-group btn-group-toggle" data-toggle="buttons">
             <label class="btn btn-secondary">
               <input type="radio"  class="btn btn-primary" name="options" id="option1" autocomplete="off" value="Order"> Order
@@ -70,17 +68,15 @@
             
           </div>
           </div>
-          <div class="col col-lg-2">
-            Edit Program
-          </div>
+        
              
           </div>
         </div>
-        <div class="content form-group" style="margin-left:5%">
-          <div class="container">
+
+        <form style="margin-left:5%;margin-bottom:2%;margin-right:5%" class="justify-content-md-start">
             <div class="row justify-content-md-center">
              
-                <div class="form-group col-sm-5">
+                <div class="form-group col-sm-4 justify-content-md-center">
                     <strong> <label for="inputDescription">Page Type</label> </strong>
                     <select class="form-control" name="page_type" id="pageType">
                       <option>Select page type</option>
@@ -89,58 +85,54 @@
                       <option value="SL">Solutions Lab</option>
                     </select>
                 </div> 
-                <div class="form-group col col-sm-5"  id="proTitlediv">
+                <div class="form-group col col-sm-4"  id="proTitlediv">
                     <strong><label for="inputDescription">Title</label></strong>
                     <select class="form-control" name="inputDesignType" id="proTitle">
-                      <option>Select the design type</option>
+                      <option>Select the Program</option>
                     </select>
                 </div>
-                <div class="form-groupcol-sm-2" style="margin-top:2.8%">
-                  <button type="button" class="btn btn-primary" id="searcTitle"><i class="fa fa-search"></i></button>
-                  <button type="button" class="btn btn-primary" id="searchOder"><i class="fa fa-search"></i></button>
-                </div>
-           
+              
           </div>
-        </div>
-       </div>
+        </form>
+  
        <hr>
-       <form style="margin-left:5%;margin-bottom:5%" id="Program_form" class="justify-content-md-center">
+       <form style="margin-left:5%;margin-bottom:5%;margin-top:2%;margin-right:5%" id="Program_form" class="justify-content-md-start">
      
        
           <input  type="hidden" class="form-control" name="ID" id="ID" >
           <input  type="hidden" class="form-control" name="method" id="method" value="save">
         
-       <div class="row justify-content-md-center">
+       <div class="row justify-content-md-start">
         <div class="form-group col col-sm-8" >
           <strong><label for="inputTitle">Page Title</label></strong>
           <input type="text" class="form-control" name="Title" placeholder="Title" id="Title" required>
         </div>
        </div>
-       <div class="row justify-content-md-center">
+       <div class="row justify-content-md-start">
         <div class="form-group col col-sm-8">
           <strong><label for="inputTitle">Summary</label></strong>
           <textarea type="text" class="form-control" name="Summary" placeholder="Summary" id="Summary" required></textarea>
         </div>
        </div>
-       <div class="row justify-content-md-center">
+       <div class="row justify-content-md-start">
         <div class="form-group col-8">
           <strong> <label for="inputDescription">Show program</label></strong><br>
-          <input type="radio" name="status" value="1" id="status-show">Show &nbsp;
-          <input type="radio" name="status" value="0"  id="status-hide">Don't Show 
+          <input type="radio" name="status" value="1" id="status-show"> Show &nbsp;
+          <input type="radio" name="status" value="0"  id="status-hide"> Don't Show 
         </div>
       </div>
-      <div class="row justify-content-md-center">
-        <div class="col col-lg-3">
+      <div class="row justify-content-md-start">
+        <div class="col col-lg-3" style="margin-top:5%">
           <strong><label for="inputTitle">Image</label></strong>
           <input type="file" id="file" name="file" />
         </div>
         <div class="col col-lg-1">
         </div>
-        <div class="col col-lg-4">
+        <div class="col col-lg-3">
           <img src="img/American_University_Seal.svg.png" class="rounded float-left" alt="..." style="width:200px;height200px" id="Image">
         </div>
        </div>
-      <div class="row row justify-content-end">
+      <div class="row row justify-content-end" style="margin-top:2%">
         <div class="col-sm-4">
           <button type="submit" class="btn btn-primary submitBtn" id="save" style="margin-top:10px">Save Changes</button>
           <p class="statusMsg"></p> 

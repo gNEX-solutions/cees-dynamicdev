@@ -6,7 +6,6 @@ var PageType=$('#pageType').val();
 
     $.ajax({
         type: "POST",
-        async: false,
         url: "AdminModel/EditSectionHedder.php",
         data: {PageType:PageType,method:'searchTitle'},
         success: function(data){
@@ -23,7 +22,8 @@ var PageType=$('#pageType').val();
             ${option} 
             </option>`); 
            }
-          
+           getProgramTitles()
+           showOder()
         },
         error: function (request, status, error) {
             $("#error").append(request.responseText)
@@ -34,37 +34,45 @@ var PageType=$('#pageType').val();
   });
 
   //get add append requested data to inputs
-  $( "#searcTitle" ).click(function() {
 
-    var ProgramID=$('#proTitle').val();
-    $.ajax({
-        type: "POST",
-        async: false,
-        url: "AdminModel/EditSectionHedder.php",
-        data: {PageId:ProgramID,method:'searchProgram'},
-        success: function(data){
-           var res = $.parseJSON(data);
-           var len = res.length;
-           for(var i=0; i<len; i++){
-           $('#Summary').val(res[i].summary);
-           $('#Title').val(res[i].program_title);
-           $('#ID').val(res[i].idprogram);
-           $('#Image').attr('src','../'+res[i].image_url )
-           
-           if(res[i].status=="1"){
-            $('#status-show')[0].checked = true;
-           }else{
-            $('#status-hide')[0].checked = true;
-           }
-          
+function getProgramTitles()
+{
+  var ProgramID=$('#proTitle').val();
+  $.ajax({
+      type: "POST",
+      url: "AdminModel/EditSectionHedder.php",
+      data: {PageId:ProgramID,method:'searchProgram'},
+      success: function(data){
+         var res = $.parseJSON(data);
+         var len = res.length;
+         for(var i=0; i<len; i++){
+         $('#Summary').val(res[i].summary);
+         $('#Title').val(res[i].program_title);
+         $('#ID').val(res[i].idprogram);
+         $('#Image').attr('src','../'+res[i].image_url )
+         
+         if(res[i].status=="1"){
+          $('#status-show')[0].checked = true;
+         }else{
+          $('#status-hide')[0].checked = true;
          }
-          
-        },
-        error: function (request, status, error) {
-            $("#error").append(request.responseText)
-          
-        }
-      })
+        
+       }
+        
+      },
+      error: function (request, status, error) {
+          $("#error").append(request.responseText)
+        
+      }
+    })
+
+}
+
+
+
+  $( "#proTitle" ).on('change',function() {
+    getProgramTitles()
+  
    
   });
 
@@ -161,7 +169,7 @@ $("#Program_form").on('submit', function(e){
       $("#searcTitle").hide();
       $("#searchOder").show();
       $("#oder").show();
-      
+      $('.statusMsg').html('<span style="font-size:15px;color:#34A853"></span>');
       
     }else{
       $("#Program_form").show();
@@ -169,18 +177,18 @@ $("#Program_form").on('submit', function(e){
       $("#searcTitle").show();
       $("#searchOder").hide();
       $("#oder").hide();
+      $('.statusMsg').html('<span style="font-size:15px;color:#34A853"></span>');
     }
   
   })
 
  //Show Oder 
-  $( "#searchOder" ).click(function() {
+ function showOder() {
     $("#sortable").empty();
     $('#notsortable').empty();
     var PageType=$('#pageType').val();
     $.ajax({
         type: "POST",
-        async: false,
         url: "AdminModel/EditSectionHedder.php",
         data: {PageType:PageType,method:'searchTitle'},
        
@@ -190,6 +198,9 @@ $("#Program_form").on('submit', function(e){
            var count=1
            $("#save_oder").show();
            $("#th").show();
+           $("#oder").show();
+           $('.statusMsg').html('<span style="font-size:15px;color:#34A853"></span>');
+            
            for(var i=0; i<len; i++){
              if(res[i].status=="1"){
            $('#Title').val();
@@ -206,7 +217,7 @@ $("#Program_form").on('submit', function(e){
         }
       })
    
-  });
+  }
 
   window.onload = $(function () {
     $( "#sortable" ).sortable();
@@ -237,20 +248,27 @@ $("#Program_form").on('submit', function(e){
               
                 $.ajax({
                   type: "POST",
-
                   data:{oderlist_json:oderlist_json,method:'oder'},
                   url: "AdminModel/EditSectionHedder.php",
-                
-                    success: function(msg) {
+                  beforeSend: function(){
+                    $('#save_oder').attr("display","block");
+                    $('#oder').css("opacity",".5");
+                  },success: function(msg) {
                      // $("#error").append(msg)
                       if(msg.trim() == '"ok"'){
-                       
+                          $('#sortable').empty();
+                          $('#notsortable').empty();
+                          $("#oder").hide();
+                          $("#save_oder").hide();
+                           $("#th").hide();
+                         $('.statusMsg').html('<span style="font-size:15px;color:#34A853">successfully Updated.</span>');
                           $.alert('successfully Oder is Updated');
                       }else{
-                        
+                        $('.statusMsg').html('<span style="font-size:15px;color:#EA4335">Some problem occurred, please try again.</span>');
                           $.alert('Some problem occurred, please try again.!');
                       }
-                    
+                      $('#oder').css("opacity","");
+                      $('#save_oder').attr("display","none");
                 }
                 })
             }
