@@ -43,7 +43,8 @@
 
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
   <link rel="stylesheet" href="style.css">
-
+  <script src="../../assets/customjs/sweetalert2.all.min.js"></script>
+  
 </head>
 
 <body id="page-top">
@@ -90,10 +91,32 @@
         <textarea name="article" id="blogArticle" required></textarea>
         </div>
         <div class="form-group">
-        <button type="submit">Edit Article</button> 
+        <button type="button" onclick="confirmEdit()">Edit Article</button> 
+        <input type="submit" id="subButtonEdit" hidden>
         </div>
         </form>
-
+        <script>
+        function confirmEdit() {
+            Swal.fire({
+  title: 'You are about to save your work',
+  text: "",
+  type: 'info',
+  showCancelButton: true,
+  confirmButtonColor: '#3085d6',
+  cancelButtonColor: '#d33',
+  confirmButtonText: 'Yes, save it!'
+}).then((result)=>{
+ 
+  if(result.value){
+   
+    $('#subButtonEdit').trigger('click');
+  }else{
+    
+  }
+});
+        
+      }
+</script>
         <?php
  
   include '../../Model/dbh.inc.php';

@@ -6,7 +6,6 @@ var PageType=$('#pageType').val();
 
     $.ajax({
         type: "POST",
-        async: false,
         url: "AdminModel/EditSectionHedder.php",
         data: {PageType:PageType,method:'searchTitle'},
         success: function(data){
@@ -23,7 +22,8 @@ var PageType=$('#pageType').val();
             ${option} 
             </option>`); 
            }
-          
+           getProgramTitles()
+           showOder()
         },
         error: function (request, status, error) {
             $("#error").append(request.responseText)
@@ -34,37 +34,45 @@ var PageType=$('#pageType').val();
   });
 
   //get add append requested data to inputs
-  $( "#searcTitle" ).click(function() {
 
-    var ProgramID=$('#proTitle').val();
-    $.ajax({
-        type: "POST",
-        async: false,
-        url: "AdminModel/EditSectionHedder.php",
-        data: {PageId:ProgramID,method:'searchProgram'},
-        success: function(data){
-           var res = $.parseJSON(data);
-           var len = res.length;
-           for(var i=0; i<len; i++){
-           $('#Summary').val(res[i].summary);
-           $('#Title').val(res[i].program_title);
-           $('#ID').val(res[i].idprogram);
-           $('#Image').attr('src','../'+res[i].image_url )
-           
-           if(res[i].status=="1"){
-            $('#status-show')[0].checked = true;
-           }else{
-            $('#status-hide')[0].checked = true;
-           }
-          
+function getProgramTitles()
+{
+  var ProgramID=$('#proTitle').val();
+  $.ajax({
+      type: "POST",
+      url: "AdminModel/EditSectionHedder.php",
+      data: {PageId:ProgramID,method:'searchProgram'},
+      success: function(data){
+         var res = $.parseJSON(data);
+         var len = res.length;
+         for(var i=0; i<len; i++){
+         $('#Summary').val(res[i].summary);
+         $('#Title').val(res[i].program_title);
+         $('#ID').val(res[i].idprogram);
+         $('#Image').attr('src','../'+res[i].image_url )
+         
+         if(res[i].status=="1"){
+          $('#status-show')[0].checked = true;
+         }else{
+          $('#status-hide')[0].checked = true;
          }
-          
-        },
-        error: function (request, status, error) {
-            $("#error").append(request.responseText)
-          
-        }
-      })
+        
+       }
+        
+      },
+      error: function (request, status, error) {
+          $("#error").append(request.responseText)
+        
+      }
+    })
+
+}
+
+
+
+  $( "#proTitle" ).on('change',function() {
+    getProgramTitles()
+  
    
   });
 
@@ -123,10 +131,8 @@ $("#Program_form").on('submit', function(e){
             $.alert('action is canceled');
         }
     }
-});
-
-   
   });
+});
 // add Choosed image to image View
   $("#file").change(function() {
     var file = this.files[0];
@@ -163,7 +169,7 @@ $("#Program_form").on('submit', function(e){
       $("#searcTitle").hide();
       $("#searchOder").show();
       $("#oder").show();
-      
+      $('.statusMsg').html('<span style="font-size:15px;color:#34A853"></span>');
       
     }else{
       $("#Program_form").show();
@@ -171,26 +177,43 @@ $("#Program_form").on('submit', function(e){
       $("#searcTitle").show();
       $("#searchOder").hide();
       $("#oder").hide();
+      $('.statusMsg').html('<span style="font-size:15px;color:#34A853"></span>');
     }
   
   })
 
  //Show Oder 
-  $( "#searchOder" ).click(function() {
-
+ function showOder() {
+    $("#sortable").empty();
+    $('#notsortable').empty();
+  
     var PageType=$('#pageType').val();
     $.ajax({
         type: "POST",
-        async: false,
         url: "AdminModel/EditSectionHedder.php",
         data: {PageType:PageType,method:'searchTitle'},
+       
         success: function(data){
            var res = $.parseJSON(data);
            var len = res.length;
+           var count=1
+           $("#save_oder").show();
+           $("#th").show();
+           if ($("#option2").is(":checked")) {
+            $("#oder").hide();
+         }
+         if ($("#option1").is(":checked")) {
+          $("#oder").show();
+       }
+           $('.statusMsg').html('<span style="font-size:15px;color:#34A853"></span>');
+            
            for(var i=0; i<len; i++){
-           $('#Title').val(res[i].program_title);
-           
-          
+             if(res[i].status=="1"){
+           $('#Title').val();
+           $('#notsortable').append('<div class="col-col-md-4 index text-center">'+count+'</div>')
+           $('#sortable').append('<li class="oder"><div class=row><div class="col col-md-10">'+res[i].program_title+'</div><div class="col col-md-2 text-center">'+count+'</div> <input  type="hidden"  id="programID" value="'+res[i].idprogram+'" ></div></li>')
+           count=count+1;
+             }
          }
           
         },
@@ -200,7 +223,7 @@ $("#Program_form").on('submit', function(e){
         }
       })
    
-  });
+  }
 
   window.onload = $(function () {
     $( "#sortable" ).sortable();
@@ -210,4 +233,73 @@ $("#Program_form").on('submit', function(e){
     $("#searcTitle").show();
     $("#searchOder").hide();
     $("#oder").hide();
+    $("#save_oder").hide();
+     $("#th").hide();
   } );
+
+//Update Program Oder
+  $("#save_oder").on('click', function(e){
+  var oderlist= getOderList()   
+  var oderlist_json = JSON.stringify(oderlist);       
+   $.confirm({
+    title: 'Update Oder?',
+    content: 'This dialog will automatically trigger \'cancel\' in 6 seconds if you don\'t respond.',
+    autoClose: 'cancelAction|8000',
+    icon: 'fa fa-warning',
+    type: 'green',
+    buttons: {
+        deleteUser: {
+            text: 'Update Data',
+            action: function () {
+              
+                $.ajax({
+                  type: "POST",
+                  data:{oderlist_json:oderlist_json,method:'oder'},
+                  url: "AdminModel/EditSectionHedder.php",
+                  beforeSend: function(){
+                    $('#save_oder').attr("display","block");
+                    $('#oder').css("opacity",".5");
+                  },success: function(msg) {
+                     // $("#error").append(msg)
+                      if(msg.trim() == '"ok"'){
+                          $('#sortable').empty();
+                          $('#notsortable').empty();
+                          $("#oder").hide();
+                          $("#save_oder").hide();
+                           $("#th").hide();
+                         $('.statusMsg').html('<span style="font-size:15px;color:#34A853">successfully Updated.</span>');
+                          $.alert('successfully Oder is Updated');
+                      }else{
+                        $('.statusMsg').html('<span style="font-size:15px;color:#EA4335">Some problem occurred, please try again.</span>');
+                          $.alert('Some problem occurred, please try again.!');
+                      }
+                      $('#oder').css("opacity","");
+                      $('#save_oder').attr("display","none");
+                }
+                })
+            }
+        },
+        cancelAction: function () {
+            $.alert('action is canceled');
+        }
+    }
+  });
+});
+
+
+//Create OderList Obj
+function getOderList() 
+{
+  var obj_array = new Array();
+
+  var ul = document.getElementById("sortable");
+  var items = ul.getElementsByTagName("li");
+  for (var i = 0; i < items.length; ++i)
+  {
+    obj = new Object();
+    obj.programID= items[i].getElementsByTagName("input")[0].value; 
+    obj.program_order=i+1;
+   obj_array.push(obj);
+  }
+  return  obj_array;
+}

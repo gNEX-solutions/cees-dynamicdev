@@ -29,6 +29,14 @@ else if($method=='save')
    $result=$Edit->UpdateProgram ($_POST['Title'],$_POST['Summary'],$_POST['status'], $imgLocation,$_POST['ID']);
    echo json_encode(trim( $result,"\""));
 }
+else if($method=='oder')
+{   
+    $programList=$_POST['oderlist_json'];
+    $result=$Edit->UpdateProgramOder ($programList);
+    echo json_encode($result);
+}
+
+
 
 
 ?>

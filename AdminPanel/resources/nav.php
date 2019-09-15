@@ -18,7 +18,7 @@
           <!-- Nav Item - Dashboard -->
           <li class="nav-item active">
             <a class="nav-link" href="index.php">
-              <i class="fas fa-fw fa-tachometer-alt"></i>
+            <i class="fa fa-home" style="font-size:24px"></i>
               <span>Home</span></a>
           </li>
     
@@ -30,33 +30,35 @@
               <li class="nav-item">
                   <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseNewPages" aria-expanded="true" aria-controls="collapseNewPages">
                     <i class="fas fa-fw fa-folder"></i>
-                    <span>Create a New Page</span>
+                    <span>Create Content</span>
                   </a>
                   <div id="collapseNewPages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                      
-                      <a class="collapse-item" href="AcademyNewPage.php">CEES Academy</a>
-                      <a class="collapse-item" href="ConsultancyNewPage.php">Consulting Services</a>
-                      <a class="collapse-item" href="SolutionsLabNewPage.php">Solutions Lab</a>
-                      <a class="collapse-item" href="./ResearchAndInsightsNewPage.php">Research and Insights</a>
+                      <a class="collapse-item" href="AcademyNewPage.php">Add new program</a>
+                      <a class="collapse-item" href="addNewCourse.php">Add new course</a>
                       <div class="collapse-divider"></div>
                     </div>
                   </div>
                 </li>
               
-                
               <li class="nav-item">
                   <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseCurrentPages" aria-expanded="true" aria-controls="collapseCurrentPages">
                     <i class="fas fa-fw fa-folder"></i>
-                    <span>Edit Current Pages</span>
+
+               
+
+                    <span>Edit Content</span>
+
                   </a>
                   <div id="collapseCurrentPages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                      
-                      <a class="collapse-item" href="./AcademyEditPage.php">CEES Academy</a>
-                      <a class="collapse-item" href="./ConsultingServicesEditPage.php">Consulting Services</a>
-                      <a class="collapse-item" href="./SolutionsLabEditPage.php">Solutions Lab</a>
-                      <a class="collapse-item" href="./ReserchAndInsights.php">Research and Insights</a>
+
+                      <a class="collapse-item" href="EditProgram.php">Edit Program</a>
+                      <a class="collapse-item" href="EditCourses.php">Edit Course</a>
+                    
+
                       <div class="collapse-divider"></div>
                     </div>
                   </div>
@@ -74,7 +76,7 @@
           <a class="nav-link" href="addEvents.php">
             <i class="fas fa-fw fa-chart-area"></i>
             <span>Add Events</span></a>
-        </li>
+          </li>
     
           <!-- Nav Item - Utilities Collapse Menu -->
           <li class="nav-item">
@@ -270,13 +272,13 @@
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseCurrentPages" aria-expanded="true" aria-controls="collapseCurrentPages">
                   <i class="fas fa-fw fa-folder"></i>
-                  <span>Edit Current Pages</span>
+                  <span>Edit Pages</span>
                 </a>
                 <div id="collapseCurrentPages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                   <div class="bg-white py-2 collapse-inner rounded">
                    
-                    <a class="collapse-item" href="AcademyEditPage.php">CEES Academy</a>
-                    <a class="collapse-item" href="#">Consulting Services</a>
+                    <a class="collapse-item" href="EditProgram.php">Edit Program</a>
+                    <a class="collapse-item" href="EditCourses.php">Edit Course</a>
                     <a class="collapse-item" href="#">Solutions Lab</a>
                     <div class="collapse-divider"></div>
                   </div>
