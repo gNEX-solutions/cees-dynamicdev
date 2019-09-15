@@ -116,18 +116,18 @@
                     $uploadOk = 1;
                     /* Upload file */
                     move_uploaded_file($_FILES['file']['tmp_name'],$location);
-                
+                    echo "<script>alert(".$title.")</script>";
                     $conn->autocommit(false);
                     $stmt= $conn->prepare("INSERT INTO courses(course_heading, summary, status, course_icon_url, idprogram) VALUES (?,?,?,?,?)");
                     $stmt->bind_param('ssisi',$title, $summary, $status, $relLocation, $idprogram);
                 
                     if(!$stmt->execute()){
                         $success=0;
-                        echo '<script>swal("Good job!", "You clicked the button!", "success");</script>';
+                        echo '<script>swal({icon: "error", text:"Course cannot be added",});</script>';
                     }
                     if($success==1){
                         $conn->commit();
-                        echo '<script>swal("Good job!", "You clicked the button!", "success");</script>';
+                        echo '<script>swal({icon: "success", text:"Course added successfuly!",});</script>';
                     }
                     //Redirect
                     echo " <script type='text/javascript'>
