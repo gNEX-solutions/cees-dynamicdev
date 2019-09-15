@@ -160,7 +160,7 @@ include 'Model/getClientLogos.php';
                     <h4 class="card-title py-3 mbr-fonts-style display-5"><a href="#">Solutions LAB</a></h4>
                     <p class="mbr-text mbr-fonts-style display-7" >
                     <!-- Dedicated set of engineers and scientists who are working on cutting edge technologies and develop integrated solutions considering Lean, Automation and Digitization initiatives to create quantum leaps in the Enterprise Excellence practices.  -->
-                    Businesses are in dire need of creative, agile and high tech solutions than ever in the VUCA conditions. Our team of engineers offer you customized integrated solutions in Lean, Automation & Digitization to cater your specific needs. 
+                    Businesses are in direct need of creative, agile and high tech solutions than ever in the VUCA conditions. Our team of engineers offer you customized integrated solutions in Lean, Automation & Digitization to cater your specific needs. 
                     </p>
                   <span class="vspacer"></span>
                   <p class="py-3 mbr-fonts-style">
