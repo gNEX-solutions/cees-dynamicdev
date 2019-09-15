@@ -6,7 +6,7 @@ $('#pageType').on('change', function() {
     
     $.ajax({
         type: "POST",
-        async: false,
+      
         url: "AdminModel/EditSectionHedder.php",
         data: {PageType:PageType,method:'searchTitle'},
         success: function(data){
@@ -34,13 +34,13 @@ $('#pageType').on('change', function() {
 });
 // fill Course Title select box 
 $('#proTitle').on('change', function() {
-    var proTitle=$('#proTitle').val();
+    var proID=$('#proTitle').val();
     
         $.ajax({
             type: "POST",
-            async: false,
+      
             url: "AdminModel/EditCourseHeader.php",
-            data: {proTitle:proTitle,method:'searchCourse'},
+            data: {proID:proID,method:'searchCourse'},
             success: function(data){
                 $('#CourseTitle')
                 .find('option')
@@ -69,10 +69,17 @@ $('#proTitle').on('change', function() {
 
     function getCourseData()
     {
+     
+      if ($("#option2").is(":checked")) {
+        $("#lodding").hide();
+       }
+      if ($("#option1").is(":checked")) {
+        $("#lodding").show();
+        }
         var courseId=$('#CourseTitle').val();
         $.ajax({
             type: "POST",
-            async: false,
+      
             url: "AdminModel/EditCourseHeader.php",
             data: {courseId:courseId,method:'courseData'},
             success: function(data){
@@ -91,7 +98,7 @@ $('#proTitle').on('change', function() {
                }
               
              }
-              
+             ShowCourseOder()
             },
             error: function (request, status, error) {
                 $("#error").append(request.responseText)
@@ -112,13 +119,13 @@ $('#proTitle').on('change', function() {
     
     
     
-    // Update Program Data
-    $("#Program_form").on('submit', function(e){
+    // Update course Data
+    $("#course_form").on('submit', function(e){
         
         e.preventDefault();
     
         output =  $('input[name=status]:checked', 
-                    '#Program_form').val(); 
+                    '#course_form').val(); 
                    
        var formdata = new FormData(this);
        formdata.append('status', output);
@@ -139,24 +146,25 @@ $('#proTitle').on('change', function() {
                       contentType: false,
                       cache: false,
                       processData:false,
-                      url: "AdminModel/EditSectionHedder.php",
+                      url: "AdminModel/EditCourseHeader.php",
                       beforeSend: function(){
                           $('.submitBtn').attr("disabled","disabled");
-                          $('#Program_form').css("opacity",".5");
+                          $('#course_form').css("opacity",".5");
                         },
                         success: function(msg) {
                          $('.statusMsg').html('');
-                         // document.getElementById("error").innerHTML=msg;
+                       // document.getElementById("error").innerHTML=msg;
                           if(msg.trim() == '"ok"'){
-                              $('#Program_form')[0].reset();
+                              $('#course_form')[0].reset();
                               $('.statusMsg').html('<span style="font-size:15px;color:#34A853">successfully Updated.</span>');
                               $.alert('successfully Updated');
                           }else{
                               $('.statusMsg').html('<span style="font-size:15px;color:#EA4335">Some problem occurred, please try again.</span>');
                               $.alert('Some problem occurred, please try again.!');
                           }
-                          $('#Program_form').css("opacity","");
+                          $('#course_form').css("opacity","");
                           $(".submitBtn").removeAttr("disabled");
+                         
                     }
                     })
                 }
@@ -198,16 +206,18 @@ $('#proTitle').on('change', function() {
       $('input[name="options"]').change( function() {
     
         if($(this).val()=="Order"){
-          $("#Program_form").hide();
-      
+          $("#course_form").hide();
+          $("#courseTitlediv").hide();
+          
           $("#searcTitle").hide();
           $("#searchOder").show();
           $("#oder").show();
           $('.statusMsg').html('<span style="font-size:15px;color:#34A853"></span>');
           
         }else{
-          $("#Program_form").show();
-        
+          $("#course_form").show();
+          $("#courseTitlediv").show();
+          
           $("#searcTitle").show();
           $("#searchOder").hide();
           $("#oder").hide();
@@ -216,49 +226,60 @@ $('#proTitle').on('change', function() {
       
       })
     
-     //Show Oder 
-      $( "#searchOder" ).click(function() {
-        $("#sortable").empty();
-        $('#notsortable').empty();
-        var PageType=$('#pageType').val();
-        $.ajax({
-            type: "POST",
-            async: false,
-            url: "AdminModel/EditSectionHedder.php",
-            data: {PageType:PageType,method:'searchTitle'},
-           
-            success: function(data){
-               var res = $.parseJSON(data);
-               var len = res.length;
-               var count=1
-               $("#save_oder").show();
-               $("#th").show();
-               $("#oder").show();
-               $('.statusMsg').html('<span style="font-size:15px;color:#34A853"></span>');
-                
-               for(var i=0; i<len; i++){
-                 if(res[i].status=="1"){
-               $('#Title').val();
-               $('#notsortable').append('<div class="col-col-md-4 index text-center">'+count+'</div>')
-               $('#sortable').append('<li class="oder"><div class=row><div class="col col-md-10">'+res[i].program_title+'</div><div class="col col-md-2 text-center">'+count+'</div> <input  type="hidden"  id="programID" value="'+res[i].idprogram+'" ></div></li>')
-               count=count+1;
-                 }
-             }
+     //Show Course Oder 
+    function ShowCourseOder()
+    {
+      
+   
+      $("#sortable").empty();
+      $('#notsortable').empty();
+      var proID=$('#proTitle').val();
+      $.ajax({
+          type: "POST",
+          url: "AdminModel/EditCourseHeader.php",
+          data: {proID:proID,method:'CoresOder'},
+         
+          success: function(data){
+           // document.getElementById("error").innerHTML=data;
+           $("#lodding").hide();
+             var res = $.parseJSON(data);
+             var len = res.length;
+             var count=1
+             $("#save_oder").show();
+             $("#th").show();
+                if ($("#option2").is(":checked")) {
+                  $("#oder").hide();
+              }
+              if ($("#option1").is(":checked")) {
+                $("#oder").show();
+                }
+             $('.statusMsg').html('<span style="font-size:15px;color:#34A853"></span>');
               
-            },
-            error: function (request, status, error) {
-                $("#error").append(request.responseText)
-              
-            }
-          })
-       
-      });
+             for(var i=0; i<len; i++){
+               if(res[i].status=="1"){
+             $('#Title').val();
+             $('#notsortable').append('<div class="col-col-md-4 index text-center">'+count+'</div>')
+             $('#sortable').append('<li class="oder"><div class=row><div class="col col-md-10">'+res[i].course_heading+'</div><div class="col col-md-2 text-center">'+count+'</div> <input  type="hidden"  id="CourseID" value="'+res[i].idcourses+'" ></div></li>')
+             count=count+1;
+               }
+           }
+            
+          },
+          error: function (request, status, error) {
+              $("#error").append(request.responseText)
+            
+          }
+        })
+
+    }
+
+     
     
       window.onload = $(function () {
         $( "#sortable" ).sortable();
         $( "#sortable" ).disableSelection();
         $("#Program_form").show();
- 
+        $("#lodding").hide();
         $("#searcTitle").show();
         $("#searchOder").hide();
         $("#oder").hide();
@@ -284,7 +305,7 @@ $('#proTitle').on('change', function() {
                     $.ajax({
                       type: "POST",
                       data:{oderlist_json:oderlist_json,method:'oder'},
-                      url: "AdminModel/EditSectionHedder.php",
+                      url: "AdminModel/EditCourseHeader.php",
                       beforeSend: function(){
                         $('#save_oder').attr("display","block");
                         $('#oder').css("opacity",".5");
@@ -326,8 +347,8 @@ $('#proTitle').on('change', function() {
       for (var i = 0; i < items.length; ++i)
       {
         obj = new Object();
-        obj.programID= items[i].getElementsByTagName("input")[0].value; 
-        obj.program_order=i+1;
+        obj.courseID= items[i].getElementsByTagName("input")[0].value; 
+        obj.course_order=i+1;
        obj_array.push(obj);
       }
       return  obj_array;

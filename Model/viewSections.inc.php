@@ -99,10 +99,10 @@ class ViewSections extends Sections {
                echo '<div class="container">
 
                <div class="grid-flex hideme">
-               <div class="col col-image">
-                  <img src="'.$program['image_url'].'" alt="" class="mx-auto d-block" />
+               <div class="col col-image img-div">
+                  <img src="'.$program['image_url'].'" alt="" class="mx-auto d-block proimg" />
                </div>
-               <div class="col col-text">
+               <div class="col col-text ">
                   <div class="Aligner-item text-left">
                      <h3 class="text-left display-2 font-weight-normal">'.$program['program_title'].'</h3>
                      <p class="text-justify">'.$program['summary'].'</p>
@@ -117,10 +117,10 @@ class ViewSections extends Sections {
            
             echo' <div class="container">
             <div class="grid-flex hideme">
-              <div class="col col-image">
-                <img src="'.$program['image_url'].'" alt="" class="mx-auto d-block" />
+              <div class="col col-image img-div">
+                <img src="'.$program['image_url'].'" alt="" class="mx-auto d-block proimg" />
               </div>
-              <div class="col col-text col-left" style="margin-left:75px;">
+              <div class="col col-text col-left">
                 <div class="Aligner-item">
                   <h3 class="text-left display-2 font-weight-normal">'.$program['program_title'].'</h3>
                   <p class="text-justify">'.$program['summary'].'</p>
