@@ -76,8 +76,11 @@
           <input type="text" class="form-control" name="summary" placeholder="Summary of the Article" required>
         </div>
         <div class="form-group">
-          <label for="title">Cover Image</label><br>
-          <input type="file"  name="image"  accept="image/*" required>
+          <label for="title">Cover Image </label><br>
+         
+          <input type="file"  name="image"  accept="image/*" required><br>
+          <label>**Please upload images less than 5MB </label><br>
+          <label>**Please rename image file if it contains whitespaces, before uploading</label><br>
         </div>
         <div class="form-group">
         <textarea name="article" id="blogArticle" required> Get Started :)</textarea>
