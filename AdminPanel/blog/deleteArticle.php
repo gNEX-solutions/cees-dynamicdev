@@ -1,4 +1,8 @@
 <?php
+ session_start();
+
+ if(isset($_SESSION['User']))
+ {
 include '../../Model/dbh.inc.php';
 $newConnection= new dbh;
 $conn=$newConnection->connect();
@@ -12,5 +16,9 @@ $id=$_GET['id'];
 
 $conn->close();
 unset($newConnection);
-
+}
+else
+{
+    header("location:../login.php");
+}
 ?>
