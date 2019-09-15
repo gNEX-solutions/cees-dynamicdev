@@ -40,87 +40,80 @@
             $success=1;
             $conn=$newConnection->connect();
             
-            //$type=$_POST['inputType'];
-
-            $target_dir = "../../assets/images/";
-            $target_file = $target_dir . basename($_FILES["inputImage"]["name"]);
-            $target_file_relative_path = "assets/images/" . basename($_FILES["inputImage"]["name"]);
-            $uploadOk = 1;
-            $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
             // Check if image file is a actual image or fake image
             if(isset($_POST["submit"])) {
-
+                
                 $title=$_POST['inputTitle'];
                 $summary=$_POST['inputSummary'];
                 $pageType=$_POST['inputPageType'];
                 $designType=$_POST['inputDesignType'];
-                $status=$_POST['status'];
-
-                $image=$_POST['inputImage'];
-                //If an image is uploaded
-                if($image!=''){
-                    $check = getimagesize($_FILES["inputImage"]["tmp_name"]);
-                    if($check !== false) {
-                        echo "File is an image - " . $check["mime"] . ".";
-                        $uploadOk = 1;
-                    } else {
-                        echo "File is not an image.<br>";
-                        $uploadOk = 0;
-                    }
-                    if ($_FILES["inputImage"]["size"] > 5000000) {
-                        echo "Sorry, your file is too large.<br>";
-                        $uploadOk = 0;
-                    }
-                    // Allow certain file formats
-                    if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
-                    && $imageFileType != "gif" ) {
-                        echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.<br>";
-                        $uploadOk = 0;
-                    }
-                    // Check if $uploadOk is set to 0 by an error
-                    if ($uploadOk == 0) {
-                        echo "Sorry, your file was not uploaded.Please Try Again<br>";
-                    
-                    // if everything is ok, try to upload file
-                    } else {
-                        if (move_uploaded_file($_FILES["inputImage"]["tmp_name"], $target_file)) {
-                    //echo "The file ". basename( $_FILES["inputImage"]["name"]). " has been uploaded.".$title;
-                    } else { 
-                        echo "Sorry, there was an error uploading your file. Please try again<br>";
-                    }
-                    //if($uploadOk == 0){
-                    }   
-                }  
-                //if an image is not uploaded
-                else{
-                    $target_dir = '';
-                }
+                $status=1;
                 
+                $filename = $_FILES['file']['name'];
+                $location = "../../assets/images/consultancy/". $filename;
+                $temp = explode(".", $filename);
+       
+                $uploadOk = 1;
+                $imageFileType = pathinfo($location,PATHINFO_EXTENSION);
+                    /* Valid extensions */
+                $valid_extensions = array("jpg","jpeg","png");
+                    /* Check file extension */
+                if(!in_array(strtolower($imageFileType), $valid_extensions)) {
+                $uploadOk = 0;
+                }
+                if($uploadOk == 0){
+                    $uploadOk = 0;
+                    echo '<script>swal({icon: "error", text:"Image file should be in jpg, jpeg or png format",});</script>';//echo " <script type='text/javascript'>location.href = '../AcademyNewPage.php';</script>";
+                }else{
+                    $uploadOk = 1;
+                /* Upload file */
+                move_uploaded_file($_FILES['file']['tmp_name'],$location);
+                               
                 $conn->autocommit(false);
                 $stmt= $conn->prepare("INSERT INTO program(program_title, summary, status, image_url, page_type, Menu_type) VALUES (?,?,?,?,?,?)");
-                $stmt->bind_param('ssisss',$title, $summary, $status, $target_dir, $pageType, $designType);
+                $stmt->bind_param('ssisss',$title, $summary, $status, $location, $pageType, $designType);
                 
                 if(!$stmt->execute()){
                     $success=0;
-                    echo '<script>swal("Good job!", "You clicked the button!", "success");</script>';
+                    echo '<script>swal({icon: "error", text:"Program cannot be added",});</script>';
                 }
                 if($success==1){
                     $conn->commit();
-                    echo '<script>swal("Good job!", "You clicked the button!", "success");</script>';
+                    echo '<script>swal({icon: "success", text:"Program added successfuly!",});</script>';
                 }
-                echo " <script type='text/javascript'>
-                        location.href = '../AcademyNewPage.php';
-                        </script>";
+            }
+               // echo " <script type='text/javascript'>
+                 //       location.href = '../AcademyNewPage.php';
+                   //     </script>";
             }
         
             if(isset($_POST["submitCourse"])) {
 
                 $title=$_POST['inputTitle'];
                 $summary=$_POST['inputSummary'];
-                $status=$_POST['status'];
+                $status=1;
                 $idprogram=$_POST['idprogram'];
-
-                $check = getimagesize($_FILES["inputImage"]["tmp_name"]);
+                
+                $filename = $_FILES['file']['name'];
+                $location = "../../assets/images/consultancy/". $filename;
+                $temp = explode(".", $filename);
+       
+                $uploadOk = 1;
+                $imageFileType = pathinfo($location,PATHINFO_EXTENSION);
+                    /* Valid extensions */
+                $valid_extensions = array("jpg","jpeg","png");
+                    /* Check file extension */
+                if(!in_array(strtolower($imageFileType), $valid_extensions)) {
+                $uploadOk = 0;
+                }
+                if($uploadOk == 0){
+                    $uploadOk = 0;
+                    echo '<script>swal({icon: "error", text:"Image file should be in jpg, jpeg or png format",});</script>';//echo " <script type='text/javascript'>location.href = '../AcademyNewPage.php';</script>";
+                }else{
+                    $uploadOk = 1;
+                /* Upload file */
+                move_uploaded_file($_FILES['file']['tmp_name'],$location);
+                /*$check = getimagesize($_FILES["inputImage"]["tmp_name"]);
                 if($check !== false) {
                     echo "File is an image - " . $check["mime"] . ".";
                     $uploadOk = 1;
@@ -150,19 +143,11 @@
                     echo "Sorry, there was an error uploading your file. Please try again<br>";
                 }
                 //if($uploadOk == 0){
-                        
-                $newConnection= new dbh;
-                $success=1;
-                $conn=$newConnection->connect();
-                //echo "<script>alert('.$title.')</script>";
-                //if($pageType=="CA"){
-               // echo "<script>alert(".$pageType.")</script>";
-                //$type='CA'; 
-                //$status=1;s
-                //$x=40;
+               
+                echo '<script>alert('.$title.');</script>';*/
                 $conn->autocommit(false);
                 $stmt= $conn->prepare("INSERT INTO courses(course_heading, summary, status, course_icon_url, idprogram) VALUES (?,?,?,?,?)");
-                $stmt->bind_param('ssisi',$title, $summary, $status, $target_dir, $idprogram);
+                $stmt->bind_param('ssisi',$title, $summary, $status, $location, $idprogram);
                 //$stmt= $conn->prepare("INSERT INTO program(program_title) VALUES(?)");
                 //$stmt->bind_param('s',$title);
                 //$stmt->execute();
@@ -179,7 +164,7 @@
                         location.href = '../addNewCourse.php';
                         </script>";
             }
-        }
+            }
             // Check if file already exists
             /*if (file_exists($target_file)) {
                 echo "Sorry, file already exists.<br>";

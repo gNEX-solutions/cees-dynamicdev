@@ -33,7 +33,7 @@
 
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
   <link rel="stylesheet" href="style.css">
-
+  <script src="../../assets/customjs/sweetalert2.all.min.js"></script>
 </head>
 
 <body id="page-top">
@@ -126,7 +126,15 @@ if($_POST['status']=='new'){
     $status=1;
         $stmt= $conn->prepare("INSERT INTO blog_posts(title,htmlString,status,imageUrl,summary) VALUES (?,?,?,?,?)");
         $stmt->bind_param("ssiss",$title,$content,$status,$image,$summary);
-        $stmt->execute();
+        if($stmt->execute()){
+          echo "<script>Swal.fire({
+            position: 'top-end',
+            type: 'success',
+            title: 'Your work has been saved',
+            showConfirmButton: false,
+            timer: 1500
+          })</script>";
+        }
 
 
 } else if($_POST['status']=='update'){
@@ -145,7 +153,7 @@ if($_POST['status']=='new'){
       if($path!=''){
         if(file_exists('../../'.$path)){
           unlink('../../'.$path);
-          echo 'deleted';
+          
         }
       }
     }else{
@@ -157,11 +165,27 @@ if($_POST['status']=='new'){
    
     $stmt1= $conn->prepare("UPDATE blog_posts SET htmlString=?, title=?, summary=?, imageUrl=? WHERE idblog_posts=?");
     $stmt1->bind_param("ssssi",$content,$title,$summary,$image,$id);
-    $stmt1->execute();
+    if($stmt1->execute()){
+      echo "<script>Swal.fire({
+        position: 'top-end',
+        type: 'success',
+        title: 'Your work has been saved',
+        showConfirmButton: false,
+        timer: 1500
+      })</script>";
+    }
   }else{
     $stmt2= $conn->prepare("UPDATE blog_posts SET htmlString=?, title=?, summary=? WHERE idblog_posts=?");
     $stmt2->bind_param("sssi",$content,$title,$summary,$id);
-    $stmt2->execute();
+    if($stmt2->execute()){
+      echo "<script>Swal.fire({
+        position: 'top-end',
+        type: 'success',
+        title: 'Your work has been saved',
+        showConfirmButton: false,
+        timer: 1500
+      })</script>";
+    }
   }
      
 }
