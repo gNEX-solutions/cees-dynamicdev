@@ -81,7 +81,9 @@
         </div>
         <div class="form-group">
           <label for="title">Change Cover Image</label><br>
-          <input type="file"  name="image"  accept="image/*" >
+          <input type="file"  name="image"  accept="image/*" ><br>
+          <label>**Please upload images less than 5MB </label><br>
+          <label>**Please rename image file if it contains whitespaces, before uploading</label><br>
         </div>
         <div class="form-group">
           <label for="title">Cover Image</label><br>
