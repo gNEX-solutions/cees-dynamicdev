@@ -27,12 +27,12 @@ class ViewSections extends Sections {
                      </div>';
                foreach($courses as $course){
                   if($course['idprogram']==$program['idprogram'] && $course['status']==1){
-                     echo '<div class="col-lg-4 col-md-4 col-sm-12">
+                     echo '<div class="col-lg-3 col-md-3 col-sm-12">
 
                         <div class="servicebox text-center">
                            <div class="service-icon">
                               <div class="dm-icon-effect-1" data-effect="slide-bottom">
-                                 <a href="#" class=""> <img src="'.$course['course_icon_url'].'" style="width:50%"> </a>
+                                 <a href="#" class=""> <img src="'.$course['course_icon_url'].'" style="width:30%"> </a>
                               </div>
                            <div class="servicetitle">
                               <h4>'.$course['course_heading'].'</h4>
@@ -61,10 +61,10 @@ class ViewSections extends Sections {
                                        <div class="card">
                                           <div class="service-icon">
                                              <div class="dm-icon-effect-1" data-effect="slide-left">
-                                                <img src="'.$course['course_icon_url'].'" alt="" title="" style="width:30%; margin-bottom:10px; margin-top:10px;"><br>
+                                                <img src='.$course['course_icon_url'].' alt="" title="" style="width:30%; margin-bottom:10px; margin-top:10px;"><br>
                                              </div>
                                           <div class="servicetitle">
-                                          <h4>.'.$course['course_heading'].'</h4>
+                                          <h4>'.$course['course_heading'].'</h4>
                                           <hr>
                                        </div>
                                        <p>'.$course['summary'].'</p>
