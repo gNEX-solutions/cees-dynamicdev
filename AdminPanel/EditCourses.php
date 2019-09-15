@@ -77,8 +77,8 @@
           </div>
         </div>
 
-        <form style="margin-left:5%;margin-bottom:2%" class="justify-content-md-start">
-            <div class="row justify-content-md-start">
+        <form style="margin-left:5%;margin-bottom:2%" class="justify-content-md-center">
+            <div class="row justify-content-md-center">
              
                 <div class="form-group col-sm-3">
                     <strong> <label for="inputDescription">Page Type</label> </strong>
@@ -101,16 +101,13 @@
                       <option>Select the Course</option>
                     </select>
                 </div>
-                <div class="form-groupcol-sm-2" style="margin-top:2.5%">
-              
-                  <button type="button" class="btn btn-primary" id="searchOder"><i class="fa fa-search"></i></button>
-                </div>
+             
            
           </div>
         </form>
   
        <hr>
-       <form style="margin-left:5%;margin-bottom:5%;margin-top:2%" id="Program_form" class="justify-content-md-start">
+       <form style="margin-left:5%;margin-bottom:5%;margin-top:2%" id="course_form" class="justify-content-md-start">
      
        
           <input  type="hidden" class="form-control" name="ID" id="ID" >
@@ -156,6 +153,15 @@
       </form>
 <div id="error">
 
+</div>
+<div id="lodding" class="text-center" style="margin-top:10%;margin-bottom:15%">
+  <Strong><span>Loading</span></Strong>
+  <span class="l-1"></span>
+  <span class="l-2"></span>
+  <span class="l-3"></span>
+  <span class="l-4"></span>
+  <span class="l-5"></span>
+  <span class="l-6"></span>
 </div>
 <div class="container" style="margin-bottom:5%" id="oder">
   <div class="row justify-content-md-center">
