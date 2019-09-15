@@ -153,7 +153,8 @@ include 'Model/getClientLogos.php';
             <div class="card p-3 col-12 col-md-6 col-lg-4">
             <h3>Amplify You</h3>
                 <div class="card-img pb-3">
-                    <span class="mbr-iconfont mbri-growing-chart" style="color: rgb(15, 118, 153); fill: rgb(15, 118, 153); font-size: 120px;"></span>
+                <img src="assets/images/mixer-512.png" style="width:121px; height:auto;">
+                    <!-- <span class="mbr-iconfont mbri-growing-chart" style="color: rgb(15, 118, 153); fill: rgb(15, 118, 153); font-size: 120px;"></span> -->
                 </div>
                 <div class="card-box">
                     <h4 class="card-title py-3 mbr-fonts-style display-5"><a href="#">Solutions LAB</a></h4>
@@ -163,7 +164,7 @@ include 'Model/getClientLogos.php';
                     </p>
                   <span class="vspacer"></span>
                   <p class="py-3 mbr-fonts-style">
-                    <a href="https://gnex-cees.herokuapp.com/services2.php" target="_blank">READ MORE » </a>
+                    <a href="https://gnex-cees.herokuapp.com/solutionslab.php" target="_blank">READ MORE » </a> 
                   </p>
                 </div>
             </div>
