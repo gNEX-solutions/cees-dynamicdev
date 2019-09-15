@@ -130,7 +130,7 @@
        </div>
        <div class="row justify-content-md-start">
         <div class="form-group col-8">
-          <strong> <label for="inputDescription">Show program</label></strong><br>
+          <strong> <label for="inputDescription">Show Course</label></strong><br>
           <input type="radio" name="status" value="1" id="status-show"> Show &nbsp;
           <input type="radio" name="status" value="0"  id="status-hide"> Don't Show 
         </div>
