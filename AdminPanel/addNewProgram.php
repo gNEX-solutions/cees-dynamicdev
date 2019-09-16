@@ -92,6 +92,7 @@
   
               <div class="form-group">
                 <strong><label for="inputImage" class="btn-2" >Image</label></strong><br>
+                <small>The image file should be a jpg, jpeg or a png file less than 5MB.</small><br>
                 <input type="file" id="file"  name="file">
               </div>
               <div class="form-group">
