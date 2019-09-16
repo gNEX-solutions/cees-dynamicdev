@@ -87,7 +87,7 @@
                                <img src="assets/images/img/Group 53.png" style=" display: block; margin-left: auto; margin-right: auto;"/>
                          
                             <p class="mbr-text align-left mbr-fonts-style display-4" style=" font-weight: bold;color: black; text-align: center;">
-                                350 5th Ave, New York, NY 10118, USA
+                                No 152/1, Bekkegama Road, Walana, Panadura. <br>Postcode: 12500
                             </p>
                         </div>
                     </div>
