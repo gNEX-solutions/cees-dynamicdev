@@ -31,10 +31,12 @@ class ViewSections extends Sections {
          $programid= $program['idprogram'];
     
         
+
          if($program['page_type']=='CS' && $program['status']==1)
          {
             //DS: 15.09.2019: Include all course types
             include "courseTypes.inc.php";
+
          }
       }
       
