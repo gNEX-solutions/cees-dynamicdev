@@ -68,15 +68,10 @@
             <label for="inputSummary">Summary</label>
             <textarea class="form-control" name="inputSummary" placeholder="Summary"></textarea>
           </div>
-
-          <!--<div class="form-group">
-            <label for="inputDescription">Show program</label><br>
-            <input type="radio" name="status" value="1">Show &nbsp;
-            <input type="radio" name="status" value="0">Don't Show 
-          </div>-->
   
             <div class="form-group">
                 <label for="inputImage" class="btn-2" >Image</label><br>
+                <small>The image file should be a jpg, jpeg or a png file less than 5MB.</small><br>
                 <input type="file" id="file" name="file" required>
             </div>
             <div class="form-group">

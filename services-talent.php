@@ -66,47 +66,13 @@ include 'Model/viewSections.inc.php';
 
   <section class="header1 cid-ruXI5S6ubv" id="header16-1l">
     <!--Griglia alternata testo e immagine, resposive con flexbox.-->
-  
-      <?php
+    <?php
       $services=new ViewSections();
       $services->ShowCS_MENU();
     ?> 
-
-   
-
- </section>
-  <div class="content-slider col-12">
-    <div class="slider">
-      <div class="mask">
-        <ul>
-       
-        <?php
-      $services=new ViewSections();
-      $services-> ShowCS_Slider();
-      ?> 
-          
-        </ul>
-      </div>
-    </div>
-  </div>
-  </div>
-  <section>
-    <div class="container" >
-      <div class="row main justify-content-center">
-        <div class="media-container-column col-12 col-lg-3 col-md-4">
-          <div class="mbr-section-btn align-left py-4"><a class="btn btn-primary display-4" href="#">
-
-              Get a Quote !</a></div>
-        </div>
-        <div class="media-container-column title col-12 col-lg-7 col-md-6">
-          <h2 class="align-right mbr-bold mbr-white pb-3 mbr-fonts-style display-2">
-            Let us help grow your business !</h2>
-          <h3 class="mbr-section-subtitle align-right mbr-light mbr-white mbr-fonts-style display-5">
-            Lorem ipsum dolor set amet titus malesuada proin libero.</h3>
-        </div>
-      </div>
-    </div>
-  </section> 
+  </section>
+ 
+  
 
   <section class="cid-ruOTxA2tiD" id="footer5-16">
     <?php require_once('common/Components/footer.php'); ?>

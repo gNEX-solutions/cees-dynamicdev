@@ -29,7 +29,7 @@
 
   <!-- Custom styles for this template-->
   <link href="css/sb-admin-2.min.css" rel="stylesheet">
-
+  <script src="../assets/customjs/sweetalert2.all.min.js"></script>
 </head>
 
 <body id="page-top">
@@ -118,7 +118,12 @@
               The page  has been deleted successfully. </div>"
           );
             // echo ("<h1> delete clicked </h1>");
-      
+           echo(" <script>
+            if ( window.history.replaceState ) {
+                window.history.replaceState( null, null, window.location.href );
+            }
+            </script>");
+            echo("<script> window.location.reload() </script>");
           }
 
           if($_SERVER['REQUEST_METHOD'] == "POST" and isset($_POST["edit"])){
@@ -186,17 +191,17 @@
           <div class="form-group row">
             <div class="col-sm-6 mb-3 mb-sm-0">
               <input type="text" class="form-control form-control-user" name="EventName" placeholder="Event Name"  
-              required value=<?php 
+              required value='<?php 
                 if($resultCons != null){
                   echo($rowCons['name']);
-                  }?> >
+                  }?>' >
             </div>
             <div class="col-sm-6 mb-3 mb-sm-0">
               <input type="text" class="form-control form-control-user" name="EventLocation" placeholder="Event Location"
-              required value=<?php 
+              required value='<?php 
                 if($resultCons != null){
                   echo($rowCons['location']);
-                  }?> >
+                  }?> '>
             </div>
           </div>
 
@@ -206,41 +211,36 @@
              </div>
               <div class="col-sm-2">
                  <input type="date" class="form-control form-control-user" name="EventDate" placeholder="Event Date"
-                 required value=<?php 
+                 required value='<?php 
                   if($resultCons != null){
                   echo($rowCons['date']);
-                  }?>>
+                  }?>'>
               </div>
              <div class="col-sm-2">
                  <label style="float:left;">Event Start Time</label>
              </div>
              <div class="col-sm-2" style="float:left;" >
                <input type="time" class="form-control form-control-user" name="EventStartTime" placeholder="Email Address"
-               required value=<?php 
+               required value='<?php 
                 if($resultCons != null){
                   echo($rowCons['start_time']);
-                  }?>>
+                  }?>'>
              </div>
              <div class="col-sm-2">
                  <label style="float:right;">Event End Time</label>
              </div>
              <div class="col-sm-2">
                <input type="time" class="form-control form-control-user" name="EventEndTime" placeholder="Email Address"
-               required value=<?php 
+               required value='<?php 
                 if($resultCons != null){
                   echo($rowCons['end_time']);
-                  }?>>
+                  }?>'>
              </div>
           </div>
 
           <div class="form-group">
             <label for="inputDescription">Description</label>
-            <textarea class="form-control" name="inputDescription1" placeholder="Paragraph" required>
-            <?php 
-              if($resultCons != null){
-                 echo($rowCons['description']);
-              }?>
-            </textarea>
+            <textarea class="form-control" name="inputDescription1" placeholder="Paragraph" required><?php if($resultCons != null){echo($rowCons['description']);}?></textarea>
           </div>
 
           <div class="col-md-6">
@@ -320,18 +320,37 @@
     function removeImg(imgId){
       console.log(imgId);
       var imageSection = document.getElementById(imgId);
+      Swal.fire({
+      title: 'Are you sure?',
+      text: "You won't be able to revert this!",
+      type: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, delete it!'
+      }).then((result) => {
+      if (result.value) {
       $.ajax({
         type:'POST', 
         url: "./AdminModel/editEvent.php",
         data: {img_remove: imgId, req:'imgRemove'},
         success: function(){
-          alert('image has been deleted succesfully');
+          
           $(imageSection).css("display","none");
         },
         error: function(){
           alert('image deletion failed');
         }
-      }); 
+      });
+      Swal.fire(
+          'Deleted!',
+          'Your file has been deleted.',
+          'success'
+        ).then( function(){
+          window.location.reload();
+        });
+  }
+})
     }
 
     function changeImg(imgId){
@@ -354,8 +373,9 @@
         processData: false,
         contentType: false,
         success: function(){
-          alert('image has been Updated succesfully');
+          alert("image has been Updated succesfully");
           $(imageSection).css("display","none");
+          window.location.reload();
         },
         error: function(){
           alert('image Updating failed');
