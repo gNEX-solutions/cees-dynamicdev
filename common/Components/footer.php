@@ -21,7 +21,12 @@
       <!-- end widget -->
       <div class="widget col-lg-4 col-md-4 col-sm-4">
         <h4 class="title">Social Media</h4>
-        <div class="fb-page" data-href="https://www.facebook.com/gNEXsolutionsSL/" data-width="" data-height="" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/gNEXsolutionsSL/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/gNEXsolutionsSL/">gNEX Solutions</a></blockquote></div>
+        <div class="fb-page" data-href="https://www.facebook.com/ceesinternational/" 
+        data-width="" data-height="" data-small-header="true" 
+        data-adapt-container-width="true" data-hide-cover="false" 
+        data-show-facepile="true">
+        <blockquote cite="https://www.facebook.com/ceesinternational/" class="fb-xfbml-parse-ignore">
+        <a href="https://www.facebook.com/ceesinternational/">CEES International</a></blockquote></div>
 
       </div>
       <!-- end widget -->
