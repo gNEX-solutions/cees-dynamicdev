@@ -182,14 +182,10 @@ include 'Model/getClientLogos.php';
     <div class="glide" id="Glide" >
                     <div class="glide__wrapper">
                         <ul class="glide__track">
-
                         <?php
-
                              $eventDetails = new ViewEvents();
                              $eventDetails->ShowEvent_List();
-
                         ?>
-
                         </ul>
                     </div>
                 <ul class="glide__bullets"></ul>
