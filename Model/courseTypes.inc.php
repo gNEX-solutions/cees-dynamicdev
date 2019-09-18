@@ -121,7 +121,7 @@ if($program['Menu_type']=='WCCV')
                         <div class="servicebox text-center">
                            <div class="service-icon">
                               <div class="dm-icon-effect-1" data-effect="slide-right">
-                                 <a href="#" class=""> <i class="dm-icon '.$course['course_icon_url'].' fa-3x"></i> </a>
+                              <a href="#" class=""> <img class="proimg" src="'.$course['course_icon_url'].'" style="width:100px;height:100px;border-radius: 50%;"></img> </a>
                               </div>
                               <div class="servicetitle">
                                  <h4>'.$course['course_heading'].'</h4>
