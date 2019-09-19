@@ -70,7 +70,7 @@
                 <form method="POST" action="./AdminModel/clientlogo.php" enctype="multipart/form-data">
                     <div class="form-group">
                         <label for="inputImage">Upload Client logo (Please upload only png files)</label><br>
-                        <input type="file"  accept="image/*" name="inputImage">
+                        <input type="file"  accept="image/*" name="inputImage" required>
                     </div>
 
                     <button type="submit" class="btn btn-primary">Add Client</button>
