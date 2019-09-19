@@ -375,7 +375,7 @@ include 'Model/getClientLogos.php';
         <div class="container">
             <div class="row" > 
                 <h1 id="title-text" class="mbr-title pt-2 mbr-fonts-style display-2" style="text-align:center;width:100%">
-                        Our Partners
+                        Our Clients & Partners
                 </h1>
             </div>
             <div id="slider-logo">
