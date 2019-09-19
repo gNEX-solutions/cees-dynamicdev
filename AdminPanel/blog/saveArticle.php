@@ -83,7 +83,7 @@ if(isset($_POST["submit"])) {
 
 
 // Check file size
-if ($_FILES["image"]["size"] > 5000000) {
+if ($_FILES["image"]["size"] > 2000000) {
     echo "Sorry, your cover image is too large.<br>";
     $uploadOk = 0;
 }

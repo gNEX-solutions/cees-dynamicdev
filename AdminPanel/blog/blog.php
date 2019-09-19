@@ -79,7 +79,7 @@
           <label for="title">Cover Image </label><br>
          
           <input type="file"  name="image"  accept="image/*" required><br>
-          <label>**Please upload images less than 5MB </label><br>
+          <label>**Please upload images less than 2MB </label><br>
           <label>**Please rename image file if it contains whitespaces, before uploading</label><br>
         </div>
         <div class="form-group">
