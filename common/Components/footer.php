@@ -12,7 +12,7 @@
 
           <li><i class="fa fa-envelope-o"></i>info@ceesinternational.org</li>
           <li><i class="fa fa-phone-square"></i> +94 778 241 664</li>
-          <li><i class="fa fa-home"></i> Lorem Ipsum is simply dummy text, 887, Colombo, Sri Lanka.</li>
+          <li><i class="fa fa-home"></i>  No 152/1, Bekkegama Road, Walana, Panadura, Sri Lanka <br>Postcode: 12500</li>
           <li><a href="#" style="color:#0056b3;"><i class="fa fa-map-marker"></i> View large map</a></li>
 
         </ul>
