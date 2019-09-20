@@ -191,17 +191,17 @@
           <div class="form-group row">
             <div class="col-sm-6 mb-3 mb-sm-0">
               <input type="text" class="form-control form-control-user" name="EventName" placeholder="Event Name"  
-              required value=<?php 
+              required value='<?php 
                 if($resultCons != null){
                   echo($rowCons['name']);
-                  }?> >
+                  }?>' >
             </div>
             <div class="col-sm-6 mb-3 mb-sm-0">
               <input type="text" class="form-control form-control-user" name="EventLocation" placeholder="Event Location"
-              required value=<?php 
+              required value='<?php 
                 if($resultCons != null){
                   echo($rowCons['location']);
-                  }?> >
+                  }?> '>
             </div>
           </div>
 
@@ -211,41 +211,36 @@
              </div>
               <div class="col-sm-2">
                  <input type="date" class="form-control form-control-user" name="EventDate" placeholder="Event Date"
-                 required value=<?php 
+                 required value='<?php 
                   if($resultCons != null){
                   echo($rowCons['date']);
-                  }?>>
+                  }?>'>
               </div>
              <div class="col-sm-2">
                  <label style="float:left;">Event Start Time</label>
              </div>
              <div class="col-sm-2" style="float:left;" >
                <input type="time" class="form-control form-control-user" name="EventStartTime" placeholder="Email Address"
-               required value=<?php 
+               required value='<?php 
                 if($resultCons != null){
                   echo($rowCons['start_time']);
-                  }?>>
+                  }?>'>
              </div>
              <div class="col-sm-2">
                  <label style="float:right;">Event End Time</label>
              </div>
              <div class="col-sm-2">
                <input type="time" class="form-control form-control-user" name="EventEndTime" placeholder="Email Address"
-               required value=<?php 
+               required value='<?php 
                 if($resultCons != null){
                   echo($rowCons['end_time']);
-                  }?>>
+                  }?>'>
              </div>
           </div>
 
           <div class="form-group">
             <label for="inputDescription">Description</label>
-            <textarea class="form-control" name="inputDescription1" placeholder="Paragraph" required>
-            <?php 
-              if($resultCons != null){
-                 echo($rowCons['description']);
-              }?>
-            </textarea>
+            <textarea class="form-control" name="inputDescription1" placeholder="Paragraph" required><?php if($resultCons != null){echo($rowCons['description']);}?></textarea>
           </div>
 
           <div class="col-md-6">

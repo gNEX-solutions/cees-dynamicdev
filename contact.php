@@ -87,7 +87,7 @@
                                <img src="assets/images/img/Group 53.png" style=" display: block; margin-left: auto; margin-right: auto;"/>
                          
                             <p class="mbr-text align-left mbr-fonts-style display-4" style=" font-weight: bold;color: black; text-align: center;">
-                                350 5th Ave, New York, NY 10118, USA
+                                No 152/1, Bekkegama Road, Walana, Panadura. <br>Postcode: 12500
                             </p>
                         </div>
                     </div>
@@ -126,7 +126,7 @@
     <div class="container" id="section_form">
         <div class="row">
             <div class="col-md-6">
-                <div class="google-map"><iframe frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAEIpgj38KyLFELm2bK9Y7krBkz1K-cMq8&amp;q=place_id:ChIJn6wOs6lZwokRLKy1iqRcoKw" allowfullscreen=""></iframe></div>
+                <div class="google-map"><iframe frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAEIpgj38KyLFELm2bK9Y7krBkz1K-cMq8&amp;q=place_id:EiUxNTIgQmVra2VnYW1hIFJkLCBQYW5hZHVyYSwgU3JpIExhbmthIjESLwoUChIJfXqOPv5F4joRVGGr_IUGgBEQmAEqFAoSCf91C3X9ReI6EX5K3WefJSpq" allowfullscreen=""></iframe></div>
             </div>
             <div class="col-md-6">
                 <h2 class="pb-3 align-left mbr-fonts-style display-2">
