@@ -5,7 +5,7 @@ $courses=$this->getAllCourses();
 
 if($program['Menu_type']=='WCCV')
             {  
-               echo ' <div class="container">
+               echo ' <div class="container" id="'.$program['idprogram'].'">
                   <div class="row justify-content-md-center">
                      <div class="col-12 general-title text-center">
                         <h2>'.$program['program_title'].'</h2>
@@ -34,7 +34,7 @@ if($program['Menu_type']=='WCCV')
             }
             //With Courses Block View
             elseif($program['Menu_type']=='WCBV' && $program['status']==1){
-               echo '<div class="container">
+               echo '<div class="container" id="'.$program['idprogram'].'">
                         <div class="row justify-content-md-center ">
                            <div class="col-12 general-title text-center">
                               <h2>'.$program['program_title'].'</h2>
@@ -65,7 +65,7 @@ if($program['Menu_type']=='WCCV')
             //No Courses Image Left
             elseif($program['Menu_type']=='NCIL' && $program['status']==1)
             { 
-               echo '<div class="container">
+               echo '<div class="container" id="'.$program['idprogram'].'">
                   <div class="grid-flex">
                      <div class="col col-image img-div">
                         <img src="'.$program['image_url'].'" alt="" class="mx-auto d-block proimg" />
@@ -100,7 +100,7 @@ if($program['Menu_type']=='WCCV')
             //With Courses Grid View
             elseif($program['Menu_type']=='WCGV' && $program['status']==1)
             {         
-              echo '<div class="container">
+              echo '<div class="container" id="'.$program['idprogram'].'">
               <div class="row ">
                <div class="text-center col-12 display-2 font-weight-normal">
                      <p>'.$program['program_title'].'</p>
@@ -139,7 +139,7 @@ if($program['Menu_type']=='WCCV')
             //No Courses Image Card View DS: 15.09.2019 
             elseif($program['Menu_type']=='NCICV' && $program['status']==1)
             {
-               echo '<div class="container">
+               echo '<div class="container" id="'.$program['idprogram'].'">
                         <div class="row justify-content-md-center">
                             <div class="col-lg-4 col-md-6 col-sm-12">
                                 <div class="widget" data-effect="slide-left">
