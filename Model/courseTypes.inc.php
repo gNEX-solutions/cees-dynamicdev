@@ -139,9 +139,8 @@ if($program['Menu_type']=='WCCV')
             //No Courses Image Card View DS: 15.09.2019 
             elseif($program['Menu_type']=='NCICV' && $program['status']==1)
             {
-               echo '<div class="container" id="'.$program['idprogram'].'">
-                        <div class="row justify-content-md-center">
-                            <div class="col-lg-4 col-md-6 col-sm-12">
+               echo '
+                            <div class="col-lg-4 col-md-6 col-sm-12" id="'.$program['idprogram'].'">
                                 <div class="widget" data-effect="slide-left">
                                     <div class="card text-black mb-3" style="background-image: linear-gradient(-90deg ,#bdc7c7, #ebeded);">
                                         <div class="card-header"><h5 class="card-title">'.$program['program_title'].'</h5></div>
@@ -151,9 +150,7 @@ if($program['Menu_type']=='WCCV')
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                            </div>
-                        </div> 
+                       
                      </div>';
             
             }

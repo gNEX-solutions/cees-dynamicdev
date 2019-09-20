@@ -76,7 +76,7 @@ class ViewSections extends Sections {
   { 
       $programs=$this->getAllSections();
        
-      
+      echo '<div class="media-container-row">';
        
       foreach($programs as $program)
       {
@@ -87,6 +87,7 @@ class ViewSections extends Sections {
          }
       }
       
+      echo '</div>';
    // End of SL sections list
   }
 
