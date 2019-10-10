@@ -138,6 +138,10 @@ background-size: auto 100%;
     font-size:13px;
     line-height: 13pt;
     }
+
+    #res_sec{
+        margin-bottom: 0px !important;
+    }
         
 }  
 

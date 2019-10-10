@@ -286,7 +286,7 @@ include 'Model/getClientLogos.php';
         </div> 
     </div>          
 </section>
-<section class="progress-bars2 cid-ruXscj5IY2" id="progress-bars2-1b">
+<section id="res_sec"  class="progress-bars2 cid-ruXscj5IY2" id="progress-bars2-1b" style="margin-bottom:150px;">
     <!-- <div class="container">
         <h2 class="mbr-section-title pb-3 align-center mbr-fonts-style display-2">
             Our Expertise</h2>

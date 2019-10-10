@@ -145,7 +145,7 @@ function showInsights(){
     </div>';
     
     }
-    echo '    <button onclick= "window.open(\'researchMore.php\',\'_blank\')">See more articles</button></div>';        
+    echo '<button onclick= "window.open(\'researchMore.php\',\'_blank\')">See more articles</button> </div>';        
     if(isset($data)){
 
     }         
