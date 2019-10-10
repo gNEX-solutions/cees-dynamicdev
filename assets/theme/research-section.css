@@ -83,7 +83,7 @@ font-family: 'Open Sans', sans-serif !important;
     margin:auto;width:100%;
     height:40px;padding:0;
 }
-#research-section .right-part div button{
+#research-section .right-part button{
     color:#ffff;
     background-color:#1a91ae;
     margin:auto;width:100%;
@@ -97,19 +97,22 @@ font-family: 'Open Sans', sans-serif !important;
 
 @media only screen and (max-width: 770px) {
 
-    #research-section .right-part div button{
+    #research-section .right-part button{
         visibility: visible;
     }
     #research-section .left-part div button{
         visibility: hidden;
     }
     #research-section .right-part {
-        top: 20px;
+        top: -50px;
     }
+    #research-section .left-part {
+        height:unset !important;
+    }
+}
     #see_more_btn{
         display: inline-block;
     }
-}
 
 #research-section .left-part{
 padding:0px;
@@ -140,25 +143,25 @@ background-size: auto 100%;
 
 .image1{
 background-image: url("../images/mbr-3-1460x973.jpg");
-background-size:  100% auto;
+background-size: 100% auto !important;
 background-repeat:no-repeat;
 
 }
 .image2{
 background-image: url("../images/mbr-1620x1080.jpg");
-background-size:  100% auto;
+background-size: 100% auto !important;
 background-repeat:no-repeat;
 }
 
 .image3{
 background-image: url("../images/mbr-3-1460x973.jpg");
-background-size: auto 100%;
+background-size: 100% auto !important;
 background-repeat:no-repeat;
 }
 
 .image4{
 background-image: url("../images/mbr-1620x1080.jpg");
-background-size: auto 100%;
+background-size: 100% auto !important;
 background-repeat:no-repeat;
 }
 
