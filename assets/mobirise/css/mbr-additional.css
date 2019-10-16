@@ -2052,6 +2052,7 @@ padding-top:100px;
 }
 .cid-ruXpPiazmW2{
   margin-top: 10px !important;
+  margin-bottom: 50px !important;
 }
 .cid-ruXscj5IY2{
   margin-top:100px;
@@ -2063,7 +2064,6 @@ padding-top:100px;
   padding-top:100px;
   padding-bottom:100px;
 }
-
 
 @media only screen and (max-width: 770px) {
   #our_Clients{
@@ -3962,6 +3962,11 @@ padding-top:100px;
 .cid-ruOSFMRcwn div.b {
   padding-top: 2rem;
 }
+
+.cid-ruOSFMRcwn img {
+  width: 50px !important;
+}
+
 .cid-ruOSWCqLJZ {
   padding-top: 90px;
   padding-bottom: 90px;
