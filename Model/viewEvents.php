@@ -11,7 +11,6 @@ class ViewEvents extends EventWindow
 
             $url = explode("/", $data['url']);
 
-            //echo '<div class="col-md-3"><h4 class="dropdown-heading"><a  href="cesAcadamy.php?idconsultancies='.$data['idconsultancies'].'" >'. $data['heading'].'</a></h4><ul class="dropdown-list"><li>'. $data['summary'].' </li></ul></div>';
             echo '<li class="glide__slide">
                         <div class="container" id="post-slider">
                                 <div class="row">
