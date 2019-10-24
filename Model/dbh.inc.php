@@ -8,10 +8,7 @@ class dbh{
     private $dbName;
    public function connect()
    { 
-    //    $this->serverName="us-cdbr-iron-east-02.cleardb.net";
-    //    $this->userName="b2549a7be081f5";
-    //    $this->password="9777311d";
-    //    $this->dbName="heroku_3dffaa1b8ca65ff";
+    
     $this->serverName="138.128.162.194";
        $this->userName="ceesinte_developer";
        $this->password="1v_UJ8]QYtoL";
