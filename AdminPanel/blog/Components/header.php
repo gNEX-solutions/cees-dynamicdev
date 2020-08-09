@@ -28,7 +28,7 @@ include '../../Model/viewservices.inc.php';
 
             <!-- Main Nav -->
             <div id="logo" style="display:none;">
-                <a href="../../index.php"> <img src="Components/wef2.png" alt="ICEES-logo" style="width:auto;height:50px;margin-left:10%;"></a>
+                <a href="../../index.php"> <img src="Components/wef2.png" alt="cees-logo" style="width:auto;height:50px;margin-left:10%;"></a>
              </div>
 
 			<div id="nav-bottom">
