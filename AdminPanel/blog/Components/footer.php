@@ -10,7 +10,7 @@
         <h4 class="title">Get In Touch</h4>
         <ul class="contact_details" style="">
 
-          <li><i class="fa fa-envelope-o"></i>info@ceesinternational.org</li>
+          <li><i class="fa fa-envelope-o"></i>info@iceesinternational.org</li>
           <li><i class="fa fa-phone-square"></i> +94 778 241 664</li>
           <li><i class="fa fa-home"></i> Lorem Ipsum is simply dummy text, 887, Colombo, Sri Lanka.</li>
           <li><a href="#" style="color:#0056b3;"><i class="fa fa-map-marker"></i> View large map</a></li>
@@ -31,7 +31,7 @@
     <div class="copyrights">
       <div class="container">
         <div class="col-lg-12 col-md-12 col-sm-12 columns footer-left" >
-          <p>Copyright © 2019 CEES Internatonal - All rights reserved.</p>
+          <p>Copyright © 2019 ICEES Internatonal - All rights reserved.</p>
             <div class="credits">
             Designed and Developed by <a href="http://gnexsolutions.com/">gNEX Solutions</a>
           </div>

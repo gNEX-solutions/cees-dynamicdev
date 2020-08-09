@@ -60,7 +60,7 @@ $conn=$newConnection->connect(); ?>
 
 
 <!-- Page Heading -->
-  <h1 class="h3 mb-4 text-gray-800">Modify CEES Reserch and Insights Pages</h1>
+  <h1 class="h3 mb-4 text-gray-800">Modify ICEES Reserch and Insights Pages</h1>
   </nav>
     
 

@@ -15,7 +15,7 @@ include 'Model/viewSections.inc.php';
   <link rel="shortcut icon" href="assets/images/logo2.png" type="image/x-icon">
   <meta name="description" content="Post page">
 
-  <title>Consulting Services</title>
+  <title>Bussiness Partnering</title>
   <link rel="stylesheet" href="assets/web/assets/mobirise-icons/mobirise-icons.css">
   <link rel="stylesheet" href="assets/tether/tether.min.css">
   <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
@@ -47,9 +47,9 @@ include 'Model/viewSections.inc.php';
             <div class="carousel-item active" >
             <div class="parallax cid-ruNtyUeTOv2 mbr-fullscreen d-block w-100"  alt="Second slide"></div>
               <div class="carousel-caption second">
-                  <h5><span class="part1">Consulting</span> 
+                  <h5><span class="part1">Business</span> 
                       <br>
-                      <span class="part2">Services</span>
+                      <span class="part2">Partnering</span>
                   </h5>
                   <p>Unlocking Opportunities</p>
               </div>
