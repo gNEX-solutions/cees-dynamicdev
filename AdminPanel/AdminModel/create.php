@@ -9,7 +9,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>CEES</title>
+  <title>ICEES</title>
   <?php include '../resources/nav.php'; ?>
   <?php include '../resources/footer.php'; ?>
   <!-- Custom fonts for this template-->

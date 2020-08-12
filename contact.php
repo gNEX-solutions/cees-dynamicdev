@@ -59,7 +59,7 @@
         <div class="media-container-row">
             <div class="title col-12 col-md-8">
             <h2 style="font-size:40px;text-align:center;margin-top:30px">Get in touch</h2>
-                <p class="align-center mbr-bold mbr-white pb-3 mbr-fonts-style display-4">Want to find out how CEES can solve problems specific to your business? Let's talk.</p> 
+                <p class="align-center mbr-bold mbr-white pb-3 mbr-fonts-style display-4">Want to find out how ICEES can solve problems specific to your business? Let's talk.</p> 
             </div>
         </div>
     </div>
@@ -108,7 +108,7 @@
                             <img src="assets/images/img/Group 38.png" style=" display: block; margin-left: auto; margin-right: auto;"/>
                          
                             <p class="mbr-text align-left mbr-fonts-style display-4" style=" font-weight: bold;color: black; text-align: center;">
-                            info@ceesinternational.org
+                            info@iceesinternational.org
                             </p>
                         </div>
                     </div>
@@ -147,7 +147,7 @@
                         </h5>
                         <p class="align-left mbr-fonts-style display-7">
                             Phone:  +94 778 241 664 <br>
-                            Email: info@ceesinternational.org
+                            Email: info@iceesinternational.org
                         </p>
                     </div>
                 </div>

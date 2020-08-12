@@ -52,22 +52,22 @@ include 'Model/getClientLogos.php';
 <section id="header2-1">
     <div>
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-        <ol class="carousel-indicators">
+        <!-- <ol class="carousel-indicators">
             <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
             <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
             <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-        </ol>
+        </ol> -->
         <div class="carousel-inner">
             <div class="carousel-item active" >
             <div class="parallax cid-ruNtyUeTOv1 mbr-fullscreen d-block w-100"  alt="First slide"></div>
-            <div class="carousel-caption first">
-                <h5><span class="part1">CEES</span> 
+            <!-- <div class="carousel-caption first">
+                <h5><span class="part1">We</span> 
                     <br>
-                    <span class="part2">Academy</span>
+                    <span class="part2">Enlighten Enterprises</span>
                 </h5>
                 <p>Enlightening Minds</p>
-            </div>
-            </div>
+            </div> -->
+            <!-- </div>
             <div class="carousel-item">
             <div class="parallax cid-ruNtyUeTOv2 mbr-fullscreen d-block w-100"  alt="Second slide"></div>
             <div class="carousel-caption second">
@@ -87,17 +87,17 @@ include 'Model/getClientLogos.php';
                 </h5>
              <p>Amplifying Future</p>
             </div>
-            </div>
+            </div> -->
 
         </div>
-        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+        <!-- <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             <span class="sr-only">Previous</span>
         </a>
         <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="sr-only">Next</span>
-        </a>
+        </a> -->
     </div>
     </div>
 
@@ -119,11 +119,11 @@ include 'Model/getClientLogos.php';
                 <div class="card-img pb-3">
                     <span class="mbr-iconfont mbri-idea" style="color: rgb(15, 118, 153); fill: rgb(15, 118, 153); font-size: 120px;"></span>
                 </div>
-                <h4 class="card-title py-3 mbr-fonts-style display-5"><a href="Programs.php">CEES Academy</a></h4>
+                <h4 class="card-title py-3 mbr-fonts-style display-5"><a href="Programs.php">ICEES Dojo</a></h4>
                 <div class="card-box">
                     <p class="mbr-text mbr-fonts-style display-7" >
-                    <!-- CEES Academy is dedicated for training and development on Enterprise Excellence tools including Lean, Six Sigma and Industry 4.0 to enlighten business executives to successfully transform themselves, respective teams and organizations   -->
-                    CEES Academy brings you the best knowledge in Enterprise Excellence (Lean, Six Sigma, Agile & Industry 4.0) from globally recognized Institutes and Universities. Our highly experienced international and local sensei panel is there to enlighten your minds to become excellent
+                    <!-- CEES Dojo is dedicated for training and development on Enterprise Excellence tools including Lean, Six Sigma and Industry 4.0 to enlighten business executives to successfully transform themselves, respective teams and organizations   -->
+                    ICEES Dojo brings you the best knowledge in Enterprise Excellence (Lean, Six Sigma, Agile & Industry 4.0) from globally recognized Institutes and Universities. Our highly experienced international and local sensei panel is there to enlighten your minds to become excellent
                     </p>
                   <span class="vspacer"></span>
                   <p class="py-3 mbr-fonts-style">
@@ -138,7 +138,7 @@ include 'Model/getClientLogos.php';
                     <span class="mbr-iconfont mbri-unlock" style="color: rgb(15, 118, 153); fill: rgb(15, 118, 153); font-size: 120px;"></span>
                 </div>
                 <div class="card-box">
-                    <h4 class="card-title py-3 mbr-fonts-style display-5"><a href="services-talent.php">Consulting Services&nbsp;</a></h4>
+                    <h4 class="card-title py-3 mbr-fonts-style display-5"><a href="services-talent.php">Bussiness Partnering&nbsp;</a></h4>
                     <p class="mbr-text mbr-fonts-style display-7" >
                     <!-- Our expert consultants to visit organizations and deeply understand the Strategic problems and improvement opportunities and tactfully guide, coach and mentor business leaders on managing Enterprise Excellence transformation effectively  -->
                     Even the best of the best in the world can have ample opportunities improve. Our expert business transformation consultants are capable of unlocking these opportunities for you. We will guide, coach and mentor you to drive beyond your expectations.
@@ -351,27 +351,8 @@ include 'Model/getClientLogos.php';
             </div>
         </div>
     </div> -->
-
-    <div class="container">
-         <div class="row" > 
-         <h1 id="title-text" class="mbr-title pt-2 mbr-fonts-style display-2" style="text-align:center">
-                Insights & Research
-            </h1>
-        </div>
-        <br>
-       
-        <div class="row" id="research-section">
-
-           <?php showInsights(); ?>
-
-            
-           
-        </div>
-    </div>
-
-</section>
-<br>
-<section class="cid-ruXscj5IY2" id="our_Clients">
+    <br>
+    <section class="cid-ruXscj5IY2" id="our_Clients">
         <div class="container">
             <div class="row" > 
                 <h1 id="title-text" class="mbr-title pt-2 mbr-fonts-style display-2" style="text-align:center;width:100%">
@@ -394,7 +375,22 @@ include 'Model/getClientLogos.php';
 
         </div>
 
+    </section>
+    <div class="container">
+         <div class="row" > 
+         <h1 id="title-text" class="mbr-title pt-2 mbr-fonts-style display-2" style="text-align:center">
+                Insights & Research
+            </h1>
+        </div>
+        <br>
+       
+        <div class="row" id="research-section">
+           <?php showInsights(); ?>
+        </div>
+    </div>
+
 </section>
+
 
 <section class="mbr-section info2 cid-ruOTHzyksn" id="info2-17">
 
@@ -411,7 +407,7 @@ include 'Model/getClientLogos.php';
             <div class="media-container-column title col-12 col-lg-7 col-md-6">
                 <h2 class="align-right mbr-bold mbr-white pb-3 mbr-fonts-style display-2"><span style="font-weight: normal;">
                     Let us help grow your business !</span></h2>
-                <h3 class="mbr-section-subtitle align-right mbr-light mbr-white mbr-fonts-style display-5">Want to find out how CEES can solve problems specific to your business? Let's talk</h3>
+                <h3 class="mbr-section-subtitle align-right mbr-light mbr-white mbr-fonts-style display-5">Want to find out how ICEES can solve problems specific to your business? Let's talk</h3>
             </div>
         </div>
     </div>

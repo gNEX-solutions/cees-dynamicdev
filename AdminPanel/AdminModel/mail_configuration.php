@@ -1,5 +1,5 @@
 <?php
-define("PROJECT_HOME","https://ceesinternational.com/");
+define("PROJECT_HOME","https://iceesinternational.com/");
 
 define("PORT", 587); // port number
 define("MAIL_USERNAME", "gnexsolutionssrilanka@gmail.com"); // smtp usernmae
