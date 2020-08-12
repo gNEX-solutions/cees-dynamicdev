@@ -707,10 +707,18 @@ textarea.input {
   color: rgb(0, 60, 78);
 }
 
-.nav-aside-menu li a {
+.nav-aside-menu li>a {
   display: block;
   padding: 15px 0px;
   color: #fff;
+}
+
+.nav-aside-menu li.has-dropdown> a:nth-child(1) {
+  border-bottom: 0px solid #323335;
+  float: right;
+  width: 50%;
+}
+.nav-aside-menu li> a:nth-child(2) {
   border-bottom: 1px solid #323335;
 }
 
@@ -722,11 +730,13 @@ textarea.input {
   cursor: pointer;
 }
 
-.nav-aside-menu li.has-dropdown>a:after {
+.nav-aside-menu li.has-dropdown>a:nth-child(1):after {
   font-family: 'FontAwesome';
   content: "\f0d7";
   float: right;
+  border-bottom: 0px  !important;
 }
+
 
 .nav-aside-menu li.has-dropdown>.dropdown {
   display: none;
