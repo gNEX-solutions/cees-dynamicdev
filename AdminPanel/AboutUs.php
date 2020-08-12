@@ -15,7 +15,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>CEES Admin - Add Member</title>
+  <title>ICEES Admin - Add Member</title>
 
   <?php include 'resources/nav.php'; ?>
   <?php include 'resources/footer.php'; ?>

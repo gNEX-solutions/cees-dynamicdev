@@ -10,7 +10,7 @@
         <h4 class="title">Get In Touch</h4>
         <ul class="contact_details" style="">
 
-          <li><i class="fa fa-envelope-o"></i>info@ceesinternational.org</li>
+          <li><i class="fa fa-envelope-o"></i>info@iceesinternational.org</li>
           <li><i class="fa fa-phone-square"></i> +94 778 241 664</li>
           <li><i class="fa fa-home"></i>  No 152/1, Bekkegama Road, Walana, Panadura, Sri Lanka <br>Postcode: 12500</li>
           <li><a href="#" style="color:#0056b3;"><i class="fa fa-map-marker"></i> View large map</a></li>
@@ -21,12 +21,12 @@
       <!-- end widget -->
       <div class="widget col-lg-4 col-md-4 col-sm-4">
         <h4 class="title">Social Media</h4>
-        <div class="fb-page" data-href="https://www.facebook.com/ceesinternational/" 
+        <div class="fb-page" data-href="https://www.facebook.com/iceesinternational/" 
         data-width="" data-height="" data-small-header="true" 
         data-adapt-container-width="true" data-hide-cover="false" 
         data-show-facepile="true">
-        <blockquote cite="https://www.facebook.com/ceesinternational/" class="fb-xfbml-parse-ignore">
-        <a href="https://www.facebook.com/ceesinternational/">CEES International</a></blockquote></div>
+        <blockquote cite="https://www.facebook.com/iceesinternational/" class="fb-xfbml-parse-ignore">
+        <a href="https://www.facebook.com/iceesinternational/">ICEES International</a></blockquote></div>
 
       </div>
       <!-- end widget -->
@@ -36,7 +36,7 @@
     <div class="copyrights">
       <div class="container">
         <div class="col-lg-12 col-md-12 col-sm-12 columns footer-left" >
-          <p>Copyright © 2019 CEES Internatonal - All rights reserved.</p>
+          <p>Copyright © 2019 ICEES Internatonal - All rights reserved.</p>
             <div class="credits">
             Designed and Developed by <a href="http://gnexsolutions.com/">gNEX Solutions</a>
           </div>

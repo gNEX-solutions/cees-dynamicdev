@@ -15,7 +15,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>CEES Admin - Manage Clients</title>
+  <title>ICEES Admin - Manage Clients</title>
 
   <?php include 'resources/nav.php'; ?>
   <?php include 'resources/footer.php'; ?>

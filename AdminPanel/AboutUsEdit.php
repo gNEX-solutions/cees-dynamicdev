@@ -18,7 +18,7 @@ include '../Model/getMembers.php';
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>CEES Admin - Edit/Delete Member</title>
+  <title>ICEES Admin - Edit/Delete Member</title>
 
   <?php include 'resources/nav.php'; ?>
   <?php include 'resources/footer.php'; ?>

@@ -44,7 +44,7 @@ include 'Model/viewservices.inc.php';
                                     <a href="index.php">Home</a>
                                 </li>
                                 <li class="has-dropdown megamenu" >
-                                    <a href="Programs.php">CEES Academy</a>
+                                    <a href="Programs.php">ICEES Dojo</a>
                                     <div class="dropdown">
                                         <div class="dropdown-body">
                                             <div class="row">
@@ -58,7 +58,7 @@ include 'Model/viewservices.inc.php';
                                     </div>
                                 </li>
                                 <li class="has-dropdown megamenu">
-                                    <a href="services-talent.php">Consulting Services</a>
+                                    <a href="services-talent.php">Bussiness Partnering</a>
                                     <div class="dropdown">
                                         <div class="dropdown-body">
                                             <div class="row">
@@ -83,7 +83,7 @@ include 'Model/viewservices.inc.php';
                                         </div>
                                     </div>
                                 </li>
-                                <li><a href="about.php">About CEES</a></li>
+                                <li><a href="about.php">About ICEES</a></li>
                                 <li><a href="contact.php">Contact Us</a></li>
                             </ul>
                             <!-- /nav -->
@@ -98,7 +98,9 @@ include 'Model/viewservices.inc.php';
 				<ul class="nav-aside-menu">
 					<li><a href="index.php">Home</a></li>
 					
+
                     <li class="has-dropdown" style=""><a href="#" class="side_a"><a href="Programs.php">CEES Academy</a></a>
+
 						<ul class="dropdown">
                         <?php
                             $services=new ViewServices();
@@ -107,7 +109,9 @@ include 'Model/viewservices.inc.php';
                            
 						</ul>
 					</li>
+
                     <li class="has-dropdown"><a class="side_a" href="#" class="side_a"><a href="services-talent.php">Consulting services</a></a>
+
 						<ul class="dropdown">
                             <?php
                             $services=new ViewServices();
@@ -124,7 +128,7 @@ include 'Model/viewservices.inc.php';
                            
 						</ul>
 					</li>
-                    <li><a href="about.php">About CEES</a></li>
+                    <li><a href="about.php">About ICEES</a></li>
 					<li><a href="contact.php">Contact Us</a></li>
 				<!-- <button class="nav-close nav-aside-close"><span></span></button> -->
 			</div>

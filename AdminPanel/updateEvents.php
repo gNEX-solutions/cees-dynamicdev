@@ -15,7 +15,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>CEES Admin - Update Events</title>
+  <title>ICEES Admin - Update Events</title>
 
   <?php include 'resources/nav.php'; ?>
   <?php include 'resources/footer.php'; ?>

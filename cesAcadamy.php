@@ -46,7 +46,7 @@
     <div class="media-container-row">
         <div class="title col-12 col-md-8">
             <h2 class="align-center mbr-bold mbr-white pb-3 mbr-fonts-style display-2">
-                CEES ACADEMY</h2>
+                ICEES DOJO</h2>
             
             
             
