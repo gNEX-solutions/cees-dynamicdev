@@ -15,7 +15,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
-  <meta name="author" content="">
+  <meta name="author" content="Kalpa Wijesooriya">
 
   <title>Edit Programs</title>
   <?php include './resources/nav.php'; ?>
@@ -53,7 +53,7 @@
          <h1 class="h3 mb-4 text-gray-800">Edit Programs</h1>
         </nav>
 
-<!-- KDW: 11-09-2010 : -->
+<!-- KDW: 11-09-2019 : -->
         <div class="container" style="margin-bottom:5%;margin-top:5%;margin-right:5%;margin-left:15%" >
           <div class="row justify-content-md-center">
          
@@ -73,8 +73,8 @@
           </div>
         </div>
 
-        <form style="margin-left:5%;margin-bottom:2%;margin-right:5%" class="justify-content-md-start">
-            <div class="row justify-content-md-center">
+        <form style="margin-left:5%;margin-bottom:2%" class="justify-content-md-start">
+            <div class="row justify-content-md-start">
              
                 <div class="form-group col-sm-4 justify-content-md-center">
                     <strong> <label for="inputDescription">Page Type</label> </strong>
@@ -108,10 +108,17 @@
           <input type="text" class="form-control" name="Title" placeholder="Title" id="Title" required>
         </div>
        </div>
+      
        <div class="row justify-content-md-start">
         <div class="form-group col col-sm-8">
-          <strong><label for="inputTitle">Summary</label></strong>
+          <strong><label for="inputTitle"></label></strong>
           <textarea type="text" class="form-control" name="Summary" placeholder="Summary" id="Summary" required></textarea>
+        </div>
+       </div>
+       <div class="row justify-content-md-start">
+        <div class="form-group col col-sm-8">
+          <strong><label for="Description">Description</label></strong>
+          <textarea type="text" class="form-control" name="Description" placeholder="Description" id="Description" required></textarea>
         </div>
        </div>
        <div class="row justify-content-md-start">

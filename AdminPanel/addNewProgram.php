@@ -89,6 +89,11 @@
                 <strong> <label for="inputSummary">Summary</label></strong>
                 <textarea class="form-control" name="inputSummary" placeholder="Summary" required></textarea>
               </div>
+              
+              <div class="form-group">
+                <strong> <label for="inputDiscretion">Discretion</label></strong>
+                <textarea class="form-control" name="inputDiscretion" placeholder="Discretion" required></textarea>
+              </div>
   
               <div class="form-group">
                 <strong><label for="inputImage" class="btn-2" >Image</label></strong><br>
