@@ -42,7 +42,13 @@ function getProgramTitles()
       type: "POST",
       url: "AdminModel/EditSectionHedder.php",
       data: {PageId:ProgramID,method:'searchProgram'},
+      beforeSend: function(){
+      
+        $('#Program_form').css("opacity",".5");
+      },
       success: function(data){
+        $('#Program_form')[0].reset();
+        $('#Program_form').css("opacity","1");
          var res = $.parseJSON(data);
          var len = res.length;
          for(var i=0; i<len; i++){
@@ -50,7 +56,7 @@ function getProgramTitles()
          $('#Title').val(res[i].program_title);
          $('#ID').val(res[i].idprogram);
          $('#Image').attr('src','../'+res[i].image_url )
-         
+         $('#Description').val(res[i].discription)
          if(res[i].status=="1"){
           $('#status-show')[0].checked = true;
          }else{

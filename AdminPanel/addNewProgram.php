@@ -61,7 +61,7 @@
                 <strong> <label for="inputPageType">Page Type</label> </strong>
                   <select class="form-control" name="inputPageType">
                     <option>Select page type</option>
-                    <option value="CA">CEES Academy</option>
+                    <option value="CA">ICEES Dojo</option>
                     <option value="CS">Consultancy Services</option>
                     <option value="SL">Solutions Lab</option>
                   </select>
@@ -88,6 +88,11 @@
               <div class="form-group">
                 <strong> <label for="inputSummary">Summary</label></strong>
                 <textarea class="form-control" name="inputSummary" placeholder="Summary" required></textarea>
+              </div>
+              
+              <div class="form-group">
+                <strong> <label for="inputDiscretion">Discretion</label></strong>
+                <textarea class="form-control" name="inputDiscretion" placeholder="Discretion" required></textarea>
               </div>
   
               <div class="form-group">

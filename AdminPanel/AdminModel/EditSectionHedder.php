@@ -26,7 +26,7 @@ else if($method=='save')
        $imgLocation=$_FILES['file']['name'];
     }
    // echo  $imgLocation;  
-   $result=$Edit->UpdateProgram ($_POST['Title'],$_POST['Summary'],$_POST['status'], $imgLocation,$_POST['ID']);
+   $result=$Edit->UpdateProgram ($_POST['Title'],$_POST['Summary'],$_POST['status'], $imgLocation,$_POST['ID'],$_POST['Description']);
    echo json_encode(trim( $result,"\""));
 }
 else if($method=='oder')

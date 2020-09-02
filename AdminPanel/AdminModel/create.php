@@ -9,7 +9,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>CEES</title>
+  <title>ICEES</title>
   <?php include '../resources/nav.php'; ?>
   <?php include '../resources/footer.php'; ?>
   <!-- Custom fonts for this template-->
@@ -45,7 +45,10 @@
                 
                 $title=$_POST['inputTitle'];
                 $summary=$_POST['inputSummary'];
+                $discretion=$_POST['inputDiscretion'];
                 $pageType=$_POST['inputPageType'];
+                $pageType=$_POST['inputPageType'];
+                
                 $designType=$_POST['inputDesignType'];
                 $status=1;
                 
@@ -80,12 +83,29 @@
                         echo '<script>swal({icon: "error", text:"Program cannot be added",});</script>';
                     }
                     if($success==1){
-                        $conn->commit();
-                        echo '<script>swal({icon: "success", text:"Program added successfuly!",});</script>';
+                        $last_id =$conn->insert_id;
+                        $created_at= date("Y-m-d h:i:sa");
+                        $stmt1= $conn->prepare("INSERT INTO courses(created_at,status, discription, idprogram) VALUES (?,?,?,?)");
+                        echo$created_at;
+                        $stmt1->bind_param('sisi', $created_at, $status, $discretion, $last_id);
+
+                       
+                        if(!$stmt1->execute()){
+                            $success=0;
+                            $sql = 'DELETE FROM program '
+                                   . 'WHERE idprogram ='. $last_id;
+                            $conn->query($sql);
+                            echo '<script>swal({icon: "error", text:"Program cannot be added",});</script>';
+                        }
+                        if($success==1){
+                            $conn->commit();
+                            echo '<script>swal({icon: "success", text:"Program added successfuly!",});</script>';
+                        }
+
                     }
                     //header("Location:https://www.formget.com/app/");
                     echo " <script type='text/javascript'>
-                    window.setTimeout(function(){window.location.href = '../AcademyNewPage.php'},2000);
+                    window.setTimeout(function(){window.location.href = '../addNewProgram.php'},2000);
                     </script>";
             }
         

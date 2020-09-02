@@ -34,24 +34,24 @@ class EditCourse extends dbh{
     }
 
     //Update the Change Data On Courses
-    public function UpdateCourse($Title,$Summary,$status,$img,$programId)
-    { 
-     $location="dddd";
-     if($img==""){
+    // public function UpdateCourse($Title,$Summary,$status,$img,$programId)
+    // { 
+    //  $location="dddd";
+    //  if($img==""){
       
-     }else{
-        $this->saveImage();
-        $filename = $_FILES['file']['name'];
-        $location = "assets/images/consultancy/". $filename;
-     }
+    //  }else{
+    //     $this->saveImage();
+    //     $filename = $_FILES['file']['name'];
+    //     $location = "assets/images/consultancy/". $filename;
+    //  }
  
-      $sql="UPDATE courses SET course_heading='".$Title."',summary='".$Summary."',course_icon_url='". $location."',status=".$status." WHERE idcourses=".$programId;
-      $result=$this->connect()->query($sql);
+    //   $sql="UPDATE courses SET course_heading='".$Title."',summary='".$Summary."',course_icon_url='". $location."',status=".$status." WHERE idcourses=".$programId;
+    //   $result=$this->connect()->query($sql);
     
-     // return $status;
-      return $result?'ok':'err';
+    //  // return $status;
+    //   return $result?'ok':'err';
     
-    }
+    // }
 
 
     //Upload the Image Image To Folder
@@ -82,30 +82,30 @@ class EditCourse extends dbh{
     }
 
    
-    public function  getCourseOder ($programId)
-    { 
-     $sql="SELECT * FROM courses WHERE idprogram=".$programId."ORDER BY course_order";
-     $result=$this->connect()->query($sql);
-     $numRows=$result->num_rows;
-     if($numRows>0){
-         while($row=$result->fetch_assoc()){
-            $data[]=$row;
-         }
-         echo json_encode($data);
-     }
-    }
+    // public function  getCourseOder ($programId)
+    // { 
+    //  $sql="SELECT * FROM courses WHERE idprogram=".$programId."ORDER BY course_order";
+    //  $result=$this->connect()->query($sql);
+    //  $numRows=$result->num_rows;
+    //  if($numRows>0){
+    //      while($row=$result->fetch_assoc()){
+    //         $data[]=$row;
+    //      }
+    //      echo json_encode($data);
+    //  }
+    // }
     //Reoder the Course list
-    public function UpdateCourseOder($programList)
-    {
-         $datas = json_decode($programList,true);
-          //return $datas ;
-        foreach( $datas as $data){
-            $sql="UPDATE courses  SET course_order='".$data['course_order']."' WHERE idcourses=".$data['courseID'];
-            $this->connect()->query($sql);
-        }
-        return 'ok';
+    // public function UpdateCourseOder($programList)
+    // {
+    //      $datas = json_decode($programList,true);
+    //       //return $datas ;
+    //     foreach( $datas as $data){
+    //         $sql="UPDATE courses  SET course_order='".$data['course_order']."' WHERE idcourses=".$data['courseID'];
+    //         $this->connect()->query($sql);
+    //     }
+    //     return 'ok';
    
-    }
+    // }
 
 }
 ?>
