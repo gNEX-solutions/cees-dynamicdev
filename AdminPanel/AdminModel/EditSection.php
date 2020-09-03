@@ -20,7 +20,7 @@ class Edit extends dbh{
 
    public function getProgram ($programId)
    { 
-    $sql="SELECT * FROM program WHERE idprogram=".$programId;
+    $sql="SELECT program.program_title,program.summary,program.status, program.image_url,program.idprogram,courses.discription,courses.idprogram  FROM program INNER JOIN courses ON courses.idprogram=program.idprogram WHERE program.idprogram=".$programId;
     $result=$this->connect()->query($sql);
     $numRows=$result->num_rows;
     if($numRows>0){
@@ -31,7 +31,7 @@ class Edit extends dbh{
     }
    }
 
-   public function UpdateProgram ($Title,$Summary,$status,$img,$programId)
+   public function UpdateProgram ($Title,$Summary,$status,$img,$programId,$Description)
    { 
     $location="dddd";
     if($img==""){
@@ -41,12 +41,18 @@ class Edit extends dbh{
        $filename = $_FILES['file']['name'];
        $location = "assets/images/consultancy/". $filename;
     }
+    $modified_at= date("Y-m-d h:i:sa");
+     $sql="UPDATE program  SET program_title='".$Title."',summary='".$Summary."',image_url='". $location."',status=".$status.",modfied_at='". $modified_at."' WHERE idprogram=".$programId;
+     $sql2="UPDATE courses  SET discription='".$Description."',course_icon_url='". $location."',modified_at='". $modified_at."'WHERE idprogram=".$programId;
 
-     $sql="UPDATE program  SET program_title='".$Title."',summary='".$Summary."',image_url='". $location."',status=".$status." WHERE idprogram=".$programId;
      $result=$this->connect()->query($sql);
+     $result2=0;
+      if($result==1)
+      {
+       $result2=$this->connect()->query($sql2);
+      }
    
-   
-     return $result?'ok':'err';
+     return $result2? 'ok':'err';
    
    }
 
