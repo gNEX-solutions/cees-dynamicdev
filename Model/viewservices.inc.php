@@ -9,7 +9,7 @@ class ViewServices extends Services {
        $datas=$this->getAllServices();
        foreach($datas as $data){
          if($data['page_type']=='CA'&& $data['status']==1){
-          echo '<div class="col-md-3"><h4 class="dropdown-heading"><a  href="Programs.php#'.$data['idprogram'].'" >'. $data['program_title'].'</a></h4><ul class="dropdown-list"><li>'. $data['summary'].' </li></ul></div>';
+          echo '<div class="col-md-3"><h4 class="dropdown-heading"><a  href="course-details.php#'.$data['idprogram'].'" >'. $data['program_title'].'</a></h4><ul class="dropdown-list"><li>'. $data['summary'].' </li></ul></div>';
          }
       
 
