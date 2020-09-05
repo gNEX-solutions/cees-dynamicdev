@@ -57,6 +57,10 @@ function getProgramTitles()
          $('#ID').val(res[i].idprogram);
          $('#Image').attr('src','../'+res[i].image_url )
          $('#Description').val(res[i].discription)
+         $('#fee').val(res[i].course_fee);
+         $('#duration').val(res[i].course_duration);
+         $('#lecturer').val(res[i].lecturer);
+       
          if(res[i].status=="1"){
           $('#status-show')[0].checked = true;
          }else{

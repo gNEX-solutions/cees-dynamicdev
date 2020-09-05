@@ -66,7 +66,7 @@
                     <option value="SL">Solutions Lab</option>
                   </select>
               </div> 
-              <div class="form-group">
+              <!-- <div class="form-group">
                   <strong> <label for="inputDesignType">Program design type</label></strong>
                   <select class="form-control" name="inputDesignType" id="proType">
                     <option>Select the design type</option>
@@ -78,8 +78,7 @@
                     <option value="WCBV">With Courses Block View</option>
                     
                   </select>
-              </div> 
-        
+              </div> -->
               <div class="form-group">
                 <strong> <label for="inputTitle">Title</label></strong>
                 <input type="text" class="form-control" name="inputTitle" placeholder="Title" required>
@@ -91,10 +90,21 @@
               </div>
               
               <div class="form-group">
-                <strong> <label for="inputDiscretion">Discretion</label></strong>
-                <textarea class="form-control" name="inputDiscretion" placeholder="Discretion" required></textarea>
+                <strong> <label for="inputDiscretion">Description</label></strong>
+                <textarea class="form-control" name="inputDiscretion" placeholder="Description" required></textarea>
               </div>
-  
+              <div class="form-group" id="inputLecturer" >
+                <strong> <label for="inputLecturer">Lecturer</label></strong>
+                <input type="text" class="form-control" name="inputLecturer" placeholder="Lecturer" >
+              </div>
+              <div class="form-group" id="inputCourseDuration">
+                <strong> <label for="inputCourseDuration">Course Duration</label></strong>
+                <input type="text"  class="form-control" name="inputCourseDuration" placeholder="Course Duration" >
+              </div>
+              <div class="form-group" id="inputCourseFee">
+                <strong> <label for="inputCourseFee">Course Fee</label></strong>
+                <input type="number"  class="form-control" name="inputCourseFee" placeholder="Course Fee" >
+              </div>
               <div class="form-group">
                 <strong><label for="inputImage" class="btn-2" >Image</label></strong><br>
                 <small>The image file should be a jpg, jpeg or a png file less than 5MB.</small><br>
@@ -158,6 +168,27 @@
     $('#proType').on('change', function() {
       $("#sample").attr("src","img/"+this.value +".PNG");
     });
+    // $( document ).ready(function() {
+    //  alert("reday!")
+    // });
+    $(window).ready(function() {
+      $("#inputCourseFee").hide();
+      $("#inputCourseDuration").hide();
+      $("#inputLecturer").hide();
+    });
+    $('select').on('change', function (e) {
+      if(this.value=="CA")
+      {
+        $("#inputCourseFee").show();
+      $("#inputCourseDuration").show();
+      $("#inputLecturer").show();
+      }else{
+      $("#inputCourseFee").hide();
+      $("#inputCourseDuration").hide();
+      $("#inputLecturer").hide();
+      }
+    });
+
   </script>
 </body>
 
