@@ -61,8 +61,8 @@
                 <strong> <label for="inputPageType">Page Type</label> </strong>
                   <select class="form-control" name="inputPageType">
                     <option>Select page type</option>
-                    <option value="CA">ICEES Dojo</option>
-                    <option value="CS">Consultancy Services</option>
+                    <option value="ID">ICEES Dojo</option>
+                    <option value="BP">Bussiness Partnering</option>
                     <option value="SL">Solutions Lab</option>
                   </select>
               </div> 
@@ -87,11 +87,18 @@
               <div class="form-group">
                 <strong> <label for="inputSummary">Summary</label></strong>
                 <textarea class="form-control" name="inputSummary" placeholder="Summary" required></textarea>
+              </div>              
+              <div class="form-group" id="discription1">
+                <strong> <label for="description1">Description 1</label></strong>
+                <textarea class="form-control" name="description1" placeholder="Description 1" required></textarea>
               </div>
-              
-              <div class="form-group">
-                <strong> <label for="inputDiscretion">Description</label></strong>
-                <textarea class="form-control" name="inputDiscretion" placeholder="Description" required></textarea>
+              <div class="form-group" id="discription2">
+                <strong> <label for="description2">Description 2</label></strong>
+                <textarea class="form-control" name="description2" placeholder="Description 2" required></textarea>
+              </div>
+              <div class="form-group" id="discription3">
+                <strong> <label for="description3">Description 3</label></strong>
+                <textarea class="form-control" name="description3" placeholder="Description 3"></textarea>
               </div>
               <div class="form-group" id="inputLecturer" >
                 <strong> <label for="inputLecturer">Lecturer</label></strong>
@@ -175,17 +182,33 @@
       $("#inputCourseFee").hide();
       $("#inputCourseDuration").hide();
       $("#inputLecturer").hide();
+      $("#discription1").hide();
+      $("#discription2").hide();
+      $("#discription3").hide();
+      
     });
     $('select').on('change', function (e) {
-      if(this.value=="CA")
+      if(this.value=="ID")
       {
-        $("#inputCourseFee").show();
+      $("#inputCourseFee").show();
       $("#inputCourseDuration").show();
       $("#inputLecturer").show();
-      }else{
+      $("#discription1").show();
+      $("#discription2").show();
+      }else if(this.value=="BP"){
       $("#inputCourseFee").hide();
       $("#inputCourseDuration").hide();
       $("#inputLecturer").hide();
+      $("#discription1").show();
+      $("#discription2").show();
+      $("#discription3").show();
+      }
+    else if(this.value=="SL"){
+      $("#inputCourseFee").hide();
+      $("#inputCourseDuration").hide();
+      $("#inputLecturer").hide();
+      $("#discription1").show();
+      $("#discription2").show();
       }
     });
 

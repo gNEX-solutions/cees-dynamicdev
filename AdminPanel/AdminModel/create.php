@@ -45,12 +45,15 @@
                 
                 $title=$_POST['inputTitle'];
                 $summary=$_POST['inputSummary'];    
-                $discretion=$_POST['inputDiscretion'];
+        
                 $pageType=$_POST['inputPageType'];
                 $lecturer=$_POST['inputLecturer'];
                 $CourseDuration=$_POST['inputCourseDuration'];
                 $CourseFee=$_POST['inputCourseFee'];
                 $created_at= date("Y-m-d h:i:sa");
+                $discretion1=$_POST['description1'];
+                $description2 =$_POST["description2"];
+                $description3 =$_POST["description3"];
                
                 $status=1;
                 
@@ -86,11 +89,28 @@
                     }
                     if($success==1){
                         $last_id =$conn->insert_id;
-                      
-                        $stmt1= $conn->prepare("INSERT INTO courses(description, idprogram,course_fee,course_duration,lecturer) VALUES (?,?,?,?,?)");
+                        $stmt1="";
+                       if( $pageType=="ID"){
+                        $stmt1= $conn->prepare("INSERT INTO courses(description1,description2, idprogram,course_fee,course_duration,lecturer) VALUES (?,?,?,?,?,?)");
                   
-                        $stmt1->bind_param('siiss', $discretion, $last_id, $CourseFee,$CourseDuration,$lecturer);
+                        $stmt1->bind_param('ssiiss', $discretion1,$discretion2, $last_id, $CourseFee,$CourseDuration,$lecturer);
 
+                       }
+                       if( $pageType=="BP"){
+                        $stmt1= $conn->prepare("INSERT INTO bussiness_partnering(idprogram,description1,description2,description3) VALUES (?,?,?,?)");
+                  
+                        $stmt1 ->bind_param('isss', $last_id,$discretion1,$discretion2,$discretion3);
+
+                       }
+                       if( $pageType=="SL"){
+                        $stmt1= $conn->prepare("INSERT INTO solution_lab(idprogram,description1,description2) VALUES (?,?,?)");
+                  
+                        $stmt1->bind_param('iss', $last_id,$discretion1,$discretion2);
+
+                       }
+
+                        
+                    
                        
                         if(!$stmt1->execute()){
                             $success=0;
