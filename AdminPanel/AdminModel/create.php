@@ -51,7 +51,7 @@
                 $CourseDuration=$_POST['inputCourseDuration'];
                 $CourseFee=$_POST['inputCourseFee'];
                 $created_at= date("Y-m-d h:i:sa");
-                $discretion1=$_POST['description1'];
+                $description1 =$_POST['description1'];
                 $description2 =$_POST["description2"];
                 $description3 =$_POST["description3"];
                
@@ -93,19 +93,19 @@
                        if( $pageType=="ID"){
                         $stmt1= $conn->prepare("INSERT INTO courses(description1,description2, idprogram,course_fee,course_duration,lecturer) VALUES (?,?,?,?,?,?)");
                   
-                        $stmt1->bind_param('ssiiss', $discretion1,$discretion2, $last_id, $CourseFee,$CourseDuration,$lecturer);
+                        $stmt1->bind_param('ssiiss', $description1,$description2, $last_id, $CourseFee,$CourseDuration,$lecturer);
 
                        }
                        if( $pageType=="BP"){
-                        $stmt1= $conn->prepare("INSERT INTO bussiness_partnering(idprogram,description1,description2,description3) VALUES (?,?,?,?)");
+                        $stmt1= $conn->prepare("INSERT INTO business_partnering(idprogram,description1,description2,description3) VALUES (?,?,?,?)");
                   
-                        $stmt1 ->bind_param('isss', $last_id,$discretion1,$discretion2,$discretion3);
+                        $stmt1 ->bind_param('isss', $last_id, $description1, $description2, $description3);
 
                        }
                        if( $pageType=="SL"){
                         $stmt1= $conn->prepare("INSERT INTO solution_lab(idprogram,description1,description2) VALUES (?,?,?)");
                   
-                        $stmt1->bind_param('iss', $last_id,$discretion1,$discretion2);
+                        $stmt1->bind_param('iss', $last_id,$description1,$description2);
 
                        }
 

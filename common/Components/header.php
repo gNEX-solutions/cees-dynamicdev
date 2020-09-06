@@ -58,7 +58,7 @@ include 'Model/viewservices.inc.php';
                                     </div>
                                 </li>
                                 <li class="has-dropdown megamenu">
-                                    <a href="services-talent.php">Bussiness Partnering</a>
+                                    <a href="services-talent.php">Business Partnering</a>
                                     <div class="dropdown">
                                         <div class="dropdown-body">
                                             <div class="row">
