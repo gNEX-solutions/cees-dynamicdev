@@ -80,8 +80,8 @@
                     <strong> <label for="inputDescription">Page Type</label> </strong>
                     <select class="form-control" name="page_type" id="pageType">
                       <option>Select page type</option>
-                      <option value="CA">ICEES Dojo</option>
-                      <option value="CS">Consultancy Services</option>
+                      <option value="ID">ICEES Dojo</option>
+                      <option value="BP">Business Partnering</option>
                       <option value="SL">Solutions Lab</option>
                     </select>
                 </div> 
@@ -111,14 +111,26 @@
       
        <div class="row justify-content-md-start">
         <div class="form-group col col-sm-8">
-          <strong><label for="inputTitle"></label></strong>
+          <strong><label for="inputTitle">Summary</label></strong>
           <textarea type="text" class="form-control" name="Summary" placeholder="Summary" id="Summary" required></textarea>
         </div>
        </div>
-       <div class="row justify-content-md-start">
+       <div class="row justify-content-md-start" id="discription1">
         <div class="form-group col col-sm-8">
-          <strong><label for="Description">Description</label></strong>
-          <textarea type="text" class="form-control" name="Description" placeholder="Description" id="Description" required></textarea>
+          <strong><label for="Description">Description1</label></strong>
+          <textarea type="text" class="form-control" name="Description1" placeholder="Description1" id="Description" required></textarea>
+        </div>
+       </div>
+       <div class="row justify-content-md-start" id="discription2">
+        <div class="form-group col col-sm-8">
+          <strong><label for="Description">Description2</label></strong>
+          <textarea type="text" class="form-control" name="Description2" placeholder="Description2" id="Description2" ></textarea>
+        </div>
+       </div>
+       <div class="row justify-content-md-start" id="discription3">
+        <div class="form-group col col-sm-8">
+          <strong><label for="Description">Description3</label></strong>
+          <textarea type="text" class="form-control" name="Description3" placeholder="Description3" id="Description3" ></textarea>
         </div>
        </div>
        <div class="row justify-content-md-start">
@@ -225,30 +237,51 @@
 <script type="text/javascript" src="js/jquery-confirm.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <script type="text/javascript" src="js/jscolar.js"></script>
-<script src="js/editsections.js"></script>
+
 <script>
-   
-    $(window).ready(function() {
+       $(window).ready(function() {
       $("#inputCourseFee").hide();
       $("#inputCourseDuration").hide();
       $("#inputLecturer").hide();
+      $("#discription1").hide();
+      $("#discription2").hide();
+      $("#discription3").hide();
+      $("#Image2").hide();
+      
     });
-    $('#pageType').on('change', function (e) {
-      if(this.value=="CA")
+   $('select').on('change', function (e) {
+      if(this.value=="ID")
       {
-        $("#inputCourseFee").show();
+      $("#inputCourseFee").show();
       $("#inputCourseDuration").show();
       $("#inputLecturer").show();
-      }else{
+      $("#discription1").show();
+      $("#discription2").show();
+      $("#Image2").hide();
+      $("#discription3").hide();
+      }else if(this.value=="BP"){
       $("#inputCourseFee").hide();
       $("#inputCourseDuration").hide();
       $("#inputLecturer").hide();
+      $("#discription1").show();
+      $("#discription2").show();
+      $("#discription3").show();
+      $("#Image2").show();
+      }
+    else if(this.value=="SL"){
+      $("#inputCourseFee").hide();
+      $("#inputCourseDuration").hide();
+      $("#inputLecturer").hide();
+      $("#discription1").show();
+      $("#discription2").show();
+      $("#discription3").hide();
+      $("#Image2").hide();
       }
     });
 
   </script>
 </body>
-
+<script src="js/editsections.js"></script>
 </html>
 <?php   
 }

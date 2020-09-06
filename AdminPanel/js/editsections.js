@@ -9,12 +9,14 @@ var PageType=$('#pageType').val();
         url: "AdminModel/EditSectionHedder.php",
         data: {PageType:PageType,method:'searchTitle'},
         success: function(data){
+         // $("#error").append(data)
             $('#proTitle')
             .find('option')
             .remove()
             .end()
            var res = $.parseJSON(data);
            var len = res.length;
+        //   console.log("Data",data)
            for(var i=0; i<len; i++){
           var option=  res[i].program_title
           var value=  res[i].idprogram
@@ -22,7 +24,7 @@ var PageType=$('#pageType').val();
             ${option} 
             </option>`); 
            }
-           getProgramTitles()
+           getProgramDetails()
            showOder()
         },
         error: function (request, status, error) {
@@ -35,18 +37,23 @@ var PageType=$('#pageType').val();
 
   //get add append requested data to inputs
 
-function getProgramTitles()
+function getProgramDetails()
 {
+ 
+  var pagetype=$('#pageType').val();
   var ProgramID=$('#proTitle').val();
+  //alert("ProgramID "+ProgramID +" pagetype "+pagetype)
   $.ajax({
       type: "POST",
       url: "AdminModel/EditSectionHedder.php",
-      data: {PageId:ProgramID,method:'searchProgram'},
+      data: {PageId:ProgramID,method:'searchProgram',pageType:pagetype},
       beforeSend: function(){
       
         $('#Program_form').css("opacity",".5");
       },
       success: function(data){
+       // console.log(data)
+      //  $("#error").append(data)
         $('#Program_form')[0].reset();
         $('#Program_form').css("opacity","1");
          var res = $.parseJSON(data);
@@ -56,7 +63,11 @@ function getProgramTitles()
          $('#Title').val(res[i].program_title);
          $('#ID').val(res[i].idprogram);
          $('#Image').attr('src','../'+res[i].image_url )
-         $('#Description').val(res[i].discription)
+         $('#Description').val(res[i].description1)
+         $('#Description2').val(res[i].description2)
+         if(pagetype==="BP"){
+         $('#Description3').val(res[i].description3)
+         }
          $('#fee').val(res[i].course_fee);
          $('#duration').val(res[i].course_duration);
          $('#lecturer').val(res[i].lecturer);
@@ -71,21 +82,21 @@ function getProgramTitles()
         
       },
       error: function (request, status, error) {
-          $("#error").append(request.responseText)
-        
+         // $("#error").append(request.responseText)
+        console.log("request",request)
+        console.log("error",error)
+        console.log("status",status)
       }
     })
 
 }
 
+$('#proTitle').on('change', function() {
+ //alert( this.value );
+  getProgramDetails()
+});
 
-
-  $( "#proTitle" ).on('change',function() {
-    getProgramTitles()
-  
-   
-  });
-
+ 
 
 
 // Update Program Data

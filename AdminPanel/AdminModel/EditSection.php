@@ -7,7 +7,7 @@ class Edit extends dbh{
  
   public function getTitles ($pageType)
    { 
-    $sql="SELECT * FROM program WHERE page_type='".$pageType."'ORDER BY program_order";
+    $sql="SELECT program_title,idprogram FROM program WHERE page_type='".$pageType."'ORDER BY program_order";
     $result=$this->connect()->query($sql);
     $numRows=$result->num_rows;
     if($numRows>0){
@@ -18,9 +18,23 @@ class Edit extends dbh{
     }
    }
 
-   public function getProgram ($programId)
+   public function getProgram ($programId,$pageType)
    { 
-    $sql="SELECT program.program_title,program.summary,program.status, program.image_url,program.idprogram,courses.description,courses.idprogram ,courses.course_fee ,courses.course_duration ,courses.lecturer  FROM program INNER JOIN courses ON courses.idprogram=program.idprogram WHERE program.idprogram=".$programId;
+
+    $sql="";
+    if($pageType=="ID"){
+        $sql="SELECT program.program_title,program.summary,program.status, program.image_url,program.idprogram,courses.description1,courses.description2,courses.idprogram ,courses.course_fee ,courses.course_duration ,courses.lecturer  FROM program INNER JOIN courses ON courses.idprogram=program.idprogram WHERE program.idprogram=".$programId;
+
+    }
+    if($pageType=="BP"){
+        $sql="SELECT program.program_title,program.summary,program.status, program.image_url,program.idprogram,business_partnering.description2,business_partnering.description3,business_partnering.description1,business_partnering.idprogram  FROM program INNER JOIN business_partnering ON business_partnering.idprogram=program.idprogram WHERE program.idprogram=".$programId;
+
+    }
+    if($pageType=="SL"){
+        $sql="SELECT program.program_title,program.summary,program.status, program.image_url,program.idprogram,solution_lab.idprogram ,solution_lab.description2,solution_lab.description1 FROM program INNER JOIN solution_lab ON solution_lab.idprogram=program.idprogram WHERE program.idprogram=".$programId;
+
+    }
+
     $result=$this->connect()->query($sql);
     $numRows=$result->num_rows;
     if($numRows>0){

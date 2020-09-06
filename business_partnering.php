@@ -4,9 +4,11 @@ include 'Model/business_partnering_service.php';
 include 'Model/business_partnering_view.php';
 
 $artID =  $_GET['artID'];
-if($artID==NULL){
-header("Location: 404.html");
-exit();
+if($artID==NULL)
+{
+    header("Location: 404.php");
+    exit();
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -67,14 +69,14 @@ exit();
                 </div>
                 <div class="col-lg-4 right-contents">
                     <div class="container">
-                       
+                        <div class="container right-contents" style="padding-bottom: 20px;  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);">
                         <?php $businessPartneringView->ShowImage($artID);  ?>
-                        
+                        </div>
                     </div>
                     <div class="container">
-                        
+                        <div class="container right-contents" style="padding-bottom: 20px;  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);">
                         <?php $businessPartneringView->ShowImage2($artID);  ?>
-                       
+                        </div>
                     </div>
 
 

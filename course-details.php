@@ -8,7 +8,7 @@ include 'Model/courses_view.php';
 
 $artID =  $_GET['artID'];
 if($artID==NULL){
-header("Location: 404.html");
+header("Location: 404.php");
 exit();
 }
 ?>
