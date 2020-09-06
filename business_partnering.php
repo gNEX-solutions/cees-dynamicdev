@@ -4,7 +4,9 @@ include 'Model/business_partnering_service.php';
 include 'Model/business_partnering_view.php';
 
 $artID =  $_GET['artID'];
-
+if($artID==NULL){
+header("Location: 404.html");
+exit();
 ?>
 <!DOCTYPE html>
 <html lang="en">
