@@ -90,7 +90,8 @@ $no_user ='';
                                 <div class="media-body">
                                     <h4 class="card-title mbr-fonts-style display-6"  style="font-size:30px;font-wight:100">Academically & Professionally Qualified</h4>
                                 </div>
-                            </div>                
+                            </div>       
+                            <!-- Goal of CEES          -->
                             <div class="card-box">
                                 <p class="block-text mbr-fonts-style display-7">
                                 We are set of academically and professionally qualified business leaders with hands on experience on Enterprise transformation in various countries and industries
