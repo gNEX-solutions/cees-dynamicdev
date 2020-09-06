@@ -112,10 +112,17 @@
                 <strong> <label for="inputCourseFee">Course Fee</label></strong>
                 <input type="number"  class="form-control" name="inputCourseFee" placeholder="Course Fee" >
               </div>
-              <div class="form-group">
-                <strong><label for="inputImage" class="btn-2" >Image</label></strong><br>
-                <small>The image file should be a jpg, jpeg or a png file less than 5MB.</small><br>
-                <input type="file" id="file"  name="file">
+              <div class="row">
+                <div class="form-group col col-lg-6">
+                  <strong><label for="inputImage" class="btn-2" >Image</label></strong><br>
+                  <small>The image file should be a jpg, jpeg or a png file less than 5MB.</small><br>
+                  <input type="file" id="file"  name="file">
+                </div>
+                <div class="form-group col col-lg-6" id="Image2">
+                  <strong><label for="file2" class="btn-2" >Image 2</label></strong><br>
+                  <small>The image file should be a jpg, jpeg or a png file less than 5MB.</small><br>
+                  <input type="file" id="file2"  name="file2">
+                </div>
               </div>
               <div class="form-group">
                 <button type="submit" name="submit" class="btn btn-primary">Create</button>
@@ -185,6 +192,7 @@
       $("#discription1").hide();
       $("#discription2").hide();
       $("#discription3").hide();
+      $("#Image2").hide();
       
     });
     $('select').on('change', function (e) {
@@ -195,6 +203,8 @@
       $("#inputLecturer").show();
       $("#discription1").show();
       $("#discription2").show();
+      $("#Image2").hide();
+      $("#discription3").hide();
       }else if(this.value=="BP"){
       $("#inputCourseFee").hide();
       $("#inputCourseDuration").hide();
@@ -202,6 +212,7 @@
       $("#discription1").show();
       $("#discription2").show();
       $("#discription3").show();
+      $("#Image2").show();
       }
     else if(this.value=="SL"){
       $("#inputCourseFee").hide();
@@ -209,6 +220,8 @@
       $("#inputLecturer").hide();
       $("#discription1").show();
       $("#discription2").show();
+      $("#discription3").hide();
+      $("#Image2").hide();
       }
     });
 

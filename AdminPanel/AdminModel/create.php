@@ -45,31 +45,44 @@
                 
                 $title=$_POST['inputTitle'];
                 $summary=$_POST['inputSummary'];    
-        
                 $pageType=$_POST['inputPageType'];
                 $lecturer=$_POST['inputLecturer'];
                 $CourseDuration=$_POST['inputCourseDuration'];
                 $CourseFee=$_POST['inputCourseFee'];
-                $created_at= date("Y-m-d h:i:sa");
+
+           
+
                 $description1 =$_POST['description1'];
                 $description2 =$_POST["description2"];
                 $description3 =$_POST["description3"];
                
+                $created_at= date("Y-m-d h:i:sa");
+                
                 $status=1;
                 
                 $filename = $_FILES['file']['name'];
                 $location = "../../assets/images/consultancy/". $filename;
                 $relLocation = "assets/images/consultancy/". $filename;
                 $temp = explode(".", $filename);
-       
+
+                $filename2 = $_FILES['file2']['name'];
+                $location2 = "../../assets/images/business_partnering/". $filename2;
+                $relLocation2 = "assets/images/business_partnering/". $filename2;
+                $temp2 = explode(".", $filename2);
+    
                 $uploadOk = 1;
+                $uploadOk2 = 1;
                 $imageFileType = pathinfo($location,PATHINFO_EXTENSION);
+                $imageFileType2 = pathinfo($location2,PATHINFO_EXTENSION);
                     /* Valid extensions */
                 //if($_POST['file'] != ''){}
                 $valid_extensions = array("jpg","jpeg","png");
                     /* Check file extension */
                 if(!in_array(strtolower($imageFileType), $valid_extensions)) {
-                $uploadOk = 0;
+                    $uploadOk = 0;
+                }
+                if(!in_array(strtolower($imageFileType2), $valid_extensions)) {
+                    $uploadOk2 = 0;
                 }
                 if($uploadOk == 0){
                     $uploadOk = 0;
@@ -78,7 +91,17 @@
                     $uploadOk = 1;
                 /* Upload file */
                     move_uploaded_file($_FILES['file']['tmp_name'],$location);
-                }               
+                } 
+                if($uploadOk2 == 0){
+                    $uploadOk2 = 0;
+                    echo 'Error Uploading file 2' ;
+                }else{
+                    $uploadOk2 = 1;
+                /* Upload file */
+                echo 'Uploaded file 2' ;
+                    move_uploaded_file($_FILES['file2']['tmp_name'],$location2);
+                }      
+                echo $relLocation2;          
                     $conn->autocommit(false);
                     $stmt= $conn->prepare("INSERT INTO program(program_title, summary, status, image_url, page_type,created_at) VALUES (?,?,?,?,?,?)");
                     $stmt->bind_param('ssisss',$title, $summary, $status, $relLocation, $pageType,$created_at);
@@ -97,9 +120,9 @@
 
                        }
                        if( $pageType=="BP"){
-                        $stmt1= $conn->prepare("INSERT INTO business_partnering(idprogram,description1,description2,description3) VALUES (?,?,?,?)");
+                        $stmt1= $conn->prepare("INSERT INTO business_partnering(idprogram,description1,description2,description3,image) VALUES (?,?,?,?,?)");
                   
-                        $stmt1 ->bind_param('isss', $last_id, $description1, $description2, $description3);
+                        $stmt1 ->bind_param('issss', $last_id, $description1, $description2, $description3,$relLocation2);
 
                        }
                        if( $pageType=="SL"){
