@@ -51,12 +51,30 @@ class BusinessPartneringView extends businessPartneringService
     {
         $datas1 = $this->getSpecificBusinessPartner($artID);
         foreach ($datas1 as $key=>$data1) {
-
+            if(isset($data1['image_url'])){
                 echo '
                 
                 <img src=' . $data1['image_url'] . ' style=" width: 100%; max-width: 300px; height: auto; " />
 
                 ';
+            }
+              
+            
+        }
+    }
+
+    public function ShowImage2($artID)
+    {
+        $datas1 = $this->getSpecificBusinessPartner($artID);
+        foreach ($datas1 as $key=>$data1) {
+                if(isset($data1['image'])){
+                    echo '
+                
+                    <img src=' . $data1['image'] . ' style=" width: 100%; max-width: 300px; height: auto; " />
+    
+                    ';
+                }
+               
             
         }
     }
