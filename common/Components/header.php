@@ -50,7 +50,7 @@ include 'Model/viewservices.inc.php';
                                             <div class="row">
                                             <?php
                                              $services=new ViewServices();
-                                             $services->ShowCA_MENU();
+                                             $services->ShowID_MENU();
                                             ?> 
                                                
                                             </div>
