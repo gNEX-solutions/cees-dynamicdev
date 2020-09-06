@@ -64,7 +64,7 @@ include 'Model/viewservices.inc.php';
                                             <div class="row">
                                             <?php
                                              $services=new ViewServices();
-                                             $services->ShowCS_MENU();
+                                             $services->ShowBP_MENU();
                                             ?> 
                                             </div>
                                         </div>
@@ -115,7 +115,7 @@ include 'Model/viewservices.inc.php';
 						<ul class="dropdown">
                             <?php
                             $services=new ViewServices();
-                            $services->ShowCSMOB_MENU();
+                            $services->ShowBPMOB_MENU();
                             ?>  
                         </ul>
                     </li>
