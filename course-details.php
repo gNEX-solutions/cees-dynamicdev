@@ -86,12 +86,12 @@ $CoursesView =new CoursesView()
 
     <!--================ Start Course Details Area =================-->
     <section class="course_details_area" style="background: lightgrey;">
-        <div class="container" style="background: #fff; box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);">
+        <div class="container" style="background: #fff; box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);  padding-bottom:200px;">
             <div class="row">
                 <div class="col-lg-8 course_details_left">
                    
                     <div class="content_wrapper" style="padding-left:50px; padding-right: 80px;">
-                        <h4 class="title">Objectives</h4>
+                        <h4 class="title">Course Overview</h4>
                         <div class="content">
                         <?php  $CoursesView->ShowContent($artID);    ?>
                         </div>
@@ -149,7 +149,7 @@ $CoursesView =new CoursesView()
                 </div>
 
 
-                <div class="col-lg-4 right-contents" >
+                <div class="col-lg-4 right-contents" style="margin-bottom:30px;">
                     <div class="container">
                         <h3></h3>
                     </div>
@@ -187,7 +187,7 @@ $CoursesView =new CoursesView()
                         </li>
                     </ul>
 
-                    <a href="#" class="primary-btn2 text-uppercase enroll rounded-0 " >Enroll the course</a>
+                    <!-- <a href="#" class="primary-btn2 text-uppercase enroll rounded-0 " >Enroll the course</a> -->
                 </div>
                 </div>
             </div>
