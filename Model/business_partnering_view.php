@@ -53,9 +53,9 @@ class BusinessPartneringView extends businessPartneringService
         foreach ($datas1 as $key=>$data1) {
             if(isset($data1['image_url'])){
                 echo '
-                
+                <div class="container right-contents" style="padding-bottom: 20px;  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);">
                 <img src=' . $data1['image_url'] . ' style=" width: 100%; max-width: 300px; height: auto; " />
-
+                </div>
                 ';
             }
               
@@ -69,9 +69,9 @@ class BusinessPartneringView extends businessPartneringService
         foreach ($datas1 as $key=>$data1) {
                 if(isset($data1['image'])){
                     echo '
-                
+                    <div class="container right-contents" style="padding-bottom: 20px;  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);">
                     <img src=' . $data1['image'] . ' style=" width: 100%; max-width: 300px; height: auto; " />
-    
+                    </div>
                     ';
                 }
                
