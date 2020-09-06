@@ -50,7 +50,7 @@ include 'Model/viewservices.inc.php';
                                             <div class="row">
                                             <?php
                                              $services=new ViewServices();
-                                             $services->ShowCA_MENU();
+                                             $services->ShowID_MENU();
                                             ?> 
                                                
                                             </div>
@@ -58,13 +58,13 @@ include 'Model/viewservices.inc.php';
                                     </div>
                                 </li>
                                 <li class="has-dropdown megamenu">
-                                    <a href="services-talent.php">Bussiness Partnering</a>
+                                    <a href="services-talent.php">Business Partnering</a>
                                     <div class="dropdown">
                                         <div class="dropdown-body">
                                             <div class="row">
                                             <?php
                                              $services=new ViewServices();
-                                             $services->ShowCS_MENU();
+                                             $services->ShowBP_MENU();
                                             ?> 
                                             </div>
                                         </div>
@@ -115,7 +115,7 @@ include 'Model/viewservices.inc.php';
 						<ul class="dropdown">
                             <?php
                             $services=new ViewServices();
-                            $services->ShowCSMOB_MENU();
+                            $services->ShowBPMOB_MENU();
                             ?>  
                         </ul>
                     </li>

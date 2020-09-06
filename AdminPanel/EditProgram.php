@@ -73,8 +73,8 @@
           </div>
         </div>
 
-        <form style="margin-left:5%;margin-bottom:2%" class="justify-content-md-start">
-            <div class="row justify-content-md-start">
+        <form style="margin-left:5%;margin-bottom:2%" class="justify-content-md-center">
+            <div class="row justify-content-md-center">
              
                 <div class="form-group col-sm-4 justify-content-md-center">
                     <strong> <label for="inputDescription">Page Type</label> </strong>
@@ -121,6 +121,29 @@
           <textarea type="text" class="form-control" name="Description" placeholder="Description" id="Description" required></textarea>
         </div>
        </div>
+       <div class="row justify-content-md-start">
+       <div class="form-group col col-sm-8" id="inputLecturer" >
+          <strong> <label for="inputLecturer">Lecturer</label></strong>
+          <input type="text" class="form-control" id="lecturer" name="inputLecturer" placeholder="Lecturer" >
+        </div>
+        </div>
+      <div class="row justify-content-md-start">
+       <div class="form-group col col-sm-8" id="inputCourseDuration">
+        <strong> <label for="inputCourseDuration">Course Duration</label></strong>
+        <input type="text"  class="form-control" id="duration"name="inputCourseDuration" placeholder="Course Duration" >
+       </div>
+      </div>
+      <div class="row justify-content-md-start">
+        <div class="form-group col col-sm-8" id="inputCourseFee">
+          <strong> <label for="inputCourseFee">Course Fee</label></strong>
+          <input type="number" id="fee" class="form-control" name="inputCourseFee" placeholder="Course Fee" >
+        </div>
+      </div>
+      <div class="form-group">
+        <strong><label for="inputImage" class="btn-2" >Image</label></strong><br>
+        <small>The image file should be a jpg, jpeg or a png file less than 5MB.</small><br>
+        <input type="file" id="file"  name="file">
+      </div>
        <div class="row justify-content-md-start">
         <div class="form-group col-8">
           <strong> <label for="inputDescription">Show program</label></strong><br>
@@ -186,7 +209,7 @@
           <p class="statusMsg"></p> 
         </div>
       </div>
-</div>
+  </div>
 
 
 
@@ -203,6 +226,27 @@
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <script type="text/javascript" src="js/jscolar.js"></script>
 <script src="js/editsections.js"></script>
+<script>
+   
+    $(window).ready(function() {
+      $("#inputCourseFee").hide();
+      $("#inputCourseDuration").hide();
+      $("#inputLecturer").hide();
+    });
+    $('#pageType').on('change', function (e) {
+      if(this.value=="CA")
+      {
+        $("#inputCourseFee").show();
+      $("#inputCourseDuration").show();
+      $("#inputLecturer").show();
+      }else{
+      $("#inputCourseFee").hide();
+      $("#inputCourseDuration").hide();
+      $("#inputLecturer").hide();
+      }
+    });
+
+  </script>
 </body>
 
 </html>
