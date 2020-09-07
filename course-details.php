@@ -1,6 +1,19 @@
 
 <!DOCTYPE html>
 <html lang="en">
+<?php
+include_once 'Model/dbh.inc.php';
+include 'Model/courses_service.php';
+include 'Model/courses_view.php';
+
+$artID =  $_GET['artID'];
+if($artID==NULL){
+header("Location: 404.html");
+exit();
+}
+?>
+
+
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8" />
@@ -25,7 +38,9 @@
   </head>
 
   <body>
-
+<?php 
+$CoursesView =new CoursesView()
+?>
     <div id="preloader">
       <div id="status">&nbsp;</div>
     </div>
@@ -48,8 +63,18 @@
           <div class="row justify-content-center">
             <div class="col-lg-6">
               <div class="banner_content">
-                <h2>Course Name Should Come Here</h2>
-                <h4>Small Summary About the Certificate Course</h4>
+                <h2> 
+                    <?php 
+                    $CoursesView->ShowTitle($artID);
+                   
+                    ?>
+                </h2>
+                <h4>
+                <?php 
+                   
+                    $CoursesView->ShowSummary($artID);
+                    ?>
+                </h4>
               </div>
             </div>
           </div>
@@ -61,36 +86,17 @@
 
     <!--================ Start Course Details Area =================-->
     <section class="course_details_area" style="background: lightgrey;">
-        <div class="container" style="background: #fff; box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);">
+        <div class="container" style="background: #fff; box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);  padding-bottom:200px;">
             <div class="row">
                 <div class="col-lg-8 course_details_left">
                    
                     <div class="content_wrapper" style="padding-left:50px; padding-right: 80px;">
-                        <h4 class="title">Objectives</h4>
+                        <h4 class="title">Course Overview</h4>
                         <div class="content">
-                            When you enter into any new area of science, you almost always find yourself with a
-                            baffling new language of
-                            technical terms to learn before you can converse with the experts. This is certainly
-                            true in astronomy both in
-                            terms of terms that refer to the cosmos and terms that describe the tools of the trade,
-                            the most prevalent
-                            being the telescope.
-                            <br>
-                            <br>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                            incididunt ut labore et dolore
-                            magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
-                            ut aliquip ex ea
-                            commodoconsequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                            cillum. Lorem ipsum dolor sit
-                            amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                            dolore magna aliqua. Ut enim
-                            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-                            commodo consequat. Duis aute
-                            irure dolor in reprehenderit in voluptate velit esse cillum.
+                        <?php  $CoursesView->ShowContent($artID);    ?>
                         </div>
 
-                        <h4 class="title">Certificate Program Outcomes</h4>
+                        <!-- <h4 class="title">Certificate Program Outcomes</h4>
                         <div class="content">
                             • Learn a process to make strategic choices centered on both the needs of your customers as well as your business or organization.
                             <br/>
@@ -105,11 +111,11 @@
                             <br/>
                             <br/>
                             • Grow your skills and confidence to undertake, plan, and lead day-to-day strategic efforts, as well as broad wide-scale innovation initiatives.
-                        </div>
+                        </div> -->
 
-                        <h4 class="title">Course Outline</h4>
+                        <!--  <h4 class="title">Course Outline</h4>
                         <div class="content">
-                           <!--  <ol class="course_list">
+                           <ol class="course_list">
                                 <li class="">
                                     Introduction Lesson
                                    </li>
@@ -137,13 +143,13 @@
                                 <li class="justify-content-between d-flex">
                                     <p>Canvas in HTML 5</p>
                                 </li>
-                            </ol> -->
-                        </div>
+                            </ol> 
+                        </div>-->
                     </div>
                 </div>
 
 
-                <div class="col-lg-4 right-contents" >
+                <div class="col-lg-4 right-contents" style="margin-bottom:30px;">
                     <div class="container">
                         <h3></h3>
                     </div>
@@ -152,7 +158,7 @@
                         <li>
                             <a class="justify-content-between d-flex" href="#">
                                 <p>Trainer’s Name</p>
-                                <span class="or">George Mathews</span>
+                                <span class="or"> <?php  $CoursesView->getLecturer($artID);    ?></span>
                             </a>
                         </li>
                         <li>
@@ -164,13 +170,13 @@
                         <li>
                             <a class="justify-content-between d-flex" href="#">
                                 <p>Duratuion</p>
-                                <span class="or">3-4 Months</span>
+                                <span class="or"> <?php  $CoursesView->getcourseDuration($artID);    ?></span>
                             </a>
                         </li>
                         <li>
                             <a class="justify-content-between d-flex" href="#">
                                 <p>Course Fee </p>
-                                <span class="or">$230</span>
+                                <span class="or"> <?php  $CoursesView->getFee($artID);    ?></span>
                             </a>
                         </li>
                         <li>
@@ -181,7 +187,7 @@
                         </li>
                     </ul>
 
-                    <a href="#" class="primary-btn2 text-uppercase enroll rounded-0 " >Enroll the course</a>
+                    <!-- <a href="#" class="primary-btn2 text-uppercase enroll rounded-0 " >Enroll the course</a> -->
                 </div>
                 </div>
             </div>
