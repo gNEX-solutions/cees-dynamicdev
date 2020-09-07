@@ -33,7 +33,7 @@ class ViewServices extends Services {
        $datas=$this->getAllServices();
        foreach($datas as $data){
          if($data['page_type']=='SL'&& $data['status']=='1'){
-          echo '<div class="col-md-3"><h4 class="dropdown-heading"><a href="solutionslab.php#'.$data['idprogram'].'" >'. $data['program_title'].'</a></h4><ul class="dropdown-list"><li>'. $data['summary'].' </li></ul></div>';
+          echo '<div class="col-md-3"><h4 class="dropdown-heading"><a href="solution.php?SLPageId='.$data['idprogram'].'" >'. $data['program_title'].'</a></h4><ul class="dropdown-list"><li>'. $data['summary'].' </li></ul></div>';
          }
       
 
@@ -58,7 +58,7 @@ class ViewServices extends Services {
        foreach($datas as $data){
          if($data['page_type']=='BP'&& $data['status']=='1'){
          
-          echo '<li><a href="#">'. $data['program_title'].'</a></li>';
+          echo '<li><a "solution.php?SLPageId='.$data['idprogram'].'">'. $data['program_title'].'</a></li>';
          }
       }
    }
