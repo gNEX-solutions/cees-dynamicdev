@@ -1,8 +1,10 @@
-
 <?php
 include_once 'Model/dbh.inc.php';
 include 'Model/sections.inc.php';
 include 'Model/viewSections.inc.php';
+
+$slPageId = $_GET['SLPageId'];
+
 ?>
 
 <!DOCTYPE html>
@@ -47,7 +49,7 @@ include 'Model/viewSections.inc.php';
         <?php require_once ('common/Components/header.php'); ?>
   </section>
 
-  <section id="header2-1">
+  <!-- <section id="header2-1">
     <div>
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
@@ -69,14 +71,14 @@ include 'Model/viewSections.inc.php';
             <i class="mbri-down mbr-iconfont"></i>
         </a>
     </div>
-</section> 
+</section>  -->
 <!-- end section -->
 
 <!-- dynamic view  -->
 <section class="first-section">
 <?php
     $services=new ViewSections();
-    $services->ShowSL_CONTENT('1012');
+    $services->ShowSL_CONTENT($slPageId);
   ?>
 </section>
 
