@@ -70,7 +70,6 @@ class ViewSections extends Sections {
       return  $datas;  
    }
 
-
    // BW: 12.09.2019: Show SL page sections list
   public function ShowSL_MENU()
   { 
@@ -90,6 +89,26 @@ class ViewSections extends Sections {
       echo '</div>';
    // End of SL sections list
   }
+
+
+  //creating html elements for Solution.php page contents
+  public function ShowSL_CONTENT($idSolutionsLab)
+  { 
+      $datas=$this->getRequestedSolutionsData ($idSolutionsLab);
+      
+      echo '<div class="media-container-row">';
+   
+      foreach($datas as $data)
+      {
+         echo $data['description1'];
+         echo $data['description2'];
+      }
+      
+      echo '</div>';
+  }
+
+
+  
 
 }
 

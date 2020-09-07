@@ -52,8 +52,6 @@ class ViewServices extends Services {
       return  $datas;  
    }
 
-
-
    public function ShowBPMOB_MENU()
    {   
        $datas=$this->getAllServices();
