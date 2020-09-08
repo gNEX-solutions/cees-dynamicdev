@@ -45,8 +45,8 @@ exit();
     <!--================Home Banner Area =================-->
     <section style="padding-top: 86px" >
         <?php
-        $businessPartneringView = new BusinessPartneringView();
-        $businessPartneringView->ShowTitle($artID);
+        $businessPartneringView = new BusinessPartneringView($artID);
+        $businessPartneringView->ShowTitle();
         ?>
 
 
@@ -61,20 +61,22 @@ exit();
                 <div class="col-lg-8 course_details_left">
 
                     <div class="content_wrapper" style="padding-left:50px; padding-right: 80px;">
-                        <?php $businessPartneringView->ShowContent($artID);  ?>
+                        <?php $businessPartneringView->ShowContent();  ?>
                     </div>
-
+                    <div class="container">
+                    <?php $businessPartneringView->ShowImages();  ?>
+                    </div>
 
                 </div>
                 <div class="col-lg-4 right-contents">
                     <div class="container">
                        
-                        <?php $businessPartneringView->ShowImage($artID);  ?>
+                        <?php $businessPartneringView->ShowMain_image();  ?>
                         
                     </div>
                     <div class="container">
                         
-                        <?php $businessPartneringView->ShowImage2($artID);  ?>
+                        <?php $businessPartneringView->ShowImage1();  ?>
                        
                     </div>
 
