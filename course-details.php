@@ -86,65 +86,16 @@ $CoursesView =new CoursesView()
 
     <!--================ Start Course Details Area =================-->
     <section class="course_details_area" style="background: lightgrey;">
-        <div class="container" style="background: #fff; box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);  padding-bottom:200px;">
+        <div class="container" style="background: #fff; box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);  padding-bottom: 70px;">
             <div class="row">
                 <div class="col-lg-8 course_details_left">
                    
                     <div class="content_wrapper" style="padding-left:50px; padding-right: 80px;">
-                        <h4 class="title">Course Overview</h4>
+                        <h4 class="title">Background</h4>
                         <div class="content">
                         <?php  $CoursesView->ShowContent($artID);    ?>
                         </div>
 
-                        <!-- <h4 class="title">Certificate Program Outcomes</h4>
-                        <div class="content">
-                            • Learn a process to make strategic choices centered on both the needs of your customers as well as your business or organization.
-                            <br/>
-                            <br/>
-                            • Follow repeatable steps to imagine and test strategic initiatives that combine analytical rigor and creativity, and equip you with confidence to move these initiatives forward.
-                            <br/>
-                            <br/>
-                            • Gain techniques to quickly develop, test, and iterate parts of a business model (value proposition, revenue model, and channel) to make new programs, products, and services that are grounded in what people really want.
-                            <br/>
-                            <br/>
-                            • Apply methods from design thinking (such as brainstorming, prototyping, and iteration) to business modeling and strategy.
-                            <br/>
-                            <br/>
-                            • Grow your skills and confidence to undertake, plan, and lead day-to-day strategic efforts, as well as broad wide-scale innovation initiatives.
-                        </div> -->
-
-                        <!--  <h4 class="title">Course Outline</h4>
-                        <div class="content">
-                           <ol class="course_list">
-                                <li class="">
-                                    Introduction Lesson
-                                   </li>
-                                <li class="justify-content-between d-flex">
-                                    <p>Basics of HTML</p>
-                                    </li>
-                                <li class="justify-content-between d-flex">
-                                    <p>Getting Know about HTML</p>
-                                     </li>
-                                <li class="justify-content-between d-flex">
-                                    <p>Tags and Attributes</p>
-                                    </li>
-                                <li class="justify-content-between d-flex">
-                                    <p>Basics of CSS</p>
-                                    </li>
-                                <li class="justify-content-between d-flex">
-                                    <p>Getting Familiar with CSS</p>
-                                     </li>
-                                <li class="justify-content-between d-flex">
-                                    <p>Introduction to Bootstrap</p>
-                                    </li>
-                                <li class="justify-content-between d-flex">
-                                    <p>Responsive Design</p>
-                                    </li>
-                                <li class="justify-content-between d-flex">
-                                    <p>Canvas in HTML 5</p>
-                                </li>
-                            </ol> 
-                        </div>-->
                     </div>
                 </div>
 
@@ -187,10 +138,50 @@ $CoursesView =new CoursesView()
                         </li>
                     </ul>
 
-                    <!-- <a href="#" class="primary-btn2 text-uppercase enroll rounded-0 " >Enroll the course</a> -->
+                    <a href="#" class="primary-btn2 text-uppercase enroll rounded-0 " >Download Syllabus</a>
                 </div>
                 </div>
             </div>
+        </div>
+
+       <!-- program overview -->
+       
+        <div class="container" style="background: #fff; box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);  margin-top: 40px; text-align: center; display: block; padding: 40px;">
+
+            <h2 style="padding-bottom: 30px;">Certificate Program Overview</h2>
+
+            <?php  $CoursesView->ShowProgramOverviewImage($artID);    ?>
+            
+        </div>
+       <!-- /program overview -->
+       
+       
+
+        <div class="container" style="background: #fff; box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);  margin-top: 40px; padding-bottom: 30px; text-align: center; display: block; padding: 20px;">
+
+            <h2 style="padding-bottom: 30px;">Receive and Share Your Certificate</h2>
+
+            <p>After completing the courses, you’ll receive your Collaborative Leadership certificate of completion via email as a downloadable PDF within 1-2 weeks of completing the final required course. Certificates are configured for uploading and sharing on LinkedIn.</p>
+            <br/>
+            
+            <?php  $CoursesView->ShowCertificateImage($artID);    ?>
+            
+        </div>
+
+        <div class="container" style="background: #fff; box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);  margin-top: 40px; padding-bottom: 30px; text-align: center; display: block; padding: 20px;">
+
+            <h2 style="padding-bottom: 30px;">Evaluation Criteria</h2>
+
+            <?php  $CoursesView->ShowEvaluationCriteriaImage($artID);    ?>
+            
+        </div>
+
+        <div class="container" style="background: #fff; box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);  margin-top: 40px; padding-bottom: 30px; text-align: center; display: block; padding: 20px;">
+
+            <h2 style="padding-bottom: 30px;">Learning Experience</h2>
+
+            <?php  $CoursesView->ShowLearningExperienceImage($artID);    ?>
+            
         </div>
     </section>
     <!--================ End Course Details Area =================-->
