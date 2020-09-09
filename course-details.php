@@ -161,6 +161,17 @@ $CoursesView =new CoursesView()
         <!-- learning experience --> 
             <?php  $CoursesView->ShowLearningExperienceImage($artID);    ?>
         <!-- learning experience -->  
+
+
+        <div class="container" style="background: #14305e; box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);  margin-top: 40px; padding-bottom: 30px; text-align: center; display: block; padding: 20px;">
+
+          <h2 style="color: #fff;">Want to learn more about <?php $CoursesView->ShowTitle($artID); ?></h2>
+          <h3 style="color: #fff;">Join our mailing list for webcast invites, stories, and tips.</h3>
+          <div class="imgview">
+            <input type="text" style="height: 50px; width: 400px;" name="email" id="email" placeholder="Send Us Your Email"/>
+            <button class="primary-btn2 text-uppercase enroll rounded-0" id="subBtn">Subscribe</button>
+          </div>
+        </div>
         
     </section>
     <!--================ End Course Details Area =================-->
@@ -179,6 +190,25 @@ $CoursesView =new CoursesView()
 <?php require_once ('common/Components/footer.php'); ?>
         
 </section>
+
+<script type="text/javascript">
+  $("#subBtn").click(function(e) {
+    var email = document.getElementById("email").value;
+    //alert(email);
+    e.preventDefault();
+    $.ajax({
+        type: "POST",
+        url: "Model/subscribeService.php",
+        data: {method:"subscribe", email: email},
+        success: function(result) {
+            alert('ok');
+        },
+        error: function(result) {
+            alert('error');
+        }
+    });
+});
+</script>
 
 <script src="assets/web/assets/jquery/jquery.min.js"></script>
   <script src="assets/popper/popper.min.js"></script>
