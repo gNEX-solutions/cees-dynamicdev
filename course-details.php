@@ -145,44 +145,23 @@ $CoursesView =new CoursesView()
         </div>
 
        <!-- program overview -->
-       
-        <div class="container" style="background: #fff; box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);  margin-top: 40px; text-align: center; display: block; padding: 40px;">
-
-            <h2 style="padding-bottom: 30px;">Certificate Program Overview</h2>
 
             <?php  $CoursesView->ShowProgramOverviewImage($artID);    ?>
             
-        </div>
        <!-- /program overview -->
-       
-       
 
-        <div class="container" style="background: #fff; box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);  margin-top: 40px; padding-bottom: 30px; text-align: center; display: block; padding: 20px;">
-
-            <h2 style="padding-bottom: 30px;">Receive and Share Your Certificate</h2>
-
-            <p>After completing the courses, you’ll receive your Collaborative Leadership certificate of completion via email as a downloadable PDF within 1-2 weeks of completing the final required course. Certificates are configured for uploading and sharing on LinkedIn.</p>
-            <br/>
-            
+        <!-- certificate -->  
             <?php  $CoursesView->ShowCertificateImage($artID);    ?>
-            
-        </div>
-
-        <div class="container" style="background: #fff; box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);  margin-top: 40px; padding-bottom: 30px; text-align: center; display: block; padding: 20px;">
-
-            <h2 style="padding-bottom: 30px;">Evaluation Criteria</h2>
-
+        <!-- /certificate -->  
+        
+        <!-- evaluation --> 
             <?php  $CoursesView->ShowEvaluationCriteriaImage($artID);    ?>
-            
-        </div>
+        <!-- /evaluation -->     
 
-        <div class="container" style="background: #fff; box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);  margin-top: 40px; padding-bottom: 30px; text-align: center; display: block; padding: 20px;">
-
-            <h2 style="padding-bottom: 30px;">Learning Experience</h2>
-
+        <!-- learning experience --> 
             <?php  $CoursesView->ShowLearningExperienceImage($artID);    ?>
-            
-        </div>
+        <!-- learning experience -->  
+        
     </section>
     <!--================ End Course Details Area =================-->
 
