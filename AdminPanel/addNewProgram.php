@@ -66,7 +66,7 @@
                     <option value="SL">Solutions Lab</option>
                   </select>
               </div> 
-              <div class="form-group">
+              <!-- <div class="form-group">
                   <strong> <label for="inputDesignType">Program design type</label></strong>
                   <select class="form-control" name="inputDesignType" id="proType">
                     <option>Select the design type</option>
@@ -78,8 +78,7 @@
                     <option value="WCBV">With Courses Block View</option>
                     
                   </select>
-              </div> 
-        
+              </div> -->
               <div class="form-group">
                 <strong> <label for="inputTitle">Title</label></strong>
                 <input type="text" class="form-control" name="inputTitle" placeholder="Title" required>
@@ -88,12 +87,42 @@
               <div class="form-group">
                 <strong> <label for="inputSummary">Summary</label></strong>
                 <textarea class="form-control" name="inputSummary" placeholder="Summary" required></textarea>
+              </div>              
+              <div class="form-group" id="discription1">
+                <strong> <label for="description1">Description 1</label></strong>
+                <textarea class="form-control" name="description1" placeholder="Description 1" required></textarea>
               </div>
-  
-              <div class="form-group">
-                <strong><label for="inputImage" class="btn-2" >Image</label></strong><br>
-                <small>The image file should be a jpg, jpeg or a png file less than 5MB.</small><br>
-                <input type="file" id="file"  name="file">
+              <div class="form-group" id="discription2">
+                <strong> <label for="description2">Description 2</label></strong>
+                <textarea class="form-control" name="description2" placeholder="Description 2" required></textarea>
+              </div>
+              <div class="form-group" id="discription3">
+                <strong> <label for="description3">Description 3</label></strong>
+                <textarea class="form-control" name="description3" placeholder="Description 3"></textarea>
+              </div>
+              <div class="form-group" id="inputLecturer" >
+                <strong> <label for="inputLecturer">Lecturer</label></strong>
+                <input type="text" class="form-control" name="inputLecturer" placeholder="Lecturer" >
+              </div>
+              <div class="form-group" id="inputCourseDuration">
+                <strong> <label for="inputCourseDuration">Course Duration</label></strong>
+                <input type="text"  class="form-control" name="inputCourseDuration" placeholder="Course Duration" >
+              </div>
+              <div class="form-group" id="inputCourseFee">
+                <strong> <label for="inputCourseFee">Course Fee</label></strong>
+                <input type="number"  class="form-control" name="inputCourseFee" placeholder="Course Fee" >
+              </div>
+              <div class="row">
+                <div class="form-group col col-lg-6">
+                  <strong><label for="inputImage" class="btn-2" >Image</label></strong><br>
+                  <small>The image file should be a jpg, jpeg or a png file less than 5MB.</small><br>
+                  <input type="file" id="file"  name="file">
+                </div>
+                <div class="form-group col col-lg-6" id="Image2">
+                  <strong><label for="file2" class="btn-2" >Image 2</label></strong><br>
+                  <small>The image file should be a jpg, jpeg or a png file less than 5MB.</small><br>
+                  <input type="file" id="file2"  name="file2">
+                </div>
               </div>
               <div class="form-group">
                 <button type="submit" name="submit" class="btn btn-primary">Create</button>
@@ -153,6 +182,49 @@
     $('#proType').on('change', function() {
       $("#sample").attr("src","img/"+this.value +".PNG");
     });
+    // $( document ).ready(function() {
+    //  alert("reday!")
+    // });
+    $(window).ready(function() {
+      $("#inputCourseFee").hide();
+      $("#inputCourseDuration").hide();
+      $("#inputLecturer").hide();
+      $("#discription1").hide();
+      $("#discription2").hide();
+      $("#discription3").hide();
+      $("#Image2").hide();
+      
+    });
+    $('select').on('change', function (e) {
+      if(this.value=="ID")
+      {
+      $("#inputCourseFee").show();
+      $("#inputCourseDuration").show();
+      $("#inputLecturer").show();
+      $("#discription1").show();
+      $("#discription2").show();
+      $("#Image2").hide();
+      $("#discription3").hide();
+      }else if(this.value=="BP"){
+      $("#inputCourseFee").hide();
+      $("#inputCourseDuration").hide();
+      $("#inputLecturer").hide();
+      $("#discription1").show();
+      $("#discription2").show();
+      $("#discription3").show();
+      $("#Image2").show();
+      }
+    else if(this.value=="SL"){
+      $("#inputCourseFee").hide();
+      $("#inputCourseDuration").hide();
+      $("#inputLecturer").hide();
+      $("#discription1").show();
+      $("#discription2").show();
+      $("#discription3").hide();
+      $("#Image2").hide();
+      }
+    });
+
   </script>
 </body>
 

@@ -50,12 +50,13 @@ include 'Model/viewservices.inc.php';
                                 </li>
                                 <li class="has-dropdown megamenu" >
                                     <a href="Programs.php">ICEES Academy</a>
+
                                     <div class="dropdown">
                                         <div class="dropdown-body">
                                             <div class="row">
                                             <?php
                                              $services=new ViewServices();
-                                             $services->ShowCA_MENU();
+                                             $services->ShowID_MENU();
                                             ?> 
                                                
                                             </div>
@@ -63,13 +64,13 @@ include 'Model/viewservices.inc.php';
                                     </div>
                                 </li>
                                 <li class="has-dropdown megamenu">
-                                    <a href="services-talent.php">Bussiness Partnering</a>
+                                    <a href="services-talent.php">Business Partnering</a>
                                     <div class="dropdown">
                                         <div class="dropdown-body">
                                             <div class="row">
                                             <?php
                                              $services=new ViewServices();
-                                             $services->ShowCS_MENU();
+                                             $services->ShowBP_MENU();
                                             ?> 
                                             </div>
                                         </div>
@@ -102,7 +103,7 @@ include 'Model/viewservices.inc.php';
 			<div id="nav-aside">
 				<ul class="nav-aside-menu">
 					<li><a href="index.php">Home</a></li>
-					
+		
                     <li class="has-dropdown"><a href="Programs.php" class="side_a">ICEES Academy</a>
 						<ul class="dropdown">
                         <?php
@@ -112,15 +113,17 @@ include 'Model/viewservices.inc.php';
                            
 						</ul>
 					</li>
-                    <li class="has-dropdown"><a class="side_a" href="services-talent.php">Bussiness Partnering</a>
+
+                    <li class="has-dropdown"><a class="side_a" href="#" class="side_a"><a href="services-talent.php">Consulting services</a></a>
+
 						<ul class="dropdown">
                             <?php
                             $services=new ViewServices();
-                            $services->ShowCSMOB_MENU();
-                            ?> 
+                            $services->ShowBPMOB_MENU();
+                            ?>  
                         </ul>
                     </li>
-                    <li class="has-dropdown"><a class="side_a"  href="solutionslab.php">Solutions Lab</a>
+                    <li class="has-dropdown"><a class="side_a"  href="#" class="side_a"><a href="solutionslab.php">Solutions Lab</a></a>
 						<ul class="dropdown">
                         <?php
                             $services=new ViewServices();
