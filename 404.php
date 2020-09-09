@@ -6,6 +6,7 @@ DRIBBBLE: https://dribbble.com/shots/4330167-404-Page-Lost-In-Space
 -->
 <!DOCTYPE html>
 <html lang="en">
+    
 <body class="bg-purple">
         
     <div class="stars">

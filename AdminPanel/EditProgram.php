@@ -80,8 +80,10 @@
                     <strong> <label for="inputDescription">Page Type</label> </strong>
                     <select class="form-control" name="page_type" id="pageType">
                       <option>Select page type</option>
+
                       <option value="CA">ICEES Academy</option>
                       <option value="CS">Consultancy Services</option>
+
                       <option value="SL">Solutions Lab</option>
                     </select>
                 </div> 
@@ -111,14 +113,26 @@
       
        <div class="row justify-content-md-start">
         <div class="form-group col col-sm-8">
-          <strong><label for="inputTitle"></label></strong>
+          <strong><label for="inputTitle">Summary</label></strong>
           <textarea type="text" class="form-control" name="Summary" placeholder="Summary" id="Summary" required></textarea>
         </div>
        </div>
-       <div class="row justify-content-md-start">
+       <div class="row justify-content-md-start" id="discription1">
         <div class="form-group col col-sm-8">
-          <strong><label for="Description">Description</label></strong>
-          <textarea type="text" class="form-control" name="Description" placeholder="Description" id="Description" required></textarea>
+          <strong><label for="Description">Description1</label></strong>
+          <textarea type="text" class="form-control" name="Description1" placeholder="Description1" id="Description" required></textarea>
+        </div>
+       </div>
+       <div class="row justify-content-md-start" id="discription2">
+        <div class="form-group col col-sm-8">
+          <strong><label for="Description">Description2</label></strong>
+          <textarea type="text" class="form-control" name="Description2" placeholder="Description2" id="Description2" ></textarea>
+        </div>
+       </div>
+       <div class="row justify-content-md-start" id="discription3">
+        <div class="form-group col col-sm-8">
+          <strong><label for="Description">Description3</label></strong>
+          <textarea type="text" class="form-control" name="Description3" placeholder="Description3" id="Description3" ></textarea>
         </div>
        </div>
        <div class="row justify-content-md-start">
@@ -139,11 +153,7 @@
           <input type="number" id="fee" class="form-control" name="inputCourseFee" placeholder="Course Fee" >
         </div>
       </div>
-      <div class="form-group">
-        <strong><label for="inputImage" class="btn-2" >Image</label></strong><br>
-        <small>The image file should be a jpg, jpeg or a png file less than 5MB.</small><br>
-        <input type="file" id="file"  name="file">
-      </div>
+    
        <div class="row justify-content-md-start">
         <div class="form-group col-8">
           <strong> <label for="inputDescription">Show program</label></strong><br>
@@ -153,7 +163,7 @@
       </div>
       <div class="row justify-content-md-start">
         <div class="col col-lg-3" style="margin-top:5%">
-          <strong><label for="inputTitle">Image</label></strong>
+          <strong><label for="inputTitle">Image 1</label></strong>
           <input type="file" id="file" name="file" />
         </div>
         <div class="col col-lg-1">
@@ -161,7 +171,62 @@
         <div class="col col-lg-3">
           <img src="img/American_University_Seal.svg.png" class="rounded float-left" alt="..." style="width:200px;height200px" id="Image">
         </div>
-       </div>
+      </div>
+      
+      <div class="row justify-content-md-start">
+        <div class="col col-lg-3" style="margin-top:5%">
+          <strong><label for="inputTitle">Image 2</label></strong>
+          <input type="file" id="image2" name="file" />
+        </div>
+        <div class="col col-lg-1">
+        </div>
+        <div class="col col-lg-3">
+          <img src="img/American_University_Seal.svg.png" class="rounded float-left" alt="..." style="width:200px;height200px" id="Image2src">
+        </div>
+      </div>
+
+      <div class="row justify-content-md-start">
+        <div class="col col-lg-3" style="margin-top:5%">
+          <strong><label for="inputTitle">Image 3</label></strong>
+          <input type="file" id="image3" name="image3" />
+        </div>
+        <div class="col col-lg-1">
+        </div>
+        <div class="col col-lg-3">
+          <img src="img/American_University_Seal.svg.png" class="rounded float-left" alt="..." style="width:200px;height200px" id="Image3src">
+        </div>
+      </div>
+
+      <div class="row justify-content-md-start">
+        <div class="col col-lg-3" style="margin-top:5%">
+          <strong><label for="inputTitle">Image 4</label></strong>
+          <input type="file" id="image4" name="image4" />
+        </div>
+        <div class="col col-lg-1">
+        </div>
+        <div class="col col-lg-3">
+          <img src="img/American_University_Seal.svg.png" class="rounded float-left" alt="..." style="width:200px;height200px" id="Image4src">
+        </div>
+      </div>
+
+      <div class="row justify-content-md-start" id="imageDiv5">
+        <div class="col col-lg-3" style="margin-top:5%">
+          <strong><label for="inputTitle">Image 5</label></strong>
+          <input type="file" id="image5" name="image5" />
+        </div>
+        <div class="col col-lg-1">
+        </div>
+        <div class="col col-lg-3">
+          <img src="img/American_University_Seal.svg.png" class="rounded float-left" alt="..." style="width:200px;height200px" id="Image5src">
+        </div>
+      </div>
+
+
+
+
+
+
+
       <div class="row row justify-content-end" style="margin-top:2%">
         <div class="col-sm-4">
           <button type="submit" class="btn btn-primary submitBtn" id="save" style="margin-top:10px">Save Changes</button>
@@ -225,30 +290,42 @@
 <script type="text/javascript" src="js/jquery-confirm.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <script type="text/javascript" src="js/jscolar.js"></script>
-<script src="js/editsections.js"></script>
+
 <script>
-   
-    $(window).ready(function() {
-      $("#inputCourseFee").hide();
-      $("#inputCourseDuration").hide();
-      $("#inputLecturer").hide();
-    });
-    $('#pageType').on('change', function (e) {
-      if(this.value=="CA")
+ 
+   $('select').on('change', function (e) {
+      if(this.value=="ID")
       {
-        $("#inputCourseFee").show();
+      $("#inputCourseFee").show();
       $("#inputCourseDuration").show();
       $("#inputLecturer").show();
-      }else{
+      $("#discription1").show();
+      $("#discription2").show();
+      $("#imageDiv5").hide();
+      $("#discription3").hide();
+      }else if(this.value=="BP"){
       $("#inputCourseFee").hide();
       $("#inputCourseDuration").hide();
       $("#inputLecturer").hide();
+      $("#discription1").show();
+      $("#discription2").show();
+      $("#discription3").show();
+      $("#imageDiv5").show();
+      }
+    else if(this.value=="SL"){
+      $("#inputCourseFee").hide();
+      $("#inputCourseDuration").hide();
+      $("#inputLecturer").hide();
+      $("#discription1").show();
+      $("#discription2").show();
+      $("#discription3").hide();
+      $("#imageDiv5").hide();
       }
     });
 
   </script>
 </body>
-
+<script src="js/editsections.js"></script>
 </html>
 <?php   
 }
