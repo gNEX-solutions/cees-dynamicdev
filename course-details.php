@@ -138,7 +138,12 @@ $CoursesView =new CoursesView()
                         </li>
                     </ul>
 
-                    <a href="#" class="primary-btn2 text-uppercase enroll rounded-0 " >Download Syllabus</a>
+                  <!--   <form method="get" action="file.pdf"> -->
+                        <button class="primary-btn2 text-uppercase enroll rounded-0" onclick="window.location.href='file.pdf'" target="_blank">Download Syllabus!</button>
+
+            <!--         </form> -->
+
+                    <!-- <a href="#"  ></a> -->
                 </div>
                 </div>
             </div>
