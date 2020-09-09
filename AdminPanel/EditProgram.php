@@ -151,11 +151,7 @@
           <input type="number" id="fee" class="form-control" name="inputCourseFee" placeholder="Course Fee" >
         </div>
       </div>
-      <div class="form-group">
-        <strong><label for="inputImage" class="btn-2" >Image</label></strong><br>
-        <small>The image file should be a jpg, jpeg or a png file less than 5MB.</small><br>
-        <input type="file" id="file"  name="file">
-      </div>
+    
        <div class="row justify-content-md-start">
         <div class="form-group col-8">
           <strong> <label for="inputDescription">Show program</label></strong><br>
@@ -165,7 +161,7 @@
       </div>
       <div class="row justify-content-md-start">
         <div class="col col-lg-3" style="margin-top:5%">
-          <strong><label for="inputTitle">Image</label></strong>
+          <strong><label for="inputTitle">Image 1</label></strong>
           <input type="file" id="file" name="file" />
         </div>
         <div class="col col-lg-1">
@@ -173,7 +169,62 @@
         <div class="col col-lg-3">
           <img src="img/American_University_Seal.svg.png" class="rounded float-left" alt="..." style="width:200px;height200px" id="Image">
         </div>
-       </div>
+      </div>
+      
+      <div class="row justify-content-md-start">
+        <div class="col col-lg-3" style="margin-top:5%">
+          <strong><label for="inputTitle">Image 2</label></strong>
+          <input type="file" id="image2" name="file" />
+        </div>
+        <div class="col col-lg-1">
+        </div>
+        <div class="col col-lg-3">
+          <img src="img/American_University_Seal.svg.png" class="rounded float-left" alt="..." style="width:200px;height200px" id="Image2src">
+        </div>
+      </div>
+
+      <div class="row justify-content-md-start">
+        <div class="col col-lg-3" style="margin-top:5%">
+          <strong><label for="inputTitle">Image 3</label></strong>
+          <input type="file" id="image3" name="image3" />
+        </div>
+        <div class="col col-lg-1">
+        </div>
+        <div class="col col-lg-3">
+          <img src="img/American_University_Seal.svg.png" class="rounded float-left" alt="..." style="width:200px;height200px" id="Image3src">
+        </div>
+      </div>
+
+      <div class="row justify-content-md-start">
+        <div class="col col-lg-3" style="margin-top:5%">
+          <strong><label for="inputTitle">Image 4</label></strong>
+          <input type="file" id="image4" name="image4" />
+        </div>
+        <div class="col col-lg-1">
+        </div>
+        <div class="col col-lg-3">
+          <img src="img/American_University_Seal.svg.png" class="rounded float-left" alt="..." style="width:200px;height200px" id="Image4src">
+        </div>
+      </div>
+
+      <div class="row justify-content-md-start" id="imageDiv5">
+        <div class="col col-lg-3" style="margin-top:5%">
+          <strong><label for="inputTitle">Image 5</label></strong>
+          <input type="file" id="image5" name="image5" />
+        </div>
+        <div class="col col-lg-1">
+        </div>
+        <div class="col col-lg-3">
+          <img src="img/American_University_Seal.svg.png" class="rounded float-left" alt="..." style="width:200px;height200px" id="Image5src">
+        </div>
+      </div>
+
+
+
+
+
+
+
       <div class="row row justify-content-end" style="margin-top:2%">
         <div class="col-sm-4">
           <button type="submit" class="btn btn-primary submitBtn" id="save" style="margin-top:10px">Save Changes</button>
@@ -239,16 +290,7 @@
 <script type="text/javascript" src="js/jscolar.js"></script>
 
 <script>
-       $(window).ready(function() {
-      $("#inputCourseFee").hide();
-      $("#inputCourseDuration").hide();
-      $("#inputLecturer").hide();
-      $("#discription1").hide();
-      $("#discription2").hide();
-      $("#discription3").hide();
-      $("#Image2").hide();
-      
-    });
+ 
    $('select').on('change', function (e) {
       if(this.value=="ID")
       {
@@ -257,7 +299,7 @@
       $("#inputLecturer").show();
       $("#discription1").show();
       $("#discription2").show();
-      $("#Image2").hide();
+      $("#imageDiv5").hide();
       $("#discription3").hide();
       }else if(this.value=="BP"){
       $("#inputCourseFee").hide();
@@ -266,7 +308,7 @@
       $("#discription1").show();
       $("#discription2").show();
       $("#discription3").show();
-      $("#Image2").show();
+      $("#imageDiv5").show();
       }
     else if(this.value=="SL"){
       $("#inputCourseFee").hide();
@@ -275,7 +317,7 @@
       $("#discription1").show();
       $("#discription2").show();
       $("#discription3").hide();
-      $("#Image2").hide();
+      $("#imageDiv5").hide();
       }
     });
 
