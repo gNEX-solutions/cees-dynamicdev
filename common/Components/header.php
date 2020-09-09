@@ -44,7 +44,7 @@ include 'Model/viewservices.inc.php';
                                     <a href="index.php">Home</a>
                                 </li>
                                 <li class="has-dropdown megamenu" >
-                                    <a href="Programs.php">ICEES Dojo</a>
+                                    <a href="Programs.php">ICEES Academy</a>
                                     <div class="dropdown">
                                         <div class="dropdown-body">
                                             <div class="row">
@@ -98,7 +98,7 @@ include 'Model/viewservices.inc.php';
 				<ul class="nav-aside-menu">
 					<li><a href="index.php">Home</a></li>
 					
-                    <li class="has-dropdown"><a href="Programs.php" class="side_a">ICEES Dojo</a>
+                    <li class="has-dropdown"><a href="Programs.php" class="side_a">ICEES Academy</a>
 						<ul class="dropdown">
                         <?php
                             $services=new ViewServices();

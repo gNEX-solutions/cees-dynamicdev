@@ -119,11 +119,11 @@ include 'Model/getClientLogos.php';
                 <div class="card-img pb-3">
                     <span class="mbr-iconfont mbri-idea" style="color: rgb(15, 118, 153); fill: rgb(15, 118, 153); font-size: 120px;"></span>
                 </div>
-                <h4 class="card-title py-3 mbr-fonts-style display-5"><a href="Programs.php">ICEES Dojo</a></h4>
+                <h4 class="card-title py-3 mbr-fonts-style display-5"><a href="Programs.php">ICEES Academy</a></h4>
                 <div class="card-box">
                     <p class="mbr-text mbr-fonts-style display-7" >
-                    <!-- CEES Dojo is dedicated for training and development on Enterprise Excellence tools including Lean, Six Sigma and Industry 4.0 to enlighten business executives to successfully transform themselves, respective teams and organizations   -->
-                    ICEES Dojo brings you the best knowledge in Enterprise Excellence (Lean, Six Sigma, Agile & Industry 4.0) from globally recognized Institutes and Universities. Our highly experienced international and local sensei panel is there to enlighten your minds to become excellent
+                    <!-- CEES Academy is dedicated for training and development on Enterprise Excellence tools including Lean, Six Sigma and Industry 4.0 to enlighten business executives to successfully transform themselves, respective teams and organizations   -->
+                    ICEES Academy brings you the best knowledge in Enterprise Excellence (Lean, Six Sigma, Agile & Industry 4.0) from globally recognized Institutes and Universities. Our highly experienced international and local sensei panel is there to enlighten your minds to become excellent
                     </p>
                   <span class="vspacer"></span>
                   <p class="py-3 mbr-fonts-style">
