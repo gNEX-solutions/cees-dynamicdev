@@ -11,12 +11,15 @@ $Edit=new Edit();
 if($method=='searchTitle')
 {
     $pageType=$_POST['PageType'];
-    $Edit->getTitles($pageType);
+   $data= $Edit->getTitles($pageType);
 }
 else if($method=='searchProgram')
-{   
+{  
+    
+    $pageType=$_POST['pageType'];
     $programId=$_POST['PageId'];
-    $Edit->getProgram ($programId);
+  //  echo $pageType." ".$programId;
+    $Edit->getProgram ($programId,$pageType);
 }
 else if($method=='save')
 {
