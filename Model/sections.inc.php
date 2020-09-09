@@ -41,7 +41,20 @@ class Sections extends dbh{
     }
     //End of get card count
 
-   
+
+   //Loading data from DB  dynamically into solution.php common page
+    protected function getRequestedSolutionsData ($idSolutionsLab)
+    { 
+       $sql="SELECT * FROM program p JOIN solution_lab s ON p.idprogram = s.idprogram WHERE p.idprogram =".$idSolutionsLab;
+       $result=$this->connect()->query($sql);
+       $numRows=$result->num_rows;
+       if($numRows>0){
+           while($row=$result->fetch_assoc()){
+              $data[]=$row;
+           }
+           return $data;
+       }
+     }
 
   
 }
