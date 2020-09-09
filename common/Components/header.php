@@ -33,11 +33,16 @@ include 'Model/viewservices.inc.php';
 
 			<div id="nav-bottom">
                 <div class = "row" >
-                    <div class="col-md-2" style="margin:auto" id="logo-desktop">
-                    <a href="./index.php"> <img src="assets/images/wef3.png" alt="cees-logo" style="width:auto;height:50px;margin-left:30%;"></a>
+                    <div class="col-md-2" style="margin:auto;" id="logo-desktop">
+                        <a href="./index.php"> <img src="assets/images/wef3.png" alt="cees-logo" style="width:auto;height:50px;margin-left:30%;"></a>
                     </div>
-                
-                    <div class="col-md-10"  style="padding-top:7px;padding-bottom:7px;padding-right:5%;" >
+                    <div class="col-md-1" style="margin:auto" id="">
+                        <a href="./index.php"> <img src="assets/images/logo1.png" alt="cees-logo" style="width:100%;margin-left:70%;margin-bottom:-12%"></a>
+                    </div>
+                    <div class="col-md-1" style="margin:auto" id="">
+                        <a href="./index.php"> <img src="assets/images/logo3.png" alt="cees-logo" style="width:100%;margin-left:60%;margin-bottom:-12%"></a>
+                    </div>
+                    <div class="col-md-8"  style="padding-top:7px;padding-bottom:7px;padding-right:5%;" >
                     <!-- nav -->
                        <ul class="nav-menu" >
                                 <li>
