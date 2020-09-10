@@ -100,6 +100,7 @@
      
        
           <input  type="hidden" class="form-control" name="ID" id="ID" >
+          <input  type="hidden" class="form-control" name="programType" id="programType" >
           <input  type="hidden" class="form-control" name="method" id="method" value="save">
         
        <div class="row justify-content-md-start">
@@ -174,7 +175,7 @@
       <div class="row justify-content-md-start">
         <div class="col col-lg-3" style="margin-top:5%">
           <strong><label for="inputTitle">Image 2</label></strong>
-          <input type="file" id="image2" name="file" />
+          <input type="file" id="image2" name="image2" />
         </div>
         <div class="col col-lg-1">
         </div>
