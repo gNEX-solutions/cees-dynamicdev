@@ -80,8 +80,10 @@
                     <strong> <label for="inputDescription">Page Type</label> </strong>
                     <select class="form-control" name="page_type" id="pageType">
                       <option>Select page type</option>
-                      <option value="ID">ICEES Dojo</option>
-                      <option value="BP">Business Partnering</option>
+
+                      <option value="CA">ICEES Academy</option>
+                      <option value="CS">Consultancy Services</option>
+
                       <option value="SL">Solutions Lab</option>
                     </select>
                 </div> 

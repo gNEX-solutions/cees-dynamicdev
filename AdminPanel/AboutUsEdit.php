@@ -32,7 +32,7 @@ include '../Model/getMembers.php';
 
   <!-- croppie -->
   <link rel="stylesheet" href="css/croppie.css" />
-
+  <script src="../assets/customjs/sweetalert2.all.min.js"></script>
 </head>
 
 <body id="page-top">
@@ -59,7 +59,7 @@ include '../Model/getMembers.php';
 
 
           <!-- Page Heading -->
-            <h1 class="h3 mb-4 text-gray-800">Edit/Delete Team Memebr</h1>
+            <h1 class="h3 mb-4 text-gray-800">Delete Team Member</h1>
             <!-- Topbar Search -->
          <!--    <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
               <div class="input-group">
@@ -95,31 +95,33 @@ include '../Model/getMembers.php';
                        
                     ?>
              </select>
-                
+             <br><br>  
+             <button type="button" onclick="removeClient()" name="img_remove" class="btn btn-outline-danger" > Remove Member </button>
+             
                 <hr>
             </div>
-
+<!--
                 <div class="form-group row">
                   <div class="col-sm-4 mb-3 mb-sm-0">
                     <label style="float:left;">First Name</label>
                     <input type="text" class="form-control form-control-user" id="firstName" name="firstName" placeholder="First Name" required="">
-                  <!-- </div>
+                  < </div>
                   
                 </div>
-                  <div class="col-sm-4 mb-3 mb-sm-0"> -->
+                  <div class="col-sm-4 mb-3 mb-sm-0"> 
                     <label style="float:left;">Last Name</label>
                     <input type="text" class="form-control form-control-user" name="lastName" id="lastName" placeholder="Last Name" required="">
-                  <!-- </div>
+                   </div>
 
                 <div class="form-group row">
-                  <div class="col-sm-4 mb-3 mb-sm-0"> -->
+                  <div class="col-sm-4 mb-3 mb-sm-0"> 
                     <label style="float:left;">Designation</label>
                     <input style="float:left;" type="text" class="form-control form-control-user" id="designation" name="designation" placeholder="Designation" required="">
-                  <!-- </div>
+                   </div>
                 </div>
 
                 <div class="form-group row">
-                  <div class="col-sm-4 mb-3 mb-sm-0"> -->
+                  <div class="col-sm-4 mb-3 mb-sm-0">
                     <label style="float:left;">Contact Number</label>
                     <input style="float:left;" type="text" class="form-control form-control-user" id="contact_number" name="contact_number" placeholder="07xxxxxxxxxxx">
                   </div>
@@ -130,11 +132,11 @@ include '../Model/getMembers.php';
                       <div id="uploaded_image" name="uploaded_image" >
                         <input type="hidden" id="imgpath" name="imgpath" />
                       </div>
-                      <!-- <img width="70%" src="../assets/images/mbr-510x513.jpg"> -->
+                       <img width="70%" src="../assets/images/mbr-510x513.jpg"> 
                     </div>
                     <div class="panel-body" align="center">
                       <input type="file" name="upload_image" id="upload_image" />
-                      <!-- <div id="uploaded_image"></div> -->
+                       <div id="uploaded_image"></div> 
                     </div>
                  
 
@@ -158,22 +160,23 @@ include '../Model/getMembers.php';
                     <input style="float:left;" type="text" class="form-control form-control-user" id="twitter_url" name="twitter_url" placeholder="Twitter Profile Url">
                   </div>
                 </div>
-<!-- 
+
                 <div class="form-group">
                   <label for="inputDescription">Quote</label>
                   <textarea class="form-control" name="quote" id="quote" placeholder="Quote"></textarea>
-                </div> -->
+                </div> 
 
-               <!--  <div class="form-group">
+               <div class="form-group">
                 <label for="inputImage">Upload Event Flyer</label><br/>
                 <input type="file"  accept="image/*" name="inputImage"/>
-                </div> -->
+                </div> 
             
                 <button type="submit" name="submit" id="submit_btn" class="btn btn-primary">Add Member</button>
               </form>
 
              <div class="message_box" id="message_box"></div>
         </div>
+         -->
         <!-- /.container-fluid -->
         
       </div>
@@ -318,6 +321,46 @@ $(document).ready(function(){
   });
 
 });  
+</script>
+
+<script>
+  function removeClient(){
+    var e = document.getElementById("members");
+    var clientId = e.options[e.selectedIndex].value;
+    
+    Swal.fire({
+   title: 'Are you sure?',
+    text: "You won't be able to revert this!",
+    type: 'warning',
+    showCancelButton: true,
+    confirmButtonColor: '#3085d6',
+    cancelButtonColor: '#d33',
+    confirmButtonText: 'Yes, delete it!'
+    }).then((result) => {
+    if (result.value) {
+      $.ajax({
+        type:'POST', 
+        url: "./AdminModel/Aboutus.php",
+        data: {img_remove: clientId, req:'clientRemove'},
+        success: function(){
+        },
+        error: function(){
+        }
+      });
+      Swal.fire(
+        'Deleted!',
+        'Member has been deleted.',
+        'success'
+      ).then( function(){
+        window.location.reload();
+      });
+ 
+  
+}
+
+}) 
+  }
+
 </script>
 
 

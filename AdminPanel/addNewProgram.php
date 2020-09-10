@@ -61,8 +61,8 @@
                 <strong> <label for="inputPageType">Page Type</label> </strong>
                   <select class="form-control" name="inputPageType">
                     <option>Select page type</option>
-                    <option value="ID">ICEES Dojo</option>
-                    <option value="BP">Bussiness Partnering</option>
+                    <option value="CA">ICEES Academy</option>
+                    <option value="CS">Consultancy Services</option>
                     <option value="SL">Solutions Lab</option>
                   </select>
               </div> 

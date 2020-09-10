@@ -4,14 +4,10 @@ include 'Model/business_partnering_service.php';
 include 'Model/business_partnering_view.php';
 
 $artID =  $_GET['artID'];
-<<<<<<< HEAD
-if($artID==NULL)
-{
-    header("Location: 404.php");
-=======
+
 if ($artID == NULL) {
     header("Location: 404.html");
->>>>>>> 2a98bb281fcb947c7d2ad6589c11f00d71665979
+
     exit();
 }
 ?>
@@ -76,25 +72,16 @@ if ($artID == NULL) {
                 </div>
                 <div class="col-lg-4 right-contents">
                     <div class="container">
-<<<<<<< HEAD
-                        <div class="container right-contents" style="padding-bottom: 20px;  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);">
-                        <?php $businessPartneringView->ShowImage($artID);  ?>
-                        </div>
-                    </div>
-                    <div class="container">
-                        <div class="container right-contents" style="padding-bottom: 20px;  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);">
-                        <?php $businessPartneringView->ShowImage2($artID);  ?>
-                        </div>
-=======
+
 
                         <?php $businessPartneringView->ShowMain_image();  ?>
-
+                        
                     </div>
                     <div class="container">
 
                         <?php $businessPartneringView->ShowImage1();  ?>
 
->>>>>>> 2a98bb281fcb947c7d2ad6589c11f00d71665979
+
                     </div>
 
 
