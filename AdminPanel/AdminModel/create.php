@@ -107,7 +107,7 @@
                             $imageProperties3 = getimageSize($_FILES['image3']['tmp_name']);
                             $imageProperties4 = getimageSize($_FILES['image4']['tmp_name']);
                             $imageProperties5 = getimageSize($_FILES['image5']['tmp_name']);
-                        $stmt1= "INSERT INTO business_partnering (idprogram,description1,description2,description3, image1, image2 image3, image4) VALUES ( $last_id, '{$description1}', '{$description2}', '{$description3}', '{$imgData1}', '{$imgData2}', '{$imgData3}','{$imgData4}')";
+                        $stmt1= "INSERT INTO business_partnering (idprogram,description1,description2,description3,image1,image2,image3,image4) VALUES ( $last_id, '{$description1}', '{$description2}', '{$description3}', '{$imgData1}', '{$imgData2}', '{$imgData3}','{$imgData4}')";
                            
                       }
                

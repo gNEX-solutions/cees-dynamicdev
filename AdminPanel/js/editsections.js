@@ -9,7 +9,7 @@ var PageType=$('#pageType').val();
         url: "AdminModel/EditSectionHedder.php",
         data: {PageType:PageType,method:'searchTitle'},
         success: function(data){
-         // $("#error").append(data)
+          //$("#error").append(data)
             $('#proTitle')
             .find('option')
             .remove()
@@ -39,10 +39,10 @@ var PageType=$('#pageType').val();
 
 function getProgramDetails()
 {
- 
+
   var pagetype=$('#pageType').val();
   var ProgramID=$('#proTitle').val();
-  //alert("ProgramID "+ProgramID +" pagetype "+pagetype)
+ // alert("ProgramID "+ProgramID +" pagetype "+pagetype)
   $.ajax({
       type: "POST",
       url: "AdminModel/EditSectionHedder.php",
@@ -52,7 +52,8 @@ function getProgramDetails()
         $('#Program_form').css("opacity",".5");
       },
       success: function(data){
-       // console.log(data)
+        console.log(data)
+      
       //  $("#error").append(data)
         $('#Program_form')[0].reset();
         $('#Program_form').css("opacity","1");
@@ -68,6 +69,10 @@ function getProgramDetails()
          $('#Image4src').attr('src',res[i].image1)
          $('#Image2src').attr('src',res[i].image2)
          $('#Image3src').attr('src',res[i].image3)
+         $('#image3').attr('value',blobToFile(res[i].blob, "image3.jpg"))
+       
+
+         $('#programType').val(res[i].page_type);
          if(pagetype==="BP"){
          $('#Description3').val(res[i].description3)
          $('#Image5src').attr('src',res[i].image4)
@@ -95,6 +100,12 @@ function getProgramDetails()
     })
 
 }
+function blobToFile(theBlob, fileName){
+  //A Blob() is almost a File() - it's just missing the two properties below which we will add
+  theBlob.lastModifiedDate = new Date();
+  theBlob.name = fileName;
+  return theBlob;
+}
 
 $('#proTitle').on('change', function() {
  //alert( this.value );
@@ -106,7 +117,7 @@ $('#proTitle').on('change', function() {
 
 // Update Program Data
 $("#Program_form").on('submit', function(e){
-    
+   
     e.preventDefault();
 
     output =  $('input[name=status]:checked', 
@@ -144,8 +155,8 @@ $("#Program_form").on('submit', function(e){
                           $('.statusMsg').html('<span style="font-size:15px;color:#34A853">successfully Updated.</span>');
                           $.alert('successfully Updated');
                       }else{
-                          $('.statusMsg').html('<span style="font-size:15px;color:#EA4335">Some problem occurred, please try again.</span>');
-                          $.alert('Some problem occurred, please try again.!');
+                          $('.statusMsg').html('<span style="font-size:15px;color:#EA4335">'+msg+'</span>');
+                          $.alert(msg);
                       }
                       $('#Program_form').css("opacity","");
                       $(".submitBtn").removeAttr("disabled");
@@ -317,6 +328,7 @@ $("#Program_form").on('submit', function(e){
         data: {PageType:PageType,method:'searchTitle'},
        
         success: function(data){
+         // $("#error").append(data)
            var res = $.parseJSON(data);
            var len = res.length;
            var count=1
@@ -390,7 +402,7 @@ $("#Program_form").on('submit', function(e){
                     $('#save_oder').attr("display","block");
                     $('#oder').css("opacity",".5");
                   },success: function(msg) {
-                     // $("#error").append(msg)
+                    //  $("#error").append(msg)
                       if(msg.trim() == '"ok"'){
                           $('#sortable').empty();
                           $('#notsortable').empty();

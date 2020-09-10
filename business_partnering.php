@@ -75,7 +75,7 @@ if ($artID == NULL) {
 
 
                         <?php $businessPartneringView->ShowMain_image();  ?>
-
+                        
                     </div>
                     <div class="container">
 
