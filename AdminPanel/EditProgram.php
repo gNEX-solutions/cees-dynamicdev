@@ -81,7 +81,7 @@
                     <select class="form-control" name="page_type" id="pageType">
                       <option>Select page type</option>
 
-                      <option value="CA">ICEES Academy</option>
+                      <option value="ID">ICEES Academy</option>
                       <option value="CS">Consultancy Services</option>
 
                       <option value="SL">Solutions Lab</option>
