@@ -126,9 +126,9 @@ include 'Model/getClientLogos.php';
                     ICEES Academy brings you the best knowledge in Enterprise Excellence (Lean, Six Sigma, Agile & Industry 4.0) from globally recognized Institutes and Universities. Our highly experienced international and local sensei panel is there to enlighten your minds to become excellent
                     </p>
                   <span class="vspacer"></span>
-                  <p class="py-3 mbr-fonts-style">
+                  <!--<p class="py-3 mbr-fonts-style">
                     <a href="Programs.php" target="_blank">READ MORE » </a>
-                  </p>
+                  </p>-->
                 </div>
             </div>
 
@@ -144,9 +144,9 @@ include 'Model/getClientLogos.php';
                     Even the best of the best in the world can have ample opportunities improve. Our expert business transformation consultants are capable of unlocking these opportunities for you. We will guide, coach and mentor you to drive beyond your expectations.
                     </p>
                   <span class="vspacer"></span>
-                  <p class="py-3 mbr-fonts-style">
+                  <!--<p class="py-3 mbr-fonts-style">
                     <a href="services-talent.php" target="_blank">READ MORE » </a>
-                  </p>
+                  </p>-->
                 </div>
             </div>
 
@@ -163,9 +163,9 @@ include 'Model/getClientLogos.php';
                     Businesses are in direct need of creative, agile and high tech solutions than ever in the VUCA conditions. Our team of engineers offer you customized integrated solutions in Lean, Automation & Digitization to cater your specific needs. 
                     </p>
                   <span class="vspacer"></span>
-                  <p class="py-3 mbr-fonts-style">
+                  <!--<p class="py-3 mbr-fonts-style">
                     <a href="solutionslab.php" target="_blank">READ MORE » </a> 
-                  </p>
+                  </p>-->
                 </div>
             </div>
         </div>
