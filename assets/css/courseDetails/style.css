@@ -23,6 +23,19 @@ theme.
 /*----------------------------------------------------*/
 /*---------------------------------------------------- */
 /*----------------------------------------------------*/
+h2.email, h3.email{
+  color: #fff;
+  font-family: "Rubik", sans-serif;
+  font-weight: 500;
+}
+
+div.imgview{
+  text-align: center;
+  display: block;
+  padding: 20px;
+}
+
+
 body {
   line-height: 25px;
   font-size: 16px;
@@ -2950,6 +2963,30 @@ h6 {
     color: white !important;
     border: 1px solid #002347; }
 
+  .primary-btn3 {
+  display: inline-block;
+  background: #ffd203;
+  padding: 0px 20px;
+  color: black;
+
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 30px;
+  border-radius: 5px;
+  border: 1px solid transparent;
+  outline: none !important;
+  text-align: center;
+  text-transform: uppercase;
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease 0s;
+  -moz-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s; }
+  .primary-btn3:hover {
+    background: black;
+    color: white !important;
+    border: 1px solid #002347; }
+
 .white_bg_btn {
   background: #fff;
   display: inline-block;
@@ -3395,3 +3432,7 @@ h6 {
 /*---------------------------------------------------- */
 
 /*# sourceMappingURL=style.css.map */
+
+
+
+

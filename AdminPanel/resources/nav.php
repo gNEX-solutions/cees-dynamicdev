@@ -87,6 +87,12 @@
             <i class="fas fa-fw fa-chart-area"></i>
             <span>Add New Member</span></a>
           </li>
+          <!-- Nav Item - Pages Collapse Menu -->
+          <li class="nav-item">
+            <a class="nav-link" href="AboutUsEdit.php">
+            <i class="fas fa-fw fa-chart-area"></i>
+            <span>Delete Member</span></a>
+          </li>
 
           <!-- Divider -->
           <hr class="sidebar-divider">

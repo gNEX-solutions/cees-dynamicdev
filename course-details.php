@@ -8,7 +8,7 @@ include 'Model/courses_view.php';
 
 $artID =  $_GET['artID'];
 if($artID==NULL){
-header("Location: 404.html");
+header("Location: 404.php");
 exit();
 }
 ?>
@@ -86,65 +86,16 @@ $CoursesView =new CoursesView()
 
     <!--================ Start Course Details Area =================-->
     <section class="course_details_area" style="background: lightgrey;">
-        <div class="container" style="background: #fff; box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);  padding-bottom:200px;">
+        <div class="container" style="background: #fff; box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);  padding-bottom: 70px;">
             <div class="row">
                 <div class="col-lg-8 course_details_left">
                    
                     <div class="content_wrapper" style="padding-left:50px; padding-right: 80px;">
-                        <h4 class="title">Course Overview</h4>
+                        <h4 class="title">Background</h4>
                         <div class="content">
                         <?php  $CoursesView->ShowContent($artID);    ?>
                         </div>
 
-                        <!-- <h4 class="title">Certificate Program Outcomes</h4>
-                        <div class="content">
-                            • Learn a process to make strategic choices centered on both the needs of your customers as well as your business or organization.
-                            <br/>
-                            <br/>
-                            • Follow repeatable steps to imagine and test strategic initiatives that combine analytical rigor and creativity, and equip you with confidence to move these initiatives forward.
-                            <br/>
-                            <br/>
-                            • Gain techniques to quickly develop, test, and iterate parts of a business model (value proposition, revenue model, and channel) to make new programs, products, and services that are grounded in what people really want.
-                            <br/>
-                            <br/>
-                            • Apply methods from design thinking (such as brainstorming, prototyping, and iteration) to business modeling and strategy.
-                            <br/>
-                            <br/>
-                            • Grow your skills and confidence to undertake, plan, and lead day-to-day strategic efforts, as well as broad wide-scale innovation initiatives.
-                        </div> -->
-
-                        <!--  <h4 class="title">Course Outline</h4>
-                        <div class="content">
-                           <ol class="course_list">
-                                <li class="">
-                                    Introduction Lesson
-                                   </li>
-                                <li class="justify-content-between d-flex">
-                                    <p>Basics of HTML</p>
-                                    </li>
-                                <li class="justify-content-between d-flex">
-                                    <p>Getting Know about HTML</p>
-                                     </li>
-                                <li class="justify-content-between d-flex">
-                                    <p>Tags and Attributes</p>
-                                    </li>
-                                <li class="justify-content-between d-flex">
-                                    <p>Basics of CSS</p>
-                                    </li>
-                                <li class="justify-content-between d-flex">
-                                    <p>Getting Familiar with CSS</p>
-                                     </li>
-                                <li class="justify-content-between d-flex">
-                                    <p>Introduction to Bootstrap</p>
-                                    </li>
-                                <li class="justify-content-between d-flex">
-                                    <p>Responsive Design</p>
-                                    </li>
-                                <li class="justify-content-between d-flex">
-                                    <p>Canvas in HTML 5</p>
-                                </li>
-                            </ol> 
-                        </div>-->
                     </div>
                 </div>
 
@@ -187,11 +138,46 @@ $CoursesView =new CoursesView()
                         </li>
                     </ul>
 
-                    <!-- <a href="#" class="primary-btn2 text-uppercase enroll rounded-0 " >Enroll the course</a> -->
+                  <!--   <form method="get" action="file.pdf"> -->
+                        <button class="primary-btn2 text-uppercase enroll rounded-0" onclick="window.location.href='file.pdf'" target="_blank">Download Syllabus!</button>
+
+            <!--         </form> -->
+
+                    <!-- <a href="#"  ></a> -->
                 </div>
                 </div>
             </div>
         </div>
+
+       <!-- program overview -->
+
+            <?php  $CoursesView->ShowProgramOverviewImage($artID);    ?>
+            
+       <!-- /program overview -->
+
+        <!-- certificate -->  
+            <?php  $CoursesView->ShowCertificateImage($artID);    ?>
+        <!-- /certificate -->  
+        
+        <!-- evaluation --> 
+            <?php  $CoursesView->ShowEvaluationCriteriaImage($artID);    ?>
+        <!-- /evaluation -->     
+
+        <!-- learning experience --> 
+            <?php  $CoursesView->ShowLearningExperienceImage($artID);    ?>
+        <!-- learning experience -->  
+
+
+        <div class="container" style="background: #14305e; box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);  margin-top: 40px; padding-bottom: 30px; text-align: center; display: block; padding: 20px;">
+
+          <h2 style="color: #fff;">Want to learn more about <?php $CoursesView->ShowTitle($artID); ?></h2>
+          <h3 style="color: #fff;">Join our mailing list for webcast invites, stories, and tips.</h3>
+          <div class="imgview">
+            <input type="text" style="height: 50px; width: 400px;" name="email" id="email" placeholder="Send Us Your Email"/>
+            <button class="primary-btn2 text-uppercase enroll rounded-0" id="subBtn">Subscribe</button>
+          </div>
+        </div>
+        
     </section>
     <!--================ End Course Details Area =================-->
 
@@ -209,6 +195,25 @@ $CoursesView =new CoursesView()
 <?php require_once ('common/Components/footer.php'); ?>
         
 </section>
+
+<script type="text/javascript">
+  $("#subBtn").click(function(e) {
+    var email = document.getElementById("email").value;
+    //alert(email);
+    e.preventDefault();
+    $.ajax({
+        type: "POST",
+        url: "Model/subscribeService.php",
+        data: {method:"subscribe", email: email},
+        success: function(result) {
+            alert('ok');
+        },
+        error: function(result) {
+            alert('error');
+        }
+    });
+});
+</script>
 
 <script src="assets/web/assets/jquery/jquery.min.js"></script>
   <script src="assets/popper/popper.min.js"></script>

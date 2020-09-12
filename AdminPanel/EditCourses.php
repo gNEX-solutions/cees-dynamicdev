@@ -4,7 +4,7 @@
     if(isset($_SESSION['User']))
     {
 ?>
-
+<!-- This file is not using with the new update of 2020-09-06 Kalpa Wijesooriya-->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -84,7 +84,7 @@
                     <strong> <label for="inputDescription">Page Type</label> </strong>
                     <select class="form-control" name="page_type" id="pageType">
                       <option>Select page type</option>
-                      <option value="CA">ICEES Dojo</option>
+                      <option value="CA">ICEES Academy</option>
                       <option value="CS">Consultancy Services</option>
                       <option value="SL">Solutions Lab</option>
                     </select>
