@@ -1592,6 +1592,12 @@ textarea.input {
 /*=========================================================
 	RESPONSIVE
 ===========================================================*/
+@media only screen and (max-width: 1320px) {
+    #badge-desktop{
+      visibility: hidden;
+    }
+}
+
 @media only screen and (max-width:1125px) {
   /* #logo{
     display:inline-block !important;
