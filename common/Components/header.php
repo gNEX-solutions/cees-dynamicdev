@@ -104,7 +104,7 @@ include 'Model/viewservices.inc.php';
 				<ul class="nav-aside-menu">
 					<li><a href="index.php">Home</a></li>
 		
-                    <li class="has-dropdown"><a href="Programs.php" class="side_a">ICEES Academy</a>
+                    <li class="has-dropdown"><a class="side_a" href="#" class="side_a"><a href="#">ICEES Academy</a></a>
 						<ul class="dropdown">
                         <?php
                             $services=new ViewServices();
