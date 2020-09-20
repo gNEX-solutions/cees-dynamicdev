@@ -63,7 +63,7 @@ $no_user ='';
         <div class="media-container-row">
             <div class="title col-12 col-md-8">
                 <h2 class="align-center mbr-bold mbr-white pb-3 mbr-fonts-style display-2">
-                    About Us</h2>
+                    About ICEES Global</h2>
             </div>
         </div>
     </div>
@@ -72,7 +72,7 @@ $no_user ='';
 <section class="team1 cid-ruXEWX5uJh" id="team1-1g">   
     <div class="container align-center">
         <h2 class="pb-3 mbr-fonts-style mbr-section-title display-2">
-            OUR AWESOME TEAM
+            Meet ICEES Global Team
         </h2>
         <h3 class="pb-5 mbr-section-subtitle mbr-fonts-style mbr-light display-5">Alone we can do so little, together we can do so much.</h3>
         <div class="row media-row">
@@ -115,7 +115,6 @@ $no_user ='';
             </div>    
     </div>
 </section>
-
 <section class="mbr-section article content1 cid-ruXHzFNbH4" id="content2-1i">
     <div class="container">
         <!-- <div class="media-container-row">
@@ -137,7 +136,8 @@ $no_user ='';
                                 <div class="media-body">
                                     <h4 class="card-title mbr-fonts-style display-6"  style="font-size:30px;font-wight:100">Academically & Professionally Qualified</h4>
                                 </div>
-                            </div>                
+                            </div>       
+                            <!-- Goal of CEES          -->
                             <div class="card-box">
                                 <p class="block-text mbr-fonts-style display-7">
                                 We are set of academically and professionally qualified business leaders with hands on experience on Enterprise transformation in various countries and industries
@@ -184,6 +184,8 @@ $no_user ='';
         </div> 
     </div>          
 </section>
+
+
     </div>
 </section>
 

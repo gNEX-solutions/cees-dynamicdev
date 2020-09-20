@@ -35,7 +35,7 @@
             <div id="collapseNewPages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
               <div class="bg-white py-2 collapse-inner rounded">         
                 <a class="collapse-item" href="addNewProgram.php">Add new program</a>
-                <a class="collapse-item" href="addNewCourse.php">Add new course</a>
+                <!--     <a class="collapse-item" href="addNewCourse.php">Add new course</a>-->
                 <div class="collapse-divider"></div>
               </div>
             </div>
@@ -49,7 +49,7 @@
             <div id="collapseCurrentPages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
               <div class="bg-white py-2 collapse-inner rounded">
                 <a class="collapse-item" href="EditProgram.php">Edit Program</a>
-                <a class="collapse-item" href="EditCourses.php">Edit Course</a>
+                <!--   <a class="collapse-item" href="EditCourses.php">Edit Course</a>-->
                 <div class="collapse-divider"></div>
               </div>
             </div>
@@ -86,6 +86,12 @@
             <a class="nav-link" href="AboutUs.php">
             <i class="fas fa-fw fa-chart-area"></i>
             <span>Add New Member</span></a>
+          </li>
+          <!-- Nav Item - Pages Collapse Menu -->
+          <li class="nav-item">
+            <a class="nav-link" href="AboutUsEdit.php">
+            <i class="fas fa-fw fa-chart-area"></i>
+            <span>Delete Member</span></a>
           </li>
 
           <!-- Divider -->
@@ -236,7 +242,7 @@
         <div id="collapseNewPages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">         
             <a class="collapse-item" href="../addNewProgram.php">Add new program</a>
-            <a class="collapse-item" href="../addNewCourse.php">Add new course</a>
+            <!--  <a class="collapse-item" href="../addNewCourse.php">Add new course</a>-->
             <div class="collapse-divider"></div>
           </div>
         </div>
@@ -250,7 +256,7 @@
         <div id="collapseCurrentPages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <a class="collapse-item" href="../EditProgram.php">Edit Program</a>
-            <a class="collapse-item" href="../EditCourses.php">Edit Course</a>
+            <!--   <a class="collapse-item" href="../EditCourses.php">Edit Course</a>-->
             <div class="collapse-divider"></div>
           </div>
         </div>

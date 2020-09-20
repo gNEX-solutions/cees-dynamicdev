@@ -4,7 +4,7 @@
     if(isset($_SESSION['User']))
     {
 ?>
-
+<!-- This file is not using with the new update of 2020-09-06 Kalpa Wijesooriya-->
 
 <!DOCTYPE html>
 <html lang="en">

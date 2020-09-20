@@ -36,7 +36,7 @@
     <div class="copyrights">
       <div class="container">
         <div class="col-lg-12 col-md-12 col-sm-12 columns footer-left" >
-          <p>Copyright © 2019 ICEES Internatonal - All rights reserved.</p>
+          <p>Copyright © <?php echo date("Y") ?> ICEES Internatonal - All rights reserved.</p>
             <div class="credits">
             Designed and Developed by <a href="http://gnexsolutions.com/">gNEX Solutions</a>
           </div>

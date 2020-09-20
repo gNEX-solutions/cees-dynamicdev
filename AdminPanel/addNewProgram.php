@@ -61,12 +61,12 @@
                 <strong> <label for="inputPageType">Page Type</label> </strong>
                   <select class="form-control" name="inputPageType">
                     <option>Select page type</option>
-                    <option value="CA">ICEES Academy</option>
+                    <option value="ID">ICEES Academy</option>
                     <option value="CS">Consultancy Services</option>
                     <option value="SL">Solutions Lab</option>
                   </select>
               </div> 
-              <div class="form-group">
+              <!-- <div class="form-group">
                   <strong> <label for="inputDesignType">Program design type</label></strong>
                   <select class="form-control" name="inputDesignType" id="proType">
                     <option>Select the design type</option>
@@ -78,8 +78,7 @@
                     <option value="WCBV">With Courses Block View</option>
                     
                   </select>
-              </div> 
-        
+              </div> -->
               <div class="form-group">
                 <strong> <label for="inputTitle">Title</label></strong>
                 <input type="text" class="form-control" name="inputTitle" placeholder="Title" required>
@@ -88,12 +87,57 @@
               <div class="form-group">
                 <strong> <label for="inputSummary">Summary</label></strong>
                 <textarea class="form-control" name="inputSummary" placeholder="Summary" required></textarea>
+              </div>              
+              <div class="form-group" id="discription1">
+                <strong> <label for="description1">Description 1</label></strong>
+                <textarea class="form-control" name="description1" placeholder="Description 1" required></textarea>
               </div>
-  
-              <div class="form-group">
-                <strong><label for="inputImage" class="btn-2" >Image</label></strong><br>
-                <small>The image file should be a jpg, jpeg or a png file less than 5MB.</small><br>
-                <input type="file" id="file"  name="file">
+              <div class="form-group" id="discription2">
+                <strong> <label for="description2">Description 2</label></strong>
+                <textarea class="form-control" name="description2" placeholder="Description 2" required></textarea>
+              </div>
+              <div class="form-group" id="discription3">
+                <strong> <label for="description3">Description 3</label></strong>
+                <textarea class="form-control" name="description3" placeholder="Description 3"></textarea>
+              </div>
+              <div class="form-group" id="inputLecturer" >
+                <strong> <label for="inputLecturer">Lecturer</label></strong>
+                <input type="text" class="form-control" name="inputLecturer" placeholder="Lecturer" >
+              </div>
+              <div class="form-group" id="inputCourseDuration">
+                <strong> <label for="inputCourseDuration">Course Duration</label></strong>
+                <input type="text"  class="form-control" name="inputCourseDuration" placeholder="Course Duration" >
+              </div>
+              <div class="form-group" id="inputCourseFee">
+                <strong> <label for="inputCourseFee">Course Fee</label></strong>
+                <input type="number"  class="form-control" name="inputCourseFee" placeholder="Course Fee" >
+              </div>
+              <div class="row">
+                <div class="form-group col col-lg-6"  id="Image_main">
+                  <strong><label for="inputImage" class="btn-2" >Image 1</label></strong><br>
+                  <small>The image file should be a jpg, jpeg or a png file less than 5MB.</small><br>
+                  <input type="file" id="file"  accept=".png,.jpeg,.jpg" name="file">
+                </div>
+                <div class="form-group col col-lg-6" id="Image2div">
+                  <strong><label for="image2" class="btn-2" >Image 2</label></strong><br>
+                  <small>The image file should be a jpg, jpeg or a png file less than 5MB.</small><br>
+                  <input type="file" id="image2"  accept=".png,.jpeg,.jpg" name="image2">
+                </div>
+                <div class="form-group col col-lg-6" id="Image3div">
+                  <strong><label for="image3" class="btn-2" >Image 3</label></strong><br>
+                  <small>The image file should be a jpg, jpeg or a png file less than 5MB.</small><br>
+                  <input type="file" id="image3"  accept=".png,.jpeg,.jpg" name="image3">
+                </div>
+                <div class="form-group col col-lg-6" id="Image4div">
+                  <strong><label for="image4" class="btn-2" >Image 4</label></strong><br>
+                  <small>The image file should be a jpg, jpeg or a png file less than 5MB.</small><br>
+                  <input type="file" id="image4"  accept=".png,.jpeg,.jpg" name="image4">
+                </div>
+                <div class="form-group col col-lg-6" id="Image5div">
+                  <strong><label for="image5" class="btn-2" >Image 5</label></strong><br>
+                  <small>The image file should be a jpg, jpeg or a png file less than 5MB.</small><br>
+                  <input type="file" id="image5"  accept=".png,.jpeg,.jpg" name="image5">
+                </div>
               </div>
               <div class="form-group">
                 <button type="submit" name="submit" class="btn btn-primary">Create</button>
@@ -153,6 +197,49 @@
     $('#proType').on('change', function() {
       $("#sample").attr("src","img/"+this.value +".PNG");
     });
+    // $( document ).ready(function() {
+    //  alert("reday!")
+    // });
+    $(window).ready(function() {
+      $("#inputCourseFee").hide();
+      $("#inputCourseDuration").hide();
+      $("#inputLecturer").hide();
+      $("#discription1").hide();
+      $("#discription2").hide();
+      $("#discription3").hide();
+      $("#Image5div").hide();
+      
+    });
+    $('select').on('change', function (e) {
+      if(this.value=="ID")
+      {
+      $("#inputCourseFee").show();
+      $("#inputCourseDuration").show();
+      $("#inputLecturer").show();
+      $("#discription1").show();
+      $("#discription2").show();
+      $("#discription3").hide();
+      $("#Image5div").hide();
+      }else if(this.value=="BP"){
+      $("#inputCourseFee").hide();
+      $("#inputCourseDuration").hide();
+      $("#inputLecturer").hide();
+      $("#discription1").show();
+      $("#discription2").show();
+      $("#discription3").show();
+      $("#Image5div").show();
+      }
+    else if(this.value=="SL"){
+      $("#inputCourseFee").hide();
+      $("#inputCourseDuration").hide();
+      $("#inputLecturer").hide();
+      $("#discription1").show();
+      $("#discription2").show();
+      $("#discription3").hide();
+      $("#Image5div").hide();
+      }
+    });
+
   </script>
 </body>
 
