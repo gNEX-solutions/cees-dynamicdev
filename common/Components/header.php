@@ -49,7 +49,7 @@ include 'Model/viewservices.inc.php';
                                     <a href="index.php">Home</a>
                                 </li>
                                 <li class="has-dropdown megamenu" >
-                                    <a href="Programs.php">ICEES Academy</a>
+                                    <a>TEC Certification</a>
                                     <div class="dropdown">
                                         <div class="dropdown-body">
                                             <div class="row">
@@ -63,7 +63,7 @@ include 'Model/viewservices.inc.php';
                                     </div>
                                 </li>
                                 <li class="has-dropdown megamenu">
-                                    <a href="services-talent.php">Bussiness Partnering</a>
+                                    <a>Trainings</a>
                                     <div class="dropdown">
                                         <div class="dropdown-body">
                                             <div class="row">
@@ -76,7 +76,7 @@ include 'Model/viewservices.inc.php';
                                     </div>
                                 </li>
                                 <li class="has-dropdown megamenu">
-                                    <a href="solutionslab.php">Solutions Lab</a>
+                                    <a>Solutions</a>
                                     <div class="dropdown">
                                         <div class="dropdown-body">
                                             <div class="row">

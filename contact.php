@@ -108,7 +108,7 @@
                             <img src="assets/images/img/Group 38.png" style=" display: block; margin-left: auto; margin-right: auto;"/>
                          
                             <p class="mbr-text align-left mbr-fonts-style display-4" style=" font-weight: bold;color: black; text-align: center;">
-                            info@iceesinternational.org
+                            info@iceesglobal.org
                             </p>
                         </div>
                     </div>
@@ -147,7 +147,7 @@
                         </h5>
                         <p class="align-left mbr-fonts-style display-7">
                             Phone:  +94 778 241 664 <br>
-                            Email: info@iceesinternational.org
+                            Email: info@iceesglobal.org
                         </p>
                     </div>
                 </div>
