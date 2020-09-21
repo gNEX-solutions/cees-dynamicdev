@@ -113,7 +113,7 @@ include 'Model/viewservices.inc.php';
 						</ul>
 					</li>
 
-                    <li class="has-dropdown"><a class="side_a" href="#" class="side_a"><a href="services-talent.php">Trainings</a></a>
+                    <li class="has-dropdown"><a class="side_a" href="#" class="side_a"><a href="#">Trainings</a></a>
 
 						<ul class="dropdown">
                             <?php
@@ -122,7 +122,7 @@ include 'Model/viewservices.inc.php';
                             ?>  
                         </ul>
                     </li>
-                    <li class="has-dropdown"><a class="side_a"  href="#" class="side_a"><a href="solutionslab.php">Solutions</a></a>
+                    <li class="has-dropdown"><a class="side_a"  href="#" class="side_a"><a href="#">Solutions</a></a>
 						<ul class="dropdown">
                         <?php
                             $services=new ViewServices();
