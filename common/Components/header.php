@@ -103,7 +103,7 @@ include 'Model/viewservices.inc.php';
 				<ul class="nav-aside-menu">
 					<li><a href="index.php">Home</a></li>
 		
-                    <li class="has-dropdown"><a class="side_a" href="#" class="side_a"><a href="#">ICEES Academy</a></a>
+                    <li class="has-dropdown"><a class="side_a" href="#" class="side_a"><a href="#">TEC Certification</a></a>
 						<ul class="dropdown">
                         <?php
                             $services=new ViewServices();
@@ -113,7 +113,7 @@ include 'Model/viewservices.inc.php';
 						</ul>
 					</li>
 
-                    <li class="has-dropdown"><a class="side_a" href="#" class="side_a"><a href="services-talent.php">Consulting services</a></a>
+                    <li class="has-dropdown"><a class="side_a" href="#" class="side_a"><a href="services-talent.php">Trainings</a></a>
 
 						<ul class="dropdown">
                             <?php
@@ -122,7 +122,7 @@ include 'Model/viewservices.inc.php';
                             ?>  
                         </ul>
                     </li>
-                    <li class="has-dropdown"><a class="side_a"  href="#" class="side_a"><a href="solutionslab.php">Solutions Lab</a></a>
+                    <li class="has-dropdown"><a class="side_a"  href="#" class="side_a"><a href="solutionslab.php">Solutions</a></a>
 						<ul class="dropdown">
                         <?php
                             $services=new ViewServices();
