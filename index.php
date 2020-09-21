@@ -374,9 +374,9 @@ include 'Model/getClientLogos.php';
             </div>
 
         </div>
-
     </section>
-    <div class="container">
+
+    <div class="container" id="inr">
          <div class="row" > 
          <h1 id="title-text" class="mbr-title pt-2 mbr-fonts-style display-2" style="text-align:center">
                 Insights & Research
