@@ -17,9 +17,7 @@ class BusinessPartneringView extends businessPartneringService
 
         foreach ($this->data1 as $key => $data1) {
 
-            echo '
-                
-                <div class="carousel-inner">
+            echo '<div class="carousel-inner">
                 <img style="  height: 100%;background-position: center;background-repeat: no-repeat;background-size: cover;" src="assets/images/blue-header-1.jpg" alt="" title="">
                 <div class="carousel-caption">';
             if (isset($data1['program_title'])) {
