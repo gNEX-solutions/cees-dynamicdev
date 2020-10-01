@@ -710,7 +710,7 @@ textarea.input {
 .nav-aside-menu li>a {
   display: block;
   padding: 15px 0px;
-  color: #fff;
+  color: #fff !important;
 }
 
 .nav-aside-menu li.has-dropdown> a:nth-child(1) {
@@ -1602,6 +1602,12 @@ textarea.input {
 /*=========================================================
 	RESPONSIVE
 ===========================================================*/
+@media only screen and (max-width: 1320px) {
+    #badge-desktop{
+      visibility: hidden;
+    }
+}
+
 @media only screen and (max-width:1125px) {
   /* #logo{
     display:inline-block !important;

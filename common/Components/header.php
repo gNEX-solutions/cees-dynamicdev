@@ -36,21 +36,20 @@ include 'Model/viewservices.inc.php';
                     <div class="col-md-2" style="margin:auto;" id="logo-desktop">
                         <a href="./index.php"> <img src="assets/images/wef3.png" alt="cees-logo" style="width:auto;height:50px;margin-left:30%;"></a>
                     </div>
-                    <div class="col-md-1" style="margin:auto" id="">
-                        <a href="./index.php"> <img src="assets/images/logo1.png" alt="cees-logo" style="width:100%;margin-left:70%;margin-bottom:-12%"></a>
+                    <div class="col-lg-1" style="margin:auto" id="badge-desktop">
+                        <a href="./index.php"> <img src="assets/images/logo1.png" alt="cees-logo" style="width:100%;margin-left:130px;margin-bottom:-12%"></a>
                     </div>
-                    <div class="col-md-1" style="margin:auto" id="">
-                        <a href="./index.php"> <img src="assets/images/logo3.png" alt="cees-logo" style="width:100%;margin-left:60%;margin-bottom:-12%"></a>
+                    <div class="col-lg-1" style="margin:auto" id="badge-desktop">
+                        <a href="./index.php"> <img src="assets/images/logo3.png" alt="cees-logo" style="width:100%;margin-left:110px;margin-bottom:-12%"></a>
                     </div>
-                    <div class="col-md-8"  style="padding-top:7px;padding-bottom:7px;padding-right:5%;" >
+                    <div class="col-md-8" style="padding-top:7px;padding-bottom:7px;padding-right:5%;">
                     <!-- nav -->
                        <ul class="nav-menu" >
                                 <li>
                                     <a href="index.php">Home</a>
                                 </li>
                                 <li class="has-dropdown megamenu" >
-                                    <a href="Programs.php">ICEES Academy</a>
-
+                                    <a>Lean Certification</a>
                                     <div class="dropdown">
                                         <div class="dropdown-body">
                                             <div class="row">
@@ -64,7 +63,7 @@ include 'Model/viewservices.inc.php';
                                     </div>
                                 </li>
                                 <li class="has-dropdown megamenu">
-                                    <a href="services-talent.php">Business Partnering</a>
+                                    <a>Trainings</a>
                                     <div class="dropdown">
                                         <div class="dropdown-body">
                                             <div class="row">
@@ -77,7 +76,7 @@ include 'Model/viewservices.inc.php';
                                     </div>
                                 </li>
                                 <li class="has-dropdown megamenu">
-                                    <a href="solutionslab.php">Solutions Lab</a>
+                                    <a>Solutions</a>
                                     <div class="dropdown">
                                         <div class="dropdown-body">
                                             <div class="row">
@@ -104,7 +103,7 @@ include 'Model/viewservices.inc.php';
 				<ul class="nav-aside-menu">
 					<li><a href="index.php">Home</a></li>
 		
-                    <li class="has-dropdown"><a href="Programs.php" class="side_a">ICEES Academy</a>
+                    <li class="has-dropdown"><a class="side_a" href="#" class="side_a"><a href="#">Lean Certification</a></a>
 						<ul class="dropdown">
                         <?php
                             $services=new ViewServices();
@@ -114,7 +113,7 @@ include 'Model/viewservices.inc.php';
 						</ul>
 					</li>
 
-                    <li class="has-dropdown"><a class="side_a" href="#" class="side_a"><a href="services-talent.php">Consulting services</a></a>
+                    <li class="has-dropdown"><a class="side_a" href="#" class="side_a"><a href="#">Trainings</a></a>
 
 						<ul class="dropdown">
                             <?php
@@ -123,7 +122,7 @@ include 'Model/viewservices.inc.php';
                             ?>  
                         </ul>
                     </li>
-                    <li class="has-dropdown"><a class="side_a"  href="#" class="side_a"><a href="solutionslab.php">Solutions Lab</a></a>
+                    <li class="has-dropdown"><a class="side_a"  href="#" class="side_a"><a href="#">Solutions</a></a>
 						<ul class="dropdown">
                         <?php
                             $services=new ViewServices();

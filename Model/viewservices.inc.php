@@ -58,7 +58,7 @@ class ViewServices extends Services {
        foreach($datas as $data){
          if($data['page_type']=='BP'&& $data['status']=='1'){
          
-          echo '<li><a "solution.php?SLPageId='.$data['idprogram'].'">'. $data['program_title'].'</a></li>';
+          echo '<li><a href="business_partnering.php?artID='.$data['idprogram'].'">'. $data['program_title'].'</a></li>';
          }
       }
    }
@@ -67,7 +67,7 @@ class ViewServices extends Services {
        $datas=$this->getAllServices();
        foreach($datas as $data){
          if($data['page_type']=='SL' && $data['status']=='1'){
-          echo '<li><a href="#">'. $data['program_title'].'</a></li>';
+          echo '<li><a href="solution.php?SLPageId='.$data['idprogram'].'">'. $data['program_title'].'</a></li>';
          }
       
 
@@ -78,8 +78,8 @@ class ViewServices extends Services {
    { 
        $datas=$this->getAllServices();
        foreach($datas as $data){
-         if($data['page_type']=='CA' && $data['status']=='1' ){
-          echo '<li><a href="#">'. $data['program_title'].'</a></li>';
+         if($data['page_type']=='ID' && $data['status']=='1' ){
+          echo '<li><a href="course-details.php?artID='.$data['idprogram'].'" ">'. $data['program_title'].'</a></li>';
          }
       
 
