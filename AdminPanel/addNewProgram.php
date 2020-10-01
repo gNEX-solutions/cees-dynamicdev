@@ -62,7 +62,7 @@
                   <select class="form-control" name="inputPageType">
                     <option>Select page type</option>
                     <option value="ID">ICEES Academy</option>
-                    <option value="CS">Consultancy Services</option>
+                    <option value="BP">Consultancy Services</option>
                     <option value="SL">Solutions Lab</option>
                   </select>
               </div> 

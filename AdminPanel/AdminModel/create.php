@@ -64,12 +64,19 @@
                // $filename = $_FILES['file']['name'];
                $imgData = addslashes(file_get_contents($_FILES['file']['tmp_name']));
                $imageProperties = getimageSize($_FILES['file']['tmp_name']);
-
-
-
-                   $sql = "INSERT INTO program(program_title, summary, status, main_image, page_type,created_at) VALUES ('{$title}', '{$summary}', $status, '{$imgData}','$pageType','{$created_at}')";
-                   $current_id = mysqli_query($conn, $sql) or die("<b>Error:</b> Problem on Image Insert<br/>" . mysqli_error($conn));
-                   if (isset($current_id)) {
+               $null = NULL;
+               $conn->autocommit(false);
+               $stmt= $conn->prepare("INSERT INTO program(program_title, summary, status, main_image, page_type,created_at) VALUES (?,?,?,?,?,?)");
+               $stmt->bind_param('ssibss',$title, $summary, $status,$null, $pageType,$created_at);
+               $stmt->send_long_data(3, $imgData);
+                   
+               //$sql = "INSERT INTO `program` (`program_title`, `summary`, `status`, `main_image`, `page_type`,`created_at`) VALUES ('{$title}', `".$summary."`, $status, '{$imgData}','$pageType','{$created_at}')";
+               //   $current_id = mysqli_query($conn, $sql) or die("<b>Error:</b> Problem on Image Insert<br/>" .$sql);
+                  
+                  if (!$stmt->execute()) {
+                    echo "Error:\n";
+                     print_r($stmt->error_list);
+                  }else{
 
                     $last_id =$conn->insert_id;
                     $stmt1="";
@@ -82,7 +89,19 @@
                             $imageProperties2 = getimageSize($_FILES['image2']['tmp_name']);
                             $imageProperties3 = getimageSize($_FILES['image3']['tmp_name']);
                             $imageProperties4 = getimageSize($_FILES['image4']['tmp_name']);
-                            $stmt1= "INSERT INTO solution_lab (idprogram,description1,description2, image1, image2, image3) VALUES ('{$last_id}','{$description1}','{$description2}', '{$imgData1}','{$imgData2}', '{$imgData3}')";
+                           
+                            $stmt1= $conn->prepare("INSERT INTO solution_lab (idprogram, description1, description2, image1, image2,image3) VALUES (?,?,?,?,?,?)");
+                            $stmt1->bind_param('issbbb',$last_id, $description1, $description2, $null, $null,$null);
+                            $stmt1->send_long_data(3, $imgData1);
+                            $stmt1->send_long_data(4, $imgData2);
+                            $stmt1->send_long_data(5, $imgData3);
+                            if (!$stmt1->execute()) {
+                              echo "Error:\n";
+                               print_r($stmt->error_list);
+                            }else{
+                              echo "Data Saved!";
+                            }
+                            // $stmt1= "INSERT INTO `solution_lab` (`idprogram`,`description1`,`description2`,`image1`,`image2`,`image3`) VALUES ($last_id,'{$description1}','{$description2}', '{$imgData1}','{$imgData2}', '{$imgData3}')";
                     
                         }
                         if( $pageType=="ID")
@@ -107,14 +126,14 @@
                             $imageProperties3 = getimageSize($_FILES['image3']['tmp_name']);
                             $imageProperties4 = getimageSize($_FILES['image4']['tmp_name']);
                             $imageProperties5 = getimageSize($_FILES['image5']['tmp_name']);
-                        $stmt1= "INSERT INTO business_partnering (idprogram,description1,description2,description3,image1,image2,image3,image4) VALUES ( $last_id, '{$description1}', '{$description2}', '{$description3}', '{$imgData1}', '{$imgData2}', '{$imgData3}','{$imgData4}')";
+                        $stmt1= "INSERT INTO `business_partnering` (`idprogram`,`description1`,`description2`,`description3`,`image1`,`image2`,`image3`,`image4`) VALUES ( $last_id, '{$description1}', '{$description2}', '{$description3}', '{$imgData1}', '{$imgData2}', '{$imgData3}','{$imgData4}')";
                            
                       }
                
-                        $current_id= mysqli_query($conn, $stmt1) or die("<b>Error:</b> Problem on Data Insert<br/>" . mysqli_error($conn));
-                        if (isset($current_id)) {
+                      //  $current_id= mysqli_query($conn, $stmt1) or die("<b>Error:</b> Problem on Data Insert<br/>" . mysqli_error($conn));
+                        //if (isset($current_id)) {
                             //header("Location: ../addNewProgram.php");
-                        }
+                       // }
                    }
 
                     // if($success==1){
