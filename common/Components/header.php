@@ -49,7 +49,7 @@ include 'Model/viewservices.inc.php';
                                     <a href="index.php">Home</a>
                                 </li>
                                 <li class="has-dropdown megamenu" >
-                                    <a>TEC Certification</a>
+                                    <a>Lean Certification</a>
                                     <div class="dropdown">
                                         <div class="dropdown-body">
                                             <div class="row">
@@ -103,7 +103,7 @@ include 'Model/viewservices.inc.php';
 				<ul class="nav-aside-menu">
 					<li><a href="index.php">Home</a></li>
 		
-                    <li class="has-dropdown"><a class="side_a" href="#" class="side_a"><a href="#">TEC Certification</a></a>
+                    <li class="has-dropdown"><a class="side_a" href="#" class="side_a"><a href="#">Lean Certification</a></a>
 						<ul class="dropdown">
                         <?php
                             $services=new ViewServices();
