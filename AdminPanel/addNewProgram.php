@@ -112,6 +112,10 @@
                 <strong> <label for="inputCourseFee">Course Fee</label></strong>
                 <input type="number"  class="form-control" name="inputCourseFee" placeholder="Course Fee" >
               </div>
+                <div class="form-group" id="inputCoursSheets">
+                    <strong> <label for="inputCourseSheets">Course Seats</label></strong>
+                    <input type="number"  class="form-control" name="inputCourseSheets" placeholder="Seats" >
+                </div>
               <div class="row">
                 <div class="form-group col col-lg-6"  id="Image_main">
                   <strong><label for="inputImage" class="btn-2" >Image 1</label></strong><br>
@@ -208,11 +212,14 @@
       $("#discription2").hide();
       $("#discription3").hide();
       $("#Image5div").hide();
+        $("#inputCoursSheets").hide();
+
       
     });
     $('select').on('change', function (e) {
       if(this.value=="ID")
       {
+          $("#inputCoursSheets").show();
       $("#inputCourseFee").show();
       $("#inputCourseDuration").show();
       $("#inputLecturer").show();
@@ -221,6 +228,7 @@
       $("#discription3").hide();
       $("#Image5div").hide();
       }else if(this.value=="BP"){
+          $("#inputCoursSheets").hide();
       $("#inputCourseFee").hide();
       $("#inputCourseDuration").hide();
       $("#inputLecturer").hide();
@@ -230,6 +238,7 @@
       $("#Image5div").show();
       }
     else if(this.value=="SL"){
+          $("#inputCoursSheets").hide();
       $("#inputCourseFee").hide();
       $("#inputCourseDuration").hide();
       $("#inputLecturer").hide();
