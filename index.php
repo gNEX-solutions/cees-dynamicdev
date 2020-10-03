@@ -119,16 +119,20 @@ include 'Model/getClientLogos.php';
                 <div class="card-img pb-3">
                     <span class="mbr-iconfont mbri-idea" style="color: rgb(15, 118, 153); fill: rgb(15, 118, 153); font-size: 120px;"></span>
                 </div>
-                <h4 class="card-title py-3 mbr-fonts-style display-5"><a href="Programs.php">ICEES Dojo</a></h4>
+                <h4 class="card-title py-3 mbr-fonts-style display-5">
+                    <!-- <a href="Programs.php"> -->
+                        LEAN Training
+                    <!-- </a> -->
+                </h4>
                 <div class="card-box">
                     <p class="mbr-text mbr-fonts-style display-7" >
-                    <!-- CEES Dojo is dedicated for training and development on Enterprise Excellence tools including Lean, Six Sigma and Industry 4.0 to enlighten business executives to successfully transform themselves, respective teams and organizations   -->
-                    ICEES Dojo brings you the best knowledge in Enterprise Excellence (Lean, Six Sigma, Agile & Industry 4.0) from globally recognized Institutes and Universities. Our highly experienced international and local sensei panel is there to enlighten your minds to become excellent
+                    <!-- CEES Academy is dedicated for training and development on Enterprise Excellence tools including Lean, Six Sigma and Industry 4.0 to enlighten business executives to successfully transform themselves, respective teams and organizations   -->
+                    LEAN Training brings you the best knowledge in Enterprise Excellence (Lean, Six Sigma, Agile & Industry 4.0) from globally recognized Institutes and Universities. Our highly experienced international and local sensei panel is there to enlighten your minds to become excellent
                     </p>
-                  <span class="vspacer"></span>
+                  <!-- <span class="vspacer"></span>
                   <p class="py-3 mbr-fonts-style">
                     <a href="Programs.php" target="_blank">READ MORE » </a>
-                  </p>
+                  </p> -->
                 </div>
             </div>
 
@@ -138,15 +142,19 @@ include 'Model/getClientLogos.php';
                     <span class="mbr-iconfont mbri-unlock" style="color: rgb(15, 118, 153); fill: rgb(15, 118, 153); font-size: 120px;"></span>
                 </div>
                 <div class="card-box">
-                    <h4 class="card-title py-3 mbr-fonts-style display-5"><a href="services-talent.php">Bussiness Partnering&nbsp;</a></h4>
+                    <h4 class="card-title py-3 mbr-fonts-style display-5">
+                    <!-- <a href="services-talent.php"> -->
+                        LEAN Solutions&nbsp;
+                    <!-- </a> -->
+                    </h4>
                     <p class="mbr-text mbr-fonts-style display-7" >
                     <!-- Our expert consultants to visit organizations and deeply understand the Strategic problems and improvement opportunities and tactfully guide, coach and mentor business leaders on managing Enterprise Excellence transformation effectively  -->
                     Even the best of the best in the world can have ample opportunities improve. Our expert business transformation consultants are capable of unlocking these opportunities for you. We will guide, coach and mentor you to drive beyond your expectations.
                     </p>
-                  <span class="vspacer"></span>
+                  <!-- <span class="vspacer"></span>
                   <p class="py-3 mbr-fonts-style">
                     <a href="services-talent.php" target="_blank">READ MORE » </a>
-                  </p>
+                  </p> -->
                 </div>
             </div>
 
@@ -157,15 +165,19 @@ include 'Model/getClientLogos.php';
                     <!-- <span class="mbr-iconfont mbri-growing-chart" style="color: rgb(15, 118, 153); fill: rgb(15, 118, 153); font-size: 120px;"></span> -->
                 </div>
                 <div class="card-box">
-                    <h4 class="card-title py-3 mbr-fonts-style display-5"><a href="solutionslab.php">Solutions LAB</a></h4>
+                    <h4 class="card-title py-3 mbr-fonts-style display-5">
+                    <!-- <a href="solutionslab.php"> -->
+                        Beyond LEAN
+                    <!-- </a> -->
+                    </h4>
                     <p class="mbr-text mbr-fonts-style display-7" >
                     <!-- Dedicated set of engineers and scientists who are working on cutting edge technologies and develop integrated solutions considering Lean, Automation and Digitization initiatives to create quantum leaps in the Enterprise Excellence practices.  -->
                     Businesses are in direct need of creative, agile and high tech solutions than ever in the VUCA conditions. Our team of engineers offer you customized integrated solutions in Lean, Automation & Digitization to cater your specific needs. 
                     </p>
-                  <span class="vspacer"></span>
+                  <!-- <span class="vspacer"></span>
                   <p class="py-3 mbr-fonts-style">
                     <a href="solutionslab.php" target="_blank">READ MORE » </a> 
-                  </p>
+                  </p> -->
                 </div>
             </div>
         </div>
@@ -374,9 +386,9 @@ include 'Model/getClientLogos.php';
             </div>
 
         </div>
-
     </section>
-    <div class="container">
+
+    <div class="container" id="inr">
          <div class="row" > 
          <h1 id="title-text" class="mbr-title pt-2 mbr-fonts-style display-2" style="text-align:center">
                 Insights & Research

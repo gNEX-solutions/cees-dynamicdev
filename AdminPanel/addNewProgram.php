@@ -61,8 +61,8 @@
                 <strong> <label for="inputPageType">Page Type</label> </strong>
                   <select class="form-control" name="inputPageType">
                     <option>Select page type</option>
-                    <option value="ID">ICEES Dojo</option>
-                    <option value="BP">Bussiness Partnering</option>
+                    <option value="ID">ICEES Academy</option>
+                    <option value="BP">Consultancy Services</option>
                     <option value="SL">Solutions Lab</option>
                   </select>
               </div> 
@@ -113,15 +113,30 @@
                 <input type="number"  class="form-control" name="inputCourseFee" placeholder="Course Fee" >
               </div>
               <div class="row">
-                <div class="form-group col col-lg-6">
-                  <strong><label for="inputImage" class="btn-2" >Image</label></strong><br>
+                <div class="form-group col col-lg-6"  id="Image_main">
+                  <strong><label for="inputImage" class="btn-2" >Image 1</label></strong><br>
                   <small>The image file should be a jpg, jpeg or a png file less than 5MB.</small><br>
-                  <input type="file" id="file"  name="file">
+                  <input type="file" id="file"  accept=".png,.jpeg,.jpg" name="file">
                 </div>
-                <div class="form-group col col-lg-6" id="Image2">
-                  <strong><label for="file2" class="btn-2" >Image 2</label></strong><br>
+                <div class="form-group col col-lg-6" id="Image2div">
+                  <strong><label for="image2" class="btn-2" >Image 2</label></strong><br>
                   <small>The image file should be a jpg, jpeg or a png file less than 5MB.</small><br>
-                  <input type="file" id="file2"  name="file2">
+                  <input type="file" id="image2"  accept=".png,.jpeg,.jpg" name="image2">
+                </div>
+                <div class="form-group col col-lg-6" id="Image3div">
+                  <strong><label for="image3" class="btn-2" >Image 3</label></strong><br>
+                  <small>The image file should be a jpg, jpeg or a png file less than 5MB.</small><br>
+                  <input type="file" id="image3"  accept=".png,.jpeg,.jpg" name="image3">
+                </div>
+                <div class="form-group col col-lg-6" id="Image4div">
+                  <strong><label for="image4" class="btn-2" >Image 4</label></strong><br>
+                  <small>The image file should be a jpg, jpeg or a png file less than 5MB.</small><br>
+                  <input type="file" id="image4"  accept=".png,.jpeg,.jpg" name="image4">
+                </div>
+                <div class="form-group col col-lg-6" id="Image5div">
+                  <strong><label for="image5" class="btn-2" >Image 5</label></strong><br>
+                  <small>The image file should be a jpg, jpeg or a png file less than 5MB.</small><br>
+                  <input type="file" id="image5"  accept=".png,.jpeg,.jpg" name="image5">
                 </div>
               </div>
               <div class="form-group">
@@ -192,7 +207,7 @@
       $("#discription1").hide();
       $("#discription2").hide();
       $("#discription3").hide();
-      $("#Image2").hide();
+      $("#Image5div").hide();
       
     });
     $('select').on('change', function (e) {
@@ -203,8 +218,8 @@
       $("#inputLecturer").show();
       $("#discription1").show();
       $("#discription2").show();
-      $("#Image2").hide();
       $("#discription3").hide();
+      $("#Image5div").hide();
       }else if(this.value=="BP"){
       $("#inputCourseFee").hide();
       $("#inputCourseDuration").hide();
@@ -212,7 +227,7 @@
       $("#discription1").show();
       $("#discription2").show();
       $("#discription3").show();
-      $("#Image2").show();
+      $("#Image5div").show();
       }
     else if(this.value=="SL"){
       $("#inputCourseFee").hide();
@@ -221,7 +236,7 @@
       $("#discription1").show();
       $("#discription2").show();
       $("#discription3").hide();
-      $("#Image2").hide();
+      $("#Image5div").hide();
       }
     });
 
