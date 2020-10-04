@@ -81,7 +81,7 @@
             </div>
             <div class="col-12">
                 <div class="row justify-content-center">
-                    <div class="col-12 col-md-4">
+                    <!-- <div class="col-12 col-md-4">
                         <div class="b b-adress" style="align-items: center;">
                       
                                <img src="assets/images/img/Group 53.png" style=" display: block; margin-left: auto; margin-right: auto;"/>
@@ -90,8 +90,8 @@
                                 No 152/1, Bekkegama Road, Walana, Panadura. <br>Postcode: 12500
                             </p>
                         </div>
-                    </div>
-                    <div class="col-12 col-md-4">
+                    </div> -->
+                    <div class="col-12 col-md-6">
                         <div class="b b-phone" >
                       
                       
@@ -102,13 +102,13 @@
                             </p>
                         </div>
                     </div>
-                    <div class="col-12 col-md-4">
+                    <div class="col-12 col-md-6">
                         <div class="b b-mail" >
                       
                             <img src="assets/images/img/Group 38.png" style=" display: block; margin-left: auto; margin-right: auto;"/>
                          
                             <p class="mbr-text align-left mbr-fonts-style display-4" style=" font-weight: bold;color: black; text-align: center;">
-                            info@iceesglobal.org
+                            info@iceesglobal.com
                             </p>
                         </div>
                     </div>
@@ -147,7 +147,7 @@
                         </h5>
                         <p class="align-left mbr-fonts-style display-7">
                             Phone:  +94 778 241 664 <br>
-                            Email: info@iceesglobal.org
+                            Email: info@iceesglobal.com
                         </p>
                     </div>
                 </div>
