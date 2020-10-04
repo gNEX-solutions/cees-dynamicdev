@@ -26,8 +26,9 @@ move_uploaded_file($_FILES["inputImage"]["tmp_name"], $target_file);
 $newConnection= new dbh;
 $conn=$newConnection->connect();
 
-$stmt= $conn->prepare("INSERT INTO events(name,date,start_time,end_time,description,location,status) VALUES (?,?,?,?,?,?,?)");
+$stmt= $conn->prepare("INSERT INTO events(name,date,start_time,end_time,description1,location,status) VALUES (?,?,?,?,?,?,?)");
 $stmt->bind_param("ssssssi",$eventName,$insertDate,$insertStartTime,$insertEndTime,$description,$location,$status);
+//echo $eventName." _ " .$insertDate. " _ " .$insertStartTime." _ " .$insertEndTime." _ " .$description." _ " .$location." _ " .$status;
 $stmt->execute();
 $id=$stmt->insert_id;
 
