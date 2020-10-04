@@ -2,21 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="95a0b098-8d09-43ce-9c37-682ee901cca0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/cees-dynamicdev.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminPanel/AdminModel/create.php" beforeDir="false" afterPath="$PROJECT_DIR$/AdminPanel/AdminModel/create.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminPanel/addNewProgram.php" beforeDir="false" afterPath="$PROJECT_DIR$/AdminPanel/addNewProgram.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdminPanel/AdminModel/EditSection.php" beforeDir="false" afterPath="$PROJECT_DIR$/AdminPanel/AdminModel/EditSection.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdminPanel/AdminModel/file_name.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/AdminPanel/AdminModel/file_name.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdminPanel/EditProgram.php" beforeDir="false" afterPath="$PROJECT_DIR$/AdminPanel/EditProgram.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdminPanel/js/EditCourse.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminPanel/js/EditCourse.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdminPanel/js/editsections.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminPanel/js/editsections.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings" synchronizationState="SYNCHRONIZE">
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/AdminPanel/composer.json</pharConfigPath>
     <execution />
   </component>
@@ -64,7 +62,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1601744906121</updated>
-      <workItem from="1601744907398" duration="2360000" />
+      <workItem from="1601744907398" duration="3321000" />
+      <workItem from="1601801969033" duration="2431000" />
     </task>
     <servers />
   </component>

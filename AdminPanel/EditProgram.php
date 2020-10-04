@@ -154,6 +154,12 @@
           <input type="number" id="fee" class="form-control" name="inputCourseFee" placeholder="Course Fee" >
         </div>
       </div>
+       <div class="row justify-content-md-start">
+           <div class="form-group col col-sm-8" id="inputCourseSheets">
+               <strong> <label for="inputCourseSheets">Course Seats</label></strong>
+               <input type="number" id="Seats" class="form-control" name="inputCourseSheets" placeholder="Course Seats" >
+           </div>
+       </div>
     
        <div class="row justify-content-md-start">
         <div class="form-group col-8">
@@ -293,7 +299,7 @@
 <script type="text/javascript" src="js/jscolar.js"></script>
 
 <script>
- 
+    $("#inputCourseSheets").hide();
    $('select').on('change', function (e) {
       if(this.value=="ID")
       {
@@ -304,6 +310,8 @@
       $("#discription2").show();
       $("#imageDiv5").hide();
       $("#discription3").hide();
+      $("#inputCourseSheets").show();
+
       }else if(this.value=="BP"){
       $("#inputCourseFee").hide();
       $("#inputCourseDuration").hide();
@@ -312,6 +320,7 @@
       $("#discription2").show();
       $("#discription3").show();
       $("#imageDiv5").show();
+      $("#inputCourseSheets").hide();
       }
     else if(this.value=="SL"){
       $("#inputCourseFee").hide();
@@ -321,6 +330,7 @@
       $("#discription2").show();
       $("#discription3").hide();
       $("#imageDiv5").hide();
+      $("#inputCourseSheets").hide();
       }
     });
 

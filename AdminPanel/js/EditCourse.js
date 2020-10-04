@@ -90,7 +90,7 @@ $('#proTitle').on('change', function() {
                $('#Title').val(res[i].course_heading);
                $('#ID').val(res[i].idcourses);
                $('#Image').attr('src','../'+res[i].course_icon_url )
-               
+
                if(res[i].status=="1"){
                 $('#status-show')[0].checked = true;
                }else{

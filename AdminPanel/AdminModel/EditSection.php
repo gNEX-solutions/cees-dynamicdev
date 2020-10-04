@@ -23,7 +23,7 @@ class Edit extends dbh{
 
     $sql="";
     if($pageType=="ID"){
-        $sql="SELECT program.program_title,program.summary,program.status,program.page_type, program.main_image,program.idprogram,courses.description1,courses.description2,courses.idprogram ,courses.course_fee ,courses.course_duration ,courses.lecturer ,courses.image1,courses.image2,courses.image3 FROM program INNER JOIN courses ON courses.idprogram=program.idprogram WHERE program.idprogram=".$programId;
+        $sql="SELECT program.program_title,program.summary,program.status,program.page_type, program.main_image,program.idprogram,courses.description1,courses.sheets,courses.description2,courses.idprogram ,courses.course_fee ,courses.course_duration ,courses.lecturer ,courses.image1,courses.image2,courses.image3 FROM program INNER JOIN courses ON courses.idprogram=program.idprogram WHERE program.idprogram=".$programId;
 
     }
     if($pageType=="BP"){
