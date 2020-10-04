@@ -10,7 +10,7 @@
         <h4 class="title">Get In Touch</h4>
         <ul class="contact_details" style="">
 
-          <li><i class="fa fa-envelope-o"></i>info@iceesglobal.org</li>
+          <li><i class="fa fa-envelope-o"></i>info@iceesglobal.com</li>
           <li><i class="fa fa-phone-square"></i> +94 778 241 664</li>
           <li><i class="fa fa-home"></i> Lorem Ipsum is simply dummy text, 887, Colombo, Sri Lanka.</li>
           <li><a href="#" style="color:#0056b3;"><i class="fa fa-map-marker"></i> View large map</a></li>
