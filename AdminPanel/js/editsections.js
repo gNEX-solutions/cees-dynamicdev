@@ -52,7 +52,7 @@ function getProgramDetails()
         $('#Program_form').css("opacity",".5");
       },
       success: function(data){
-        console.log(data)
+        //console.log(data)
       
       //  $("#error").append(data)
         $('#Program_form')[0].reset();
@@ -60,6 +60,7 @@ function getProgramDetails()
          var res = $.parseJSON(data);
          var len = res.length;
          for(var i=0; i<len; i++){
+             $('#Seats').val(res[i].sheets)
          $('#Summary').val(res[i].summary);
          $('#Title').val(res[i].program_title);
          $('#ID').val(res[i].idprogram);

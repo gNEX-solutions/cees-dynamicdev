@@ -3,8 +3,16 @@
   <component name="ChangeListManager">
     <list default="true" id="95a0b098-8d09-43ce-9c37-682ee901cca0" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+
+      <change beforePath="$PROJECT_DIR$/AdminPanel/AdminModel/EditSection.php" beforeDir="false" afterPath="$PROJECT_DIR$/AdminPanel/AdminModel/EditSection.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdminPanel/AdminModel/file_name.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/AdminPanel/AdminModel/file_name.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdminPanel/EditProgram.php" beforeDir="false" afterPath="$PROJECT_DIR$/AdminPanel/EditProgram.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdminPanel/js/EditCourse.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminPanel/js/EditCourse.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdminPanel/js/editsections.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminPanel/js/editsections.js" afterDir="false" />
+
       <change beforePath="$PROJECT_DIR$/Model/courses_view.php" beforeDir="false" afterPath="$PROJECT_DIR$/Model/courses_view.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/course-details.php" beforeDir="false" afterPath="$PROJECT_DIR$/course-details.php" afterDir="false" />
+
     </list>
     <ignored path="$PROJECT_DIR$/AdminPanel/vendor/bootstrap/js/" />
     <ignored path="$PROJECT_DIR$/AdminPanel/vendor/bootstrap/scss/" />
@@ -155,8 +163,10 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1601744906121</updated>
+
       <workItem from="1601744907398" duration="2360000" />
       <workItem from="1601787855403" duration="833000" />
+
     </task>
     <servers />
   </component>
