@@ -123,6 +123,17 @@
             <i class="fas fa-fw fa-chart-area"></i>
             <span>Add / Update Partners</span></a>
           </li>
+
+          <hr class="sidebar-divider">
+          <div class="sidebar-heading">
+            Subscribers   
+          </div>
+          <!-- Nav Item - Pages Collapse Menu -->
+          <li class="nav-item">
+            <a class="nav-link" href="subscriber.php">
+            <i class="fas fa-fw fa-chart-area"></i>
+            <span>View Subscibers List</span></a>
+          </li>
     
           <!-- Divider -->
           <hr class="sidebar-divider d-none d-md-block">
@@ -323,6 +334,17 @@
         <a class="nav-link" href="../clients.php">
         <i class="fas fa-fw fa-chart-area"></i>
         <span>Add / Update Partners</span></a>
+      </li>
+
+      <hr class="sidebar-divider">
+      <div class="sidebar-heading">
+        Subscribers   
+      </div>
+      <!-- Nav Item - Pages Collapse Menu -->
+      <li class="nav-item">
+        <a class="nav-link" href="../clients.php">
+        <i class="fas fa-fw fa-chart-area"></i>
+        <span>View Subscriber List</span></a>
       </li>
 
       <!-- Divider -->
