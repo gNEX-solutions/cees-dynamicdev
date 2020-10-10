@@ -77,7 +77,7 @@ class Edit extends dbh{
 
      }
      if($pageType=="BP"){
-        $sql2="UPDATE business_partnering  SET image4='".$image5."',image2='".$image2."',image3='".$image3."',image4='".$image4."',description2='".$Description2. "',description1='".$Description1."',description3='".$Description3."' WHERE idprogram=".$programId;
+        $sql2="UPDATE business_partnering  SET image4='".$image5."',image2='".$image3."',image3='".$image4."',image1='".$image2."',description2='".$Description2. "',description1='".$Description1."',description3='".$Description3."' WHERE idprogram=".$programId;
 
      }
   

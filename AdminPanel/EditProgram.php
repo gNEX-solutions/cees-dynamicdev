@@ -79,12 +79,10 @@
                 <div class="form-group col-sm-4 justify-content-md-center">
                     <strong> <label for="inputDescription">Page Type</label> </strong>
                     <select class="form-control" name="page_type" id="pageType">
-                      <option>Select page type</option>
-
-                      <option value="ID">ICEES Academy</option>
-                      <option value="BP">Consultancy Services</option>
-
-                      <option value="SL">Solutions Lab</option>
+                      <option >Select page type</option>
+                      <option value="ID">Lean Certification</option>
+                      <option value="BP">Trainings</option>
+                      <option value="SL">Solutions </option>
                     </select>
                 </div> 
                 <div class="form-group col col-sm-4"  id="proTitlediv">

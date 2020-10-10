@@ -60,10 +60,10 @@
               <div class="form-group">
                 <strong> <label for="inputPageType">Page Type</label> </strong>
                   <select class="form-control" name="inputPageType">
-                    <option>Select page type</option>
-                    <option value="ID">ICEES Academy</option>
-                    <option value="BP">Consultancy Services</option>
-                    <option value="SL">Solutions Lab</option>
+                    <option >Select page type</option>
+                    <option value="ID">Lean Certification</option>
+                    <option value="BP">Trainings</option>
+                    <option value="SL">Solutions</option>
                   </select>
               </div> 
               <!-- <div class="form-group">
