@@ -72,6 +72,17 @@ class CoursesView extends CoursesService
             
         }
     }
+
+    public function getSeats($artID)
+    {
+        $datas1 = $this->getSpecificCourse($artID);
+        foreach ($datas1 as $key=>$data1) {
+
+            echo  $data1['sheets'] ;
+
+        }
+    }
+
     public function ShowImage($artID)
     {
         $datas1 = $this->getSpecificProgram($artID);

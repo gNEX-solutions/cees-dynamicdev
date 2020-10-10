@@ -109,15 +109,15 @@ $CoursesView =new CoursesView()
                         <li>
                             <a class="justify-content-between d-flex" href="#">
                                 <p>Trainer’s Name</p>
-                                <span class="or"> <?php  $CoursesView->getLecturer($artID);    ?></span>
+                                <span style="text-align:right" class="or"> <?php  $CoursesView->getLecturer($artID); ?></span>
                             </a>
                         </li>
-                        <li>
-                            <a class="justify-content-between d-flex" href="#">
-                                <p>Format</p>
-                                <span class="or">2 Online Cohort Courses</span>
-                            </a>
-                        </li>
+<!--                        <li>-->
+<!--                            <a class="justify-content-between d-flex" href="#">-->
+<!--                                <p>Format</p>-->
+<!--                                <span class="or">2 Online Cohort Courses</span>-->
+<!--                            </a>-->
+<!--                        </li>-->
                         <li>
                             <a class="justify-content-between d-flex" href="#">
                                 <p>Duratuion</p>
@@ -133,13 +133,13 @@ $CoursesView =new CoursesView()
                         <li>
                             <a class="justify-content-between d-flex" href="#">
                                 <p>Available Seats </p>
-                                <span class="or">15</span>
+                                <span class="or"><?php  $CoursesView->getSeats($artID);  ?></span>
                             </a>
                         </li>
                     </ul>
 
                   <!--   <form method="get" action="file.pdf"> -->
-                        <button class="primary-btn2 text-uppercase enroll rounded-0" onclick="window.location.href='file.pdf'" target="_blank">Download Syllabus!</button>
+<!--                        <button class="primary-btn2 text-uppercase enroll rounded-0" onclick="window.location.href='file.pdf'" target="_blank">Download Syllabus!</button>-->
 
             <!--         </form> -->
 
