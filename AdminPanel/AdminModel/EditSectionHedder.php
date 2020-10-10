@@ -45,7 +45,7 @@ else if($method=='save')
       $imageProperties4 = getimageSize($_FILES['image4']['tmp_name']);
   
    // echo  $_POST['programType'];  
-   $result=$Edit->UpdateProgram ($_POST['Title'],$_POST['Summary'],$_POST['status'], $imgLocation,$_POST['ID'],$_POST['Description1'],$_POST['inputLecturer'],$_POST['inputCourseDuration'],$_POST['inputCourseFee'], $imgLocation5,$imgLocation2,$imgLocation3,$imgLocation4,$_POST['Description2'],$_POST['Description3'],$_POST['programType']);
+   $result=$Edit->UpdateProgram ($_POST['Title'],$_POST['Summary'],$_POST['status'], $imgLocation,$_POST['ID'],$_POST['Description1'],$_POST['inputLecturer'],$_POST['inputCourseDuration'],$_POST['inputCourseFee'], $imgLocation5,$imgLocation2,$imgLocation3,$imgLocation4,$_POST['Description2'],$_POST['Description3'],$_POST['programType'],$_POST['inputCourseSheets']);
    echo $result;
 }
 else if($method=='oder')
