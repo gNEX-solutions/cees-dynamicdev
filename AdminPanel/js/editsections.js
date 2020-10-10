@@ -446,3 +446,22 @@ function getOderList()
   }
   return  obj_array;
 }
+
+$("#delete").on('click', function(e){
+  alert("delete");
+  var title = document.getElementById("Title").value
+  alert(title);
+
+  $.ajax({
+    type:'POST', 
+    url: "./AdminModel/deletePage.php",
+    data: {title_remove: title, method:'deletePage'},
+    success: function(){
+      alert('page has been deleted succesfully');
+    },
+    error: function(){
+      alert('page deletion failed');
+    }
+  });
+
+});

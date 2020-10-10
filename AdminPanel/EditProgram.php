@@ -96,7 +96,7 @@
         </form>
   
        <hr>
-       <form style="margin-left:5%;margin-bottom:5%;margin-top:2%;margin-right:5%" id="Program_form" class="justify-content-md-start">
+       <form style="margin-left:5%;margin-top:2%;margin-right:5%" id="Program_form" class="justify-content-md-start">
      
        
           <input  type="hidden" class="form-control" name="ID" id="ID" >
@@ -234,12 +234,15 @@
 
       <div class="row row justify-content-end" style="margin-top:2%">
         <div class="col-sm-4">
-          <button type="submit" class="btn btn-primary submitBtn" id="save" style="margin-top:10px">Save Changes</button>
+        
+        <button type="submit" class="btn btn-primary submitBtn" id="save" style="margin-top:10px">Save Changes</button>
+          
           <p class="statusMsg"></p> 
         </div>
       </div>
       
       </form>
+      <button class="btn btn-danger" id="delete" style="margin-left:750px">Delete</button>
 <div id="error">
 
 </div>
@@ -331,6 +334,8 @@
       $("#inputCourseSheets").hide();
       }
     });
+
+
 
   </script>
 </body>
