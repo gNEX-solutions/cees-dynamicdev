@@ -61,7 +61,7 @@ class Edit extends dbh{
     }
    }
 
-   public function UpdateProgram ($Title,$Summary,$status,$main_image,$programId,$Description1, $lecturer,$CourseDuration, $CourseFee,$image5,$image2,$image3,$image4,$Description2,$Description3,$pageType)
+   public function UpdateProgram ($Title,$Summary,$status,$main_image,$programId,$Description1, $lecturer,$CourseDuration, $CourseFee,$image5,$image2,$image3,$image4,$Description2,$Description3,$pageType,$sheat)
    {                           
 
    
@@ -70,14 +70,14 @@ class Edit extends dbh{
      $sql2="";
    
      if($pageType=="ID"){
-        $sql2="UPDATE courses  SET image1='".$image2."',image2='".$image3."',image3='".$image4."',description1='".$Description1. "',description2='".$Description2."',course_fee='".$CourseFee."',course_duration='".$CourseDuration."',lecturer='".$lecturer."'WHERE idprogram=".$programId;
+        $sql2="UPDATE courses  SET image1='".$image2."',image2='".$image3."',image3='".$image4."',description1='".$Description1. "',description2='".$Description2."',course_fee='".$CourseFee."',course_duration='".$CourseDuration."',sheets='".$sheat."',lecturer='".$lecturer."'WHERE idprogram=".$programId;
      }
      if($pageType=="SL"){
         $sql2="UPDATE solution_lab  SET image1='".$image2."',image2='".$image3."',image3='".$image4."',description1='".$Description1. "',description2='".$Description2."' WHERE idprogram=".$programId;
 
      }
      if($pageType=="BP"){
-        $sql2="UPDATE business_partnering  SET image4='".$image5."',image2='".$image2."',image3='".$image3."',image4='".$image4."',description2='".$Description2. "',description1='".$Description1."',description3='".$Description3."' WHERE idprogram=".$programId;
+        $sql2="UPDATE business_partnering  SET image4='".$image5."',image2='".$image3."',image3='".$image4."',image1='".$image2."',description2='".$Description2. "',description1='".$Description1."',description3='".$Description3."' WHERE idprogram=".$programId;
 
      }
   
