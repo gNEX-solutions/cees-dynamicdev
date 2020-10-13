@@ -72,16 +72,10 @@ if ($artID == NULL) {
                 </div>
                 <div class="col-lg-4 right-contents">
                     <div class="container">
-
-
                         <?php $businessPartneringView->ShowMain_image();  ?>
-                        
                     </div>
                     <div class="container">
-
                         <?php $businessPartneringView->ShowImage1();  ?>
-
-
                     </div>
 
 
