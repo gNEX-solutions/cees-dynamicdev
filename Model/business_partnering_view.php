@@ -62,7 +62,7 @@ class BusinessPartneringView extends businessPartneringService
         foreach ($this->data1 as $key => $data1) {
             if (isset($data1['main_image'])) {
                 echo '
-                <div class="container right-contents" style="padding-bottom: 1px;  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);">
+                <div class="container right-contents" style="padding-bottom: 20px;  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);">
                 <img src="data:image/jpg;charset=utf8;base64,' . base64_encode($data1['main_image']) . '" style=" width: 100%; max-width: 300px; height: auto; " />
                 </div>
                 ';
@@ -76,7 +76,7 @@ class BusinessPartneringView extends businessPartneringService
         foreach ($this->data1 as $key => $data1) {
             if (isset($data1['image1'])) {
                 echo '
-                    <div class="container right-contents" style="padding-bottom: 1px;  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);">
+                    <div class="container right-contents" style="padding-bottom: 20px;  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);">
                     <img src="data:image/jpg;charset=utf8;base64,' . base64_encode($data1['image1']) . '" style=" width: 100%; max-width: 300px; height: auto; " />
                     </div>
                     ';
