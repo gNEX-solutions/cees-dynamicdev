@@ -43,16 +43,16 @@ class BusinessPartneringView extends businessPartneringService
                     . $data1['description1'] . '
                 </div>';
             }
-            if (isset($data1['description2'])) {
-                echo    '<div class="content">'
-                    . $data1['description2'] . '
-                </div>';
-            }
-            if (isset($data1['description3'])) {
-                echo    '<div class="content">'
-                    . $data1['description3'] . '
-                </div>';
-            }
+            // if (isset($data1['description2'])) {
+            //     echo    '<div class="content">'
+            //         . $data1['description2'] . '
+            //     </div>';
+            // }
+            // if (isset($data1['description3'])) {
+            //     echo    '<div class="content">'
+            //         . $data1['description3'] . '
+            //     </div>';
+            // }
         }
     }
 
