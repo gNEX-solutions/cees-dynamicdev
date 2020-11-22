@@ -151,7 +151,7 @@ $("#Program_form").on('submit', function(e){
                     success: function(msg) {
                      $('.statusMsg').html('');
                      // document.getElementById("error").innerHTML=msg;
-                      if(msg.trim() == '"ok"'){
+                      if(msg.trim() == "ok"){
                           $('#Program_form')[0].reset();
                           $('.statusMsg').html('<span style="font-size:15px;color:#34A853">successfully Updated.</span>');
                           $.alert('successfully Updated');
@@ -448,22 +448,35 @@ function getOderList()
 }
 
 $("#delete").on('click', function(e){
-  alert("delete");
-  var sel = document.getElementById("proTitle");
-  var title = sel.options[sel.selectedIndex].text;
-  //var title = document.getElementById("Title").value
-  alert(title);
+
+  var id = $('#proTitle').val();
+  if (id=="Select the Program")
+  {
+      alert("Please select a program")
+  }
+else{
+
 
   $.ajax({
     type:'POST', 
-    url: "./AdminModel/deletePage.php",
-    data: {title_remove: title, method:'deletePage'},
-    success: function(){
-      alert('page has been deleted succesfully');
+    url: "AdminModel/deletePage.php",
+    data: {title_remove: id, method:'deletePage'},
+    success: function(data){
+        data= JSON.parse(data)
+      if (data["status"]=200)
+      {
+          alert("Successfully deleted");
+      }else {
+          alert("something went wrong");
+      }
+
+        location.reload();
     },
-    error: function(){
-      alert('page deletion failed');
+    error: function(data){
+        data= JSON.parse(data)
+        alert("something went wrong");
+        location.reload();
     }
   });
-
+  }
 });

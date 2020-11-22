@@ -34,8 +34,7 @@ class CoursesView extends CoursesService
         foreach ($datas1 as $key=>$data1) {
 
                 echo 
-                
-               
+
                  $data1['description1'] . '<br/> <br/>'
                
                 . $data1['description2'] ;
