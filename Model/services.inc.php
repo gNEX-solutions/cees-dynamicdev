@@ -5,7 +5,7 @@ class Services extends dbh{
   // KDW: August 24th, 2019 10:52pm : get all services to show in nav bar
    protected function getAllServices ()
    { 
-      $sql="SELECT * FROM program ORDER BY program_order ASC";
+      $sql="SELECT * FROM program WHERE status=1 AND isDeleted=0 ORDER BY program_order ASC";
       $result=$this->connect()->query($sql);
       $numRows=$result->num_rows;
       if($numRows>0){

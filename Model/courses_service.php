@@ -5,7 +5,7 @@ class CoursesService extends dbh{
     public function getSpecificProgram($artID)
     { 
         
-       $sql1="SELECT * FROM program p where p.idprogram =".$artID." AND p.status = 1";
+       $sql1="SELECT * FROM program p where p.idprogram =".$artID." AND p.status = 1 AND p.isDeleted=0";
        $result1=$this->connect()->query($sql1);
        $numRows1=$result1->num_rows;
        if($numRows1>0){

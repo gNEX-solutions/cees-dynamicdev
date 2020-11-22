@@ -233,16 +233,20 @@
 
 
       <div class="row row justify-content-end" style="margin-top:2%">
+          <div class="col-sm-2">
+              <button type ="button" class="btn btn-danger" id="delete" style="margin-top:10px;float: right"">Delete</button>
+          </div>
         <div class="col-sm-4">
-        
-        <button type="submit" class="btn btn-primary submitBtn" id="save" style="margin-top:10px">Save Changes</button>
+
+        <button type="submit" class="btn btn-primary submitBtn" id="save" style="margin-top:10px;float: left">Save Changes</button>
           
           <p class="statusMsg"></p> 
         </div>
+
       </div>
       
       </form>
-      <button class="btn btn-danger" id="delete" style="margin-left:750px">Delete</button>
+
 <div id="error">
 
 </div>
@@ -298,7 +302,7 @@
 <script type="text/javascript" src="js/jquery-confirm.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <script type="text/javascript" src="js/jscolar.js"></script>
-
+<script src="js/editsections.js"></script>
 <script>
     $("#inputCourseSheets").hide();
    $('select').on('change', function (e) {
@@ -339,7 +343,7 @@
 
   </script>
 </body>
-<script src="js/editsections.js"></script>
+
 </html>
 <?php   
 }

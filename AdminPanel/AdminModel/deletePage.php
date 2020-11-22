@@ -4,18 +4,19 @@ include '../../Model/dbh.inc.php';
 $newConnection= new dbh;
 $con=$newConnection->connect();
 
-echo ($_POST["method"]);
+
 if( $_POST['method'] == "deletePage"){
-    echo($_POST["title_remove"]);
-    echo('running');
+
+
     
-    $stmt = $con->prepare("UPDATE program SET isDeleted = 1 WHERE program_title = ?;") ;
-    $stmt->bind_param("s",$_POST["title_remove"]);
+    $stmt = $con->prepare("UPDATE program SET isDeleted = 1 WHERE idprogram = ?") ;
+    $stmt->bind_param("i",$_POST["title_remove"]);
     if($stmt->execute()){
-        $response_array['status'] = 'success';
+        echo ( '{"status":200,"message":"successfully deleted"}');
     }
     else{
-        $response_array['status'] = 'error';
+        echo ( '{"status":500,"message":"Something went wrong"}');
     }
+
     }
     ?>

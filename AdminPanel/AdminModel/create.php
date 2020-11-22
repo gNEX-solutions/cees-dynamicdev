@@ -67,7 +67,7 @@
 
 
 
-                    $sql = "INSERT INTO program(program_title, summary, status, main_image, page_type,created_at) VALUES ('{$title}', '{$summary}', $status, '{$imgData}','$pageType','{$created_at}')";
+                    $sql = "INSERT INTO program(program_title, summary, status, main_image, page_type,created_at,isDeleted) VALUES ('{$title}', '{$summary}', $status, '{$imgData}','$pageType','{$created_at}',0)";
                     $current_id = mysqli_query($conn, $sql) or die("<b>Error:</b> Problem on Image Insert<br/>" . mysqli_error($conn));
                     if (isset($current_id)) {
 
