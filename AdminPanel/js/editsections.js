@@ -449,7 +449,9 @@ function getOderList()
 
 $("#delete").on('click', function(e){
   alert("delete");
-  var title = document.getElementById("Title").value
+  var sel = document.getElementById("proTitle");
+  var title = sel.options[sel.selectedIndex].text;
+  //var title = document.getElementById("Title").value
   alert(title);
 
   $.ajax({

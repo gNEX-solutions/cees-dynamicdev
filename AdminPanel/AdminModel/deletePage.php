@@ -9,7 +9,7 @@ if( $_POST['method'] == "deletePage"){
     echo($_POST["title_remove"]);
     echo('running');
     
-    $stmt = $con->prepare("DELETE FROM program WHERE program_title = ?;") ;
+    $stmt = $con->prepare("UPDATE program SET isDeleted = 1 WHERE program_title = ?;") ;
     $stmt->bind_param("s",$_POST["title_remove"]);
     if($stmt->execute()){
         $response_array['status'] = 'success';

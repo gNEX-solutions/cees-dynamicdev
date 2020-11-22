@@ -7,7 +7,7 @@ class Edit extends dbh{
  
   public function getTitles ($pageType)
    { 
-    $sql="SELECT program_title,summary,idprogram,status,page_type FROM program WHERE page_type='".$pageType."'ORDER BY program_order";
+    $sql="SELECT program_title,summary,idprogram,status,page_type FROM program WHERE page_type='".$pageType."' AND isDeleted=0 ORDER BY program_order";
     $result=$this->connect()->query($sql);
     $numRows=$result->num_rows;
     if($numRows>0){
