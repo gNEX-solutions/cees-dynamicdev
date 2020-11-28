@@ -129,10 +129,10 @@ include 'Model/getClientLogos.php';
                     <!-- CEES Academy is dedicated for training and development on Enterprise Excellence tools including Lean, Six Sigma and Industry 4.0 to enlighten business executives to successfully transform themselves, respective teams and organizations   -->
                     LEAN Training brings you the best knowledge in Enterprise Excellence (Lean, Six Sigma, Agile & Industry 4.0) from globally recognized Institutes and Universities. Our highly experienced international and local sensei panel is there to enlighten your minds to become excellent
                     </p>
-                  <!-- <span class="vspacer"></span>
-                  <p class="py-3 mbr-fonts-style">
+                  <span class="vspacer"></span>
+                  <!--<p class="py-3 mbr-fonts-style">
                     <a href="Programs.php" target="_blank">READ MORE » </a>
-                  </p> -->
+                  </p>-->
                 </div>
             </div>
 
@@ -151,10 +151,10 @@ include 'Model/getClientLogos.php';
                     <!-- Our expert consultants to visit organizations and deeply understand the Strategic problems and improvement opportunities and tactfully guide, coach and mentor business leaders on managing Enterprise Excellence transformation effectively  -->
                     Even the best of the best in the world can have ample opportunities improve. Our expert business transformation consultants are capable of unlocking these opportunities for you. We will guide, coach and mentor you to drive beyond your expectations.
                     </p>
-                  <!-- <span class="vspacer"></span>
-                  <p class="py-3 mbr-fonts-style">
+                  <span class="vspacer"></span>
+                  <!--<p class="py-3 mbr-fonts-style">
                     <a href="services-talent.php" target="_blank">READ MORE » </a>
-                  </p> -->
+                  </p>-->
                 </div>
             </div>
 
@@ -174,10 +174,10 @@ include 'Model/getClientLogos.php';
                     <!-- Dedicated set of engineers and scientists who are working on cutting edge technologies and develop integrated solutions considering Lean, Automation and Digitization initiatives to create quantum leaps in the Enterprise Excellence practices.  -->
                     Businesses are in direct need of creative, agile and high tech solutions than ever in the VUCA conditions. Our team of engineers offer you customized integrated solutions in Lean, Automation & Digitization to cater your specific needs. 
                     </p>
-                  <!-- <span class="vspacer"></span>
-                  <p class="py-3 mbr-fonts-style">
+                  <span class="vspacer"></span>
+                  <!--<p class="py-3 mbr-fonts-style">
                     <a href="solutionslab.php" target="_blank">READ MORE » </a> 
-                  </p> -->
+                  </p>-->
                 </div>
             </div>
         </div>
