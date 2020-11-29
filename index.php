@@ -302,10 +302,8 @@ include 'Model/getClientLogos.php';
     <!-- <div class="container">
         <h2 class="mbr-section-title pb-3 align-center mbr-fonts-style display-2">
             Our Expertise</h2>
-
         <h3 class="mbr-section-subtitle mbr-fonts-style display-5">
             Over the years we have completed a wide range of projects shown below in %.</h3>
-
         <div class="row pt-5 mt-5">
             <div class="col-md-6 text-elements">
                 <h4 class="section-content-title pb-3 align-left mbr-fonts-style display-5">
@@ -497,4 +495,3 @@ include 'Model/getClientLogos.php';
 
 </body>
 </html>
-
