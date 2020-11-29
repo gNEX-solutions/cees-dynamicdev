@@ -531,5 +531,16 @@ div[data-for^="input-range"] input {
 	top: 0;
 	left: -2400px;
 }
+.hidden{
+  display: none;
+}
+.form-control {
+  background-color: white !important;
+  min-height: 1rem !important;
+}
 
+.pament_form{
+  margin-left: 10%;
+  margin-bottom: 5%;
+}
 
