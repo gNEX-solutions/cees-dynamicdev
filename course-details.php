@@ -63,7 +63,7 @@ $CoursesView =new CoursesView()
           <div class="row justify-content-center">
             <div class="col-lg-6">
               <div class="banner_content">
-                <h2> 
+                <h2 id="course_title"> 
                     <?php 
                     $CoursesView->ShowTitle($artID);
                    
@@ -127,7 +127,7 @@ $CoursesView =new CoursesView()
                         <li>
                             <a class="justify-content-between d-flex" href="#">
                                 <p>Course Fee </p>
-                                <span class="or"> <?php  $CoursesView->getFee($artID);    ?></span>
+                                <span class="or" id="course_fee"> <?php  $CoursesView->getFee($artID);    ?></span>
                             </a>
                         </li>
                         <li>
@@ -137,7 +137,8 @@ $CoursesView =new CoursesView()
                             </a>
                         </li>
                         <li>
-                            <a class="justify-content-between d-flex" href="payment.php">
+                     
+                            <a class="justify-content-between d-flex" href="payment.php?course_title=<?php $CoursesView->ShowTitle($artID) ?>&course_fee=<?php $CoursesView->getFee($artID) ?>">
                             <button type="button" class="btn btn-primary">Register</button>
                             </a>
                         </li>

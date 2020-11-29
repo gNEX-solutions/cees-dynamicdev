@@ -56,85 +56,103 @@ $custom_fields = base64_encode('cus_1|cus_2|cus_3|cus_4');
 	<script src="assets/web/assets/jquery/jquery.min.js"></script>
 
   </head>
-  <body>   
- 
+  <body style="overflow-y: auto !important;">   
+   
+
 	<section class="menu cid-ruNsw1yRec"  once="menu" id="menu1-0" style="width:100%; position:fixed; z-index:999;">
 			<?php require_once ('common/Components/header.php'); ?>
 	</section> 
-	<section id="header2-1"> 	
-	<br><br><br><br><br>  
-        <form action="<?php echo $url; ?>" method="POST">
-			<table>
-				<tr>
-					<td><div>First name: </div> </td>
-					<td><input type="text" name="first_name" value="Pavan"></td>
-				</tr>
-				<tr>
-					<td>Last name: </td>
-					<td><input type="text" name="last_name" value="Welihinda"></td>
-				</tr>
-				<tr>
-					<td>Email: </td> 
-					<td><input type="text" name="email" value="customer_email@email.com"></td>
-				</tr>
-				<tr>
-					<td>Contact Number: </td> 
-					<td><input type="text" name="contact_number" value="0773606370"></td>
-				</tr>
-				<tr>
-					<td>Address Line 1: </td> 
-					<td><input type="text" name="address_line_one" value="46/46, Green Lanka Building"></td>
-				</tr>
-				<tr>
-					<td>Address Line 2: </td>
-					<td><input type="text" name="address_line_two" value="Nawam Mawatha"></td>
-				</tr>
-				<tr>
-					<td>City: </td> 
-					<td><input type="text" name="city" value="Colombo"></td>
-				</tr>
-				<tr>
-					<td>State: </td> 
-					<td><input type="text" name="state" value="Western"></td>
-				</tr>
-				<tr>
-					<td>Zip/Postal Code:</td>
-					<td><input type="text" name="postal_code" value="10300"></td>
-				</tr>
-				<tr>
-					<td>Country:</td>
-					<td><input type="text" name="country" value="Sri Lanka"></td>
-				</tr>
-				<tr>
-					<td>currency: <input type="text" name="process_currency" value="LKR"></td> <!-- currency value must be LKR or USD -->
-					<td></td>
-				</tr>
-				<tr>	
-					<td>CMS : <input type="text" name="cms" value="PHP"></td>
-					<td></td>
-				</tr>
-				<tr>
-					<td>custom: <input type="text" name="custom_fields" value="<?php echo $custom_fields; ?>"></td>
-					<td></td>
-				</tr>
-				<tr>
-					<td>Mechanism: <input type="text" name="enc_method" value="JCs3J+6oSz4V0LgE0zi/Bg=="></td>
-					<td></td>
-				</tr>
-				<tr>		   
-					<!-- POST parameters -->
-					<td><input type="hidden" name="secret_key" value="630be963-59e2-447a-8f3b-93b3d7a3bf25" ></td> 
-					<td></td>
-				</tr>
-				<tr> 
-					<td><input type="hidden" name="payment" value="<?php echo $payment; ?>" ></td> 
-					<td></td>  
-				</tr>
-				<tr>                      
-					<td><input type="submit" value="Pay Now" ></td>
-					<td></td>
-				</tr>
-			</table>
+	<section id="header2-1" style="margin-left:15%;margin-right:15%;"> 	
+	<br><br><br><br><br><br>
+	         <h1 style="font-size:large;" class="text-center">Register For - <?php echo  $_GET['course_title'] ?></h1>
+			 <br>
+			 <form action="<?php echo $url; ?>" method="POST" class="pament_form" >
+	
+       
+			<div class="form-group row">
+				<label for="first_name"   class="col-sm-2 col-form-label col-form-label-sm">First name :</label>
+				<div class="col-sm-8">
+					<input type="text" name="first_name"   class="form-control form-control-sm" required>
+				</div> 
+			</div> 
+			<div class="form-group row">
+				<label for="last_name"   class="col-sm-2 col-form-label col-form-label-sm">Last name :</label>
+				<div class="col-sm-8">
+					<input type="text" name="last_name"  class="form-control form-control-sm" required>
+				</div> 
+			</div> 
+			<div class="form-group row">
+				<label for="email"   class="col-sm-2 col-form-label col-form-label-sm">Email :</label>
+				<div class="col-sm-8">
+					<input type="email" name="email"  class="form-control form-control-sm"required >
+				</div> 
+			</div> 
+			<div class="form-group row">
+				<label for="contact_number"   class="col-sm-2 col-form-label col-form-label-sm">Contact Number:</label>
+				<div class="col-sm-8">
+					<input type="number" name="contact_number"   class="form-control form-control-sm" required>
+				</div> 
+			</div> 
+			<div class="form-group row">
+				<label for="address_line_one"   class="col-sm-2 col-form-label col-form-label-sm">Address Line 1 :</label>
+				<div class="col-sm-8">
+					<input type="text" name="address_line_one"  class="form-control form-control-sm" required>
+				</div> 
+			</div> 
+			<div class="form-group row">
+				<label for="address_line_two"   class="col-sm-2 col-form-label col-form-label-sm">Address Line 2 :</label>
+				<div class="col-sm-8">
+					<input type="text" name="address_line_two"   class="form-control form-control-sm"requrequiredire >
+				</div> 
+			</div> 
+			<div class="form-group row">
+				<label for="city"   class="col-sm-2 col-form-label col-form-label-sm">City :</label>
+				<div class="col-sm-8">
+					<input type="text" name="city"   class="form-control form-control-sm" required>
+				</div> 
+			</div> 
+			<div class="form-group row">
+				<label for="state"   class="col-sm-2 col-form-label col-form-label-sm">State :</label>
+				<div class="col-sm-8">
+					<input type="text" name="state"   class="form-control form-control-sm" required>
+				</div> 
+			</div> 
+			<div class="form-group row">
+				<label for="postal_code"   class="col-sm-2 col-form-label col-form-label-sm">Zip/Postal Code:</label>
+				<div class="col-sm-8">
+					<input type="text" name="postal_code"  class="form-control form-control-sm" required>
+				</div> 
+			</div> 
+			<div class="form-group row">
+				<label for="country"   class="col-sm-2 col-form-label col-form-label-sm">Country :</label>
+				<div class="col-sm-8">
+					<input type="text" name="country"   class="form-control form-control-sm" required>
+				</div> 
+			</div> 
+		<?php $price = explode(".",$_GET['course_fee']); ?>
+			<div class="form-group row">
+				<label for="country"   class="col-sm-2 col-form-label col-form-label-sm">Price :</label>
+				<div class="col-sm-8">
+					<input type="text" name="country" value="Rs. <?php echo $price[1] ?>.00"  class="form-control form-control-sm" required>
+				</div> 
+			</div> 
+			<br>
+			<div class="form-group row">
+			  <div class="col align-self-end">
+			    <button  type="submit" value="Pay Now" class="btn btn-primary"  style="float:right !important;margin-right:25%">Pay Now</button>
+			  </div>	
+			 </div> 
+			
+			 <p></p>
+			<input type="hidden"  name="process_currency" value="LKR"></td> <!-- currency value must be LKR or USD -->
+		   <input  type="hidden" name="cms" value="PHP">
+		   <input  type="hidden" name="custom_fields" value="<?php echo $custom_fields; ?>">
+		   <input type="hidden" name="enc_method" value="JCs3J+6oSz4V0LgE0zi/Bg==">
+		   <input type="hidden" name="secret_key" value="630be963-59e2-447a-8f3b-93b3d7a3bf25" >
+		   <input type="hidden" name="payment" value="<?php echo $payment; ?>" >
+		   
+		   <br><br><br>
+			
 		</form>   
 	</section>
   </body>
