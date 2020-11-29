@@ -136,6 +136,11 @@ $CoursesView =new CoursesView()
                                 <span class="or"><?php  $CoursesView->getSeats($artID);  ?></span>
                             </a>
                         </li>
+                        <li>
+                            <a class="justify-content-between d-flex" href="payment.php">
+                            <button type="button" class="btn btn-primary">Register</button>
+                            </a>
+                        </li>
                     </ul>
 
                   <!--   <form method="get" action="file.pdf"> -->
