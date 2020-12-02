@@ -31,9 +31,11 @@ if($signature_status == true)
 	var_dump($custom_fields_varible);
 	echo '<br/>';
 	var_dump($responseVariables);
+	header('Location: ../success.php');
 }else
 {
-	echo 'Error Validation'; 
+	echo 'Error Validation';
+	header('Location: ../error.php');
 }
 	
 ?>  
