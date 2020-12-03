@@ -10,7 +10,7 @@ include 'Model/getClientLogos.php';
 // unique_order_id|total_amount
 $dtime = strtotime(date("Y-m-d h:i:s"));
 $uniqueid = $dtime.''.mt_rand(10,100);
-$text = $uniqueid.'|100';
+$text = '25|100';
 
 $publickey = "-----BEGIN PUBLIC KEY-----
 MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDZU22QKT6n8GXrH7aMuxRhlgD/
