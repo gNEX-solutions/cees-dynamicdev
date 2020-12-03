@@ -6,16 +6,21 @@ include 'Model/viewEvents.php';
 include 'Model/getInsights.php';
 include 'insights.php';
 include 'Model/getClientLogos.php';
+
+$fee = explode(".",$_GET['course_fee']); 
 // unique_order_id|total_amount
-$plaintext = '525|10';
+$dtime = strtotime(date("Y-m-d h:i:s"));
+$uniqueid = $dtime.''.mt_rand(10,100); 
+$text = $uniqueid.'|'.$fee[1];
+
 $publickey = "-----BEGIN PUBLIC KEY-----
-MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQC9l2HykxDIDVZeyDPJU4pA0imf
-3nWsvyJgb3zTsnN8B0mFX6u5squ5NQcnQ03L8uQ56b4/isHBgiyKwfMr4cpEpCTY
-/t1WSdJ5EokCI/F7hCM7aSSSY85S7IYOiC6pKR4WbaOYMvAMKn5gCobEPtosmPLz
-gh8Lo3b8UsjPq2W26QIDAQAB
+MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDZU22QKT6n8GXrH7aMuxRhlgD/
+zyK+iUTtpU+GKkg4qslgNyvRgW4O/rsVkV8wwE2i9RVEhhjTz1piMzIcTbKMG12U
+WDhVtvsEHq/Tzm4q9iiamHOurkkcYj3qyF5i3/l0fILUesX9xAD0Fszprt4mMLtA
+RN+QR62pEv8HtdrknQIDAQAB
 -----END PUBLIC KEY-----";
 //load public key for encrypting
-openssl_public_encrypt($plaintext, $encrypt, $publickey);
+openssl_public_encrypt($text, $encrypt, $publickey);
 
 //encode for data passing
 $payment = base64_encode($encrypt);
@@ -112,7 +117,7 @@ $custom_fields = base64_encode('cus_1|cus_2|cus_3|cus_4');
 				</div> 
 			</div> 
 			<div class="form-group row">
-				<label for="state"   class="col-sm-2 col-form-label col-form-label-sm">State :</label>
+				<label for="province"   class="col-sm-2 col-form-label col-form-label-sm">Province :</label>
 				<div class="col-sm-8">
 					<input type="text" name="state"   class="form-control form-control-sm" required>
 				</div> 
@@ -133,7 +138,7 @@ $custom_fields = base64_encode('cus_1|cus_2|cus_3|cus_4');
 			<div class="form-group row">
 				<label for="country"   class="col-sm-2 col-form-label col-form-label-sm">Price :</label>
 				<div class="col-sm-8">
-					<input type="text" name="country" value="Rs. <?php echo $price[1] ?>.00"  class="form-control form-control-sm" required>
+					<input type="text" name="price" value="Rs. <?php echo $price[1] ?>.00"  class="form-control form-control-sm" disabled>
 				</div> 
 			</div> 
 			<br>
@@ -144,7 +149,7 @@ $custom_fields = base64_encode('cus_1|cus_2|cus_3|cus_4');
 			 </div> 
 			
 			 <p></p>
-			<input type="hidden"  name="process_currency" value="LKR"></td> <!-- currency value must be LKR or USD -->
+		   <input type="hidden"  name="process_currency" value="LKR"></td> <!-- currency value must be LKR or USD -->
 		   <input  type="hidden" name="cms" value="PHP">
 		   <input  type="hidden" name="custom_fields" value="<?php echo $custom_fields; ?>">
 		   <input type="hidden" name="enc_method" value="JCs3J+6oSz4V0LgE0zi/Bg==">
