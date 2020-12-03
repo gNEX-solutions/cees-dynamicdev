@@ -10,13 +10,13 @@ include 'Model/getClientLogos.php';
 // unique_order_id|total_amount
 $dtime = strtotime(date("Y-m-d h:i:s"));
 $uniqueid = $dtime.''.mt_rand(10,100);
-$text = '525|10';
+$text = $uniqueid.'|100';
 
-$publickey =  "-----BEGIN PUBLIC KEY-----
-MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQC9l2HykxDIDVZeyDPJU4pA0imf
-3nWsvyJgb3zTsnN8B0mFX6u5squ5NQcnQ03L8uQ56b4/isHBgiyKwfMr4cpEpCTY
-/t1WSdJ5EokCI/F7hCM7aSSSY85S7IYOiC6pKR4WbaOYMvAMKn5gCobEPtosmPLz
-gh8Lo3b8UsjPq2W26QIDAQAB
+$publickey = "-----BEGIN PUBLIC KEY-----
+MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDZU22QKT6n8GXrH7aMuxRhlgD/
+zyK+iUTtpU+GKkg4qslgNyvRgW4O/rsVkV8wwE2i9RVEhhjTz1piMzIcTbKMG12U
+WDhVtvsEHq/Tzm4q9iiamHOurkkcYj3qyF5i3/l0fILUesX9xAD0Fszprt4mMLtA
+RN+QR62pEv8HtdrknQIDAQAB
 -----END PUBLIC KEY-----";
 //load public key for encrypting
 openssl_public_encrypt($text, $encrypt, $publickey);
@@ -133,16 +133,11 @@ $custom_fields = base64_encode('cus_1|cus_2|cus_3|cus_4');
 					<input type="text" name="country"   class="form-control form-control-sm" required>
 				</div> 
 			</div> 
-		<?php $price = explode(".",$_GET['course_fee']);  
-			$dtime = strtotime(date("Y-m-d h:i:s"));
-			$uniqueid = $dtime.''.mt_rand(10,100);
-			$text = $uniqueid.'|100';
-			echo $text;
-		?>
+		<?php $price = explode(".",$_GET['course_fee']); ?>
 			<div class="form-group row">
 				<label for="country"   class="col-sm-2 col-form-label col-form-label-sm">Price :</label>
 				<div class="col-sm-8">
-					<input type="text" name="price" value="Rs. <?php echo $text; ?>.00"  class="form-control form-control-sm" disabled>
+					<input type="text" name="price" value="Rs. <?php echo $price[1] ?>.00"  class="form-control form-control-sm" disabled>
 				</div> 
 			</div> 
 			<br>
