@@ -10,7 +10,8 @@ include 'Model/getClientLogos.php';
 // unique_order_id|total_amount
 $dtime = strtotime(date("Y-m-d h:i:s"));
 $uniqueid = $dtime.''.mt_rand(10,100);
-$text = $uniqueid.'|'.$price[1];
+$fee = explode(".",$_GET['course_fee']);
+$text = $uniqueid.'|'.$fee[1];
 
 $publickey = "-----BEGIN PUBLIC KEY-----
 MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQC9l2HykxDIDVZeyDPJU4pA0imf
