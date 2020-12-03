@@ -11,7 +11,6 @@ include 'Model/getClientLogos.php';
 $dtime = strtotime(date("Y-m-d h:i:s"));
 $uniqueid = $dtime.''.mt_rand(10,100);
 $fee = explode(".",$_GET['course_fee']);
-$text = $uniqueid.'|10';
 $text = $uniqueid.'|10.00';
 //$text = $uniqueid.'|'.$fee[1].'00';
 $publickey = "-----BEGIN PUBLIC KEY-----
