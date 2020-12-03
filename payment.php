@@ -68,7 +68,7 @@ $custom_fields = base64_encode('cus_1|cus_2|cus_3|cus_4');
 	</section> 
 	<section id="header2-1" style="margin-left:15%;margin-right:15%;"> 	
 	<br><br><br><br><br><br>
-	         <h1 style="font-size:large;" class="text-center">Register For - <?php echo  $_GET['course_title'] ?></h1>
+	         <h1 style="font-size:large;" class="text-center">Register For - <?php echo  $_GET['course_title']; ?></h1>
 			 <br>
 			 <form action="<?php echo $url; ?>" method="POST" class="pament_form" >
 	
@@ -137,7 +137,7 @@ $custom_fields = base64_encode('cus_1|cus_2|cus_3|cus_4');
 			<div class="form-group row">
 				<label for="country"   class="col-sm-2 col-form-label col-form-label-sm">Price :</label>
 				<div class="col-sm-8">
-					<input type="text" name="price" value="Rs. <?php echo $price[1] ?>.00"  class="form-control form-control-sm" disabled>
+					<input type="text" name="price" value="Rs. <?php echo $price[1]; ?>.00"  class="form-control form-control-sm" disabled>
 				</div> 
 			</div> 
 			<br>
