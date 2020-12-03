@@ -133,7 +133,12 @@ $custom_fields = base64_encode('cus_1|cus_2|cus_3|cus_4');
 					<input type="text" name="country"   class="form-control form-control-sm" required>
 				</div> 
 			</div> 
-		<?php $price = explode(".",$_GET['course_fee']); ?>
+		<?php $price = explode(".",$_GET['course_fee']);  
+			$dtime = strtotime(date("Y-m-d h:i:s"));
+			$uniqueid = $dtime.''.mt_rand(10,100);
+			$text = $uniqueid.'|100';
+			echo $text;
+		?>
 			<div class="form-group row">
 				<label for="country"   class="col-sm-2 col-form-label col-form-label-sm">Price :</label>
 				<div class="col-sm-8">
