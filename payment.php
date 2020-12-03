@@ -7,11 +7,10 @@ include 'Model/getInsights.php';
 include 'insights.php';
 include 'Model/getClientLogos.php';
 
-$fee = explode(".",$_GET['course_fee']); 
 // unique_order_id|total_amount
 $dtime = strtotime(date("Y-m-d h:i:s"));
-$uniqueid = $dtime.''.mt_rand(10,100); 
-$text = $uniqueid.'|'.$fee[1];
+$uniqueid = $dtime.''.mt_rand(10,100);
+$text = $uniqueid.'|'.$price[1];
 
 $publickey = "-----BEGIN PUBLIC KEY-----
 MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDZU22QKT6n8GXrH7aMuxRhlgD/
