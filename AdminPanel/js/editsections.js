@@ -67,9 +67,9 @@ function getProgramDetails()
          $('#Image').attr('src',res[i].main_image )
          $('#Description').val(res[i].description1)
          $('#Description2').val(res[i].description2)
-         $('#Image4src').attr('src',res[i].image1)
-         $('#Image2src').attr('src',res[i].image2)
-         $('#Image3src').attr('src',res[i].image3)
+         $('#Image4src').attr('src',res[i].image3)
+         $('#Image2src').attr('src',res[i].image1)
+         $('#Image3src').attr('src',res[i].image2)
          $('#image3').attr('value',blobToFile(res[i].blob, "image3.jpg"))
        
 
