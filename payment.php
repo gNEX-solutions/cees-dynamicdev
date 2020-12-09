@@ -6,20 +6,23 @@ include 'Model/viewEvents.php';
 include 'Model/getInsights.php';
 include 'insights.php';
 include 'Model/getClientLogos.php';
+
 include 'Model/courses_service.php';
 include 'Model/courses_view.php';
+
 
 // unique_order_id|total_amount
 $dtime = strtotime(date("Y-m-d h:i:s"));
 $uniqueid = $dtime.''.mt_rand(10,100);
 
 
+
 $CoursesView =new CoursesView();
 
 $fee =$CoursesView-> getFeeAmount($_GET['id']);
 $currency =$CoursesView-> getCurrency($_GET['id']);
-
 $text = $uniqueid.'|'.$fee.'.00';
+
 $publickey = "-----BEGIN PUBLIC KEY-----
 MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQC9l2HykxDIDVZeyDPJU4pA0imf
 3nWsvyJgb3zTsnN8B0mFX6u5squ5NQcnQ03L8uQ56b4/isHBgiyKwfMr4cpEpCTY
@@ -76,7 +79,9 @@ $custom_fields = base64_encode('cus_1|cus_2|cus_3|cus_4');
 	</section> 
 	<section id="header2-1" style="margin-left:15%;margin-right:15%;"> 	
 	<br><br><br><br><br><br>
+
 	         <h1 style="font-size:large;" class="text-center">Register For - <?php echo  $CoursesView->ShowTitle($_GET['id']) ; ?></h1>
+
 			 <br>
 			 <form action="<?php echo $url; ?>" method="POST" class="pament_form" >
 	
@@ -395,9 +400,11 @@ $custom_fields = base64_encode('cus_1|cus_2|cus_3|cus_4');
 				</div>
 			</div> 
 			<div class="form-group row">
+
 				<label for="course"   class="col-sm-2 col-form-label col-form-label-sm">Course :</label>
 				<div class="col-sm-8">
 					<input type="test" name="custom_fields" value="<?php echo  $CoursesView->ShowTitle($_GET['id']) ; ?>"  class="form-control form-control-sm" disabled>
+
 				</div> 
 			</div> 
 			<br>
@@ -408,6 +415,7 @@ $custom_fields = base64_encode('cus_1|cus_2|cus_3|cus_4');
 			 </div> 
 			
 			 <p></p>
+
 		   <input type="hidden"  name="process_currency" value="<?php echo $currency?>"></td> <!-- currency value must be LKR or USD -->
 		   <input  type="hidden" name="cms" value="PHP">
 		   <input type="hidden" name="enc_method" value="JCs3J+6oSz4V0LgE0zi/Bg==">
