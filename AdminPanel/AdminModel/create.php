@@ -56,9 +56,8 @@
                     $description1 =$_POST['description1'];
                     $description2 =$_POST["description2"];
                     $description3 =$_POST["description3"];
-
+                    $currency =(int)$_POST["currency"];
                     $created_at= date("Y-m-d h:i:sa");
-
                     $status=1;
 
                     // $filename = $_FILES['file']['name'];
@@ -82,7 +81,7 @@
                             $imageProperties2 = getimageSize($_FILES['image2']['tmp_name']);
                             $imageProperties3 = getimageSize($_FILES['image3']['tmp_name']);
                             $imageProperties4 = getimageSize($_FILES['image4']['tmp_name']);
-                            $stmt1= "INSERT INTO solution_lab (idprogram,description1,description2, image1, image2, image3) VALUES ('{$last_id}','{$description1}','{$description2}', '{$imgData1}','{$imgData2}', '{$imgData3}')";
+                            $stmt1= "INSERT INTO `solution_lab` (`description1`,`description2`,`idprogram`,`image1`,`image2`,`image3`) VALUES ('{$description1}','{$description2}',$last_id,'{$imgData1}','{$imgData2}','{$imgData3}')";
 
                         }
                         if( $pageType=="ID")
@@ -94,7 +93,7 @@
                             $imageProperties2 = getimageSize($_FILES['image2']['tmp_name']);
                             $imageProperties3 = getimageSize($_FILES['image3']['tmp_name']);
                             $imageProperties4 = getimageSize($_FILES['image4']['tmp_name']);
-                            $stmt1= "INSERT INTO `courses` (`description1`,`description2`,`idprogram`,`course_fee`,`course_duration`,`lecturer`,`image1`,`image2`,`image3`,`sheets`) VALUES ('{$description1}','{$description2}',$last_id,$CourseFee,'{$CourseDuration}','{$lecturer}','{$imgData1}','{$imgData2}','{$imgData3}','{$inputCourseSheets}')";
+                            $stmt1= "INSERT INTO `courses` (`description1`,`description2`,`idprogram`,`course_fee`,`course_duration`,`lecturer`,`image1`,`image2`,`image3`,`sheets`,`currency_id`) VALUES ('{$description1}','{$description2}',$last_id,$CourseFee,'{$CourseDuration}','{$lecturer}','{$imgData1}','{$imgData2}','{$imgData3}','{$inputCourseSheets}',{$currency})";
 
                         }
 
@@ -118,97 +117,9 @@
                         }
                     }
 
-                    // if($success==1){
-                    //     $last_id =$conn->insert_id;
-                    //     $stmt1="";
-                    //    if( $pageType=="ID"){
-                    //     $stmt1= $conn->prepare("INSERT INTO courses(description1,description2, idprogram,course_fee,course_duration,lecturer) VALUES (?,?,?,?,?,?)");
 
-                    //     $stmt1->bind_param('ssiiss', $description1,$description2, $last_id, $CourseFee,$CourseDuration,$lecturer);
-
-                    //    }
-                    //    if( $pageType=="BP"){
-                    //     $stmt1= $conn->prepare("INSERT INTO business_partnering(idprogram,description1,description2,description3,image) VALUES (?,?,?,?,?)");
-
-                    //     $stmt1 ->bind_param('issss', $last_id, $description1, $description2, $description3,$relLocation2);
-
-                    //    }
-                    //    if( $pageType=="SL"){
-                    //     $stmt1= $conn->prepare("INSERT INTO solution_lab(idprogram,description1,description2) VALUES (?,?,?)");
-
-                    //     $stmt1->bind_param('iss', $last_id,$description1,$description2);
-
-                    //    }
-
-
-
-
-                    //     if(!$stmt1->execute()){
-                    //         $success=0;
-                    //         $sql = 'DELETE FROM program '
-                    //                . 'WHERE idprogram ='. $last_id;
-                    //         $conn->query($sql);
-                    //         echo '<script>swal({icon: "error", text:"Program cannot be added",});</script>';
-                    //     }
-                    //     if($success==1){
-                    //         $conn->commit();
-                    //         echo '<script>swal({icon: "success", text:"Program added successfuly!",});</script>';
-                    //     }
-
-                    // }
-                    //header("Location:https://www.formget.com/app/");
-                    // echo " <script type='text/javascript'>
-                    // window.setTimeout(function(){window.location.href = '../addNewProgram.php'},2000);
-                    // </script>";
-                    //}
                 }
-                //Commented By Kalpa 2020-09-02
-                // if(isset($_POST["submitCourse"])) {
 
-                //     $title=$_POST['inputTitle'];
-                //     $summary=$_POST['inputSummary'];
-                //     $status=1;
-                //     $idprogram=$_POST['idprogram'];
-
-                //     $filename = $_FILES['file']['name'];
-                //     $location = "../../assets/images/consultancy/". $filename;
-                //     $relLocation="assets/images/consultancy/". $filename;
-                //     $temp = explode(".", $filename);
-
-                //     $uploadOk = 1;
-                //     $imageFileType = pathinfo($location,PATHINFO_EXTENSION);
-                //         /* Valid extensions */
-                //     $valid_extensions = array("jpg","jpeg","png");
-                //         /* Check file extension */
-                //     if(!in_array(strtolower($imageFileType), $valid_extensions)) {
-                //     $uploadOk = 0;
-                //     }
-                //     if($uploadOk == 0){
-                //         $uploadOk = 0;
-                //         echo '<script>swal({icon: "error", text:"Image file should be in jpg, jpeg or png format",});</script>';//echo " <script type='text/javascript'>location.href = '../AcademyNewPage.php';</script>";
-                //     }else{
-                //         $uploadOk = 1;
-                //         /* Upload file */
-                //         move_uploaded_file($_FILES['file']['tmp_name'],$location);
-                //         echo "<script>alert(".$title.")</script>";
-                //         $conn->autocommit(false);
-                //         $stmt= $conn->prepare("INSERT INTO courses(course_heading, summary, status, course_icon_url, idprogram) VALUES (?,?,?,?,?)");
-                //         $stmt->bind_param('ssisi',$title, $summary, $status, $relLocation, $idprogram);
-
-                //         if(!$stmt->execute()){
-                //             $success=0;
-                //             echo '<script>swal({icon: "error", text:"Course cannot be added",});</script>';
-                //         }
-                //         if($success==1){
-                //             $conn->commit();
-                //             echo '<script>swal({icon: "success", text:"Course added successfuly!",});</script>';
-                //         }
-                //         //Redirect
-                //         echo " <script type='text/javascript'>
-                //         window.setTimeout(function(){window.location.href = '../addNewCourse.php'},2000);
-                //         </script>";
-                //     }
-                // }
 
                 $conn->autocommit(true);
                 $conn->close();

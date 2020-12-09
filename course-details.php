@@ -138,7 +138,7 @@ $CoursesView =new CoursesView()
                         </li>
                         <li>
                      
-                            <a class="justify-content-between d-flex" href="payment.php?course_title=<?php $CoursesView->ShowTitle($artID) ?>&course_fee=<?php $CoursesView->getFee($artID) ?>">
+                            <a class="justify-content-between d-flex" href="payment.php?id=<?php echo $artID ?>">
                             <button type="button" class="btn btn-primary">Register</button>
                             </a>
                         </li>

@@ -21,7 +21,7 @@ class CoursesService extends dbh{
 public function getSpecificCourse($artID)
     { 
         
-       $sql1="SELECT * FROM courses c where c.idprogram =".$artID;
+       $sql1="SELECT * FROM courses c INNER JOIN currency ON c.currency_id=currency.id where c.idprogram =".$artID;
        $result1=$this->connect()->query($sql1);
        $numRows1=$result1->num_rows;
        if($numRows1>0){

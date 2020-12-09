@@ -47,7 +47,7 @@ class CoursesView extends CoursesService
         $datas1 = $this->getSpecificCourse($artID);
         foreach ($datas1 as $key=>$data1) {
 
-                echo 'Rs.'. $data1['course_fee'] ;
+                echo $data1['sign']." ".$data1['course_fee'] ;
             
         }
     }
@@ -78,6 +78,24 @@ class CoursesView extends CoursesService
         foreach ($datas1 as $key=>$data1) {
 
             echo  $data1['sheets'] ;
+
+        }
+    }
+    public function getCurrency($artID)
+    {
+        $datas1 = $this->getSpecificCourse($artID);
+        foreach ($datas1 as $key=>$data1) {
+
+            echo $data1['code'] ;
+
+        }
+    }
+    public function getFeeAmount($artID)
+    {
+        $datas1 = $this->getSpecificCourse($artID);
+        foreach ($datas1 as $key=>$data1) {
+
+            echo $data1['course_fee'];
 
         }
     }
