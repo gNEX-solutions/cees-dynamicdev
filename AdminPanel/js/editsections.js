@@ -60,7 +60,8 @@ function getProgramDetails()
          var res = $.parseJSON(data);
          var len = res.length;
          for(var i=0; i<len; i++){
-             $('#Seats').val(res[i].sheets)
+         $('#Seats').val(res[i].sheets)
+         $('#currency').val(res[i].currencyId);
          $('#Summary').val(res[i].summary);
          $('#Title').val(res[i].program_title);
          $('#ID').val(res[i].idprogram);

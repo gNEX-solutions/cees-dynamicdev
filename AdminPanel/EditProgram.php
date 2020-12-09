@@ -3,6 +3,7 @@
 
     if(isset($_SESSION['User']))
     {
+        include 'Controller/adminProgramController.php'
 ?>
 
 
@@ -21,7 +22,6 @@
   <?php include './resources/nav.php'; ?>
   <?php include './resources/footer.php'; ?>
   <!-- including the database connection  -->
-  <?php include '../Model/dbh.inc.php'; ?>
   
   <!-- Custom fonts for this template-->
   <!-- <script type="text/javascript" src="./lib/jquery-3.3.1.min.js"></script> -->
@@ -152,6 +152,20 @@
           <input type="number" id="fee" class="form-control" name="inputCourseFee" placeholder="Course Fee" >
         </div>
       </div>
+           <div class="form-group" id="currencyDiv">
+               <strong> <label for="inputPageType">Currency</label> </strong>
+               <select class="form-control" name="currency" id="currency">
+                   <?php
+                   $currency =new AdminProgramController();
+                   $currencyData=  $currency->getCurrency();
+                   foreach ($currencyData as $object){
+                       echo '<option value="'. $object["id"].'">'. $object["code"].'</option>';
+                   }
+
+
+                   ?>
+               </select>
+           </div>
        <div class="row justify-content-md-start">
            <div class="form-group col col-sm-8" id="inputCourseSheets">
                <strong> <label for="inputCourseSheets">Course Seats</label></strong>
@@ -305,6 +319,7 @@
 <script src="js/editsections.js"></script>
 <script>
     $("#inputCourseSheets").hide();
+    $("#currencyDiv").hide();
    $('select').on('change', function (e) {
       if(this.value=="ID")
       {
@@ -316,6 +331,7 @@
       $("#imageDiv5").hide();
       $("#discription3").hide();
       $("#inputCourseSheets").show();
+          $("#currencyDiv").show();
 
       }else if(this.value=="BP"){
       $("#inputCourseFee").hide();
@@ -326,6 +342,7 @@
       $("#discription3").show();
       $("#imageDiv5").show();
       $("#inputCourseSheets").hide();
+          $("#currencyDiv").hide();
       }
     else if(this.value=="SL"){
       $("#inputCourseFee").hide();
@@ -336,6 +353,7 @@
       $("#discription3").hide();
       $("#imageDiv5").hide();
       $("#inputCourseSheets").hide();
+          $("#currencyDiv").hide();
       }
     });
 
