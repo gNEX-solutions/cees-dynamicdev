@@ -86,7 +86,7 @@ class CoursesView extends CoursesService
         $datas1 = $this->getSpecificCourse($artID);
         foreach ($datas1 as $key=>$data1) {
 
-            echo $data1['code'] ;
+            return $data1['code'] ;
 
         }
     }
@@ -95,7 +95,7 @@ class CoursesView extends CoursesService
         $datas1 = $this->getSpecificCourse($artID);
         foreach ($datas1 as $key=>$data1) {
 
-            echo $data1['course_fee'];
+            return $data1['course_fee'];
 
         }
     }

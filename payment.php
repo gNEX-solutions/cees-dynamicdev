@@ -76,7 +76,7 @@ $custom_fields = base64_encode('cus_1|cus_2|cus_3|cus_4');
 	</section> 
 	<section id="header2-1" style="margin-left:15%;margin-right:15%;"> 	
 	<br><br><br><br><br><br>
-	         <h1 style="font-size:large;" class="text-center">Register For - <?php echo  $_GET['course_title']; ?></h1>
+	         <h1 style="font-size:large;" class="text-center">Register For - <?php echo  $CoursesView->ShowTitle($_GET['id']) ; ?></h1>
 			 <br>
 			 <form action="<?php echo $url; ?>" method="POST" class="pament_form" >
 	
