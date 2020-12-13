@@ -45,7 +45,7 @@ class CoursesView extends CoursesService
     public function getFee($artID)
     {
         $datas1 = $this->getSpecificCourse($artID);
-        foreach ($datas1 as $key=>$data1) {
+        foreach ($datas1 as $data1) {
 
                 echo $data1['sign']." ".$data1['course_fee'] ;
             

@@ -3,7 +3,7 @@
 
     if(isset($_SESSION['User']))
     {
-        include 'Controller/adminProgramController.php'
+        include 'Controller/AdminProgramController.php'
 ?>
 
 
@@ -152,20 +152,20 @@
           <input type="number" id="fee" class="form-control" name="inputCourseFee" placeholder="Course Fee" >
         </div>
       </div>
-           <div class="form-group" id="currencyDiv">
-               <strong> <label for="inputPageType">Currency</label> </strong>
-               <select class="form-control" name="currency" id="currency">
-                   <?php
-                   $currency =new AdminProgramController();
-                   $currencyData=  $currency->getCurrency();
-                   foreach ($currencyData as $object){
-                       echo '<option value="'. $object["id"].'">'. $object["code"].'</option>';
-                   }
+      <div class="form-group  col col-sm-8" id="currencyDiv">
+          <strong> <label for="inputPageType">Currency</label> </strong>
+          <select class="form-control" name="currency" id="currency">
+              <?php
+              $currency =new AdminProgramController();
+              $currencyData=  $currency->getCurrency();
+              foreach ($currencyData as $object){
+                  echo '<option value="'. $object["id"].'">'. $object["code"].'</option>';
+              }
 
 
-                   ?>
-               </select>
-           </div>
+              ?>
+          </select>
+      </div>
        <div class="row justify-content-md-start">
            <div class="form-group col col-sm-8" id="inputCourseSheets">
                <strong> <label for="inputCourseSheets">Course Seats</label></strong>
