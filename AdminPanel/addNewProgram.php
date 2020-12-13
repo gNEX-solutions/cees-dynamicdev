@@ -3,6 +3,8 @@
 
     if(isset($_SESSION['User']))
     {
+
+        include 'Controller/adminProgramController.php'
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -61,9 +63,9 @@
                 <strong> <label for="inputPageType">Page Type</label> </strong>
                   <select class="form-control" name="inputPageType">
                     <option >Select page type</option>
-                    <option value="ID">Lean Certification</option>
-                    <option value="BP">Trainings</option>
-                    <option value="SL">Solutions</option>
+                     <option value="ID">Lean Certification</option> <!--  DB:courses-->
+                    <option value="BP">Trainings</option><!--  DB:business_partnering-->
+                    <option value="SL">Solutions</option><!--  DB:solution_lab-->
                   </select>
               </div> 
               <!-- <div class="form-group">
@@ -112,6 +114,22 @@
                 <strong> <label for="inputCourseFee">Course Fee</label></strong>
                 <input type="number"  class="form-control" name="inputCourseFee" placeholder="Course Fee" >
               </div>
+                <div class="form-group" id="currencyDiv">
+                    <strong> <label for="inputPageType">Currency</label> </strong>
+                    <select class="form-control" name="currency" id="currency">
+                        <?php
+                        $currency =new AdminProgramController();
+                        $currencyData=  $currency->getCurrency();
+                        foreach ($currencyData as $object){
+                            echo '<option value="'. $object["id"].'">'. $object["code"].'</option>';
+                        }
+
+
+                        ?>
+                    </select>
+                </div>
+
+
                 <div class="form-group" id="inputCoursSheets">
                     <strong> <label for="inputCourseSheets">Course Seats</label></strong>
                     <input type="number"  class="form-control" name="inputCourseSheets" placeholder="Seats" >
@@ -212,14 +230,15 @@
       $("#discription2").hide();
       $("#discription3").hide();
       $("#Image5div").hide();
-        $("#inputCoursSheets").hide();
+      $("#inputCoursSheets").hide();
+      $("#currencyDiv").hide();
 
       
     });
     $('select').on('change', function (e) {
       if(this.value=="ID")
       {
-          $("#inputCoursSheets").show();
+      $("#inputCoursSheets").show();
       $("#inputCourseFee").show();
       $("#inputCourseDuration").show();
       $("#inputLecturer").show();
@@ -227,6 +246,7 @@
       $("#discription2").show();
       $("#discription3").hide();
       $("#Image5div").hide();
+      $("#currencyDiv").show();
       }else if(this.value=="BP"){
           $("#inputCoursSheets").hide();
       $("#inputCourseFee").hide();
@@ -236,6 +256,7 @@
       $("#discription2").show();
       $("#discription3").show();
       $("#Image5div").show();
+      $("#currencyDiv").hide();
       }
     else if(this.value=="SL"){
           $("#inputCoursSheets").hide();
@@ -246,6 +267,7 @@
       $("#discription2").show();
       $("#discription3").hide();
       $("#Image5div").hide();
+      $("#currencyDiv").hide();
       }
     });
 

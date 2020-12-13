@@ -23,7 +23,7 @@ class Edit extends dbh{
 
     $sql="";
     if($pageType=="ID"){
-        $sql="SELECT program.program_title,program.summary,program.status,program.page_type, program.main_image,program.idprogram,courses.description1,courses.sheets,courses.description2,courses.idprogram ,courses.course_fee ,courses.course_duration ,courses.lecturer ,courses.image1,courses.image2,courses.image3 FROM program INNER JOIN courses ON courses.idprogram=program.idprogram WHERE program.idprogram=".$programId;
+        $sql="SELECT program.program_title,program.summary,program.status,program.page_type, program.main_image,program.idprogram,courses.description1,courses.sheets,courses.description2,courses.idprogram ,courses.course_fee ,courses.course_duration ,courses.lecturer ,courses.image1,courses.image2,courses.image3,currency.id AS 'currencyId',currency.code AS 'code' FROM program INNER JOIN courses ON courses.idprogram=program.idprogram INNER JOIN currency ON courses.currency_id=currency.id WHERE program.idprogram=".$programId;
 
     }
     if($pageType=="BP"){
@@ -61,7 +61,7 @@ class Edit extends dbh{
     }
    }
 
-   public function UpdateProgram ($Title,$Summary,$status,$main_image,$programId,$Description1, $lecturer,$CourseDuration, $CourseFee,$image5,$image2,$image3,$image4,$Description2,$Description3,$pageType,$sheat)
+   public function UpdateProgram ($Title,$Summary,$status,$main_image,$programId,$Description1, $lecturer,$CourseDuration, $CourseFee,$image5,$image2,$image3,$image4,$Description2,$Description3,$pageType,$sheat,$currency)
    {
 
        $sql="";
@@ -79,29 +79,29 @@ class Edit extends dbh{
      if($pageType=="ID"){
          if ($image2||$image3||$image4){
              if($image2&&$image3&&$image4){
-                 $sql2="UPDATE courses  SET image1='".$image2."',image2='".$image3."',image3='".$image4."',description1='".$Description1. "',description2='".$Description2."',course_fee='".$CourseFee."',course_duration='".$CourseDuration."',sheets='".$sheat."',lecturer='".$lecturer."'WHERE idprogram=".$programId;
+                 $sql2="UPDATE courses  SET image1='".$image2."',image2='".$image3."',image3='".$image4."',description1='".$Description1. "',description2='".$Description2."',course_fee='".$CourseFee."',course_duration='".$CourseDuration."',sheets='".$sheat."',lecturer='".$lecturer."',currency_id='".$currency."' WHERE idprogram=".$programId;
              }
              if($image2){
-                 $sql2="UPDATE courses  SET image1='".$image2."',description1='".$Description1. "',description2='".$Description2."',course_fee='".$CourseFee."',course_duration='".$CourseDuration."',sheets='".$sheat."',lecturer='".$lecturer."'WHERE idprogram=".$programId;
+                 $sql2="UPDATE courses  SET image1='".$image2."',description1='".$Description1. "',description2='".$Description2."',course_fee='".$CourseFee."',course_duration='".$CourseDuration."',sheets='".$sheat."',lecturer='".$lecturer."',currency_id='".$currency."' WHERE idprogram=".$programId;
              }
              if($image3){
-                 $sql2="UPDATE courses  SET image2='".$image3."',description1='".$Description1. "',description2='".$Description2."',course_fee='".$CourseFee."',course_duration='".$CourseDuration."',sheets='".$sheat."',lecturer='".$lecturer."'WHERE idprogram=".$programId;
+                 $sql2="UPDATE courses  SET image2='".$image3."',description1='".$Description1. "',description2='".$Description2."',course_fee='".$CourseFee."',course_duration='".$CourseDuration."',sheets='".$sheat."',lecturer='".$lecturer."',currency_id='".$currency."' WHERE idprogram=".$programId;
              }
              if($image4){
-                 $sql2="UPDATE courses  SET image3='".$image4."',description1='".$Description1. "',description2='".$Description2."',course_fee='".$CourseFee."',course_duration='".$CourseDuration."',sheets='".$sheat."',lecturer='".$lecturer."'WHERE idprogram=".$programId;
+                 $sql2="UPDATE courses  SET image3='".$image4."',description1='".$Description1. "',description2='".$Description2."',course_fee='".$CourseFee."',course_duration='".$CourseDuration."',sheets='".$sheat."',lecturer='".$lecturer."',currency_id='".$currency."' WHERE idprogram=".$programId;
              }
              if($image2&&$image3){
-                 $sql2="UPDATE courses  SET image1='".$image2."',image2='".$image3."',description1='".$Description1. "',description2='".$Description2."',course_fee='".$CourseFee."',course_duration='".$CourseDuration."',sheets='".$sheat."',lecturer='".$lecturer."'WHERE idprogram=".$programId;
+                 $sql2="UPDATE courses  SET image1='".$image2."',image2='".$image3."',description1='".$Description1. "',description2='".$Description2."',course_fee='".$CourseFee."',course_duration='".$CourseDuration."',sheets='".$sheat."',lecturer='".$lecturer."',currency_id='".$currency."' WHERE idprogram=".$programId;
              }
              if($image2&&$image3&&$image4){
-                 $sql2="UPDATE courses  SET image1='".$image2."',image3='".$image4."',description1='".$Description1. "',description2='".$Description2."',course_fee='".$CourseFee."',course_duration='".$CourseDuration."',sheets='".$sheat."',lecturer='".$lecturer."'WHERE idprogram=".$programId;
+                 $sql2="UPDATE courses  SET image1='".$image2."',image3='".$image4."',description1='".$Description1. "',description2='".$Description2."',course_fee='".$CourseFee."',course_duration='".$CourseDuration."',sheets='".$sheat."',lecturer='".$lecturer."',currency_id='".$currency."' WHERE idprogram=".$programId;
              }
              if($image3&&$image4){
-                 $sql2="UPDATE courses  SET image2='".$image3."',image3='".$image4."',description1='".$Description1. "',description2='".$Description2."',course_fee='".$CourseFee."',course_duration='".$CourseDuration."',sheets='".$sheat."',lecturer='".$lecturer."'WHERE idprogram=".$programId;
+                 $sql2="UPDATE courses  SET image2='".$image3."',image3='".$image4."',description1='".$Description1. "',description2='".$Description2."',course_fee='".$CourseFee."',course_duration='".$CourseDuration."',sheets='".$sheat."',lecturer='".$lecturer."',currency_id='".$currency."' WHERE idprogram=".$programId;
              }
 
          }else{
-             $sql2="UPDATE courses  SET description1='".$Description1. "',description2='".$Description2."',course_fee='".$CourseFee."',course_duration='".$CourseDuration."',sheets='".$sheat."',lecturer='".$lecturer."'WHERE idprogram=".$programId;
+             $sql2="UPDATE courses  SET description1='".$Description1. "',description2='".$Description2."',course_fee='".$CourseFee."',course_duration='".$CourseDuration."',sheets='".$sheat."',lecturer='".$lecturer."',currency_id='".$currency."' WHERE idprogram=".$programId;
 
          }
      }
