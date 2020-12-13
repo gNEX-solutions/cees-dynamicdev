@@ -4,7 +4,7 @@
     if(isset($_SESSION['User']))
     {
 
-        include 'Controller/adminProgramController.php'
+        include 'Controller/AdminProgramController.php'
 ?>
 <!DOCTYPE html>
 <html lang="en">
