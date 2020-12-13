@@ -6,10 +6,10 @@ $signature = base64_decode($_POST ["signature"]);
 $custom_fields = base64_decode($_POST ["custom_fields"]);
 //load public key for signature matching
 $publickey = "-----BEGIN PUBLIC KEY-----
-MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQC9l2HykxDIDVZeyDPJU4pA0imf
-3nWsvyJgb3zTsnN8B0mFX6u5squ5NQcnQ03L8uQ56b4/isHBgiyKwfMr4cpEpCTY
-/t1WSdJ5EokCI/F7hCM7aSSSY85S7IYOiC6pKR4WbaOYMvAMKn5gCobEPtosmPLz
-gh8Lo3b8UsjPq2W26QIDAQAB
+MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDZU22QKT6n8GXrH7aMuxRhlgD/
+zyK+iUTtpU+GKkg4qslgNyvRgW4O/rsVkV8wwE2i9RVEhhjTz1piMzIcTbKMG12U
+WDhVtvsEHq/Tzm4q9iiamHOurkkcYj3qyF5i3/l0fILUesX9xAD0Fszprt4mMLtA
+RN+QR62pEv8HtdrknQIDAQAB
 -----END PUBLIC KEY-----";
 openssl_public_decrypt($signature, $value, $publickey);
 
