@@ -49,31 +49,6 @@ $slPageId = $_GET['SLPageId'];
         <?php require_once ('common/Components/header.php'); ?>
   </section>
 
-  <!-- <section id="header2-1">
-    <div>
-    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-        <div class="carousel-inner">
-            <div class="carousel-item active" >
-              <div class="parallax cid-ruNtyUeTOv3 mbr-fullscreen d-block w-100" alt="Third slide"></div>
-              <div class="carousel-caption third">
-              <h5><span class="part1">Solutions</span> 
-                      <br>
-                      <span class="part2">Lab</span>
-                  </h5>
-              <p>Amplifying Future</p>
-              </div>
-            </div>
-        </div>
-    </div>
-    </div>
-    <div class="mbr-arrow hidden-sm-down" aria-hidden="true" >
-        <a href="#next">
-            <i class="mbri-down mbr-iconfont"></i>
-        </a>
-    </div>
-</section>  -->
-<!-- end section -->
-
 <!-- dynamic view  -->
 <section class="first-section">
 <?php

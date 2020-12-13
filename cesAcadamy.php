@@ -76,14 +76,6 @@
 
 
   
-
-
-
-
-
-
-
-
 <section class="cid-ruOTxA2tiD" id="footer5-16">
 
 <?php require_once ('common/Components/footer.php'); ?>
