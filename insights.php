@@ -61,7 +61,7 @@ function showInsights(){
         echo '<div >
         <br> 
         <h4 > 
-            <a href="AdminPanel/blog/researchView.php?artID='.$data[0]['idblog_posts'].'" target="_blank">
+            <a href="researchView.php?artID='.$data[0]['idblog_posts'].'" target="_blank">
             '.$data[0]['title'].'            
             <br>
             <span id="date-section">
@@ -86,7 +86,7 @@ function showInsights(){
 
         </div>
         <div class="col-md-9 col-sm-9 col-lg-9" style="background-color: #f5f2f2;">
-            <a href="AdminPanel/blog/researchView.php?artID='.$data[1]['idblog_posts'].'" target="_blank">
+            <a href="researchView.php?artID='.$data[1]['idblog_posts'].'" target="_blank">
             <h5> '.$data[1]['title'].' </h5>
             <p>
             '.$data[1]['summary'].'   
@@ -102,7 +102,7 @@ function showInsights(){
 
         </div>
         <div class="col-md-9 col-sm-9 col-lg-9" >
-        <a href="AdminPanel/blog/researchView.php?artID='.$data[2]['idblog_posts'].'" target="_blank">
+        <a href="researchView.php?artID='.$data[2]['idblog_posts'].'" target="_blank">
         <h5>  '.$data[2]['title'].'</h5>
         <p>
         '.$data[2]['summary'].'   
@@ -118,7 +118,7 @@ function showInsights(){
 
         </div>
         <div class="col-md-9 col-sm-9 col-lg-9" style="background-color: #f5f2f2;">
-        <a href="AdminPanel/blog/researchView.php?artID='.$data[3]['idblog_posts'].'" target="_blank">
+        <a href="researchView.php?artID='.$data[3]['idblog_posts'].'" target="_blank">
         <h5> '.$data[3]['title'].' </h5>
         <p>
         '.$data[3]['summary'].'   
@@ -135,7 +135,7 @@ function showInsights(){
 
         </div>
         <div class="col-md-9 col-sm-9 col-lg-9" >
-        <a href="AdminPanel/blog/researchView.php?artID='.$data[4]['idblog_posts'].'" target="_blank">
+        <a href="researchView.php?artID='.$data[4]['idblog_posts'].'" target="_blank">
         <h5>  '.$data[4]['title'].'</h5>
         <p>
         '.$data[4]['summary'].'   

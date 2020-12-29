@@ -28,29 +28,34 @@ include '../../Model/viewservices.inc.php';
 
             <!-- Main Nav -->
             <div id="logo" style="display:none;">
-                <a href="../../index.php"> <img src="Components/wef2.png" alt="cees-logo" style="width:auto;height:50px;margin-left:10%;"></a>
+                <a href="./index.php"> <img src="../../assets/images/wef2.png" alt="cees-logo" style="width:auto;height:50px;margin-left:10%;"></a>
              </div>
 
 			<div id="nav-bottom">
                 <div class = "row" >
-                    <div class="col-md-2" style="margin:auto" id="logo-desktop">
-                    <a href="../../index.php"> <img src="Components/wef3.png" alt="cees-logo" style="width:auto;height:50px;margin-left:30%;"></a>
+                    <div class="col-md-2" style="margin:auto;" id="logo-desktop">
+                        <a href="./index.php"> <img src="../../assets/images/wef3.png" alt="cees-logo" style="width:auto;height:50px;margin-left:30%;"></a>
                     </div>
-                
-                    <div class="col-md-10"  style="padding-top:7px;padding-bottom:7px;padding-right:5%;" >
+                    <div class="col-lg-1" style="margin:auto" id="badge-desktop">
+                        <a href="./index.php"> <img src="../../assets/images/logo1.png" alt="cees-logo" style="width:100%;margin-left:130px;margin-bottom:-12%"></a>
+                    </div>
+                    <div class="col-lg-1" style="margin:auto" id="badge-desktop">
+                        <a href="./index.php"> <img src="../../assets/images/logo3.png" alt="cees-logo" style="width:100%;margin-left:110px;margin-bottom:-12%"></a>
+                    </div>
+                    <div class="col-md-8" style="padding-top:7px;padding-bottom:7px;padding-right:5%;">
                     <!-- nav -->
                        <ul class="nav-menu" >
                                 <li>
-                                    <a href="../../index.php">Home</a>
+                                    <a href="index.php">Home</a>
                                 </li>
                                 <li class="has-dropdown megamenu" >
-                                    <a href="../../Programs.php">CEES Academy</a>
+                                    <a>Lean Certification</a>
                                     <div class="dropdown">
                                         <div class="dropdown-body">
                                             <div class="row">
                                             <?php
                                              $services=new ViewServices();
-                                             $services->ShowCA_MENU();
+                                             $services->ShowID_MENU();
                                             ?> 
                                                
                                             </div>
@@ -58,20 +63,20 @@ include '../../Model/viewservices.inc.php';
                                     </div>
                                 </li>
                                 <li class="has-dropdown megamenu">
-                                    <a href="../../services-talent.php">Bussiness Partnering</a>
+                                    <a>Trainings</a>
                                     <div class="dropdown">
                                         <div class="dropdown-body">
                                             <div class="row">
                                             <?php
                                              $services=new ViewServices();
-                                             $services->ShowCS_MENU();
+                                             $services->ShowBP_MENU();
                                             ?> 
                                             </div>
                                         </div>
                                     </div>
                                 </li>
                                 <li class="has-dropdown megamenu">
-                                    <a href="../../solutionslab.php">Solutions Lab</a>
+                                    <a>Solutions</a>
                                     <div class="dropdown">
                                         <div class="dropdown-body">
                                             <div class="row">
@@ -83,8 +88,8 @@ include '../../Model/viewservices.inc.php';
                                         </div>
                                     </div>
                                 </li>
-                                <li><a href="../../about.php">About ICEES</a></li>
-                                <li><a href="../../contact.php">Contact Us</a></li>
+                                <li><a href="about.php">About ICEES</a></li>
+                                <li><a href="contact.php">Contact Us</a></li>
                             </ul>
                             <!-- /nav -->
             
@@ -96,9 +101,9 @@ include '../../Model/viewservices.inc.php';
 			<!-- Aside Nav -->
 			<div id="nav-aside">
 				<ul class="nav-aside-menu">
-					<li><a href="../../index.php">Home</a></li>
-					
-                    <li class="has-dropdown"><a class="side_a">ICEES Academy</a>
+					<li><a href="index.php">Home</a></li>
+		
+                    <li class="has-dropdown"><a class="side_a" href="#" class="side_a"><a href="#">Lean Certification</a></a>
 						<ul class="dropdown">
                         <?php
                             $services=new ViewServices();
@@ -107,15 +112,17 @@ include '../../Model/viewservices.inc.php';
                            
 						</ul>
 					</li>
-                    <li class="has-dropdown"><a class="side_a">Bussiness Partnering</a>
+
+                    <li class="has-dropdown"><a class="side_a" href="#" class="side_a"><a href="#">Trainings</a></a>
+
 						<ul class="dropdown">
                             <?php
                             $services=new ViewServices();
-                            $services->ShowCSMOB_MENU();
-                            ?> 
+                            $services->ShowBPMOB_MENU();
+                            ?>  
                         </ul>
                     </li>
-                    <li class="has-dropdown"><a class="side_a">Solutions Lab</a>
+                    <li class="has-dropdown"><a class="side_a"  href="#" class="side_a"><a href="#">Solutions</a></a>
 						<ul class="dropdown">
                         <?php
                             $services=new ViewServices();
@@ -124,8 +131,8 @@ include '../../Model/viewservices.inc.php';
                            
 						</ul>
 					</li>
-                    <li><a href="../../about.php">About ICEES</a></li>
-					<li><a href="../../contact.php">Contact Us</a></li>
+                    <li><a href="about.php">About ICEES</a></li>
+					<li><a href="contact.php">Contact Us</a></li>
 				<!-- <button class="nav-close nav-aside-close"><span></span></button> -->
 			</div>
 			<!-- /Aside Nav -->
@@ -134,9 +141,13 @@ include '../../Model/viewservices.inc.php';
 	</header>
 	<!-- /HEADER -->
 	<!-- jQuery Plugins -->
+
 	<script src="../../assets/navbar/jquery.min.js"></script>
     <!-- <script src="js/bootstrap.min.js"></script> -->
 	<script src="../../assets/navbar/jquery.stellar.min.js"></script>
     <script src="../../assets/navbar/main.js"></script>
+
+
+    
 
     
