@@ -80,6 +80,7 @@ class researchService extends researchWindow
                     <div class="carousel-caption">
                         <h5>' . $data1['title'] . '</h5>
                         <p>Published on - ' . $data1['created_at'] . '</p>
+                        <br>
                     </div>
                 </div>
 
